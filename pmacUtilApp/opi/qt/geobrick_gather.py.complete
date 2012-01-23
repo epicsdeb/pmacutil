@@ -1,0 +1,305 @@
+#!/dls_sw/tools/bin/python2.5
+
+import os, sys, signal
+
+sys.path.append("/dls_sw/tools/python2.4/lib/python2.4/site-packages/cothread-1.14-py2.4.egg")
+
+from PyQt4 import QtCore, QtGui
+from PyQt4.Qt import *
+from PyQt4.Qwt5 import *
+
+# Import the cothread library in each module that uses it.
+import cothread
+from cothread.catools import *
+from numpy import *
+
+# Enable Qt processing
+qApp = cothread.iqt()
+
+# Import the ui form
+from form_ui import Ui_Form
+
+class Spy(QtCore.QObject):
+	
+	def __init__(self, parent):
+		QtCore.QObject.__init__(self, parent)
+		parent.setMouseTracking(True)
+		parent.installEventFilter(self)
+
+	# __init__()
+
+	def eventFilter(self, _, event):
+		if event.type() == QtCore.QEvent.MouseMove:
+			self.emit(QtCore.SIGNAL("MouseMove"), event.pos())
+		return False
+
+class plot(QwtPlot):
+	def __init__(self, parent):
+		QwtPlot.__init__(self, parent)
+		self.setCanvasBackground(Qt.white)		
+		# legend
+		legend = QwtLegend()
+		legend.setFrameStyle(QFrame.Box | QFrame.Sunken)
+		legend.setItemMode(QwtLegend.ClickableItem)
+		self.insertLegend(legend, QwtPlot.BottomLegend)
+				
+		# grid
+		self.grid = QwtPlotGrid()
+		self.grid.enableXMin(True)
+		self.grid.setMajPen(QPen(Qt.black, 0, Qt.DotLine))
+		self.grid.setMinPen(QPen(Qt.gray, 0 , Qt.DotLine))
+		self.grid.attach(self)
+
+		# axes
+		self.enableAxis(QwtPlot.yRight)
+		self.setAxisTitle(QwtPlot.xBottom, "Time (ms)")
+		self.setAxisTitle(QwtPlot.yLeft, 'Position (cts)')
+		self.setAxisTitle(QwtPlot.yRight, "Following Error (cts)")
+
+		self.setAxisMaxMajor(QwtPlot.xBottom, 6)
+		self.setAxisMaxMinor(QwtPlot.xBottom, 10)
+
+		# curves
+		self.demand = QwtPlotCurve('Demand')
+		self.demand.setRenderHint(QwtPlotItem.RenderAntialiased);
+		self.demand.setPen(QPen(Qt.blue))
+		self.demand.setYAxis(QwtPlot.yLeft)
+		self.demand.attach(self)
+
+		self.readback = QwtPlotCurve('Readback')
+		self.readback.setRenderHint(QwtPlotItem.RenderAntialiased);
+		self.readback.setPen(QPen(Qt.green))
+		self.readback.setYAxis(QwtPlot.yLeft)
+		self.readback.attach(self)
+	
+		self.fErr = QwtPlotCurve('Following Error')
+		self.fErr.setRenderHint(QwtPlotItem.RenderAntialiased);
+		self.fErr.setPen(QPen(Qt.red))
+		self.fErr.setYAxis(QwtPlot.yRight)
+		self.fErr.attach(self)
+			
+
+class gui(QtGui.QMainWindow):
+	def __init__(self, prefix):
+		QtGui.QMainWindow.__init__(self)
+		self.prefix = prefix
+		# setup the ui
+		self.ui = Ui_Form()	
+		self.ui.setupUi(self)
+		# setup the button actions
+		self.bActions = {self.ui.go: (self.go, "go"), self.ui.stop: (self.stop, "stop")}
+		pre = os.path.dirname(sys.argv[0])+"/button_"
+		for p in "pm":
+			for i in ["01", "1", "10"]:
+				button = self.ui.__dict__[p+i]
+				if i == "01":
+					val = 1				
+				else:
+					val = int(i)*10
+				if p == "m":
+					val = -val
+				def f(self = self, val = val):
+					self.moveBy(val)
+				self.bActions[button] = (f, p+i)				
+		# and connect them
+		for button, (f, name) in self.bActions.items():
+			self.connect(button, QtCore.SIGNAL("clicked()"), f)
+			pix = QPixmap(pre + name + ".png")
+			button.releasedIcon = QIcon(pix)
+			button.pressedIcon = QIcon(pre + name + "_down.png")
+			button.hoverIcon = QIcon(pre + name + "_up.png")			
+			button.setIcon(button.releasedIcon)
+			button.setIconSize(pix.size())
+			button.setMask(QRegion(pix.mask()).translated(8,6))			
+			def pressedAction(button = button):
+				button.setIcon(button.pressedIcon)
+			button.pressedAction = pressedAction		
+			self.connect(button, QtCore.SIGNAL("pressed()"), button.pressedAction)					
+			def releasedAction(button = button):
+				button.setIcon(button.releasedIcon)
+			button.releasedAction = releasedAction			
+			self.connect(button, QtCore.SIGNAL("released()"), button.releasedAction)												
+		# setup the lineEdit actions
+		self.lActions = {}
+		for line, pv, pvrbv in \
+				[ (self.ui.P, self.prefix + ":P", self.prefix + ":P:RBV"),
+				  (self.ui.I, self.prefix + ":I", self.prefix + ":I:RBV"),
+				  (self.ui.V, self.prefix + ":MOTOR.VELO", self.prefix + ":MOTOR.VELO"),
+				  (self.ui.A, self.prefix + ":MOTOR.ACCL", self.prefix + ":MOTOR.ACCL") ]:
+			def f(string, pv = pv):
+				caput(pv, float(string))
+			self.lActions[line] = f
+			def monitor(value, line = line):	
+				if not line.isModified() or not line.hasFocus():			
+					line.setText(str(value))
+			camonitor(pvrbv, monitor)
+		# and connect them			
+		for line, f in self.lActions.items():
+			self.connect(line, QtCore.SIGNAL("textEdited ( const QString & ) "), f)		
+		# connect combo box
+		self.connect(self.ui.graphDisplay, QtCore.SIGNAL("currentIndexChanged ( const QString & ) "), self.comboBoxChanged)
+		# make a plot
+		self.flayout = QtGui.QVBoxLayout(self.ui.frame)				
+		self.plot = plot(self.ui.frame)
+		self.flayout.addWidget(self.plot)
+		self.__initTracking()
+		self.__initZooming()		
+		# store the arrays
+		self.arrays = {}		
+		# set some monitors on the array
+		self.arrayFuncs = {}
+		for i,pv in enumerate([self.prefix + ":GATHER:DEMANDPOSN",
+							   self.prefix + ":GATHER:POSN",
+							   self.prefix + ":GATHER:DEMANDVELO",
+							   self.prefix + ":GATHER:VELO",
+							   self.prefix + ":GATHER:TIME",
+							   self.prefix + ":GATHER:FERR"]):
+			def f(value, self=self, i=i):
+				self.arrays[i] = value
+				self.updateArray(i)
+			self.arrayFuncs[pv] = f
+		self.gtype = "Position"
+		for pv, f in self.arrayFuncs.items():
+			camonitor(pv, f)
+		# now make an animated moving symbol
+		gif = QMovie("wait30trans.gif")
+		self.ui.moving.setMovie(gif)
+
+	def updateArray(self, i):
+		changed = False
+		if self.gtype == "Position" and self.arrays.has_key(4):
+			if i in (0,4) and self.arrays.has_key(0):
+				self.plot.demand.setData(self.arrays[4], self.arrays[0])
+				changed = True
+			if i in (1,4) and self.arrays.has_key(1):
+				self.plot.readback.setData(self.arrays[4], self.arrays[1])
+				changed = True				
+		if self.gtype == "Velocity" and self.arrays.has_key(4):
+			if i in (2,4) and self.arrays.has_key(2):
+				self.plot.demand.setData(self.arrays[4], self.arrays[2])
+				changed = True				
+			if i in (3,4) and self.arrays.has_key(3):
+				self.plot.readback.setData(self.arrays[4], self.arrays[3])
+				changed = True				
+		if self.arrays.has_key(4) and i in (4,5) and self.arrays.has_key(5):
+			self.plot.fErr.setData(self.arrays[4], self.arrays[5])	
+			changed = True	
+		if changed:			
+			self.clearZoomStack()			
+								 						 
+	def comboBoxChanged(self, text):
+		self.gtype = str(text)
+		if self.gtype == "Position":
+			self.plot.setAxisTitle(QwtPlot.yLeft, 'Position (cts)')		
+		else:
+			self.plot.setAxisTitle(QwtPlot.yLeft, 'Velocity (cts/ms)')				
+		# replot time, which replots everything
+		self.updateArray(4)
+						
+	def moveBy(self, value):
+		current = caget(self.prefix + ":MOTOR.RBV")
+		caput(self.prefix + ":MOTOR", current + value)
+
+	def tick(self):
+		state = caget(self.prefix + ":GATHER:STATE")
+		if state == "MONITOR_INPUT":			
+			self.ui.progressBar.setValue(100)
+			self.timer.stop()
+		elif self.ui.progressBar.value() < 99:
+			self.ui.progressBar.setValue(self.ui.progressBar.value() + 1)
+
+	def go(self):
+		caput(self.prefix + ":GATHER:PORT", "pmac1port")
+		caput(self.prefix + ":GATHER:MOTOR", self.prefix + ":MOTOR")	
+		axis = caget(self.prefix + ":MOTOR.OUT").rstrip(")").split(",")[-1].strip()
+		caput(self.prefix + ":GATHER:ASYN.AOUT", "#%shmz" % axis)
+		cothread.Sleep(0.5)
+		try:
+			val = float(str(self.ui.D.text()))
+		except ValueError:
+			val = 10
+			self.ui.D.setText("10")
+		caput(self.prefix + ":GATHER:DEMAND", val)
+		tSample = caget(self.prefix + ":GATHER:TSAMPLE.B")
+		accl = caget(self.prefix + ":MOTOR.ACCL")
+		tMove = max(accl + (val / caget(self.prefix + ":MOTOR.VELO")), 2*accl)
+		sPeriod = int(tMove * 1000.0 / (1024.0 * tSample)) + 1
+		caput(self.prefix + ":GATHER:SPERIOD", sPeriod)
+		cothread.Sleep(0.5)				
+		# timer tick in ms
+		tick = sPeriod * tSample * 10.24 + 30
+		self.timer = QtCore.QTimer()		
+		self.ui.progressBar.setValue(0)		
+		self.connect(self.timer, QtCore.SIGNAL("timeout()"), self.tick)
+		caput(self.prefix + ":GATHER:STATE", "EXECUTE")
+		caput(self.prefix + ":GATHER:EXECUTE", 1)
+		self.timer.start(tick)
+		
+	def stop(self):
+		caput(self.prefix + ":MOTOR.STOP", 1)
+		self.ui.progressBar.setValue(100)
+		
+	def clearZoomStack(self):
+		"""Auto scale and clear the zoom stack
+		"""
+
+		self.plot.setAxisAutoScale(Qwt.QwtPlot.xBottom)
+		self.plot.setAxisAutoScale(Qwt.QwtPlot.yLeft)
+		self.plot.replot()
+		self.zoomer.setZoomBase()
+		
+	def __initTracking(self):
+		"""Initialize tracking
+		"""		
+
+		self.connect(Spy(self.plot.canvas()),
+					 QtCore.SIGNAL("MouseMove"),
+					 self.showCoordinates) 
+
+		self.statusBar().showMessage(
+			'Mouse movements in the plot canvas are shown in the status bar')
+
+	# __initTracking()
+
+	def showCoordinates(self, position):
+		self.statusBar().showMessage(
+			'Time = %f, %s = %f'
+			% (self.plot.invTransform(Qwt.QwtPlot.xBottom, position.x()),
+			   self.gtype,
+			   self.plot.invTransform(Qwt.QwtPlot.yLeft, position.y())))
+
+	# showCoordinates()
+	
+	def __initZooming(self):
+		"""Initialize zooming
+		"""
+
+		self.zoomer = Qwt.QwtPlotZoomer(Qwt.QwtPlot.xBottom,
+										Qwt.QwtPlot.yLeft,
+										Qwt.QwtPicker.DragSelection,
+										Qwt.QwtPicker.AlwaysOff,
+										self.plot.canvas())
+		self.zoomer.setRubberBandPen(QPen(Qt.black))
+		pattern = [
+			Qwt.QwtEventPattern.MousePattern(Qt.LeftButton, Qt.NoModifier),
+			Qwt.QwtEventPattern.MousePattern(Qt.MidButton, Qt.NoModifier),
+			Qwt.QwtEventPattern.MousePattern(Qt.RightButton, Qt.NoModifier),
+			Qwt.QwtEventPattern.MousePattern(Qt.LeftButton, Qt.ShiftModifier),
+			Qwt.QwtEventPattern.MousePattern(Qt.MidButton, Qt.ShiftModifier),
+			Qwt.QwtEventPattern.MousePattern(Qt.RightButton, Qt.ShiftModifier)]
+		self.zoomer.setMousePattern(pattern)		
+
+	# __initZooming()
+				
+
+if __name__ == "__main__":				
+	# create and show form
+	QtCore.QObject.connect(qApp, QtCore.SIGNAL("lastWindowClosed()"), qApp.quit)	
+	g = gui("TESTGATHER")
+	def quit(*args, **kwargs):
+		cothread.Quit()
+	signal.signal(signal.SIGINT, quit)	
+	g.show()
+	# main loop
+	cothread.WaitForQuit()
+		

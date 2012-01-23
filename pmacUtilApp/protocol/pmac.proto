@@ -1,0 +1,135 @@
+# Streams protocol file for the pmacStreams protocol
+# Initial version NPR 04/2006
+# two versions for function getPlcsDisabled and getMotionProgramActive
+# 0 suffix for VME, 1 suffix for GeoBrick - the only difference is an additional CR in "out"
+
+# use "streamReload" to reload this file without restarting the IOC
+
+ExtraInput = Ignore;
+ReadTimeout = 500;
+OutTerminator = "";
+InTerminator = ACK;
+Separator = CR;
+
+getVar
+{
+  out "\$1" CR;
+  in  "%f" CR;
+}
+
+setVar
+{
+  out "\$1=%f" CR;
+  in;
+}
+
+
+getStatus
+{
+  out "\$1" CR;
+  in "%4x%(\$2:status2.VAL)4x%(\$2:status3.VAL)4x";
+}
+
+getPlcsDisabled1
+{
+  # version for GeoBrick
+  out "M5000..5031";
+  in  "%i" ;
+}
+
+getGPIOInputs1
+{
+  # version for GeoBrick
+  out "M0..15";
+  in  "%i" ;
+}
+
+getGPIOOutputs1
+{
+  # version for GeoBrick
+  out "M32..39 i0 i0 i0 i0 i0 i0 i0 i0";
+  in  "%i" ;
+}
+
+getMotionProgramActive1
+{
+  # version for GeoBrick
+  out "M5180,16,100";
+  in  "%i" ;
+}
+
+getPlcsDisabled0
+{
+  # version for VME
+  out "M5000..5031" CR;
+  in  "%i" ;
+}
+
+getGPIOInputs0
+{
+  # version for VME
+  out "M7616..7623 M7640..7647" CR;
+  in  "%i" ;
+}
+
+getGPIOOutputs0
+{
+  # version for VME
+  out "M7716..7723 M7740..7747" CR;
+  in  "%i" ;
+}
+
+getMotionProgramActive0
+{
+  # version for VME
+  out "M5180,16,100" CR;
+  in  "%i" ;
+}
+
+getIntVar
+{
+  out "\$1" CR;
+  in  "%d" CR;
+}
+
+setIntVar
+{
+  out "\$1=%d" CR;
+  in;
+}
+
+getHexVar
+{
+  out "\$1" CR;
+  in  "$%x" CR;
+}
+
+setHexVar
+{
+  out "\$1=$%x" CR;
+  in;
+}
+
+sendString
+{
+  out "%s" CR;
+  in;
+}
+
+killMotor
+{
+  out "#\$1k" CR;
+  in;
+}
+
+getEloss
+{
+  out "P%(\$1:ELOSSVAR.VAL)d" CR;
+  in "%i";
+}
+
+resetEloss
+{
+  out "P%(\$1:ELOSSVAR.VAL)d=%d" CR;
+  in;
+}

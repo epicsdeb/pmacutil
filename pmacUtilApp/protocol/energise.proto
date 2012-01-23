@@ -1,0 +1,32 @@
+Terminator = CR;
+InTerminator = CR LF;
+
+LockTimeout = 10000;
+ReplyTimeout = 7000;
+ReadTimeout = 1000;
+
+setEnergisem7501 {
+    out "m7501=%u";
+    @init {
+        out "m7501";
+        in "%u";
+    }
+}
+
+getEnergisem7501 {
+	out "m7501";
+	in "%u";
+}
+
+setEnergisem7503 {
+    out "m7503=%u";
+    @init {
+        out "m7503";
+        in "%u";
+    }
+}
+
+getEnergisem7503 {
+	out "m7503";
+	in "%u";
+}

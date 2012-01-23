@@ -1,0 +1,10 @@
+Terminator = CR;
+InTerminator = CR "\x06";
+
+LockTimeout = 10000;
+ReplyTimeout = 500;
+ReadTimeout = 500;
+
+getPos {
+    out "#\$1 P"; in "%f";
+}

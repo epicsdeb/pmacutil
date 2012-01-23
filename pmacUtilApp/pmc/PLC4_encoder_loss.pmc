@@ -1,0 +1,279 @@
+CLOSE
+
+;###############################################################################
+; Define encoder loss protection
+; Original Author: Alan Greer
+; Used variables: P400..497,mxx84,85,86 defined
+; Macros (and example values):
+; ONM1 = 1       ;Turn encoder loss protection for axis 1 on
+; ...
+; ONM32 = 0      ;Turn encoder loss protection for axis 32 off
+; ONMx is a bitmask with the following types of protection available:
+; 1 = encoder loss detection, when the encoder is marked as lost (mx84 = 0),
+;     the protection will be tripped and will need a manual reset 
+;     (set p(464+axis_number) = 0)
+; 2 = GeoBrick amplifier enable detection, when the amplifier goes undervoltage
+;     then trip the protection, auto reset when it comes back on
+; 4 = PMAC Micromech amplifier enable detection, when the amplifier is demanded 
+;     to be on, but is actually off, then trip the protection, auto reset when 
+;     it comes back on
+; So ONMx = 2 for open loop brick, 3 for closed loop brick, 4 for open loop PMAC
+; 5 for closed loop PMAC.
+;
+; NB Needs either BRICK_M_variables.pmc or PMAC_M_variables.pmc loaded
+;-------------------------------------------------------------------;
+; The following must be uncommented in your main pmc file for PMACs ;
+;-------------------------------------------------------------------;
+;;Memory locations for encoder loss bit
+;;These addresses work for micromech racks, OD racks need different ones
+;ms0,i21 = $6488C8DCC0A1
+;ms0,i22 = $6488C9DCC0A2
+;ms0,i23 = $6488CADCC0A3
+;ms0,i24 = $6488CBDCC0A5
+;ms0,i25 = $6488CCDCC0A6
+;ms0,i26 = $6488CDDCC0A7
+;ms0,i27 = $6488CEDCC0A9
+;ms0,i28 = $6488CFDCC0AA
+;ms0,i29 = $6498C8DCC0AB
+;ms0,i30 = $6498C9DCC0AD
+;ms0,i31 = $6498CADCC0AE
+;ms0,i32 = $6498CBDCC0AF
+;ms0,i33 = $6498CCDCC0B1
+;ms0,i34 = $6498CDDCC0B2
+;ms0,i35 = $6498CEDCC0B3
+;ms0,i36 = $6498CFDCC0B5
+;ms32,i21 = $6488C8DCC0A1
+;ms32,i22 = $6488C9DCC0A2
+;ms32,i23 = $6488CADCC0A3
+;ms32,i24 = $6488CBDCC0A5
+;ms32,i25 = $6488CCDCC0A6
+;ms32,i26 = $6488CDDCC0A7
+;ms32,i27 = $6488CEDCC0A9
+;ms32,i28 = $6488CFDCC0AA
+;ms32,i29 = $6498C8DCC0AB
+;ms32,i30 = $6498C9DCC0AD
+;ms32,i31 = $6498CADCC0AE
+;ms32,i32 = $6498CBDCC0AF
+;ms32,i33 = $6498CCDCC0B1
+;ms32,i34 = $6498CDDCC0B2
+;ms32,i35 = $6498CEDCC0B3
+;ms32,i36 = $6498CFDCC0B5
+;;Configure MACRO station node enable i variables
+;ms0,i996 = $FBFFF
+;ms32,i996 = $2FBFFF
+;;Configure IO, enable all nodes
+;ms0,i975 = $CCC
+;ms32,i975 = $CCC
+;;Macro IC0 and IC2 Node Activate Control
+;i6841 = $FFFFF
+;i6941 = $2FFFFF
+;; i20 sets up 16-bit data transfer lines between
+;; expansion cards and UMAC macro card.
+;ms0,i20=$FFFF
+;ms32,i20=$FFFF
+;
+;; i19 controls how often they are read
+;ms0,i19=$4
+;ms32,i19=$4
+;###############################################################################
+
+; Turn encoder loss protection on or off
+P401 = $(ONM1=0)
+P402 = $(ONM2=0)
+P403 = $(ONM3=0)
+P404 = $(ONM4=0)
+P405 = $(ONM5=0)
+P406 = $(ONM6=0)
+P407 = $(ONM7=0)
+P408 = $(ONM8=0)
+P409 = $(ONM9=0)
+P410 = $(ONM10=0)
+P411 = $(ONM11=0)
+P412 = $(ONM12=0)
+P413 = $(ONM13=0)
+P414 = $(ONM14=0)
+P415 = $(ONM15=0)
+P416 = $(ONM16=0)
+P417 = $(ONM17=0)
+P418 = $(ONM18=0)
+P419 = $(ONM19=0)
+P420 = $(ONM20=0)
+P421 = $(ONM21=0)
+P422 = $(ONM22=0)
+P423 = $(ONM23=0)
+P424 = $(ONM24=0)
+P425 = $(ONM25=0)
+P426 = $(ONM26=0)
+P427 = $(ONM27=0)
+P428 = $(ONM28=0)
+P429 = $(ONM29=0)
+P430 = $(ONM30=0)
+P431 = $(ONM31=0)
+P432 = $(ONM32=0)
+
+; used for storing current axis number
+#define axis_number              P400
+
+; use axis_number to calculate the P variable to look in to see
+; if encoder loss protection is turned on on this axis
+#define encoder_protection       P(P400 + 400) & 1 = 1
+#define amp_protection           P(P400 + 400) & 2 = 2
+#define micromech_protection     P(P400 + 400) & 4 = 4
+
+; m variable pointing at the memory location showing if the encoder is present
+#define encoder_loss_bit         M(P400*100 + 84)
+
+; These are for checking amp status
+; NOTE: under voltage is only wired to the first 4 axes in a geoBrick, so 
+; always check amp 1 status for under voltage
+#define amp_status               M(P400 * 100 + 90) & 448
+#define amp_1_status             M190 & 448
+#define AMP_STATUS_READY         64
+#define AMP_STATUS_UNDER_VOLTAGE 128
+
+; These are for checking the status of the micromech amps (PMAC UMAC systems)
+#define micromech_status         M(7599 + P400 + (P400 - 1) & 16 / 16 * 8)
+#define micromech_demand         M(7699 + P400 + (P400 - 1) & 16 / 16 * 8)
+
+; m variable pointing at the CS number (-1) for the motor
+#define coord_system_number      M(P400*100 + 85)
+
+; m variable saying if the motor is in a CS
+#define in_coord_system          M(P400*100 + 86) > 0
+
+; this is the flag that is set if encoder is lost
+; needs to be reset by EPICS when encoder is restored
+#define protection_tripped       P(P400+464)
+P465..496=0
+
+; this is a temp var
+#define temp_var P497
+
+; The amp_status bits flickers around a bit so we read it several times until we get consecutive reading the same before we act on it.
+#define amp_status_debounce P498
+#define amp_1_status_debounce P499
+
+; this is the old following error limit
+#define saved_fe_limit           P(P400+432)
+
+; this is the actual following error limit
+#define following_error_limit    I(P400*100 + 11)
+
+; this is how many matching readings are needed for amplifier status
+#define NREADINGS 5
+
+;**********************************************************
+;
+; Encoder loss detection PLC.  This checks if the encoder
+; is lost for each axis.  If it is, it kills the axis,
+; sets the following error to 1/16th of a count and aborts
+; any coordinate system move that this axis belongs to.
+;
+; If the encoder is recovered and the latch reset (P(464+axis_number)=0)
+; then the following error will be set back to its orginal
+; value
+;
+;**********************************************************
+OPEN PLC 4
+CLEAR
+
+axis_number = 1
+; Loop through all axis
+while(axis_number < 33)
+
+    if (amp_protection)                         
+        ; The amp_status bits flicker around a bit so we read the amp_status bits NREADINGS times inside a while loop. This ensures 
+        ; that other PLC's and background tasks are run between the readings so that amp_status gets updated between readings. 
+        ; Tests have show you do not ever seem to get 3 consecutive incorrect readings from amp_status if the background 
+        ; tasks are allowed to run between readings.
+
+        ; Debounce the amp_status reading.
+        amp_status_debounce = amp_status
+        temp_var = 0
+        while (temp_var < NREADINGS)
+            if (amp_status = amp_status_debounce)
+                temp_var = temp_var + 1
+            else
+                amp_status_debounce = amp_status
+                temp_var = 0
+            endif
+        endwhile  
+
+        ; Debounce the amp_1_status reading.
+        amp_1_status_debounce = amp_1_status
+        temp_var = 0
+        while (temp_var < NREADINGS)
+            if (amp_1_status = amp_1_status_debounce)
+                temp_var = temp_var + 1
+            else
+                amp_1_status_debounce = amp_1_status
+                temp_var = 0
+            endif
+        endwhile          
+    endif  
+
+    ; If encoder protection is enabled for this axis and the encoder loss bit
+    ; drops to zero and we have not already
+    if(encoder_protection and encoder_loss_bit = 0)
+    ; Or amp protection is enabled and the amp status is no longer READY
+    or(amp_protection and amp_status_debounce != AMP_STATUS_READY)
+    ; Or amp 1 is under voltage
+    or(amp_protection and amp_1_status_debounce = AMP_STATUS_UNDER_VOLTAGE)    
+    ; Or micromech amp enabled but not active
+    or(micromech_protection and micromech_status = 0 and micromech_demand = 1)
+        if (protection_tripped=0)
+            ; If the following error limit is sensible
+            ; then save it for future reference
+            if(following_error_limit != 1)
+                saved_fe_limit = following_error_limit
+            endif
+            ; Check to see if there is a coordinate system
+            ; for this axis that needs aborting
+            if(in_coord_system)
+                ; Abort any coordinate system motion
+                temp_var = coord_system_number + 1
+                ADDRESS&temp_var CMD"A"
+            endif
+            ; Kill the specific axis
+            ADDRESS#axis_number CMD"K"
+            ; Finally signal that protection is tripped
+            protection_tripped = 1
+        endif
+    endif
+
+    ; Auto-reset the protection_tripped if it was an amp fault
+    if(amp_protection and amp_status_debounce = AMP_STATUS_READY and amp_1_status_debounce != AMP_STATUS_UNDER_VOLTAGE)        
+        ; If encoder loss is still tripped then don't reset protection
+        if(encoder_protection and encoder_loss_bit = 0)
+        else
+            protection_tripped = 0
+        endif
+    endif
+
+    ; Auto-reset the protection_tripped if it was a micromech amp fault
+    if(micromech_protection and micromech_status = 1 and micromech_demand = 1)
+        ; If encoder loss is still tripped then don't reset protection
+        if(encoder_protection and encoder_loss_bit = 0)
+        else
+            protection_tripped = 0
+        endif
+    endif
+
+    if(protection_tripped = 1)
+        ; Protection has been tripped, so set the following
+        ; error for this axis to 1/16th count
+        following_error_limit = 1
+    else
+        ; Protection is not tripped so restore following error
+        if (following_error_limit = 1 and saved_fe_limit > 1)
+            following_error_limit = saved_fe_limit
+        endif
+    endif
+
+    axis_number=axis_number+1
+
+endwhile
+
+CLOSE
+
+ENABLE PLC 4

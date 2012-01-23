@@ -1,0 +1,11 @@
+#% macro, HOME, Prefix for autohome instance. Defaults to $(P). If unspecified,
+# the template contains enough records to keep the motor record happy
+
+include "basic_asyn_motor.template"
+
+record(calcout, "$(P)$(M):SDIS") {
+  field(INPA, "$(HOME=$(P)):HM:HOMING CP")
+}
+
+record(busy, "$(HOME=$(P)):HM:HOMING") {
+}

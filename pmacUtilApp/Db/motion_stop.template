@@ -1,0 +1,23 @@
+# Database to read the motion stop input variable
+# Requires PLC2 to be running on the PMAC
+# Macros:
+# P - device (PMAC) name
+# SPORT - PMAC serial comms port
+# Note that 0 means the motion stop is active
+
+record(asyn, "$(P):READMSTOP") {
+  field(DTYP, "asynRecordDevice")
+  field(PORT, "$(SPORT)")
+  field(DESC, "Read motion stop variable")
+  field(TMOT, "5")
+  field(AOUT, "P200")
+}
+
+record(bi, "$(P):MOTIONSTOP") {
+  field(INP, "$(P):READMSTOP.AINP PP")
+  field(SCAN, "5 second")
+  field(ZSV, "MAJOR")
+  field(OSV, "NO_ALARM")
+  field(ZNAM, "ACTIVE")
+  field(ONAM, "NOT ACTIVE")
+}

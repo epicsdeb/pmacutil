@@ -1,0 +1,89 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 1477
+y 102
+w 142
+h 26
+font "arial-medium-r-18.0"
+ctlFont "arial-medium-r-18.0"
+btnFont "arial-medium-r-18.0"
+fgColor index 14
+bgColor index 3
+textColor index 14
+ctlFgColor1 index 14
+ctlFgColor2 index 0
+ctlBgColor1 index 0
+ctlBgColor2 index 14
+topShadowColor index 0
+botShadowColor index 14
+endScreenProperties
+
+# (Byte)
+object ByteClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 114
+y 3
+w 20
+h 20
+controlPv "$(P):$(R):STATE"
+lineColor index 14
+onColor index 20
+offColor index 15
+lineWidth 2
+numBits 1
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 45
+y 3
+w 57
+h 16
+controlPv "$(P):$(R):STATE"
+font "arial-bold-r-14.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+autoHeight
+limitsFromDb
+nullColor index 0
+useHexPrefix
+newPos
+objType "monitors"
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 4
+y 3
+w 40
+h 16
+controlPv "$(P):$(R):COUNTDOWN"
+font "arial-bold-r-14.0"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+autoHeight
+limitsFromDb
+nullColor index 0
+useHexPrefix
+showUnits
+newPos
+objType "monitors"
+endObjectProperties
+

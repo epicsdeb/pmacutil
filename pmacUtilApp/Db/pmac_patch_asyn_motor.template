@@ -1,0 +1,88 @@
+#% macro, SPORT, Asyn port for eloss commands 
+# usually PMAC_S<n> for pmacs, the name of the pmacAsynIpPort for bricks
+
+include "basic_asyn_motor.template"
+
+# Template for a patch panel motor
+# Includes extra autosave and archiver tags for resolution fields
+# Also includes records to enable/disable limits by setting ixx24 to $40001/$60001
+
+# % autosave 1 MRES ERES RRES
+# % archiver 0.5 Monitor ERES
+# % archiver 0.5 Monitor RRES
+record(motor, "$(P)$(M)") {
+}
+
+# Asyn records for communication with
+# PMAC
+# Set variable ixx24
+record(asyn, "$(P)$(M):ASYN:LIMSET") {
+  field(SCAN, "Passive")
+  field(DTYP, "asynRecordDevice")
+  field(PORT, "$(SPORT)")
+  field(DESC, "Set PMAC limits flag")
+}
+
+# Read variable ixx24
+record(asyn, "$(P)$(M):ASYN:LIMGET") {
+  field(SCAN, "Passive")
+  field(DTYP, "asynRecordDevice")
+  field(PORT, "$(SPORT)")
+  field(DESC, "Get PMAC limits flag")
+  field(AOUT, "i$(ADDR)24")
+}
+
+# Create command string to send to
+# PMAC
+record(scalcout, "$(P)$(M):LIMSTRING") {
+  field(DESC, "Setup PMAC command")
+  field(DTYP, "Soft Channel")
+  field(CALC, "PRINTF('i$(ADDR)24=$%x',A)")
+  field(OUT, "$(P)$(M):ASYN:LIMSET.AOUT PP")
+  field(OOPT, "Every Time")
+  field(DOPT, "Use CALC")
+}
+
+# User chooses to enable/disable limits
+# via this record
+record(bo, "$(P)$(M):SETLIMITS") {
+  field(ZNAM, "ENABLE")
+  field(ONAM, "DISABLE")
+  field(OUT, "$(P)$(M):LIMCALC.A PP")
+}
+
+# Parse response from the PMAC (in hex)
+record(scalcout, "$(P)$(M):PARSELIM") {
+  field(DTYP, "Soft Channel")
+  field(CALC, "SSCANF(AA-'$', '%x')")
+  field(INAA, "$(P)$(M):ASYN:LIMGET.AINP PP")
+  field(DESC, "Parse PMAC response")
+}
+
+record(bi, "$(P)$(M):GETLIMITS") {
+  field(ZNAM, "ENABLED")
+  field(ONAM, "DISABLED")
+}
+
+# Set bit 17 to 1 to disable limits, and to 0 to enable them.
+# Keep the remaining bits the same. Make sure we read the variable
+# again directly so that we don't use stale data.
+record(calcout, "$(P)$(M):LIMCALC") {
+  field(CALC, "(A)? (1<<17)|B : ~((1<<17))&B")
+  field(INPB, "$(P)$(M):PARSELIM PP")
+  field(OUT, "$(P)$(M):LIMSTRING.A PP")
+  field(DESC, "Calculate new ixx24")
+  field(OOPT, "Every Time")
+  field(DOPT, "Use CALC")
+}
+
+# Check bit 17 to see if limits are enabled
+record(calcout, "$(P)$(M):CHECKLIMBIT") {
+  field(CALC, "(A>>17)&1")
+  field(INPA, "$(P)$(M):PARSELIM PP")
+  field(OUT, "$(P)$(M):GETLIMITS PP")
+  field(OOPT, "Every Time")
+  field(DOPT, "Use CALC")
+  field(DESC, "Check limits bit")
+  field(SCAN, "1 second")
+}

@@ -1,0 +1,15 @@
+###################################################################
+# Template to read back an encoder value from a PMAC
+# Can be used as the RDBL link for readback_asyn_motor.template
+# Macros:
+#   AXIS - axis number
+#   PORT - PMAC asyn port
+#   SCAN - Update rate. Can be set to "Passive" if RDBL link is PP
+###################################################################
+
+record(ai, "$(P)$(M):ENC") {
+  field(DTYP, "stream")
+  field(INP, "@encoderRead.proto getPos($(AXIS)) $(PORT)")
+  field(SCAN, "$(SCAN)")
+  field(PINI, "YES")
+}

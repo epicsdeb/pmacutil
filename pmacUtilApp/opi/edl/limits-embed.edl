@@ -1,0 +1,61 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 993
+y 842
+w 142
+h 26
+font "arial-medium-r-18.0"
+ctlFont "arial-medium-r-18.0"
+btnFont "arial-medium-r-18.0"
+fgColor index 14
+bgColor index 3
+textColor index 14
+ctlFgColor1 index 14
+ctlFgColor2 index 0
+ctlBgColor1 index 0
+ctlBgColor2 index 14
+topShadowColor index 0
+botShadowColor index 14
+endScreenProperties
+
+# (Menu Button)
+object activeMenuButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 9
+y 3
+w 95
+h 20
+fgColor index 25
+bgColor index 3
+inconsistentColor index 10
+topShadowColor index 0
+botShadowColor index 14
+controlPv "$(motor):SETLIMITS"
+indicatorPv "$(motor):SETLIMITS"
+font "arial-bold-r-14.0"
+endObjectProperties
+
+# (Byte)
+object ByteClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 115
+y 4
+w 20
+h 20
+controlPv "$(motor):GETLIMITS"
+lineColor index 14
+onColor index 20
+offColor index 15
+lineWidth 2
+numBits 1
+endObjectProperties
+
