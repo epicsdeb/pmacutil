@@ -2098,11 +2098,11 @@ h 30
 
 beginGroup
 
-# (Extended Related Display)
-object ExtendedRelatedDisplayClass
+# (Related Display)
+object relatedDisplayClass
 beginObjectProperties
 major 4
-minor 0
+minor 2
 release 0
 x 320
 y 365
@@ -2157,11 +2157,11 @@ h 30
 
 beginGroup
 
-# (Extended Related Display)
-object ExtendedRelatedDisplayClass
+# (Related Display)
+object relatedDisplayClass
 beginObjectProperties
 major 4
-minor 0
+minor 2
 release 0
 x 320
 y 400
@@ -2216,11 +2216,11 @@ h 30
 
 beginGroup
 
-# (Extended Related Display)
-object ExtendedRelatedDisplayClass
+# (Related Display)
+object relatedDisplayClass
 beginObjectProperties
 major 4
-minor 0
+minor 2
 release 0
 x 320
 y 435
@@ -2275,11 +2275,11 @@ h 30
 
 beginGroup
 
-# (Extended Related Display)
-object ExtendedRelatedDisplayClass
+# (Related Display)
+object relatedDisplayClass
 beginObjectProperties
 major 4
-minor 0
+minor 2
 release 0
 x 320
 y 470
@@ -2334,11 +2334,11 @@ h 30
 
 beginGroup
 
-# (Extended Related Display)
-object ExtendedRelatedDisplayClass
+# (Related Display)
+object relatedDisplayClass
 beginObjectProperties
 major 4
-minor 0
+minor 2
 release 0
 x 320
 y 505
@@ -2393,11 +2393,11 @@ h 30
 
 beginGroup
 
-# (Extended Related Display)
-object ExtendedRelatedDisplayClass
+# (Related Display)
+object relatedDisplayClass
 beginObjectProperties
 major 4
-minor 0
+minor 2
 release 0
 x 320
 y 540
@@ -2452,11 +2452,11 @@ h 30
 
 beginGroup
 
-# (Extended Related Display)
-object ExtendedRelatedDisplayClass
+# (Related Display)
+object relatedDisplayClass
 beginObjectProperties
 major 4
-minor 0
+minor 2
 release 0
 x 320
 y 575
@@ -2511,11 +2511,11 @@ h 30
 
 beginGroup
 
-# (Extended Related Display)
-object ExtendedRelatedDisplayClass
+# (Related Display)
+object relatedDisplayClass
 beginObjectProperties
 major 4
-minor 0
+minor 2
 release 0
 x 320
 y 610
