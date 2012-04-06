@@ -149,7 +149,7 @@ msgstr "$(SYS){$(DEVICE)-Ax:02}-Seq_"
 #: ../pmacUtilApp/Db/pmacStatus.vdb:365
 #: ../pmacUtilApp/Db/pmacStatus.vdb:470
 msgid "$(DEVICE):AXIS30:ReadBack"
-msgstr "$(SYS){$(DEVICE)-Ax:20}-Seq_"
+msgstr "$(SYS){$(DEVICE)-Ax:30}-Seq_"
 
 #. recordtype: seq
 #: ../pmacUtilApp/Db/pmacStatus.vdb:368
