@@ -228,53 +228,6 @@ record(mbbi, "$(DEVICE):ERRREPMODE") {
   field(THST, "BELL+CR+ERR(3)")
 }
 
-# I56 DPRAM ASCII Communications Interrupt
-record(bi, "$(DEVICE):DPRAM_COMMS_INT") {
-  field(DTYP, "stream")
-  field(INP, "@pmac.proto getIntVar(I56) $(PORT)")
-  field(ONAM, "ENABLED")
-  field(PINI, "YES")
-  field(SCAN, "Passive")
-  field(ZNAM, "DISABLED")
-}
-
-# I58 DPRAM ASCII Communications Enable
-record(bi, "$(DEVICE):DPRAM_COMMS") {
-  field(SCAN, "Passive")
-  field(PINI, "YES")
-  field(DTYP, "stream")
-  field(INP, "@pmac.proto getIntVar(I58) $(PORT)")
-  field(ZNAM, "DISABLED")
-  field(ONAM, "ENABLED")
-}
-
-# I90 VME Address modifier
-record(mbbi, "$(DEVICE):VME_ADDR_MODE") {
-  field(SCAN, "Passive")
-  field(PINI, "YES")
-  field(DTYP, "stream")
-  field(INP, "@pmac.proto getHexVar(I90) $(PORT)")
-  field(ZRVL, "0x29")
-  field(ONVL, "0x39")
-  field(TWVL, "0x09")
-  field(ZRST, "16-bit addr")
-  field(ONST, "24-bit addr")
-  field(TWST, "32-bit addr")
-}
-
-# I97 VME DPRAM Base Address Bits A23-A20
-record(longin, "$(DEVICE):VME_DPRAMBASE") {
-  field(DTYP, "stream")
-  field(INP, "@pmac.proto getHexVar(I97) $(PORT)")
-  field(PINI, "YES")
-}
-# I95 VME Interrupt Level
-record(longin, "$(DEVICE):VME_INTLVL") {
-  field(DTYP, "stream")
-  field(INP, "@pmac.proto getHexVar(I95) $(PORT)")
-  field(PINI, "YES")
-}
-
 record(seq, "$(DEVICE):AXIS1:ReadBack") {
 }
 
