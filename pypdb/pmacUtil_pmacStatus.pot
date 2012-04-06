@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2012-04-06 13:10-0400\n"
-"PO-Revision-Date: 2012-04-06 13:10-0400\n"
+"POT-Creation-Date: 2012-04-06 10:11-0400\n"
+"PO-Revision-Date: 2012-04-06 10:11-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: \n"
@@ -17,239 +17,241 @@ msgstr ""
 #: ../pmacUtilApp/Db/pmacStatus.vdb:305
 #: ../pmacUtilApp/Db/pmacStatus.vdb:406
 msgid "$(DEVICE):AXIS10:ReadBack"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)-Ax:10}-Seq_"
 
 #. recordtype: seq
 #: ../pmacUtilApp/Db/pmacStatus.vdb:308
 #: ../pmacUtilApp/Db/pmacStatus.vdb:407
 msgid "$(DEVICE):AXIS11:ReadBack"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)-Ax:11}-Seq_"
 
 #. recordtype: seq
 #: ../pmacUtilApp/Db/pmacStatus.vdb:311
 #: ../pmacUtilApp/Db/pmacStatus.vdb:408
 msgid "$(DEVICE):AXIS12:ReadBack"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)-Ax:12}-Seq_"
 
 #. recordtype: seq
 #: ../pmacUtilApp/Db/pmacStatus.vdb:314
 #: ../pmacUtilApp/Db/pmacStatus.vdb:409
 msgid "$(DEVICE):AXIS13:ReadBack"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)-Ax:13}-Seq_"
 
 #. recordtype: seq
 #: ../pmacUtilApp/Db/pmacStatus.vdb:317
 #: ../pmacUtilApp/Db/pmacStatus.vdb:410
 msgid "$(DEVICE):AXIS14:ReadBack"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)-Ax:14}-Seq_"
 
 #. recordtype: seq
 #: ../pmacUtilApp/Db/pmacStatus.vdb:320
 #: ../pmacUtilApp/Db/pmacStatus.vdb:411
 msgid "$(DEVICE):AXIS15:ReadBack"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)-Ax:15}-Seq_"
 
 #. recordtype: seq
 #: ../pmacUtilApp/Db/pmacStatus.vdb:323
 #: ../pmacUtilApp/Db/pmacStatus.vdb:412
 msgid "$(DEVICE):AXIS16:ReadBack"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)-Ax:16}-Seq_"
 
 #. recordtype: seq
 #: ../pmacUtilApp/Db/pmacStatus.vdb:326
 #: ../pmacUtilApp/Db/pmacStatus.vdb:435
 msgid "$(DEVICE):AXIS17:ReadBack"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)-Ax:17}-Seq_"
 
 #. recordtype: seq
 #: ../pmacUtilApp/Db/pmacStatus.vdb:329
 #: ../pmacUtilApp/Db/pmacStatus.vdb:436
 msgid "$(DEVICE):AXIS18:ReadBack"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)-Ax:18}-Seq_"
 
 #. recordtype: seq
 #: ../pmacUtilApp/Db/pmacStatus.vdb:332
 #: ../pmacUtilApp/Db/pmacStatus.vdb:437
 msgid "$(DEVICE):AXIS19:ReadBack"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)-Ax:19}-Seq_"
 
 #. recordtype: seq
 #: ../pmacUtilApp/Db/pmacStatus.vdb:278
 #: ../pmacUtilApp/Db/pmacStatus.vdb:375
 msgid "$(DEVICE):AXIS1:ReadBack"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)-Ax:01}-Seq_"
 
 #. recordtype: seq
 #: ../pmacUtilApp/Db/pmacStatus.vdb:335
 #: ../pmacUtilApp/Db/pmacStatus.vdb:438
 msgid "$(DEVICE):AXIS20:ReadBack"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)-Ax:20}-Seq_"
 
 #. recordtype: seq
 #: ../pmacUtilApp/Db/pmacStatus.vdb:338
 #: ../pmacUtilApp/Db/pmacStatus.vdb:439
 msgid "$(DEVICE):AXIS21:ReadBack"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)-Ax:21}-Seq_"
 
 #. recordtype: seq
 #: ../pmacUtilApp/Db/pmacStatus.vdb:341
 #: ../pmacUtilApp/Db/pmacStatus.vdb:440
 msgid "$(DEVICE):AXIS22:ReadBack"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)-Ax:22}-Seq_"
 
 #. recordtype: seq
 #: ../pmacUtilApp/Db/pmacStatus.vdb:344
 #: ../pmacUtilApp/Db/pmacStatus.vdb:441
 msgid "$(DEVICE):AXIS23:ReadBack"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)-Ax:23}-Seq_"
 
 #. recordtype: seq
 #: ../pmacUtilApp/Db/pmacStatus.vdb:347
 #: ../pmacUtilApp/Db/pmacStatus.vdb:442
 msgid "$(DEVICE):AXIS24:ReadBack"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)-Ax:24}-Seq_"
 
 #. recordtype: seq
 #: ../pmacUtilApp/Db/pmacStatus.vdb:350
 #: ../pmacUtilApp/Db/pmacStatus.vdb:465
 msgid "$(DEVICE):AXIS25:ReadBack"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)-Ax:25}-Seq_"
 
 #. recordtype: seq
 #: ../pmacUtilApp/Db/pmacStatus.vdb:353
 #: ../pmacUtilApp/Db/pmacStatus.vdb:466
 msgid "$(DEVICE):AXIS26:ReadBack"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)-Ax:26}-Seq_"
 
 #. recordtype: seq
 #: ../pmacUtilApp/Db/pmacStatus.vdb:356
 #: ../pmacUtilApp/Db/pmacStatus.vdb:467
 msgid "$(DEVICE):AXIS27:ReadBack"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)-Ax:27}-Seq_"
 
 #. recordtype: seq
 #: ../pmacUtilApp/Db/pmacStatus.vdb:359
 #: ../pmacUtilApp/Db/pmacStatus.vdb:468
 msgid "$(DEVICE):AXIS28:ReadBack"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)-Ax:28}-Seq_"
 
 #. recordtype: seq
 #: ../pmacUtilApp/Db/pmacStatus.vdb:362
 #: ../pmacUtilApp/Db/pmacStatus.vdb:469
 msgid "$(DEVICE):AXIS29:ReadBack"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)-Ax:29}-Seq_"
 
 #. recordtype: seq
 #: ../pmacUtilApp/Db/pmacStatus.vdb:281
 #: ../pmacUtilApp/Db/pmacStatus.vdb:376
 msgid "$(DEVICE):AXIS2:ReadBack"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)-Ax:02}-Seq_"
 
 #. recordtype: seq
 #: ../pmacUtilApp/Db/pmacStatus.vdb:365
 #: ../pmacUtilApp/Db/pmacStatus.vdb:470
 msgid "$(DEVICE):AXIS30:ReadBack"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)-Ax:20}-Seq_"
 
 #. recordtype: seq
 #: ../pmacUtilApp/Db/pmacStatus.vdb:368
 #: ../pmacUtilApp/Db/pmacStatus.vdb:471
 msgid "$(DEVICE):AXIS31:ReadBack"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)-Ax:31}-Seq_"
 
 #. recordtype: seq
 #: ../pmacUtilApp/Db/pmacStatus.vdb:371
 #: ../pmacUtilApp/Db/pmacStatus.vdb:472
 msgid "$(DEVICE):AXIS32:ReadBack"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)-Ax:32}-Seq_"
 
 #. recordtype: seq
 #: ../pmacUtilApp/Db/pmacStatus.vdb:284
 #: ../pmacUtilApp/Db/pmacStatus.vdb:377
 msgid "$(DEVICE):AXIS3:ReadBack"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)-Ax:03}-Seq_"
 
 #. recordtype: seq
 #: ../pmacUtilApp/Db/pmacStatus.vdb:287
 #: ../pmacUtilApp/Db/pmacStatus.vdb:378
 msgid "$(DEVICE):AXIS4:ReadBack"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)-Ax:04}-Seq_"
 
 #. recordtype: seq
 #: ../pmacUtilApp/Db/pmacStatus.vdb:290
 #: ../pmacUtilApp/Db/pmacStatus.vdb:379
 msgid "$(DEVICE):AXIS5:ReadBack"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)-Ax:05}-Seq_"
 
 #. recordtype: seq
 #: ../pmacUtilApp/Db/pmacStatus.vdb:293
 #: ../pmacUtilApp/Db/pmacStatus.vdb:380
 msgid "$(DEVICE):AXIS6:ReadBack"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)-Ax:06}-Seq_"
 
 #. recordtype: seq
 #: ../pmacUtilApp/Db/pmacStatus.vdb:296
 #: ../pmacUtilApp/Db/pmacStatus.vdb:381
 msgid "$(DEVICE):AXIS7:ReadBack"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)-Ax:07}-Seq_"
 
 #. recordtype: seq
 #: ../pmacUtilApp/Db/pmacStatus.vdb:299
 #: ../pmacUtilApp/Db/pmacStatus.vdb:382
 msgid "$(DEVICE):AXIS8:ReadBack"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)-Ax:08}-Seq_"
 
 #. recordtype: seq
 #: ../pmacUtilApp/Db/pmacStatus.vdb:302
 #: ../pmacUtilApp/Db/pmacStatus.vdb:405
 msgid "$(DEVICE):AXIS9:ReadBack"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)-Ax:09}-Seq_"
 
 #. recordtype: seq
 #: ../pmacUtilApp/Db/pmacStatus.vdb:374
 #: ../pmacUtilApp/Db/pmacStatus.vdb:26
 msgid "$(DEVICE):AxisRB"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)-Ax:RB1}-Seq_"
 
 #. recordtype: seq
 #: ../pmacUtilApp/Db/pmacStatus.vdb:404
 #: ../pmacUtilApp/Db/pmacStatus.vdb:383
 msgid "$(DEVICE):AxisRB2"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)-Ax:RB2}-Seq_"
 
 #. recordtype: seq
 #: ../pmacUtilApp/Db/pmacStatus.vdb:434
 #: ../pmacUtilApp/Db/pmacStatus.vdb:413
 msgid "$(DEVICE):AxisRB3"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)-Ax:RB3}-Seq_"
 
 #. recordtype: seq
 #: ../pmacUtilApp/Db/pmacStatus.vdb:464
 #: ../pmacUtilApp/Db/pmacStatus.vdb:443
 msgid "$(DEVICE):AxisRB4"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)-Ax:RB4}-Seq_"
 
 #. recordtype: ai
 #. EGU: %
 #: ../pmacUtilApp/Db/pmacStatus.vdb:49
 #: ../pmacUtilApp/Db/pmacStatus.vdb:22
 msgid "$(DEVICE):CPULOAD"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)}Val:CPULoad-I"
 
 #. recordtype: mbbiDirect
 #: ../pmacUtilApp/Db/pmacStatus.vdb:63
 #: ../pmacUtilApp/Db/pmacStatus.vdb:21
 msgid "$(DEVICE):CTRLSTAT:status1"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)}Sts:1-Sts"
 
 #. recordtype: mbbiDirect
 #: ../pmacUtilApp/Db/pmacStatus.vdb:69
 msgid "$(DEVICE):CTRLSTAT:status2"
+msgstr "$(SYS){$(DEVICE)}Sts:2-Sts"
 msgstr ""
 
 #. recordtype: mbbiDirect
 #: ../pmacUtilApp/Db/pmacStatus.vdb:73
 msgid "$(DEVICE):CTRLSTAT:status3"
+msgstr "$(SYS){$(DEVICE)}Sts:3-Sts"
 msgstr ""
 
 #. recordtype: bi
@@ -265,7 +267,7 @@ msgstr ""
 #. recordtype: mbbi
 #: ../pmacUtilApp/Db/pmacStatus.vdb:212
 msgid "$(DEVICE):ERRREPMODE"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)}Mode:ErrRep-Sts"
 
 #. recordtype: waveform
 #. DESC: Query GPIO Inputs
@@ -273,33 +275,33 @@ msgstr ""
 #: ../pmacUtilApp/Db/pmacStatus.vdb:31
 #: ../pmacUtilApp/Db/pmacStatus.vdb:117
 msgid "$(DEVICE):GPIO_INPUTS_GET"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)}In:GP-WF_"
 
 #. recordtype: mbbiDirect
 #: ../pmacUtilApp/Db/pmacStatus.vdb:125
 #: ../pmacUtilApp/Db/pmacStatus.vdb:121
 msgid "$(DEVICE):GPIO_INP_BITS"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)}In:GP-Sts"
 
 #. recordtype: genSub
 #: ../pmacUtilApp/Db/pmacStatus.vdb:115
 #: ../pmacUtilApp/Db/pmacStatus.vdb:126
 #: ../pmacUtilApp/Db/pmacStatus.vdb:108
 msgid "$(DEVICE):GPIO_INP_PARSE"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)}In:GP-GenSub_"
 
 #. recordtype: mbbiDirect
 #: ../pmacUtilApp/Db/pmacStatus.vdb:148
 #: ../pmacUtilApp/Db/pmacStatus.vdb:144
 msgid "$(DEVICE):GPIO_OP_BITS"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)}Out:GP-Sel"
 
 #. recordtype: genSub
 #: ../pmacUtilApp/Db/pmacStatus.vdb:138
 #: ../pmacUtilApp/Db/pmacStatus.vdb:131
 #: ../pmacUtilApp/Db/pmacStatus.vdb:149
 msgid "$(DEVICE):GPIO_OP_PARSE"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)}Out:GP-GenSub_"
 
 #. recordtype: waveform
 #. DESC: Query GPIO Outputs
@@ -307,35 +309,35 @@ msgstr ""
 #: ../pmacUtilApp/Db/pmacStatus.vdb:32
 #: ../pmacUtilApp/Db/pmacStatus.vdb:140
 msgid "$(DEVICE):GPIO_OUTPUTS_GET"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)}Out:GP-WF_"
 
 #. recordtype: mbbi
 #: ../pmacUtilApp/Db/pmacStatus.vdb:182
 msgid "$(DEVICE):IO_HANDSHAKE"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)}Val:IO_HndShk-Sts"
 
 #. recordtype: ai
 #: ../pmacUtilApp/Db/pmacStatus.vdb:176
 #: ../pmacUtilApp/Db/pmacStatus.vdb:25
 msgid "$(DEVICE):MACROERRS"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)}Cnt:MACRO_Err-I"
 
 #. recordtype: longin
 #: ../pmacUtilApp/Db/pmacStatus.vdb:492
 msgid "$(DEVICE):NAXES"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)}Cnt:Axes-I"
 
 #. recordtype: mbbiDirect
 #: ../pmacUtilApp/Db/pmacStatus.vdb:96
 #: ../pmacUtilApp/Db/pmacStatus.vdb:92
 msgid "$(DEVICE):PLCDISBITS00"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)}Dsbl:PLC_W0-Sts"
 
 #. recordtype: mbbiDirect
 #: ../pmacUtilApp/Db/pmacStatus.vdb:102
 #: ../pmacUtilApp/Db/pmacStatus.vdb:97
 msgid "$(DEVICE):PLCDISBITS01"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)}Dsbl:PLC_W1-Sts"
 
 #. recordtype: waveform
 #. DESC: Query plcs cmd
@@ -343,7 +345,7 @@ msgstr ""
 #: ../pmacUtilApp/Db/pmacStatus.vdb:23
 #: ../pmacUtilApp/Db/pmacStatus.vdb:87
 msgid "$(DEVICE):PLCGET"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)}Sts:PLC-WF_"
 
 #. recordtype: genSub
 #: ../pmacUtilApp/Db/pmacStatus.vdb:85
@@ -351,23 +353,23 @@ msgstr ""
 #: ../pmacUtilApp/Db/pmacStatus.vdb:98
 #: ../pmacUtilApp/Db/pmacStatus.vdb:103
 msgid "$(DEVICE):PLCPARSE"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)}Sts:PLC-GenSub_"
 
 #. recordtype: mbbi
 #: ../pmacUtilApp/Db/pmacStatus.vdb:197
 msgid "$(DEVICE):PLC_CONTROL"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)}Sts:PLC_Ctrl-Sts"
 
 #. recordtype: mbbi
 #: ../pmacUtilApp/Db/pmacStatus.vdb:36
 msgid "$(DEVICE):PMACTYPE"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)}Type:PMAC-Sts"
 
 #. recordtype: mbbiDirect
 #: ../pmacUtilApp/Db/pmacStatus.vdb:172
 #: ../pmacUtilApp/Db/pmacStatus.vdb:168
 msgid "$(DEVICE):PROGBITS"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)}Val:Pgm-Sts"
 
 #. recordtype: waveform
 #. DESC: Query motion progs
@@ -375,25 +377,25 @@ msgstr ""
 #: ../pmacUtilApp/Db/pmacStatus.vdb:164
 #: ../pmacUtilApp/Db/pmacStatus.vdb:24
 msgid "$(DEVICE):PROGGET"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)}Val:Pgm-WF_"
 
 #. recordtype: genSub
 #: ../pmacUtilApp/Db/pmacStatus.vdb:162
 #: ../pmacUtilApp/Db/pmacStatus.vdb:173
 #: ../pmacUtilApp/Db/pmacStatus.vdb:155
 msgid "$(DEVICE):PROGPARSE"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)}Val:Pgm-GenSub_"
 
 #. recordtype: fanout
 #: ../pmacUtilApp/Db/pmacStatus.vdb:18
 msgid "$(DEVICE):ReadBack"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)}Sts:Read1-FOut_"
 
 #. recordtype: fanout
 #: ../pmacUtilApp/Db/pmacStatus.vdb:29
 #: ../pmacUtilApp/Db/pmacStatus.vdb:20
 msgid "$(DEVICE):ReadBack2"
-msgstr ""
+msgstr "$(SYS){$(DEVICE)}Sts:Read2-FOut_"
 
 #. recordtype: mbbi
 #: ../pmacUtilApp/Db/pmacStatus.vdb:252
