@@ -246,13 +246,11 @@ msgstr "$(SYS){$(DEVICE)}Sts:1-Sts"
 #: ../pmacUtilApp/Db/pmacStatus.vdb:69
 msgid "$(DEVICE):CTRLSTAT:status2"
 msgstr "$(SYS){$(DEVICE)}Sts:2-Sts"
-msgstr ""
 
 #. recordtype: mbbiDirect
 #: ../pmacUtilApp/Db/pmacStatus.vdb:73
 msgid "$(DEVICE):CTRLSTAT:status3"
 msgstr "$(SYS){$(DEVICE)}Sts:3-Sts"
-msgstr ""
 
 #. recordtype: bi
 #: ../pmacUtilApp/Db/pmacStatus.vdb:242
@@ -275,33 +273,33 @@ msgstr "$(SYS){$(DEVICE)}Mode:ErrRep-Sts"
 #: ../pmacUtilApp/Db/pmacStatus.vdb:31
 #: ../pmacUtilApp/Db/pmacStatus.vdb:117
 msgid "$(DEVICE):GPIO_INPUTS_GET"
-msgstr "$(SYS){$(DEVICE)}In:GP-WF_"
+msgstr "$(SYS){$(DEVICE)}In:GPIO-WF_"
 
 #. recordtype: mbbiDirect
 #: ../pmacUtilApp/Db/pmacStatus.vdb:125
 #: ../pmacUtilApp/Db/pmacStatus.vdb:121
 msgid "$(DEVICE):GPIO_INP_BITS"
-msgstr "$(SYS){$(DEVICE)}In:GP-Sts"
+msgstr "$(SYS){$(DEVICE)}In:GPIO-Sts"
 
 #. recordtype: genSub
 #: ../pmacUtilApp/Db/pmacStatus.vdb:115
 #: ../pmacUtilApp/Db/pmacStatus.vdb:126
 #: ../pmacUtilApp/Db/pmacStatus.vdb:108
 msgid "$(DEVICE):GPIO_INP_PARSE"
-msgstr "$(SYS){$(DEVICE)}In:GP-GenSub_"
+msgstr "$(SYS){$(DEVICE)}In:GPIO-GenSub_"
 
 #. recordtype: mbbiDirect
 #: ../pmacUtilApp/Db/pmacStatus.vdb:148
 #: ../pmacUtilApp/Db/pmacStatus.vdb:144
 msgid "$(DEVICE):GPIO_OP_BITS"
-msgstr "$(SYS){$(DEVICE)}Out:GP-Sel"
+msgstr "$(SYS){$(DEVICE)}Out:GPIO-Sel"
 
 #. recordtype: genSub
 #: ../pmacUtilApp/Db/pmacStatus.vdb:138
 #: ../pmacUtilApp/Db/pmacStatus.vdb:131
 #: ../pmacUtilApp/Db/pmacStatus.vdb:149
 msgid "$(DEVICE):GPIO_OP_PARSE"
-msgstr "$(SYS){$(DEVICE)}Out:GP-GenSub_"
+msgstr "$(SYS){$(DEVICE)}Out:GPIO-GenSub_"
 
 #. recordtype: waveform
 #. DESC: Query GPIO Outputs
@@ -309,7 +307,7 @@ msgstr "$(SYS){$(DEVICE)}Out:GP-GenSub_"
 #: ../pmacUtilApp/Db/pmacStatus.vdb:32
 #: ../pmacUtilApp/Db/pmacStatus.vdb:140
 msgid "$(DEVICE):GPIO_OUTPUTS_GET"
-msgstr "$(SYS){$(DEVICE)}Out:GP-WF_"
+msgstr "$(SYS){$(DEVICE)}Out:GPIO-WF_"
 
 #. recordtype: mbbi
 #: ../pmacUtilApp/Db/pmacStatus.vdb:182
