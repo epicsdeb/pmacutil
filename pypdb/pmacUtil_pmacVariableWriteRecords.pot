@@ -17,33 +17,33 @@ msgstr ""
 #: /home/wlewis/local/data/work/hg/repos/pmacUtil/pmacUtilApp/Db/pmacVariableWriteRecords.vdb:28
 #: /home/wlewis/local/data/work/hg/repos/pmacUtil/pmacUtilApp/Db/pmacVariableWriteRecords.vdb:21
 msgid "$(P)$(Q)"
-msgstr ""
+msgstr "$(SYS)$(DEV)Val:$(SIG)-SP"
 
 #. recordtype: asyn
 #. DESC: Get $(VAR) $(PORT)
 #: /home/wlewis/local/data/work/hg/repos/pmacUtil/pmacUtilApp/Db/pmacVariableWriteRecords.vdb:37
 #: /home/wlewis/local/data/work/hg/repos/pmacUtil/pmacUtilApp/Db/pmacVariableWriteRecords.vdb:12
 msgid "$(P)$(Q):ARBV"
-msgstr ""
+msgstr "$(SYS)$(DEV)Val:$(SIG)RB-Asyn_"
 
 #. recordtype: asyn
 #. DESC: Asyn SE $(PORT) $(VAR)
 #: /home/wlewis/local/data/work/hg/repos/pmacUtil/pmacUtilApp/Db/pmacVariableWriteRecords.vdb:45
 #: /home/wlewis/local/data/work/hg/repos/pmacUtil/pmacUtilApp/Db/pmacVariableWriteRecords.vdb:22
 msgid "$(P)$(Q):ASET"
-msgstr ""
+msgstr "$(SYS)$(DEV)Val:$(SIG)SP-Asyn_"
 
 #. recordtype: scalcout
 #. EGU: $(EGU)
 #: /home/wlewis/local/data/work/hg/repos/pmacUtil/pmacUtilApp/Db/pmacVariableWriteRecords.vdb:7
 #: /home/wlewis/local/data/work/hg/repos/pmacUtil/pmacUtilApp/Db/pmacVariableWriteRecords.vdb:41
 msgid "$(P)$(Q):RBV"
-msgstr ""
+msgstr "$(SYS)$(DEV)Val:$(SIG)RB-SCalcout_"
 
 #. recordtype: scalcout
 #. DESC: Energy switch calculation
 #: /home/wlewis/local/data/work/hg/repos/pmacUtil/pmacUtilApp/Db/pmacVariableWriteRecords.vdb:17
 #: /home/wlewis/local/data/work/hg/repos/pmacUtil/pmacUtilApp/Db/pmacVariableWriteRecords.vdb:33
 msgid "$(P)$(Q):SET"
-msgstr ""
+msgstr "$(SYS)$(DEV)Val:$(SIG)SP-SCalcout_"
 
