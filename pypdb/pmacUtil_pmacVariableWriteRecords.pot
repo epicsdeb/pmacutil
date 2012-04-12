@@ -1,0 +1,49 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2012-04-12 12:12-0400\n"
+"PO-Revision-Date: 2012-04-12 12:12-0400\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n" 
+"X-Poedit-SearchPath-0: /usr/lib/epics/dbd\n"
+"X-Poedit-SearchPath-1: .\n"
+
+#. recordtype: ao
+#. EGU: $(EGU)
+#: /home/wlewis/local/data/work/hg/repos/pmacUtil/pmacUtilApp/Db/pmacVariableWriteRecords.vdb:28
+#: /home/wlewis/local/data/work/hg/repos/pmacUtil/pmacUtilApp/Db/pmacVariableWriteRecords.vdb:21
+msgid "$(P)$(Q)"
+msgstr ""
+
+#. recordtype: asyn
+#. DESC: Get $(VAR) $(PORT)
+#: /home/wlewis/local/data/work/hg/repos/pmacUtil/pmacUtilApp/Db/pmacVariableWriteRecords.vdb:37
+#: /home/wlewis/local/data/work/hg/repos/pmacUtil/pmacUtilApp/Db/pmacVariableWriteRecords.vdb:12
+msgid "$(P)$(Q):ARBV"
+msgstr ""
+
+#. recordtype: asyn
+#. DESC: Asyn SE $(PORT) $(VAR)
+#: /home/wlewis/local/data/work/hg/repos/pmacUtil/pmacUtilApp/Db/pmacVariableWriteRecords.vdb:45
+#: /home/wlewis/local/data/work/hg/repos/pmacUtil/pmacUtilApp/Db/pmacVariableWriteRecords.vdb:22
+msgid "$(P)$(Q):ASET"
+msgstr ""
+
+#. recordtype: scalcout
+#. EGU: $(EGU)
+#: /home/wlewis/local/data/work/hg/repos/pmacUtil/pmacUtilApp/Db/pmacVariableWriteRecords.vdb:7
+#: /home/wlewis/local/data/work/hg/repos/pmacUtil/pmacUtilApp/Db/pmacVariableWriteRecords.vdb:41
+msgid "$(P)$(Q):RBV"
+msgstr ""
+
+#. recordtype: scalcout
+#. DESC: Energy switch calculation
+#: /home/wlewis/local/data/work/hg/repos/pmacUtil/pmacUtilApp/Db/pmacVariableWriteRecords.vdb:17
+#: /home/wlewis/local/data/work/hg/repos/pmacUtil/pmacUtilApp/Db/pmacVariableWriteRecords.vdb:33
+msgid "$(P)$(Q):SET"
+msgstr ""
+
