@@ -1,9 +1,9 @@
 TOP = ../..
 include $(TOP)/configure/CONFIG
 
-DIRS += symbol
+#DIRS += symbol
 DIRS += edl
-DIRS += qt
+#DIRS += qt
 
 
 include $(TOP)/configure/RULES_DIRS
