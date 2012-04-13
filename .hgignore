@@ -1,3 +1,27 @@
 syntax: glob 
 *.orig
 fls/*
+configure/RELEASE
+configure/O.linux-x86/Makefile
+dbd/pmacUtil.dbd
+dbd/pmacUtilSupport.dbd
+lib/linux-x86/libpmacUtil.a
+lib/linux-x86/libpmacUtil.so
+pmacUtilApp/Db/O.linux-x86/Makefile
+pmacUtilApp/Db/energise.template
+pmacUtilApp/Db/gather.template
+pmacUtilApp/Db/motorstatus.template
+pmacUtilApp/Db/pmacVariableWrite.template
+pmacUtilApp/src/O.Common/pmacUtil.dbd
+pmacUtilApp/src/O.Common/pmacUtil.dbd.depends
+pmacUtilApp/src/O.Common/pmacUtilInclude.dbd
+pmacUtilApp/src/O.linux-x86/Makefile
+pmacUtilApp/src/O.linux-x86/gather.c
+pmacUtilApp/src/O.linux-x86/gather.depends
+pmacUtilApp/src/O.linux-x86/gather.i
+pmacUtilApp/src/O.linux-x86/gather.o
+pmacUtilApp/src/O.linux-x86/libpmacUtil.a
+pmacUtilApp/src/O.linux-x86/libpmacUtil.so
+pmacUtilApp/src/O.linux-x86/pmacStatusOutParse.depends
+pmacUtilApp/src/O.linux-x86/pmacStatusOutParse.o
+pypdb/pmacGPOutput_translate.sh
