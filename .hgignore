@@ -6,3 +6,4 @@ dbd/
 lib/linux-x86/
 O.Common/
 O.linux-x86/
+*.swp
