@@ -13,19 +13,9 @@ TEMPLATE_TOP=$(EPICS_BASE)/templates/makeBaseApp/top
 #If using the sequencer, uncomment this line:
 #SNCSEQ=/home/diamond/R3.14.7/prod/support/seq/2-0-10
 
-WORK=		/dls_sw/work/R3.14.11/support
-SUPPORT=	/dls_sw/prod/R3.14.11/support
-
-ASYN=		$(SUPPORT)/asyn/4-14
-CALC=		$(SUPPORT)/calc/2-8dls2
-MOTOR=		$(SUPPORT)/motor/6-5-2dls6
-STREAMDEVICE=$(SUPPORT)/streamDevice/2-4dls6
-GENSUB=     $(SUPPORT)/genSub/1-6dls2-7
-BUSY=       $(SUPPORT)/busy/1-3dls3
-
-SNCSEQ=		$(SUPPORT)/seq/2-0-12dls1
+GENSUB=$(TOP)/../genSub
 
 # EPICS_BASE usually appears last so other apps can override stuff:
-EPICS_BASE=/dls_sw/epics/R3.14.11/base
+EPICS_BASE=/usr/lib/epics
 
 -include $(TOP)/configure/RELEASE.private
