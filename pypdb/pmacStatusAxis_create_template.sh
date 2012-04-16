@@ -1,8 +1,8 @@
 #!/bin/bash
-IOC_PATH=~/local/data/work/hg/repos/pmacUtil
+IOC_PATH=~/local/data/work/hg/repos/modules/pmacUtil
 
 getpvs -I /usr/lib/epics/dbd \
 	-I . \
-	-o pmacUtil_pmacStatus.pot \
+	-o pmacUtil_pmacStatusAxis.pot \
 	base.dbd \
-	$IOC_PATH/pmacUtilApp/Db/pmacStatus.vdb
+	$IOC_PATH/pmacUtilApp/Db/pmacStatusAxis.db
