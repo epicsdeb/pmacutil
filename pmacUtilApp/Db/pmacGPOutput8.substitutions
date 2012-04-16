@@ -1,13 +1,13 @@
 file "db/pmacGPOutput.db"
 {
 pattern
-{ SYS,			DEV,		NUM, 		VAR		}
-{ "XF:X17A",	"{MC:1}"	1,			"M32"	} 
-{ "XF:X17A",	"{MC:1}"	2,			"M33"	} 
-{ "XF:X17A",	"{MC:1}"	3,			"M34"	} 
-{ "XF:X17A",	"{MC:1}"	4,			"M35"	} 
-{ "XF:X17A",	"{MC:1}"	5,			"M36"	} 
-{ "XF:X17A",	"{MC:1}"	6,			"M37"	} 
-{ "XF:X17A",	"{MC:1}"	7,			"M38"	} 
-{ "XF:X17A",	"{MC:1}"	8,			"M39"	} 
+{ SYS,			DEV,		SIG, 		VAR,	PORT		}
+{ "XF:X17A",	"{MC:1}"	"Out1",		"M32",	"P0"		} 
+{ "XF:X17A",	"{MC:1}"	"Out2",		"M33",	"P0"		} 
+{ "XF:X17A",	"{MC:1}"	"Out3",		"M34",	"P0"		} 
+{ "XF:X17A",	"{MC:1}"	"Out4",		"M35",	"P0"		} 
+{ "XF:X17A",	"{MC:1}"	"Out5",		"M36",	"P0"		} 
+{ "XF:X17A",	"{MC:1}"	"Out6",		"M37",	"P0"		} 
+{ "XF:X17A",	"{MC:1}"	"Out7",		"M38",	"P0"		} 
+{ "XF:X17A",	"{MC:1}"	"Out8",		"M39",	"P0"		} 
 }

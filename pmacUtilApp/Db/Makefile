@@ -31,7 +31,7 @@ DB += pmacStatusAxis.db
 DB += pmacStatus8Axes.db
 DB += pmacStatus32Axes.db
 DB += pmacGPOutput.db
-DB += pmacGPOutput.substitutions
+DB += pmacGPOutput8.substitutions
 
 # not using streams since this doesnt work with tpmac
 #DB += energise_streams.template

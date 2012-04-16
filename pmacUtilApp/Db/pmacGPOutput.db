@@ -4,22 +4,21 @@
 #! DBDEND
 
 
-record(scalcout, "$(SYS)$(DEV)Val:$(SIG)RB-SCalcout_") {
+record(scalcout, "$(SYS)$(DEV)Val:$(SIG)_RB-SCalcout_") {
   field(SCAN, "Passive")
   field(PINI, "NO")
   field(DTYP, "Soft Channel")
   field(CALC, "SSCANF(AA, '%f')")
-  field(INAA, "$(SYS)$(DEV)Val:$(SIG)RB-Asyn_.AINP PP")
+  field(INAA, "$(SYS)$(DEV)Val:$(SIG)_RB-Asyn_.AINP PP")
   field(PREC, "0")
-  field(EGU, "$(EGU)")
 }
 
-record(scalcout, "$(SYS)$(DEV)Val:$(SIG)SP-SCalcout_") {
+record(scalcout, "$(SYS)$(DEV)Val:$(SIG)_SP-SCalcout_") {
   field(DESC, "Energy switch calculation")
   field(DTYP, "Soft Channel")
   field(CALC, "A")
-  field(INPA, "$(SYS)$(DEV)Val:$(SIG)-SP.VAL")
-  field(OUT, "$(SYS)$(DEV)Val:$(SIG)SP-Asyn_.AOUT PP")
+  field(INPA, "$(SYS)$(DEV)Val:$(SIG)_-SP.VAL")
+  field(OUT, "$(SYS)$(DEV)Val:$(SIG)_SP-Asyn_.AOUT PP")
   field(OOPT, "Every Time")
   field(DOPT, "Use OCAL")
   field(OCAL, "PRINTF('$(VAR)=%f',A)")
@@ -30,19 +29,18 @@ record(ao, "$(SYS)$(DEV)Val:$(SIG)-SP") {
   field(DTYP, "Soft Channel")
   field(PREC, "0")
   field(LINR, "NO CONVERSION")
-  field(FLNK, "$(SYS)$(DEV)Val:$(SIG)SP-SCalcout_")
-  field(EGU, "$(EGU)")
+  field(FLNK, "$(SYS)$(DEV)Val:$(SIG)_SP-SCalcout_")
 }
 
-record(asyn, "$(SYS)$(DEV)Val:$(SIG)RB-Asyn_") {
+record(asyn, "$(SYS)$(DEV)Val:$(SIG)_RB-Asyn_") {
   field(DESC, "Get $(VAR) $(PORT)")
   field(SCAN, "2 second")
   field(AOUT, "$(VAR)")
-  field(FLNK, "$(SYS)$(DEV)Val:$(SIG)RB-SCalcout_")
+  field(FLNK, "$(SYS)$(DEV)Val:$(SIG)_RB-SCalcout_")
   field(PORT, "$(PORT)")
 }
 
-record(asyn, "$(SYS)$(DEV)Val:$(SIG)SP-Asyn_") {
+record(asyn, "$(SYS)$(DEV)Val:$(SIG)_SP-Asyn_") {
   field(SCAN, "Passive")
   field(DTYP, "asynRecordDevice")
   field(DESC, "Asyn SE $(PORT) $(VAR)")
@@ -51,21 +49,21 @@ record(asyn, "$(SYS)$(DEV)Val:$(SIG)SP-Asyn_") {
 
 #! Further lines contain data used by VisualDCT
 #! View(1217,1637,1.2)
-#! Record("$(SYS)$(DEV)Val:$(SIG)RB-SCalcout_",1160,1423,0,0,"$(SYS)$(DEV)Val:$(SIG)RB-SCalcout_")
-#! Field("$(SYS)$(DEV)Val:$(SIG)RB-SCalcout_.INAA",16777215,1,"$(SYS)$(DEV)Val:$(SIG)RB-SCalcout_.INAA")
-#! Link("$(SYS)$(DEV)Val:$(SIG)RB-SCalcout_.INAA","$(SYS)$(DEV)Val:$(SIG)RB-Asyn_.AINP")
-#! Record("$(SYS)$(DEV)Val:$(SIG)SP-SCalcout_",1800,1408,0,0,"$(SYS)$(DEV)Val:$(SIG)SP-SCalcout_")
-#! Field("$(SYS)$(DEV)Val:$(SIG)SP-SCalcout_.INPA",16777215,0,"$(SYS)$(DEV)Val:$(SIG)SP-SCalcout_.INPA")
-#! Link("$(SYS)$(DEV)Val:$(SIG)SP-SCalcout_.INPA","$(SYS)$(DEV)Val:$(SIG)-SP.VAL")
-#! Field("$(SYS)$(DEV)Val:$(SIG)SP-SCalcout_.OUT",16777215,0,"$(SYS)$(DEV)Val:$(SIG)SP-SCalcout_.OUT")
-#! Link("$(SYS)$(DEV)Val:$(SIG)SP-SCalcout_.OUT","$(SYS)$(DEV)Val:$(SIG)SP-Asyn_.AOUT")
-#! Record("$(SYS)$(DEV)Val:$(SIG)-SP",1500,1417,0,1,"$(SYS)$(DEV)Val:$(SIG)-SP")
-#! Field("$(SYS)$(DEV)Val:$(SIG)-SP.FLNK",16777215,1,"$(SYS)$(DEV)Val:$(SIG)-SP.FLNK")
-#! Link("$(SYS)$(DEV)Val:$(SIG)-SP.FLNK","$(SYS)$(DEV)Val:$(SIG)SP-SCalcout_")
-#! Field("$(SYS)$(DEV)Val:$(SIG)-SP.VAL",16777215,1,"$(SYS)$(DEV)Val:$(SIG)-SP.VAL")
-#! Record("$(SYS)$(DEV)Val:$(SIG)RB-Asyn_",1180,1651,0,1,"$(SYS)$(DEV)Val:$(SIG)RB-Asyn_")
-#! Field("$(SYS)$(DEV)Val:$(SIG)RB-Asyn_.FLNK",16777215,0,"$(SYS)$(DEV)Val:$(SIG)RB-Asyn_.FLNK")
-#! Link("$(SYS)$(DEV)Val:$(SIG)RB-Asyn_.FLNK","$(SYS)$(DEV)Val:$(SIG)RB-SCalcout_")
-#! Field("$(SYS)$(DEV)Val:$(SIG)RB-Asyn_.AINP",16777215,1,"$(SYS)$(DEV)Val:$(SIG)RB-Asyn_.AINP")
-#! Record("$(SYS)$(DEV)Val:$(SIG)SP-Asyn_",1780,1645,0,1,"$(SYS)$(DEV)Val:$(SIG)SP-Asyn_")
-#! Field("$(SYS)$(DEV)Val:$(SIG)SP-Asyn_.AOUT",16777215,0,"$(SYS)$(DEV)Val:$(SIG)SP-Asyn_.AOUT")
+#! Record("$(SYS)$(DEV)Val:$(SIG)_RB-SCalcout_",1160,1423,0,0,"$(SYS)$(DEV)Val:$(SIG)_RB-SCalcout_")
+#! Field("$(SYS)$(DEV)Val:$(SIG)_RB-SCalcout_.INAA",16777215,1,"$(SYS)$(DEV)Val:$(SIG)_RB-SCalcout_.INAA")
+#! Link("$(SYS)$(DEV)Val:$(SIG)_RB-SCalcout_.INAA","$(SYS)$(DEV)Val:$(SIG)_RB-Asyn_.AINP")
+#! Record("$(SYS)$(DEV)Val:$(SIG)_SP-SCalcout_",1800,1408,0,0,"$(SYS)$(DEV)Val:$(SIG)_SP-SCalcout_")
+#! Field("$(SYS)$(DEV)Val:$(SIG)_SP-SCalcout_.INPA",16777215,0,"$(SYS)$(DEV)Val:$(SIG)_SP-SCalcout_.INPA")
+#! Link("$(SYS)$(DEV)Val:$(SIG)_SP-SCalcout_.INPA","$(SYS)$(DEV)Val:$(SIG)_-SP.VAL")
+#! Field("$(SYS)$(DEV)Val:$(SIG)_SP-SCalcout_.OUT",16777215,0,"$(SYS)$(DEV)Val:$(SIG)_SP-SCalcout_.OUT")
+#! Link("$(SYS)$(DEV)Val:$(SIG)_SP-SCalcout_.OUT","$(SYS)$(DEV)Val:$(SIG)_SP-Asyn_.AOUT")
+#! Record("$(SYS)$(DEV)Val:$(SIG)_-SP",1500,1417,0,1,"$(SYS)$(DEV)Val:$(SIG)_-SP")
+#! Field("$(SYS)$(DEV)Val:$(SIG)_-SP.FLNK",16777215,1,"$(SYS)$(DEV)Val:$(SIG)_-SP.FLNK")
+#! Link("$(SYS)$(DEV)Val:$(SIG)_-SP.FLNK","$(SYS)$(DEV)Val:$(SIG)_SP-SCalcout_")
+#! Field("$(SYS)$(DEV)Val:$(SIG)_-SP.VAL",16777215,1,"$(SYS)$(DEV)Val:$(SIG)_-SP.VAL")
+#! Record("$(SYS)$(DEV)Val:$(SIG)_RB-Asyn_",1180,1651,0,1,"$(SYS)$(DEV)Val:$(SIG)_RB-Asyn_")
+#! Field("$(SYS)$(DEV)Val:$(SIG)_RB-Asyn_.FLNK",16777215,0,"$(SYS)$(DEV)Val:$(SIG)_RB-Asyn_.FLNK")
+#! Link("$(SYS)$(DEV)Val:$(SIG)_RB-Asyn_.FLNK","$(SYS)$(DEV)Val:$(SIG)_RB-SCalcout_")
+#! Field("$(SYS)$(DEV)Val:$(SIG)_RB-Asyn_.AINP",16777215,1,"$(SYS)$(DEV)Val:$(SIG)_RB-Asyn_.AINP")
+#! Record("$(SYS)$(DEV)Val:$(SIG)_SP-Asyn_",1780,1645,0,1,"$(SYS)$(DEV)Val:$(SIG)_SP-Asyn_")
+#! Field("$(SYS)$(DEV)Val:$(SIG)_SP-Asyn_.AOUT",16777215,0,"$(SYS)$(DEV)Val:$(SIG)_SP-Asyn_.AOUT")
