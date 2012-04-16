@@ -1,0 +1,13 @@
+file "db/pmacStatusAxis.db"
+{
+pattern
+{ SYS,			DEVICE,		AXIS, 	PORT	}
+{ "XF:X17A",	"{MC:1}"	1,		"P0"	} 
+{ "XF:X17A",	"{MC:1}"	2,		"P0"	} 
+{ "XF:X17A",	"{MC:1}"	3,		"P0"	} 
+{ "XF:X17A",	"{MC:1}"	4,		"P0"	} 
+{ "XF:X17A",	"{MC:1}"	5,		"P0"	} 
+{ "XF:X17A",	"{MC:1}"	6,		"P0"	} 
+{ "XF:X17A",	"{MC:1}"	7,		"P0"	} 
+{ "XF:X17A",	"{MC:1}"	8,		"P0"	} 
+}

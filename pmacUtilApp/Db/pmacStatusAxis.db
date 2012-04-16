@@ -4,13 +4,6 @@
 #! DBDEND
 
 
-
-template() {
-
-  #! InputMacro(PREFIX,"",3440,3060,16777215,1,true)
-  #! InputMacro(AXIS,"",3440,3120,16777215,1,true)
-}
-
 # % macro, DEVICE,  Pmac/Geobrick name
 # % macro, AXIS,    Axis number
 # % macro, PORT,    Asyn port
