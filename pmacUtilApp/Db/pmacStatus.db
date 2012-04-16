@@ -15,25 +15,25 @@
 # % gui, $(name=), edm, pmacStatus.edl, pmac=$(DEVICE)
 #
 # Scan rate for pmac status, plc querying, cpu load querying
-record(fanout, "$(DEVICE):ReadBack") {
+record(fanout, "$(SYS){$(DEVICE)}Sts:Read1-FOut_") {
   field(SCAN, "1 second")
-  field(FLNK, "$(DEVICE):ReadBack2")
-  field(LNK1, "$(DEVICE):CTRLSTAT:status1")
-  field(LNK2, "$(DEVICE):CPULOAD")
-  field(LNK3, "$(DEVICE):PLCGET")
-  field(LNK4, "$(DEVICE):PROGGET")
-  field(LNK5, "$(DEVICE):MACROERRS")
-  field(LNK6, "$(DEVICE):AxisRB")
+  field(FLNK, "$(SYS){$(DEVICE)}Sts:Read2-FOut_")
+  field(LNK1, "$(SYS){$(DEVICE)}Sts:1-Sts")
+  field(LNK2, "$(SYS){$(DEVICE)}Val:CPULoad-I")
+  field(LNK3, "$(SYS){$(DEVICE)}Sts:PLC-WF_")
+  field(LNK4, "$(SYS){$(DEVICE)}Val:Pgm-WF_")
+  field(LNK5, "$(SYS){$(DEVICE)}Cnt:MACRO_Err-I")
+  field(LNK6, "$(SYS){$(DEVICE)-Ax:RB1}-Seq_")
 }
 
-record(fanout, "$(DEVICE):ReadBack2") {
+record(fanout, "$(SYS){$(DEVICE)}Sts:Read2-FOut_") {
   field(SCAN, "1 second")
-  field(LNK1, "$(DEVICE):GPIO_INPUTS_GET")
-  field(LNK2, "$(DEVICE):GPIO_OUTPUTS_GET")
+  field(LNK1, "$(SYS){$(DEVICE)}In:GPIO-WF_")
+  field(LNK2, "$(SYS){$(DEVICE)}Out:GPIO-WF_")
 }
 
 # pmac type record
-record(mbbi, "$(DEVICE):PMACTYPE") {
+record(mbbi, "$(SYS){$(DEVICE)}Type:PMAC-Sts") {
   field(PINI, "YES")
   field(DTYP, "stream")
   field(ZRVL, "603382")
@@ -46,7 +46,7 @@ record(mbbi, "$(DEVICE):PMACTYPE") {
 # % archiver 10 Monitor
 # This makes the component icon reflect the severity
 # % gui, $(name=), sevr
-record(ai, "$(DEVICE):CPULOAD") {
+record(ai, "$(SYS){$(DEVICE)}Val:CPULoad-I") {
   field(DTYP, "stream")
   field(INP, "@pmac.proto getVar(P$(PLC)75) $(PORT)")
   field(PREC, "2")
@@ -60,126 +60,126 @@ record(ai, "$(DEVICE):CPULOAD") {
 }
 
 # % archiver 10 Monitor
-record(mbbiDirect, "$(DEVICE):CTRLSTAT:status1") {
+record(mbbiDirect, "$(SYS){$(DEVICE)}Sts:1-Sts") {
   field(DTYP, "stream")
   field(INP, "@pmac.proto getStatus(???,$(DEVICE):CTRLSTAT) $(PORT)")
 }
 
 # % archiver 10 Monitor
-record(mbbiDirect, "$(DEVICE):CTRLSTAT:status2") {
+record(mbbiDirect, "$(SYS){$(DEVICE)}Sts:2-Sts") {
 }
 
 # % archiver 10 Monitor
-record(mbbiDirect, "$(DEVICE):CTRLSTAT:status3") {
+record(mbbiDirect, "$(SYS){$(DEVICE)}Sts:3-Sts") {
 }
 
-record(waveform, "$(DEVICE):PLCGET") {
+record(waveform, "$(SYS){$(DEVICE)}Sts:PLC-WF_") {
   field(DTYP, "stream")
-  field(FLNK, "$(DEVICE):PLCPARSE")
+  field(FLNK, "$(SYS){$(DEVICE)}Sts:PLC-GenSub_")
   field(INP, "@pmac.proto getPlcsDisabled$(VERSION) $(PORT)")
   field(NELM, "32")
   field(FTVL, "USHORT")
   field(DESC, "Query plcs cmd")
 }
 
-record(genSub, "$(DEVICE):PLCPARSE") {
+record(genSub, "$(SYS){$(DEVICE)}Sts:PLC-GenSub_") {
   field(SNAM, "parsePlcBitString")
-  field(INPA, "$(DEVICE):PLCGET.VAL")
+  field(INPA, "$(SYS){$(DEVICE)}Sts:PLC-WF_.VAL")
   field(FTA, "USHORT")
   field(NOA, "32")
   field(FTVA, "ULONG")
   field(FTVB, "ULONG")
-  field(FLNK, "$(DEVICE):PLCDISBITS00")
+  field(FLNK, "$(SYS){$(DEVICE)}Dsbl:PLC_W0-Sts")
 }
 
 # % archiver 10 Monitor
-record(mbbiDirect, "$(DEVICE):PLCDISBITS00") {
-  field(FLNK, "$(DEVICE):PLCDISBITS01")
-  field(INP, "$(DEVICE):PLCPARSE.VALA")
+record(mbbiDirect, "$(SYS){$(DEVICE)}Dsbl:PLC_W0-Sts") {
+  field(FLNK, "$(SYS){$(DEVICE)}Dsbl:PLC_W1-Sts")
+  field(INP, "$(SYS){$(DEVICE)}Sts:PLC-GenSub_.VALA")
 }
 
 # % archiver 10 Monitor
-record(mbbiDirect, "$(DEVICE):PLCDISBITS01") {
-  field(INP, "$(DEVICE):PLCPARSE.VALB")
+record(mbbiDirect, "$(SYS){$(DEVICE)}Dsbl:PLC_W1-Sts") {
+  field(INP, "$(SYS){$(DEVICE)}Sts:PLC-GenSub_.VALB")
 }
 
-record(waveform, "$(DEVICE):GPIO_INPUTS_GET") {
+record(waveform, "$(SYS){$(DEVICE)}In:GPIO-WF_") {
   field(DTYP, "stream")
-  field(FLNK, "$(DEVICE):GPIO_INP_PARSE")
+  field(FLNK, "$(SYS){$(DEVICE)}In:GPIO-GenSub_")
   field(INP, "@pmac.proto getGPIOInputs$(VERSION) $(PORT)")
   field(NELM, "16")
   field(FTVL, "USHORT")
   field(DESC, "Query GPIO Inputs")
 }
 
-record(genSub, "$(DEVICE):GPIO_INP_PARSE") {
+record(genSub, "$(SYS){$(DEVICE)}In:GPIO-GenSub_") {
   field(SNAM, "parseGPIOBitString")
-  field(INPA, "$(DEVICE):GPIO_INPUTS_GET.VAL")
+  field(INPA, "$(SYS){$(DEVICE)}In:GPIO-WF_.VAL")
   field(FTA, "USHORT")
   field(NOA, "16")
   field(FTVA, "ULONG")
-  field(FLNK, "$(DEVICE):GPIO_INP_BITS")
+  field(FLNK, "$(SYS){$(DEVICE)}In:GPIO-Sts")
 }
 
 # % archiver 10 Monitor
-record(mbbiDirect, "$(DEVICE):GPIO_INP_BITS") {
-  field(INP, "$(DEVICE):GPIO_INP_PARSE.VALA")
+record(mbbiDirect, "$(SYS){$(DEVICE)}In:GPIO-Sts") {
+  field(INP, "$(SYS){$(DEVICE)}In:GPIO-GenSub_.VALA")
 }
 
-record(waveform, "$(DEVICE):GPIO_OUTPUTS_GET") {
+record(waveform, "$(SYS){$(DEVICE)}Out:GPIO-WF_") {
   field(DTYP, "stream")
-  field(FLNK, "$(DEVICE):GPIO_OP_PARSE")
+  field(FLNK, "$(SYS){$(DEVICE)}Out:GPIO-GenSub_")
   field(INP, "@pmac.proto getGPIOOutputs$(VERSION) $(PORT)")
   field(NELM, "16")
   field(FTVL, "USHORT")
   field(DESC, "Query GPIO Outputs")
 }
 
-record(genSub, "$(DEVICE):GPIO_OP_PARSE") {
+record(genSub, "$(SYS){$(DEVICE)}Out:GPIO-GenSub_") {
   field(SNAM, "parseGPIOBitString")
-  field(INPA, "$(DEVICE):GPIO_OUTPUTS_GET.VAL")
+  field(INPA, "$(SYS){$(DEVICE)}Out:GPIO-WF_.VAL")
   field(FTA, "USHORT")
   field(NOA, "16")
   field(FTVA, "ULONG")
-  field(FLNK, "$(DEVICE):GPIO_OP_BITS")
+  field(FLNK, "$(SYS){$(DEVICE)}Out:GPIO-Sel")
 }
 
 # % archiver 10 Monitor
-record(mbbiDirect, "$(DEVICE):GPIO_OP_BITS") {
-  field(INP, "$(DEVICE):GPIO_OP_PARSE.VALA")
+record(mbbiDirect, "$(SYS){$(DEVICE)}Out:GPIO-Sel") {
+  field(INP, "$(SYS){$(DEVICE)}Out:GPIO-GenSub_.VALA")
 }
 
-record(waveform, "$(DEVICE):PROGGET") {
+record(waveform, "$(SYS){$(DEVICE)}Val:Pgm-WF_") {
   field(DESC, "Query motion progs")
   field(DTYP, "stream")
-  field(FLNK, "$(DEVICE):PROGPARSE")
+  field(FLNK, "$(SYS){$(DEVICE)}Val:Pgm-GenSub_")
   field(INP, "@pmac.proto getMotionProgramActive$(VERSION) $(PORT)")
   field(NELM, "16")
   field(FTVL, "USHORT")
   field(SIOL, "@")
 }
 
-record(genSub, "$(DEVICE):PROGPARSE") {
+record(genSub, "$(SYS){$(DEVICE)}Val:Pgm-GenSub_") {
   field(SNAM, "parseProgBitString")
-  field(INPA, "$(DEVICE):PROGGET")
+  field(INPA, "$(SYS){$(DEVICE)}Val:Pgm-WF_")
   field(FTA, "USHORT")
   field(NOA, "16")
   field(FTVA, "ULONG")
-  field(FLNK, "$(DEVICE):PROGBITS")
+  field(FLNK, "$(SYS){$(DEVICE)}Val:Pgm-Sts")
 }
 
 # % archiver 10 Monitor
-record(mbbiDirect, "$(DEVICE):PROGBITS") {
-  field(INP, "$(DEVICE):PROGPARSE.VALA")
+record(mbbiDirect, "$(SYS){$(DEVICE)}Val:Pgm-Sts") {
+  field(INP, "$(SYS){$(DEVICE)}Val:Pgm-GenSub_.VALA")
 }
 
-record(ai, "$(DEVICE):MACROERRS") {
+record(ai, "$(SYS){$(DEVICE)}Cnt:MACRO_Err-I") {
   field(DTYP, "stream")
   field(INP, "@pmac.proto getIntVar(M5035) $(PORT)")
 }
 
 # I3 value 0 to 3 I/O Handshake control
-record(mbbi, "$(DEVICE):IO_HANDSHAKE") {
+record(mbbi, "$(SYS){$(DEVICE)}Val:IO_HndShk-Sts") {
   field(PINI, "YES")
   field(DTYP, "stream")
   field(ZRVL, "0")
@@ -194,7 +194,7 @@ record(mbbi, "$(DEVICE):IO_HANDSHAKE") {
 }
 
 # I5 PLC Program Control
-record(mbbi, "$(DEVICE):PLC_CONTROL") {
+record(mbbi, "$(SYS){$(DEVICE)}Sts:PLC_Ctrl-Sts") {
   field(PINI, "YES")
   field(DTYP, "stream")
   field(INP, "@pmac.proto getIntVar(I5) $(PORT)")
@@ -209,7 +209,7 @@ record(mbbi, "$(DEVICE):PLC_CONTROL") {
 }
 
 # I6 Error reporting mode
-record(mbbi, "$(DEVICE):ERRREPMODE") {
+record(mbbi, "$(SYS){$(DEVICE)}Mode:ErrRep-Sts") {
   field(PINI, "YES")
   field(DTYP, "stream")
   field(INP, "@pmac.proto getIntVar(I6) $(PORT)")
@@ -228,112 +228,112 @@ record(mbbi, "$(DEVICE):ERRREPMODE") {
   field(THST, "BELL+CR+ERR(3)")
 }
 
-record(seq, "$(DEVICE):AXIS1:ReadBack") {
+record(seq, "$(SYS){$(DEVICE)-Ax:01}-Seq_") {
 }
 
-record(seq, "$(DEVICE):AXIS2:ReadBack") {
+record(seq, "$(SYS){$(DEVICE)-Ax:02}-Seq_") {
 }
 
-record(seq, "$(DEVICE):AXIS3:ReadBack") {
+record(seq, "$(SYS){$(DEVICE)-Ax:03}-Seq_") {
 }
 
-record(seq, "$(DEVICE):AXIS4:ReadBack") {
+record(seq, "$(SYS){$(DEVICE)-Ax:04}-Seq_") {
 }
 
-record(seq, "$(DEVICE):AXIS5:ReadBack") {
+record(seq, "$(SYS){$(DEVICE)-Ax:05}-Seq_") {
 }
 
-record(seq, "$(DEVICE):AXIS6:ReadBack") {
+record(seq, "$(SYS){$(DEVICE)-Ax:06}-Seq_") {
 }
 
-record(seq, "$(DEVICE):AXIS7:ReadBack") {
+record(seq, "$(SYS){$(DEVICE)-Ax:07}-Seq_") {
 }
 
-record(seq, "$(DEVICE):AXIS8:ReadBack") {
+record(seq, "$(SYS){$(DEVICE)-Ax:08}-Seq_") {
 }
 
-record(seq, "$(DEVICE):AXIS9:ReadBack") {
+record(seq, "$(SYS){$(DEVICE)-Ax:09}-Seq_") {
 }
 
-record(seq, "$(DEVICE):AXIS10:ReadBack") {
+record(seq, "$(SYS){$(DEVICE)-Ax:10}-Seq_") {
 }
 
-record(seq, "$(DEVICE):AXIS11:ReadBack") {
+record(seq, "$(SYS){$(DEVICE)-Ax:11}-Seq_") {
 }
 
-record(seq, "$(DEVICE):AXIS12:ReadBack") {
+record(seq, "$(SYS){$(DEVICE)-Ax:12}-Seq_") {
 }
 
-record(seq, "$(DEVICE):AXIS13:ReadBack") {
+record(seq, "$(SYS){$(DEVICE)-Ax:13}-Seq_") {
 }
 
-record(seq, "$(DEVICE):AXIS14:ReadBack") {
+record(seq, "$(SYS){$(DEVICE)-Ax:14}-Seq_") {
 }
 
-record(seq, "$(DEVICE):AXIS15:ReadBack") {
+record(seq, "$(SYS){$(DEVICE)-Ax:15}-Seq_") {
 }
 
-record(seq, "$(DEVICE):AXIS16:ReadBack") {
+record(seq, "$(SYS){$(DEVICE)-Ax:16}-Seq_") {
 }
 
-record(seq, "$(DEVICE):AXIS17:ReadBack") {
+record(seq, "$(SYS){$(DEVICE)-Ax:17}-Seq_") {
 }
 
-record(seq, "$(DEVICE):AXIS18:ReadBack") {
+record(seq, "$(SYS){$(DEVICE)-Ax:18}-Seq_") {
 }
 
-record(seq, "$(DEVICE):AXIS19:ReadBack") {
+record(seq, "$(SYS){$(DEVICE)-Ax:19}-Seq_") {
 }
 
-record(seq, "$(DEVICE):AXIS20:ReadBack") {
+record(seq, "$(SYS){$(DEVICE)-Ax:20}-Seq_") {
 }
 
-record(seq, "$(DEVICE):AXIS21:ReadBack") {
+record(seq, "$(SYS){$(DEVICE)-Ax:21}-Seq_") {
 }
 
-record(seq, "$(DEVICE):AXIS22:ReadBack") {
+record(seq, "$(SYS){$(DEVICE)-Ax:22}-Seq_") {
 }
 
-record(seq, "$(DEVICE):AXIS23:ReadBack") {
+record(seq, "$(SYS){$(DEVICE)-Ax:23}-Seq_") {
 }
 
-record(seq, "$(DEVICE):AXIS24:ReadBack") {
+record(seq, "$(SYS){$(DEVICE)-Ax:24}-Seq_") {
 }
 
-record(seq, "$(DEVICE):AXIS25:ReadBack") {
+record(seq, "$(SYS){$(DEVICE)-Ax:25}-Seq_") {
 }
 
-record(seq, "$(DEVICE):AXIS26:ReadBack") {
+record(seq, "$(SYS){$(DEVICE)-Ax:26}-Seq_") {
 }
 
-record(seq, "$(DEVICE):AXIS27:ReadBack") {
+record(seq, "$(SYS){$(DEVICE)-Ax:27}-Seq_") {
 }
 
-record(seq, "$(DEVICE):AXIS28:ReadBack") {
+record(seq, "$(SYS){$(DEVICE)-Ax:28}-Seq_") {
 }
 
-record(seq, "$(DEVICE):AXIS29:ReadBack") {
+record(seq, "$(SYS){$(DEVICE)-Ax:29}-Seq_") {
 }
 
-record(seq, "$(DEVICE):AXIS30:ReadBack") {
+record(seq, "$(SYS){$(DEVICE)-Ax:30}-Seq_") {
 }
 
-record(seq, "$(DEVICE):AXIS31:ReadBack") {
+record(seq, "$(SYS){$(DEVICE)-Ax:31}-Seq_") {
 }
 
-record(seq, "$(DEVICE):AXIS32:ReadBack") {
+record(seq, "$(SYS){$(DEVICE)-Ax:32}-Seq_") {
 }
 
-record(seq, "$(DEVICE):AxisRB") {
-  field(LNK1, "$(DEVICE):AXIS1:ReadBack.PROC PP")
-  field(LNK2, "$(DEVICE):AXIS2:ReadBack.PROC PP")
-  field(LNK3, "$(DEVICE):AXIS3:ReadBack.PROC PP")
-  field(LNK4, "$(DEVICE):AXIS4:ReadBack.PROC PP")
-  field(LNK5, "$(DEVICE):AXIS5:ReadBack.PROC PP")
-  field(LNK6, "$(DEVICE):AXIS6:ReadBack.PROC PP")
-  field(LNK7, "$(DEVICE):AXIS7:ReadBack.PROC PP")
-  field(LNK8, "$(DEVICE):AXIS8:ReadBack.PROC PP")
-  field(LNK9, "$(DEVICE):AxisRB2.PROC PP")
+record(seq, "$(SYS){$(DEVICE)-Ax:RB1}-Seq_") {
+  field(LNK1, "$(SYS){$(DEVICE)-Ax:01}-Seq_.PROC PP")
+  field(LNK2, "$(SYS){$(DEVICE)-Ax:02}-Seq_.PROC PP")
+  field(LNK3, "$(SYS){$(DEVICE)-Ax:03}-Seq_.PROC PP")
+  field(LNK4, "$(SYS){$(DEVICE)-Ax:04}-Seq_.PROC PP")
+  field(LNK5, "$(SYS){$(DEVICE)-Ax:05}-Seq_.PROC PP")
+  field(LNK6, "$(SYS){$(DEVICE)-Ax:06}-Seq_.PROC PP")
+  field(LNK7, "$(SYS){$(DEVICE)-Ax:07}-Seq_.PROC PP")
+  field(LNK8, "$(SYS){$(DEVICE)-Ax:08}-Seq_.PROC PP")
+  field(LNK9, "$(SYS){$(DEVICE)-Ax:RB2}-Seq_.PROC PP")
   field(DLY1, "0")
   field(DLY2, "0.5")
   field(DLY3, "0.5")
@@ -354,16 +354,16 @@ record(seq, "$(DEVICE):AxisRB") {
   field(DOL9, "1")
 }
 
-record(seq, "$(DEVICE):AxisRB2") {
-  field(LNK1, "$(DEVICE):AXIS9:ReadBack.PROC PP")
-  field(LNK2, "$(DEVICE):AXIS10:ReadBack.PROC PP")
-  field(LNK3, "$(DEVICE):AXIS11:ReadBack.PROC PP")
-  field(LNK4, "$(DEVICE):AXIS12:ReadBack.PROC PP")
-  field(LNK5, "$(DEVICE):AXIS13:ReadBack.PROC PP")
-  field(LNK6, "$(DEVICE):AXIS14:ReadBack.PROC PP")
-  field(LNK7, "$(DEVICE):AXIS15:ReadBack.PROC PP")
-  field(LNK8, "$(DEVICE):AXIS16:ReadBack.PROC PP")
-  field(LNK9, "$(DEVICE):AxisRB3.PROC PP")
+record(seq, "$(SYS){$(DEVICE)-Ax:RB2}-Seq_") {
+  field(LNK1, "$(SYS){$(DEVICE)-Ax:09}-Seq_.PROC PP")
+  field(LNK2, "$(SYS){$(DEVICE)-Ax:10}-Seq_.PROC PP")
+  field(LNK3, "$(SYS){$(DEVICE)-Ax:11}-Seq_.PROC PP")
+  field(LNK4, "$(SYS){$(DEVICE)-Ax:12}-Seq_.PROC PP")
+  field(LNK5, "$(SYS){$(DEVICE)-Ax:13}-Seq_.PROC PP")
+  field(LNK6, "$(SYS){$(DEVICE)-Ax:14}-Seq_.PROC PP")
+  field(LNK7, "$(SYS){$(DEVICE)-Ax:15}-Seq_.PROC PP")
+  field(LNK8, "$(SYS){$(DEVICE)-Ax:16}-Seq_.PROC PP")
+  field(LNK9, "$(SYS){$(DEVICE)-Ax:RB3}-Seq_.PROC PP")
   field(DLY1, "0")
   field(DLY2, "0.5")
   field(DLY3, "0.5")
@@ -384,16 +384,16 @@ record(seq, "$(DEVICE):AxisRB2") {
   field(DOL9, "1")
 }
 
-record(seq, "$(DEVICE):AxisRB3") {
-  field(LNK1, "$(DEVICE):AXIS17:ReadBack.PROC PP")
-  field(LNK2, "$(DEVICE):AXIS18:ReadBack.PROC PP")
-  field(LNK3, "$(DEVICE):AXIS19:ReadBack.PROC PP")
-  field(LNK4, "$(DEVICE):AXIS20:ReadBack.PROC PP")
-  field(LNK5, "$(DEVICE):AXIS21:ReadBack.PROC PP")
-  field(LNK6, "$(DEVICE):AXIS22:ReadBack.PROC PP")
-  field(LNK7, "$(DEVICE):AXIS23:ReadBack.PROC PP")
-  field(LNK8, "$(DEVICE):AXIS24:ReadBack.PROC PP")
-  field(LNK9, "$(DEVICE):AxisRB4.PROC PP")
+record(seq, "$(SYS){$(DEVICE)-Ax:RB3}-Seq_") {
+  field(LNK1, "$(SYS){$(DEVICE)-Ax:17}-Seq_.PROC PP")
+  field(LNK2, "$(SYS){$(DEVICE)-Ax:18}-Seq_.PROC PP")
+  field(LNK3, "$(SYS){$(DEVICE)-Ax:19}-Seq_.PROC PP")
+  field(LNK4, "$(SYS){$(DEVICE)-Ax:20}-Seq_.PROC PP")
+  field(LNK5, "$(SYS){$(DEVICE)-Ax:21}-Seq_.PROC PP")
+  field(LNK6, "$(SYS){$(DEVICE)-Ax:22}-Seq_.PROC PP")
+  field(LNK7, "$(SYS){$(DEVICE)-Ax:23}-Seq_.PROC PP")
+  field(LNK8, "$(SYS){$(DEVICE)-Ax:24}-Seq_.PROC PP")
+  field(LNK9, "$(SYS){$(DEVICE)-Ax:RB4}-Seq_.PROC PP")
   field(DLY1, "0")
   field(DLY2, "0.5")
   field(DLY3, "0.5")
@@ -414,15 +414,15 @@ record(seq, "$(DEVICE):AxisRB3") {
   field(DOL9, "1")
 }
 
-record(seq, "$(DEVICE):AxisRB4") {
-  field(LNK1, "$(DEVICE):AXIS25:ReadBack.PROC PP")
-  field(LNK2, "$(DEVICE):AXIS26:ReadBack.PROC PP")
-  field(LNK3, "$(DEVICE):AXIS27:ReadBack.PROC PP")
-  field(LNK4, "$(DEVICE):AXIS28:ReadBack.PROC PP")
-  field(LNK5, "$(DEVICE):AXIS29:ReadBack.PROC PP")
-  field(LNK6, "$(DEVICE):AXIS30:ReadBack.PROC PP")
-  field(LNK7, "$(DEVICE):AXIS31:ReadBack.PROC PP")
-  field(LNK8, "$(DEVICE):AXIS32:ReadBack.PROC PP")
+record(seq, "$(SYS){$(DEVICE)-Ax:RB4}-Seq_") {
+  field(LNK1, "$(SYS){$(DEVICE)-Ax:25}-Seq_.PROC PP")
+  field(LNK2, "$(SYS){$(DEVICE)-Ax:26}-Seq_.PROC PP")
+  field(LNK3, "$(SYS){$(DEVICE)-Ax:27}-Seq_.PROC PP")
+  field(LNK4, "$(SYS){$(DEVICE)-Ax:28}-Seq_.PROC PP")
+  field(LNK5, "$(SYS){$(DEVICE)-Ax:29}-Seq_.PROC PP")
+  field(LNK6, "$(SYS){$(DEVICE)-Ax:30}-Seq_.PROC PP")
+  field(LNK7, "$(SYS){$(DEVICE)-Ax:31}-Seq_.PROC PP")
+  field(LNK8, "$(SYS){$(DEVICE)-Ax:32}-Seq_.PROC PP")
   field(DLY1, "0")
   field(DLY2, "0.5")
   field(DLY3, "0.5")
@@ -442,212 +442,212 @@ record(seq, "$(DEVICE):AxisRB4") {
 }
 
 
-record(longin, "$(DEVICE):NAXES") {
+record(longin, "$(SYS){$(DEVICE)}Cnt:Axes-I") {
   field(PINI, "YES")
   field(VAL, "$(NAXES)")
 }
 
 #! Further lines contain data used by VisualDCT
 #! View(1463,2287,1.0)
-#! Record("$(DEVICE):ReadBack",3320,1966,0,1,"$(DEVICE):ReadBack")
-#! Field("$(DEVICE):ReadBack.LNK3",16777215,0,"$(DEVICE):ReadBack.LNK3")
-#! Link("$(DEVICE):ReadBack.LNK3","$(DEVICE):PLCGET")
-#! Field("$(DEVICE):ReadBack.LNK4",16777215,0,"$(DEVICE):ReadBack.LNK4")
-#! Link("$(DEVICE):ReadBack.LNK4","$(DEVICE):PROGGET")
-#! Field("$(DEVICE):ReadBack.LNK1",16777215,1,"$(DEVICE):ReadBack.LNK1")
-#! Link("$(DEVICE):ReadBack.LNK1","$(DEVICE):CTRLSTAT:status1")
-#! Field("$(DEVICE):ReadBack.LNK5",16777215,1,"$(DEVICE):ReadBack.LNK5")
-#! Link("$(DEVICE):ReadBack.LNK5","$(DEVICE):MACROERRS")
-#! Field("$(DEVICE):ReadBack.LNK2",16777215,1,"$(DEVICE):ReadBack.LNK2")
-#! Link("$(DEVICE):ReadBack.LNK2","$(DEVICE):CPULOAD")
-#! Field("$(DEVICE):ReadBack.LNK6",16777215,0,"$(DEVICE):ReadBack.LNK6")
-#! Link("$(DEVICE):ReadBack.LNK6","$(DEVICE):AxisRB")
-#! Record("$(DEVICE):PMACTYPE",2180,2506,0,0,"$(DEVICE):PMACTYPE")
-#! Field("$(DEVICE):PMACTYPE.INP",16777215,0,"$(DEVICE):PMACTYPE.INP")
-#! Record("$(DEVICE):CPULOAD",3600,2260,0,0,"$(DEVICE):CPULOAD")
-#! Record("$(DEVICE):CTRLSTAT:status1",3600,1896,0,0,"$(DEVICE):CTRLSTAT:status1")
-#! Record("$(DEVICE):CTRLSTAT:status2",3600,2003,0,1,"$(DEVICE):CTRLSTAT:status2")
-#! Record("$(DEVICE):CTRLSTAT:status3",3600,2083,0,1,"$(DEVICE):CTRLSTAT:status3")
-#! Record("$(DEVICE):PLCGET",3000,1920,0,1,"$(DEVICE):PLCGET")
-#! Field("$(DEVICE):PLCGET.FLNK",16777215,0,"$(DEVICE):PLCGET.FLNK")
-#! Link("$(DEVICE):PLCGET.FLNK","$(DEVICE):PLCPARSE")
-#! Field("$(DEVICE):PLCGET.VAL",16777215,1,"$(DEVICE):PLCGET.VAL")
-#! Record("$(DEVICE):PLCPARSE",2740,1926,0,1,"$(DEVICE):PLCPARSE")
-#! Field("$(DEVICE):PLCPARSE.INPA",16777215,1,"$(DEVICE):PLCPARSE.INPA")
-#! Link("$(DEVICE):PLCPARSE.INPA","$(DEVICE):PLCGET.VAL")
-#! Field("$(DEVICE):PLCPARSE.FLNK",16777215,0,"$(DEVICE):PLCPARSE.FLNK")
-#! Link("$(DEVICE):PLCPARSE.FLNK","$(DEVICE):PLCDISBITS00")
-#! Field("$(DEVICE):PLCPARSE.VALA",16777215,0,"$(DEVICE):PLCPARSE.VALA")
-#! Field("$(DEVICE):PLCPARSE.VALB",16777215,0,"$(DEVICE):PLCPARSE.VALB")
-#! Record("$(DEVICE):PLCDISBITS00",2440,2016,0,1,"$(DEVICE):PLCDISBITS00")
-#! Field("$(DEVICE):PLCDISBITS00.FLNK",16777215,0,"$(DEVICE):PLCDISBITS00.FLNK")
-#! Link("$(DEVICE):PLCDISBITS00.FLNK","$(DEVICE):PLCDISBITS01")
-#! Field("$(DEVICE):PLCDISBITS00.INP",16777215,1,"$(DEVICE):PLCDISBITS00.INP")
-#! Link("$(DEVICE):PLCDISBITS00.INP","$(DEVICE):PLCPARSE.VALA")
-#! Record("$(DEVICE):PLCDISBITS01",2400,2150,0,0,"$(DEVICE):PLCDISBITS01")
-#! Field("$(DEVICE):PLCDISBITS01.INP",16777215,1,"$(DEVICE):PLCDISBITS01.INP")
-#! Link("$(DEVICE):PLCDISBITS01.INP","$(DEVICE):PLCPARSE.VALB")
-#! Record("$(DEVICE):PROGGET",3000,2266,0,1,"$(DEVICE):PROGGET")
-#! Field("$(DEVICE):PROGGET.FLNK",16777215,0,"$(DEVICE):PROGGET.FLNK")
-#! Link("$(DEVICE):PROGGET.FLNK","$(DEVICE):PROGPARSE")
-#! Field("$(DEVICE):PROGGET.VAL",16777215,0,"$(DEVICE):PROGGET.VAL")
-#! Record("$(DEVICE):PROGPARSE",2720,2300,0,1,"$(DEVICE):PROGPARSE")
-#! Field("$(DEVICE):PROGPARSE.INPA",16777215,1,"$(DEVICE):PROGPARSE.INPA")
-#! Link("$(DEVICE):PROGPARSE.INPA","$(DEVICE):PROGGET.VAL")
-#! Field("$(DEVICE):PROGPARSE.FLNK",16777215,1,"$(DEVICE):PROGPARSE.FLNK")
-#! Link("$(DEVICE):PROGPARSE.FLNK","$(DEVICE):PROGBITS")
-#! Field("$(DEVICE):PROGPARSE.VALA",16777215,1,"$(DEVICE):PROGPARSE.VALA")
-#! Record("$(DEVICE):PROGBITS",3000,2490,0,0,"$(DEVICE):PROGBITS")
-#! Field("$(DEVICE):PROGBITS.INP",16777215,0,"$(DEVICE):PROGBITS.INP")
-#! Link("$(DEVICE):PROGBITS.INP","$(DEVICE):PROGPARSE.VALA")
-#! Record("$(DEVICE):MACROERRS",3600,2156,0,0,"$(DEVICE):MACROERRS")
-#! Record("$(DEVICE):IO_HANDSHAKE",2360,2451,0,0,"$(DEVICE):IO_HANDSHAKE")
-#! Field("$(DEVICE):IO_HANDSHAKE.INP",16777215,0,"$(DEVICE):IO_HANDSHAKE.INP")
-#! Record("$(DEVICE):PLC_CONTROL",2180,2211,0,0,"$(DEVICE):PLC_CONTROL")
-#! Record("$(DEVICE):ERRREPMODE",2000,2211,0,0,"$(DEVICE):ERRREPMODE")
+#! Record("$(SYS){$(DEVICE)}Sts:Read1-FOut_",3320,1966,0,1,"$(SYS){$(DEVICE)}Sts:Read1-FOut_")
+#! Field("$(SYS){$(DEVICE)}Sts:Read1-FOut_.LNK3",16777215,0,"$(SYS){$(DEVICE)}Sts:Read1-FOut_.LNK3")
+#! Link("$(SYS){$(DEVICE)}Sts:Read1-FOut_.LNK3","$(SYS){$(DEVICE)}Sts:PLC-WF_")
+#! Field("$(SYS){$(DEVICE)}Sts:Read1-FOut_.LNK4",16777215,0,"$(SYS){$(DEVICE)}Sts:Read1-FOut_.LNK4")
+#! Link("$(SYS){$(DEVICE)}Sts:Read1-FOut_.LNK4","$(SYS){$(DEVICE)}Val:Pgm-WF_")
+#! Field("$(SYS){$(DEVICE)}Sts:Read1-FOut_.LNK1",16777215,1,"$(SYS){$(DEVICE)}Sts:Read1-FOut_.LNK1")
+#! Link("$(SYS){$(DEVICE)}Sts:Read1-FOut_.LNK1","$(SYS){$(DEVICE)}Sts:1-Sts")
+#! Field("$(SYS){$(DEVICE)}Sts:Read1-FOut_.LNK5",16777215,1,"$(SYS){$(DEVICE)}Sts:Read1-FOut_.LNK5")
+#! Link("$(SYS){$(DEVICE)}Sts:Read1-FOut_.LNK5","$(SYS){$(DEVICE)}Cnt:MACRO_Err-I")
+#! Field("$(SYS){$(DEVICE)}Sts:Read1-FOut_.LNK2",16777215,1,"$(SYS){$(DEVICE)}Sts:Read1-FOut_.LNK2")
+#! Link("$(SYS){$(DEVICE)}Sts:Read1-FOut_.LNK2","$(SYS){$(DEVICE)}Val:CPULoad-I")
+#! Field("$(SYS){$(DEVICE)}Sts:Read1-FOut_.LNK6",16777215,0,"$(SYS){$(DEVICE)}Sts:Read1-FOut_.LNK6")
+#! Link("$(SYS){$(DEVICE)}Sts:Read1-FOut_.LNK6","$(SYS){$(DEVICE)-Ax:RB1}-Seq_")
+#! Record("$(SYS){$(DEVICE)}Type:PMAC-Sts",2180,2506,0,0,"$(SYS){$(DEVICE)}Type:PMAC-Sts")
+#! Field("$(SYS){$(DEVICE)}Type:PMAC-Sts.INP",16777215,0,"$(SYS){$(DEVICE)}Type:PMAC-Sts.INP")
+#! Record("$(SYS){$(DEVICE)}Val:CPULoad-I",3600,2260,0,0,"$(SYS){$(DEVICE)}Val:CPULoad-I")
+#! Record("$(SYS){$(DEVICE)}Sts:1-Sts",3600,1896,0,0,"$(SYS){$(DEVICE)}Sts:1-Sts")
+#! Record("$(SYS){$(DEVICE)}Sts:2-Sts",3600,2003,0,1,"$(SYS){$(DEVICE)}Sts:2-Sts")
+#! Record("$(SYS){$(DEVICE)}Sts:3-Sts",3600,2083,0,1,"$(SYS){$(DEVICE)}Sts:3-Sts")
+#! Record("$(SYS){$(DEVICE)}Sts:PLC-WF_",3000,1920,0,1,"$(SYS){$(DEVICE)}Sts:PLC-WF_")
+#! Field("$(SYS){$(DEVICE)}Sts:PLC-WF_.FLNK",16777215,0,"$(SYS){$(DEVICE)}Sts:PLC-WF_.FLNK")
+#! Link("$(SYS){$(DEVICE)}Sts:PLC-WF_.FLNK","$(SYS){$(DEVICE)}Sts:PLC-GenSub_")
+#! Field("$(SYS){$(DEVICE)}Sts:PLC-WF_.VAL",16777215,1,"$(SYS){$(DEVICE)}Sts:PLC-WF_.VAL")
+#! Record("$(SYS){$(DEVICE)}Sts:PLC-GenSub_",2740,1926,0,1,"$(SYS){$(DEVICE)}Sts:PLC-GenSub_")
+#! Field("$(SYS){$(DEVICE)}Sts:PLC-GenSub_.INPA",16777215,1,"$(SYS){$(DEVICE)}Sts:PLC-GenSub_.INPA")
+#! Link("$(SYS){$(DEVICE)}Sts:PLC-GenSub_.INPA","$(SYS){$(DEVICE)}Sts:PLC-WF_.VAL")
+#! Field("$(SYS){$(DEVICE)}Sts:PLC-GenSub_.FLNK",16777215,0,"$(SYS){$(DEVICE)}Sts:PLC-GenSub_.FLNK")
+#! Link("$(SYS){$(DEVICE)}Sts:PLC-GenSub_.FLNK","$(SYS){$(DEVICE)}Dsbl:PLC_W0-Sts")
+#! Field("$(SYS){$(DEVICE)}Sts:PLC-GenSub_.VALA",16777215,0,"$(SYS){$(DEVICE)}Sts:PLC-GenSub_.VALA")
+#! Field("$(SYS){$(DEVICE)}Sts:PLC-GenSub_.VALB",16777215,0,"$(SYS){$(DEVICE)}Sts:PLC-GenSub_.VALB")
+#! Record("$(SYS){$(DEVICE)}Dsbl:PLC_W0-Sts",2440,2016,0,1,"$(SYS){$(DEVICE)}Dsbl:PLC_W0-Sts")
+#! Field("$(SYS){$(DEVICE)}Dsbl:PLC_W0-Sts.FLNK",16777215,0,"$(SYS){$(DEVICE)}Dsbl:PLC_W0-Sts.FLNK")
+#! Link("$(SYS){$(DEVICE)}Dsbl:PLC_W0-Sts.FLNK","$(SYS){$(DEVICE)}Dsbl:PLC_W1-Sts")
+#! Field("$(SYS){$(DEVICE)}Dsbl:PLC_W0-Sts.INP",16777215,1,"$(SYS){$(DEVICE)}Dsbl:PLC_W0-Sts.INP")
+#! Link("$(SYS){$(DEVICE)}Dsbl:PLC_W0-Sts.INP","$(SYS){$(DEVICE)}Sts:PLC-GenSub_.VALA")
+#! Record("$(SYS){$(DEVICE)}Dsbl:PLC_W1-Sts",2400,2150,0,0,"$(SYS){$(DEVICE)}Dsbl:PLC_W1-Sts")
+#! Field("$(SYS){$(DEVICE)}Dsbl:PLC_W1-Sts.INP",16777215,1,"$(SYS){$(DEVICE)}Dsbl:PLC_W1-Sts.INP")
+#! Link("$(SYS){$(DEVICE)}Dsbl:PLC_W1-Sts.INP","$(SYS){$(DEVICE)}Sts:PLC-GenSub_.VALB")
+#! Record("$(SYS){$(DEVICE)}Val:Pgm-WF_",3000,2266,0,1,"$(SYS){$(DEVICE)}Val:Pgm-WF_")
+#! Field("$(SYS){$(DEVICE)}Val:Pgm-WF_.FLNK",16777215,0,"$(SYS){$(DEVICE)}Val:Pgm-WF_.FLNK")
+#! Link("$(SYS){$(DEVICE)}Val:Pgm-WF_.FLNK","$(SYS){$(DEVICE)}Val:Pgm-GenSub_")
+#! Field("$(SYS){$(DEVICE)}Val:Pgm-WF_.VAL",16777215,0,"$(SYS){$(DEVICE)}Val:Pgm-WF_.VAL")
+#! Record("$(SYS){$(DEVICE)}Val:Pgm-GenSub_",2720,2300,0,1,"$(SYS){$(DEVICE)}Val:Pgm-GenSub_")
+#! Field("$(SYS){$(DEVICE)}Val:Pgm-GenSub_.INPA",16777215,1,"$(SYS){$(DEVICE)}Val:Pgm-GenSub_.INPA")
+#! Link("$(SYS){$(DEVICE)}Val:Pgm-GenSub_.INPA","$(SYS){$(DEVICE)}Val:Pgm-WF_.VAL")
+#! Field("$(SYS){$(DEVICE)}Val:Pgm-GenSub_.FLNK",16777215,1,"$(SYS){$(DEVICE)}Val:Pgm-GenSub_.FLNK")
+#! Link("$(SYS){$(DEVICE)}Val:Pgm-GenSub_.FLNK","$(SYS){$(DEVICE)}Val:Pgm-Sts")
+#! Field("$(SYS){$(DEVICE)}Val:Pgm-GenSub_.VALA",16777215,1,"$(SYS){$(DEVICE)}Val:Pgm-GenSub_.VALA")
+#! Record("$(SYS){$(DEVICE)}Val:Pgm-Sts",3000,2490,0,0,"$(SYS){$(DEVICE)}Val:Pgm-Sts")
+#! Field("$(SYS){$(DEVICE)}Val:Pgm-Sts.INP",16777215,0,"$(SYS){$(DEVICE)}Val:Pgm-Sts.INP")
+#! Link("$(SYS){$(DEVICE)}Val:Pgm-Sts.INP","$(SYS){$(DEVICE)}Val:Pgm-GenSub_.VALA")
+#! Record("$(SYS){$(DEVICE)}Cnt:MACRO_Err-I",3600,2156,0,0,"$(SYS){$(DEVICE)}Cnt:MACRO_Err-I")
+#! Record("$(SYS){$(DEVICE)}Val:IO_HndShk-Sts",2360,2451,0,0,"$(SYS){$(DEVICE)}Val:IO_HndShk-Sts")
+#! Field("$(SYS){$(DEVICE)}Val:IO_HndShk-Sts.INP",16777215,0,"$(SYS){$(DEVICE)}Val:IO_HndShk-Sts.INP")
+#! Record("$(SYS){$(DEVICE)}Sts:PLC_Ctrl-Sts",2180,2211,0,0,"$(SYS){$(DEVICE)}Sts:PLC_Ctrl-Sts")
+#! Record("$(SYS){$(DEVICE)}Mode:ErrRep-Sts",2000,2211,0,0,"$(SYS){$(DEVICE)}Mode:ErrRep-Sts")
 #! Record("$(DEVICE):DPRAM_COMMS_INT",2360,2280,0,0,"$(DEVICE):DPRAM_COMMS_INT")
 #! Record("$(DEVICE):DPRAM_COMMS",1820,2280,0,0,"$(DEVICE):DPRAM_COMMS")
 #! Record("$(DEVICE):VME_ADDR_MODE",2000,2465,0,0,"$(DEVICE):VME_ADDR_MODE")
 #! Record("$(DEVICE):VME_INTLVL",1820,2562,0,0,"$(DEVICE):VME_INTLVL")
-#! Record("$(DEVICE):AXIS1:ReadBack",3580,2423,0,0,"$(DEVICE):AXIS1:ReadBack")
-#! Field("$(DEVICE):AXIS1:ReadBack.PROC",16777215,0,"$(DEVICE):AXIS1:ReadBack.PROC")
-#! Record("$(DEVICE):AXIS2:ReadBack",3600,2503,0,0,"$(DEVICE):AXIS2:ReadBack")
-#! Field("$(DEVICE):AXIS2:ReadBack.PROC",16777215,0,"$(DEVICE):AXIS2:ReadBack.PROC")
-#! Record("$(DEVICE):AXIS3:ReadBack",3620,2583,0,0,"$(DEVICE):AXIS3:ReadBack")
-#! Field("$(DEVICE):AXIS3:ReadBack.PROC",16777215,0,"$(DEVICE):AXIS3:ReadBack.PROC")
-#! Record("$(DEVICE):AXIS4:ReadBack",3640,2663,0,0,"$(DEVICE):AXIS4:ReadBack")
-#! Field("$(DEVICE):AXIS4:ReadBack.PROC",16777215,0,"$(DEVICE):AXIS4:ReadBack.PROC")
-#! Record("$(DEVICE):AXIS5:ReadBack",3640,2743,0,0,"$(DEVICE):AXIS5:ReadBack")
-#! Field("$(DEVICE):AXIS5:ReadBack.PROC",16777215,0,"$(DEVICE):AXIS5:ReadBack.PROC")
-#! Record("$(DEVICE):AXIS6:ReadBack",3620,2823,0,0,"$(DEVICE):AXIS6:ReadBack")
-#! Field("$(DEVICE):AXIS6:ReadBack.PROC",16777215,0,"$(DEVICE):AXIS6:ReadBack.PROC")
-#! Record("$(DEVICE):AXIS7:ReadBack",3600,2903,0,0,"$(DEVICE):AXIS7:ReadBack")
-#! Field("$(DEVICE):AXIS7:ReadBack.PROC",16777215,0,"$(DEVICE):AXIS7:ReadBack.PROC")
-#! Record("$(DEVICE):AXIS8:ReadBack",3580,2983,0,0,"$(DEVICE):AXIS8:ReadBack")
-#! Field("$(DEVICE):AXIS8:ReadBack.PROC",16777215,0,"$(DEVICE):AXIS8:ReadBack.PROC")
-#! Record("$(DEVICE):AXIS9:ReadBack",2580,2643,0,0,"$(DEVICE):AXIS9:ReadBack")
-#! Field("$(DEVICE):AXIS9:ReadBack.PROC",16777215,1,"$(DEVICE):AXIS9:ReadBack.PROC")
-#! Record("$(DEVICE):AXIS10:ReadBack",2560,2723,0,0,"$(DEVICE):AXIS10:ReadBack")
-#! Field("$(DEVICE):AXIS10:ReadBack.PROC",16777215,1,"$(DEVICE):AXIS10:ReadBack.PROC")
-#! Record("$(DEVICE):AXIS11:ReadBack",2540,2803,0,0,"$(DEVICE):AXIS11:ReadBack")
-#! Field("$(DEVICE):AXIS11:ReadBack.PROC",16777215,1,"$(DEVICE):AXIS11:ReadBack.PROC")
-#! Record("$(DEVICE):AXIS12:ReadBack",2520,2883,0,0,"$(DEVICE):AXIS12:ReadBack")
-#! Field("$(DEVICE):AXIS12:ReadBack.PROC",16777215,1,"$(DEVICE):AXIS12:ReadBack.PROC")
-#! Record("$(DEVICE):AXIS13:ReadBack",2520,2963,0,0,"$(DEVICE):AXIS13:ReadBack")
-#! Field("$(DEVICE):AXIS13:ReadBack.PROC",16777215,1,"$(DEVICE):AXIS13:ReadBack.PROC")
-#! Record("$(DEVICE):AXIS14:ReadBack",2540,3043,0,0,"$(DEVICE):AXIS14:ReadBack")
-#! Field("$(DEVICE):AXIS14:ReadBack.PROC",16777215,1,"$(DEVICE):AXIS14:ReadBack.PROC")
-#! Record("$(DEVICE):AXIS15:ReadBack",2580,3123,0,0,"$(DEVICE):AXIS15:ReadBack")
-#! Field("$(DEVICE):AXIS15:ReadBack.PROC",16777215,1,"$(DEVICE):AXIS15:ReadBack.PROC")
-#! Record("$(DEVICE):AXIS16:ReadBack",2600,3203,0,0,"$(DEVICE):AXIS16:ReadBack")
-#! Field("$(DEVICE):AXIS16:ReadBack.PROC",16777215,1,"$(DEVICE):AXIS16:ReadBack.PROC")
-#! Record("$(DEVICE):AXIS17:ReadBack",3580,3063,0,0,"$(DEVICE):AXIS17:ReadBack")
-#! Field("$(DEVICE):AXIS17:ReadBack.PROC",16777215,0,"$(DEVICE):AXIS17:ReadBack.PROC")
-#! Record("$(DEVICE):AXIS18:ReadBack",3600,3143,0,0,"$(DEVICE):AXIS18:ReadBack")
-#! Field("$(DEVICE):AXIS18:ReadBack.PROC",16777215,0,"$(DEVICE):AXIS18:ReadBack.PROC")
-#! Record("$(DEVICE):AXIS19:ReadBack",3620,3223,0,0,"$(DEVICE):AXIS19:ReadBack")
-#! Field("$(DEVICE):AXIS19:ReadBack.PROC",16777215,0,"$(DEVICE):AXIS19:ReadBack.PROC")
-#! Record("$(DEVICE):AXIS20:ReadBack",3640,3303,0,0,"$(DEVICE):AXIS20:ReadBack")
-#! Field("$(DEVICE):AXIS20:ReadBack.PROC",16777215,0,"$(DEVICE):AXIS20:ReadBack.PROC")
-#! Record("$(DEVICE):AXIS21:ReadBack",3640,3383,0,0,"$(DEVICE):AXIS21:ReadBack")
-#! Field("$(DEVICE):AXIS21:ReadBack.PROC",16777215,0,"$(DEVICE):AXIS21:ReadBack.PROC")
-#! Record("$(DEVICE):AXIS22:ReadBack",3620,3463,0,0,"$(DEVICE):AXIS22:ReadBack")
-#! Field("$(DEVICE):AXIS22:ReadBack.PROC",16777215,0,"$(DEVICE):AXIS22:ReadBack.PROC")
-#! Record("$(DEVICE):AXIS23:ReadBack",3600,3543,0,0,"$(DEVICE):AXIS23:ReadBack")
-#! Field("$(DEVICE):AXIS23:ReadBack.PROC",16777215,0,"$(DEVICE):AXIS23:ReadBack.PROC")
-#! Record("$(DEVICE):AXIS24:ReadBack",3580,3623,0,0,"$(DEVICE):AXIS24:ReadBack")
-#! Field("$(DEVICE):AXIS24:ReadBack.PROC",16777215,0,"$(DEVICE):AXIS24:ReadBack.PROC")
-#! Record("$(DEVICE):AXIS25:ReadBack",2600,3283,0,0,"$(DEVICE):AXIS25:ReadBack")
-#! Field("$(DEVICE):AXIS25:ReadBack.PROC",16777215,1,"$(DEVICE):AXIS25:ReadBack.PROC")
-#! Record("$(DEVICE):AXIS26:ReadBack",2580,3363,0,0,"$(DEVICE):AXIS26:ReadBack")
-#! Field("$(DEVICE):AXIS26:ReadBack.PROC",16777215,1,"$(DEVICE):AXIS26:ReadBack.PROC")
-#! Record("$(DEVICE):AXIS27:ReadBack",2560,3443,0,0,"$(DEVICE):AXIS27:ReadBack")
-#! Field("$(DEVICE):AXIS27:ReadBack.PROC",16777215,1,"$(DEVICE):AXIS27:ReadBack.PROC")
-#! Record("$(DEVICE):AXIS28:ReadBack",2540,3523,0,0,"$(DEVICE):AXIS28:ReadBack")
-#! Field("$(DEVICE):AXIS28:ReadBack.PROC",16777215,1,"$(DEVICE):AXIS28:ReadBack.PROC")
-#! Record("$(DEVICE):AXIS29:ReadBack",2540,3603,0,0,"$(DEVICE):AXIS29:ReadBack")
-#! Field("$(DEVICE):AXIS29:ReadBack.PROC",16777215,1,"$(DEVICE):AXIS29:ReadBack.PROC")
-#! Record("$(DEVICE):AXIS30:ReadBack",2560,3683,0,0,"$(DEVICE):AXIS30:ReadBack")
-#! Field("$(DEVICE):AXIS30:ReadBack.PROC",16777215,1,"$(DEVICE):AXIS30:ReadBack.PROC")
-#! Record("$(DEVICE):AXIS31:ReadBack",2580,3763,0,0,"$(DEVICE):AXIS31:ReadBack")
-#! Field("$(DEVICE):AXIS31:ReadBack.PROC",16777215,1,"$(DEVICE):AXIS31:ReadBack.PROC")
-#! Record("$(DEVICE):AXIS32:ReadBack",2600,3843,0,0,"$(DEVICE):AXIS32:ReadBack")
-#! Field("$(DEVICE):AXIS32:ReadBack.PROC",16777215,1,"$(DEVICE):AXIS32:ReadBack.PROC")
-#! Record("$(DEVICE):AxisRB",3280,2400,0,0,"$(DEVICE):AxisRB")
-#! Field("$(DEVICE):AxisRB.LNK1",16777215,1,"$(DEVICE):AxisRB.LNK1")
-#! Link("$(DEVICE):AxisRB.LNK1","$(DEVICE):AXIS1:ReadBack.PROC")
-#! Field("$(DEVICE):AxisRB.LNK2",16777215,1,"$(DEVICE):AxisRB.LNK2")
-#! Link("$(DEVICE):AxisRB.LNK2","$(DEVICE):AXIS2:ReadBack.PROC")
-#! Field("$(DEVICE):AxisRB.LNK3",16777215,1,"$(DEVICE):AxisRB.LNK3")
-#! Link("$(DEVICE):AxisRB.LNK3","$(DEVICE):AXIS3:ReadBack.PROC")
-#! Field("$(DEVICE):AxisRB.LNK4",16777215,1,"$(DEVICE):AxisRB.LNK4")
-#! Link("$(DEVICE):AxisRB.LNK4","$(DEVICE):AXIS4:ReadBack.PROC")
-#! Field("$(DEVICE):AxisRB.LNK5",16777215,1,"$(DEVICE):AxisRB.LNK5")
-#! Link("$(DEVICE):AxisRB.LNK5","$(DEVICE):AXIS5:ReadBack.PROC")
-#! Field("$(DEVICE):AxisRB.LNK6",16777215,1,"$(DEVICE):AxisRB.LNK6")
-#! Link("$(DEVICE):AxisRB.LNK6","$(DEVICE):AXIS6:ReadBack.PROC")
-#! Field("$(DEVICE):AxisRB.LNK7",16777215,1,"$(DEVICE):AxisRB.LNK7")
-#! Link("$(DEVICE):AxisRB.LNK7","$(DEVICE):AXIS7:ReadBack.PROC")
-#! Field("$(DEVICE):AxisRB.LNK8",16777215,1,"$(DEVICE):AxisRB.LNK8")
-#! Link("$(DEVICE):AxisRB.LNK8","$(DEVICE):AXIS8:ReadBack.PROC")
-#! Field("$(DEVICE):AxisRB.LNK9",16777215,0,"$(DEVICE):AxisRB.LNK9")
-#! Link("$(DEVICE):AxisRB.LNK9","$(DEVICE):AxisRB2.PROC")
-#! Record("$(DEVICE):AxisRB2",2940,2620,0,0,"$(DEVICE):AxisRB2")
-#! Field("$(DEVICE):AxisRB2.LNK1",16777215,0,"$(DEVICE):AxisRB2.LNK1")
-#! Link("$(DEVICE):AxisRB2.LNK1","$(DEVICE):AXIS9:ReadBack.PROC")
-#! Field("$(DEVICE):AxisRB2.LNK2",16777215,0,"$(DEVICE):AxisRB2.LNK2")
-#! Link("$(DEVICE):AxisRB2.LNK2","$(DEVICE):AXIS10:ReadBack.PROC")
-#! Field("$(DEVICE):AxisRB2.LNK3",16777215,0,"$(DEVICE):AxisRB2.LNK3")
-#! Link("$(DEVICE):AxisRB2.LNK3","$(DEVICE):AXIS11:ReadBack.PROC")
-#! Field("$(DEVICE):AxisRB2.LNK4",16777215,0,"$(DEVICE):AxisRB2.LNK4")
-#! Link("$(DEVICE):AxisRB2.LNK4","$(DEVICE):AXIS12:ReadBack.PROC")
-#! Field("$(DEVICE):AxisRB2.LNK5",16777215,0,"$(DEVICE):AxisRB2.LNK5")
-#! Link("$(DEVICE):AxisRB2.LNK5","$(DEVICE):AXIS13:ReadBack.PROC")
-#! Field("$(DEVICE):AxisRB2.LNK6",16777215,0,"$(DEVICE):AxisRB2.LNK6")
-#! Link("$(DEVICE):AxisRB2.LNK6","$(DEVICE):AXIS14:ReadBack.PROC")
-#! Field("$(DEVICE):AxisRB2.LNK7",16777215,0,"$(DEVICE):AxisRB2.LNK7")
-#! Link("$(DEVICE):AxisRB2.LNK7","$(DEVICE):AXIS15:ReadBack.PROC")
-#! Field("$(DEVICE):AxisRB2.LNK8",16777215,0,"$(DEVICE):AxisRB2.LNK8")
-#! Link("$(DEVICE):AxisRB2.LNK8","$(DEVICE):AXIS16:ReadBack.PROC")
-#! Field("$(DEVICE):AxisRB2.PROC",16777215,1,"$(DEVICE):AxisRB2.PROC")
-#! Field("$(DEVICE):AxisRB2.LNK9",16777215,1,"$(DEVICE):AxisRB2.LNK9")
-#! Link("$(DEVICE):AxisRB2.LNK9","$(DEVICE):AxisRB3.PROC")
-#! Record("$(DEVICE):AxisRB3",3280,2980,0,1,"$(DEVICE):AxisRB3")
-#! Field("$(DEVICE):AxisRB3.LNK1",16777215,1,"$(DEVICE):AxisRB3.LNK1")
-#! Link("$(DEVICE):AxisRB3.LNK1","$(DEVICE):AXIS17:ReadBack.PROC")
-#! Field("$(DEVICE):AxisRB3.LNK2",16777215,1,"$(DEVICE):AxisRB3.LNK2")
-#! Link("$(DEVICE):AxisRB3.LNK2","$(DEVICE):AXIS18:ReadBack.PROC")
-#! Field("$(DEVICE):AxisRB3.LNK3",16777215,1,"$(DEVICE):AxisRB3.LNK3")
-#! Link("$(DEVICE):AxisRB3.LNK3","$(DEVICE):AXIS19:ReadBack.PROC")
-#! Field("$(DEVICE):AxisRB3.LNK4",16777215,1,"$(DEVICE):AxisRB3.LNK4")
-#! Link("$(DEVICE):AxisRB3.LNK4","$(DEVICE):AXIS20:ReadBack.PROC")
-#! Field("$(DEVICE):AxisRB3.LNK5",16777215,1,"$(DEVICE):AxisRB3.LNK5")
-#! Link("$(DEVICE):AxisRB3.LNK5","$(DEVICE):AXIS21:ReadBack.PROC")
-#! Field("$(DEVICE):AxisRB3.LNK6",16777215,1,"$(DEVICE):AxisRB3.LNK6")
-#! Link("$(DEVICE):AxisRB3.LNK6","$(DEVICE):AXIS22:ReadBack.PROC")
-#! Field("$(DEVICE):AxisRB3.LNK7",16777215,1,"$(DEVICE):AxisRB3.LNK7")
-#! Link("$(DEVICE):AxisRB3.LNK7","$(DEVICE):AXIS23:ReadBack.PROC")
-#! Field("$(DEVICE):AxisRB3.LNK8",16777215,1,"$(DEVICE):AxisRB3.LNK8")
-#! Link("$(DEVICE):AxisRB3.LNK8","$(DEVICE):AXIS24:ReadBack.PROC")
-#! Field("$(DEVICE):AxisRB3.PROC",16777215,1,"$(DEVICE):AxisRB3.PROC")
-#! Field("$(DEVICE):AxisRB3.LNK9",16777215,0,"$(DEVICE):AxisRB3.LNK9")
-#! Link("$(DEVICE):AxisRB3.LNK9","$(DEVICE):AxisRB4.PROC")
-#! Record("$(DEVICE):AxisRB4",2940,3241,0,1,"$(DEVICE):AxisRB4")
-#! Field("$(DEVICE):AxisRB4.LNK1",16777215,0,"$(DEVICE):AxisRB4.LNK1")
-#! Link("$(DEVICE):AxisRB4.LNK1","$(DEVICE):AXIS25:ReadBack.PROC")
-#! Field("$(DEVICE):AxisRB4.LNK2",16777215,0,"$(DEVICE):AxisRB4.LNK2")
-#! Link("$(DEVICE):AxisRB4.LNK2","$(DEVICE):AXIS26:ReadBack.PROC")
-#! Field("$(DEVICE):AxisRB4.LNK3",16777215,0,"$(DEVICE):AxisRB4.LNK3")
-#! Link("$(DEVICE):AxisRB4.LNK3","$(DEVICE):AXIS27:ReadBack.PROC")
-#! Field("$(DEVICE):AxisRB4.LNK4",16777215,0,"$(DEVICE):AxisRB4.LNK4")
-#! Link("$(DEVICE):AxisRB4.LNK4","$(DEVICE):AXIS28:ReadBack.PROC")
-#! Field("$(DEVICE):AxisRB4.LNK5",16777215,0,"$(DEVICE):AxisRB4.LNK5")
-#! Link("$(DEVICE):AxisRB4.LNK5","$(DEVICE):AXIS29:ReadBack.PROC")
-#! Field("$(DEVICE):AxisRB4.LNK6",16777215,0,"$(DEVICE):AxisRB4.LNK6")
-#! Link("$(DEVICE):AxisRB4.LNK6","$(DEVICE):AXIS30:ReadBack.PROC")
-#! Field("$(DEVICE):AxisRB4.LNK7",16777215,0,"$(DEVICE):AxisRB4.LNK7")
-#! Link("$(DEVICE):AxisRB4.LNK7","$(DEVICE):AXIS31:ReadBack.PROC")
-#! Field("$(DEVICE):AxisRB4.LNK8",16777215,0,"$(DEVICE):AxisRB4.LNK8")
-#! Link("$(DEVICE):AxisRB4.LNK8","$(DEVICE):AXIS32:ReadBack.PROC")
-#! Field("$(DEVICE):AxisRB4.PROC",16777215,0,"$(DEVICE):AxisRB4.PROC")
-#! Record("$(DEVICE):NAXES",1820,2676,0,1,"$(DEVICE):NAXES")
+#! Record("$(SYS){$(DEVICE)-Ax:01}-Seq_",3580,2423,0,0,"$(SYS){$(DEVICE)-Ax:01}-Seq_")
+#! Field("$(SYS){$(DEVICE)-Ax:01}-Seq_.PROC",16777215,0,"$(SYS){$(DEVICE)-Ax:01}-Seq_.PROC")
+#! Record("$(SYS){$(DEVICE)-Ax:02}-Seq_",3600,2503,0,0,"$(SYS){$(DEVICE)-Ax:02}-Seq_")
+#! Field("$(SYS){$(DEVICE)-Ax:02}-Seq_.PROC",16777215,0,"$(SYS){$(DEVICE)-Ax:02}-Seq_.PROC")
+#! Record("$(SYS){$(DEVICE)-Ax:03}-Seq_",3620,2583,0,0,"$(SYS){$(DEVICE)-Ax:03}-Seq_")
+#! Field("$(SYS){$(DEVICE)-Ax:03}-Seq_.PROC",16777215,0,"$(SYS){$(DEVICE)-Ax:03}-Seq_.PROC")
+#! Record("$(SYS){$(DEVICE)-Ax:04}-Seq_",3640,2663,0,0,"$(SYS){$(DEVICE)-Ax:04}-Seq_")
+#! Field("$(SYS){$(DEVICE)-Ax:04}-Seq_.PROC",16777215,0,"$(SYS){$(DEVICE)-Ax:04}-Seq_.PROC")
+#! Record("$(SYS){$(DEVICE)-Ax:05}-Seq_",3640,2743,0,0,"$(SYS){$(DEVICE)-Ax:05}-Seq_")
+#! Field("$(SYS){$(DEVICE)-Ax:05}-Seq_.PROC",16777215,0,"$(SYS){$(DEVICE)-Ax:05}-Seq_.PROC")
+#! Record("$(SYS){$(DEVICE)-Ax:06}-Seq_",3620,2823,0,0,"$(SYS){$(DEVICE)-Ax:06}-Seq_")
+#! Field("$(SYS){$(DEVICE)-Ax:06}-Seq_.PROC",16777215,0,"$(SYS){$(DEVICE)-Ax:06}-Seq_.PROC")
+#! Record("$(SYS){$(DEVICE)-Ax:07}-Seq_",3600,2903,0,0,"$(SYS){$(DEVICE)-Ax:07}-Seq_")
+#! Field("$(SYS){$(DEVICE)-Ax:07}-Seq_.PROC",16777215,0,"$(SYS){$(DEVICE)-Ax:07}-Seq_.PROC")
+#! Record("$(SYS){$(DEVICE)-Ax:08}-Seq_",3580,2983,0,0,"$(SYS){$(DEVICE)-Ax:08}-Seq_")
+#! Field("$(SYS){$(DEVICE)-Ax:08}-Seq_.PROC",16777215,0,"$(SYS){$(DEVICE)-Ax:08}-Seq_.PROC")
+#! Record("$(SYS){$(DEVICE)-Ax:09}-Seq_",2580,2643,0,0,"$(SYS){$(DEVICE)-Ax:09}-Seq_")
+#! Field("$(SYS){$(DEVICE)-Ax:09}-Seq_.PROC",16777215,1,"$(SYS){$(DEVICE)-Ax:09}-Seq_.PROC")
+#! Record("$(SYS){$(DEVICE)-Ax:10}-Seq_",2560,2723,0,0,"$(SYS){$(DEVICE)-Ax:10}-Seq_")
+#! Field("$(SYS){$(DEVICE)-Ax:10}-Seq_.PROC",16777215,1,"$(SYS){$(DEVICE)-Ax:10}-Seq_.PROC")
+#! Record("$(SYS){$(DEVICE)-Ax:11}-Seq_",2540,2803,0,0,"$(SYS){$(DEVICE)-Ax:11}-Seq_")
+#! Field("$(SYS){$(DEVICE)-Ax:11}-Seq_.PROC",16777215,1,"$(SYS){$(DEVICE)-Ax:11}-Seq_.PROC")
+#! Record("$(SYS){$(DEVICE)-Ax:12}-Seq_",2520,2883,0,0,"$(SYS){$(DEVICE)-Ax:12}-Seq_")
+#! Field("$(SYS){$(DEVICE)-Ax:12}-Seq_.PROC",16777215,1,"$(SYS){$(DEVICE)-Ax:12}-Seq_.PROC")
+#! Record("$(SYS){$(DEVICE)-Ax:13}-Seq_",2520,2963,0,0,"$(SYS){$(DEVICE)-Ax:13}-Seq_")
+#! Field("$(SYS){$(DEVICE)-Ax:13}-Seq_.PROC",16777215,1,"$(SYS){$(DEVICE)-Ax:13}-Seq_.PROC")
+#! Record("$(SYS){$(DEVICE)-Ax:14}-Seq_",2540,3043,0,0,"$(SYS){$(DEVICE)-Ax:14}-Seq_")
+#! Field("$(SYS){$(DEVICE)-Ax:14}-Seq_.PROC",16777215,1,"$(SYS){$(DEVICE)-Ax:14}-Seq_.PROC")
+#! Record("$(SYS){$(DEVICE)-Ax:15}-Seq_",2580,3123,0,0,"$(SYS){$(DEVICE)-Ax:15}-Seq_")
+#! Field("$(SYS){$(DEVICE)-Ax:15}-Seq_.PROC",16777215,1,"$(SYS){$(DEVICE)-Ax:15}-Seq_.PROC")
+#! Record("$(SYS){$(DEVICE)-Ax:16}-Seq_",2600,3203,0,0,"$(SYS){$(DEVICE)-Ax:16}-Seq_")
+#! Field("$(SYS){$(DEVICE)-Ax:16}-Seq_.PROC",16777215,1,"$(SYS){$(DEVICE)-Ax:16}-Seq_.PROC")
+#! Record("$(SYS){$(DEVICE)-Ax:17}-Seq_",3580,3063,0,0,"$(SYS){$(DEVICE)-Ax:17}-Seq_")
+#! Field("$(SYS){$(DEVICE)-Ax:17}-Seq_.PROC",16777215,0,"$(SYS){$(DEVICE)-Ax:17}-Seq_.PROC")
+#! Record("$(SYS){$(DEVICE)-Ax:18}-Seq_",3600,3143,0,0,"$(SYS){$(DEVICE)-Ax:18}-Seq_")
+#! Field("$(SYS){$(DEVICE)-Ax:18}-Seq_.PROC",16777215,0,"$(SYS){$(DEVICE)-Ax:18}-Seq_.PROC")
+#! Record("$(SYS){$(DEVICE)-Ax:19}-Seq_",3620,3223,0,0,"$(SYS){$(DEVICE)-Ax:19}-Seq_")
+#! Field("$(SYS){$(DEVICE)-Ax:19}-Seq_.PROC",16777215,0,"$(SYS){$(DEVICE)-Ax:19}-Seq_.PROC")
+#! Record("$(SYS){$(DEVICE)-Ax:20}-Seq_",3640,3303,0,0,"$(SYS){$(DEVICE)-Ax:20}-Seq_")
+#! Field("$(SYS){$(DEVICE)-Ax:20}-Seq_.PROC",16777215,0,"$(SYS){$(DEVICE)-Ax:20}-Seq_.PROC")
+#! Record("$(SYS){$(DEVICE)-Ax:21}-Seq_",3640,3383,0,0,"$(SYS){$(DEVICE)-Ax:21}-Seq_")
+#! Field("$(SYS){$(DEVICE)-Ax:21}-Seq_.PROC",16777215,0,"$(SYS){$(DEVICE)-Ax:21}-Seq_.PROC")
+#! Record("$(SYS){$(DEVICE)-Ax:22}-Seq_",3620,3463,0,0,"$(SYS){$(DEVICE)-Ax:22}-Seq_")
+#! Field("$(SYS){$(DEVICE)-Ax:22}-Seq_.PROC",16777215,0,"$(SYS){$(DEVICE)-Ax:22}-Seq_.PROC")
+#! Record("$(SYS){$(DEVICE)-Ax:23}-Seq_",3600,3543,0,0,"$(SYS){$(DEVICE)-Ax:23}-Seq_")
+#! Field("$(SYS){$(DEVICE)-Ax:23}-Seq_.PROC",16777215,0,"$(SYS){$(DEVICE)-Ax:23}-Seq_.PROC")
+#! Record("$(SYS){$(DEVICE)-Ax:24}-Seq_",3580,3623,0,0,"$(SYS){$(DEVICE)-Ax:24}-Seq_")
+#! Field("$(SYS){$(DEVICE)-Ax:24}-Seq_.PROC",16777215,0,"$(SYS){$(DEVICE)-Ax:24}-Seq_.PROC")
+#! Record("$(SYS){$(DEVICE)-Ax:25}-Seq_",2600,3283,0,0,"$(SYS){$(DEVICE)-Ax:25}-Seq_")
+#! Field("$(SYS){$(DEVICE)-Ax:25}-Seq_.PROC",16777215,1,"$(SYS){$(DEVICE)-Ax:25}-Seq_.PROC")
+#! Record("$(SYS){$(DEVICE)-Ax:26}-Seq_",2580,3363,0,0,"$(SYS){$(DEVICE)-Ax:26}-Seq_")
+#! Field("$(SYS){$(DEVICE)-Ax:26}-Seq_.PROC",16777215,1,"$(SYS){$(DEVICE)-Ax:26}-Seq_.PROC")
+#! Record("$(SYS){$(DEVICE)-Ax:27}-Seq_",2560,3443,0,0,"$(SYS){$(DEVICE)-Ax:27}-Seq_")
+#! Field("$(SYS){$(DEVICE)-Ax:27}-Seq_.PROC",16777215,1,"$(SYS){$(DEVICE)-Ax:27}-Seq_.PROC")
+#! Record("$(SYS){$(DEVICE)-Ax:28}-Seq_",2540,3523,0,0,"$(SYS){$(DEVICE)-Ax:28}-Seq_")
+#! Field("$(SYS){$(DEVICE)-Ax:28}-Seq_.PROC",16777215,1,"$(SYS){$(DEVICE)-Ax:28}-Seq_.PROC")
+#! Record("$(SYS){$(DEVICE)-Ax:29}-Seq_",2540,3603,0,0,"$(SYS){$(DEVICE)-Ax:29}-Seq_")
+#! Field("$(SYS){$(DEVICE)-Ax:29}-Seq_.PROC",16777215,1,"$(SYS){$(DEVICE)-Ax:29}-Seq_.PROC")
+#! Record("$(SYS){$(DEVICE)-Ax:30}-Seq_",2560,3683,0,0,"$(SYS){$(DEVICE)-Ax:30}-Seq_")
+#! Field("$(SYS){$(DEVICE)-Ax:30}-Seq_.PROC",16777215,1,"$(SYS){$(DEVICE)-Ax:30}-Seq_.PROC")
+#! Record("$(SYS){$(DEVICE)-Ax:31}-Seq_",2580,3763,0,0,"$(SYS){$(DEVICE)-Ax:31}-Seq_")
+#! Field("$(SYS){$(DEVICE)-Ax:31}-Seq_.PROC",16777215,1,"$(SYS){$(DEVICE)-Ax:31}-Seq_.PROC")
+#! Record("$(SYS){$(DEVICE)-Ax:32}-Seq_",2600,3843,0,0,"$(SYS){$(DEVICE)-Ax:32}-Seq_")
+#! Field("$(SYS){$(DEVICE)-Ax:32}-Seq_.PROC",16777215,1,"$(SYS){$(DEVICE)-Ax:32}-Seq_.PROC")
+#! Record("$(SYS){$(DEVICE)-Ax:RB1}-Seq_",3280,2400,0,0,"$(SYS){$(DEVICE)-Ax:RB1}-Seq_")
+#! Field("$(SYS){$(DEVICE)-Ax:RB1}-Seq_.LNK1",16777215,1,"$(SYS){$(DEVICE)-Ax:RB1}-Seq_.LNK1")
+#! Link("$(SYS){$(DEVICE)-Ax:RB1}-Seq_.LNK1","$(SYS){$(DEVICE)-Ax:01}-Seq_.PROC")
+#! Field("$(SYS){$(DEVICE)-Ax:RB1}-Seq_.LNK2",16777215,1,"$(SYS){$(DEVICE)-Ax:RB1}-Seq_.LNK2")
+#! Link("$(SYS){$(DEVICE)-Ax:RB1}-Seq_.LNK2","$(SYS){$(DEVICE)-Ax:02}-Seq_.PROC")
+#! Field("$(SYS){$(DEVICE)-Ax:RB1}-Seq_.LNK3",16777215,1,"$(SYS){$(DEVICE)-Ax:RB1}-Seq_.LNK3")
+#! Link("$(SYS){$(DEVICE)-Ax:RB1}-Seq_.LNK3","$(SYS){$(DEVICE)-Ax:03}-Seq_.PROC")
+#! Field("$(SYS){$(DEVICE)-Ax:RB1}-Seq_.LNK4",16777215,1,"$(SYS){$(DEVICE)-Ax:RB1}-Seq_.LNK4")
+#! Link("$(SYS){$(DEVICE)-Ax:RB1}-Seq_.LNK4","$(SYS){$(DEVICE)-Ax:04}-Seq_.PROC")
+#! Field("$(SYS){$(DEVICE)-Ax:RB1}-Seq_.LNK5",16777215,1,"$(SYS){$(DEVICE)-Ax:RB1}-Seq_.LNK5")
+#! Link("$(SYS){$(DEVICE)-Ax:RB1}-Seq_.LNK5","$(SYS){$(DEVICE)-Ax:05}-Seq_.PROC")
+#! Field("$(SYS){$(DEVICE)-Ax:RB1}-Seq_.LNK6",16777215,1,"$(SYS){$(DEVICE)-Ax:RB1}-Seq_.LNK6")
+#! Link("$(SYS){$(DEVICE)-Ax:RB1}-Seq_.LNK6","$(SYS){$(DEVICE)-Ax:06}-Seq_.PROC")
+#! Field("$(SYS){$(DEVICE)-Ax:RB1}-Seq_.LNK7",16777215,1,"$(SYS){$(DEVICE)-Ax:RB1}-Seq_.LNK7")
+#! Link("$(SYS){$(DEVICE)-Ax:RB1}-Seq_.LNK7","$(SYS){$(DEVICE)-Ax:07}-Seq_.PROC")
+#! Field("$(SYS){$(DEVICE)-Ax:RB1}-Seq_.LNK8",16777215,1,"$(SYS){$(DEVICE)-Ax:RB1}-Seq_.LNK8")
+#! Link("$(SYS){$(DEVICE)-Ax:RB1}-Seq_.LNK8","$(SYS){$(DEVICE)-Ax:08}-Seq_.PROC")
+#! Field("$(SYS){$(DEVICE)-Ax:RB1}-Seq_.LNK9",16777215,0,"$(SYS){$(DEVICE)-Ax:RB1}-Seq_.LNK9")
+#! Link("$(SYS){$(DEVICE)-Ax:RB1}-Seq_.LNK9","$(SYS){$(DEVICE)-Ax:RB2}-Seq_.PROC")
+#! Record("$(SYS){$(DEVICE)-Ax:RB2}-Seq_",2940,2620,0,0,"$(SYS){$(DEVICE)-Ax:RB2}-Seq_")
+#! Field("$(SYS){$(DEVICE)-Ax:RB2}-Seq_.LNK1",16777215,0,"$(SYS){$(DEVICE)-Ax:RB2}-Seq_.LNK1")
+#! Link("$(SYS){$(DEVICE)-Ax:RB2}-Seq_.LNK1","$(SYS){$(DEVICE)-Ax:09}-Seq_.PROC")
+#! Field("$(SYS){$(DEVICE)-Ax:RB2}-Seq_.LNK2",16777215,0,"$(SYS){$(DEVICE)-Ax:RB2}-Seq_.LNK2")
+#! Link("$(SYS){$(DEVICE)-Ax:RB2}-Seq_.LNK2","$(SYS){$(DEVICE)-Ax:10}-Seq_.PROC")
+#! Field("$(SYS){$(DEVICE)-Ax:RB2}-Seq_.LNK3",16777215,0,"$(SYS){$(DEVICE)-Ax:RB2}-Seq_.LNK3")
+#! Link("$(SYS){$(DEVICE)-Ax:RB2}-Seq_.LNK3","$(SYS){$(DEVICE)-Ax:11}-Seq_.PROC")
+#! Field("$(SYS){$(DEVICE)-Ax:RB2}-Seq_.LNK4",16777215,0,"$(SYS){$(DEVICE)-Ax:RB2}-Seq_.LNK4")
+#! Link("$(SYS){$(DEVICE)-Ax:RB2}-Seq_.LNK4","$(SYS){$(DEVICE)-Ax:12}-Seq_.PROC")
+#! Field("$(SYS){$(DEVICE)-Ax:RB2}-Seq_.LNK5",16777215,0,"$(SYS){$(DEVICE)-Ax:RB2}-Seq_.LNK5")
+#! Link("$(SYS){$(DEVICE)-Ax:RB2}-Seq_.LNK5","$(SYS){$(DEVICE)-Ax:13}-Seq_.PROC")
+#! Field("$(SYS){$(DEVICE)-Ax:RB2}-Seq_.LNK6",16777215,0,"$(SYS){$(DEVICE)-Ax:RB2}-Seq_.LNK6")
+#! Link("$(SYS){$(DEVICE)-Ax:RB2}-Seq_.LNK6","$(SYS){$(DEVICE)-Ax:14}-Seq_.PROC")
+#! Field("$(SYS){$(DEVICE)-Ax:RB2}-Seq_.LNK7",16777215,0,"$(SYS){$(DEVICE)-Ax:RB2}-Seq_.LNK7")
+#! Link("$(SYS){$(DEVICE)-Ax:RB2}-Seq_.LNK7","$(SYS){$(DEVICE)-Ax:15}-Seq_.PROC")
+#! Field("$(SYS){$(DEVICE)-Ax:RB2}-Seq_.LNK8",16777215,0,"$(SYS){$(DEVICE)-Ax:RB2}-Seq_.LNK8")
+#! Link("$(SYS){$(DEVICE)-Ax:RB2}-Seq_.LNK8","$(SYS){$(DEVICE)-Ax:16}-Seq_.PROC")
+#! Field("$(SYS){$(DEVICE)-Ax:RB2}-Seq_.PROC",16777215,1,"$(SYS){$(DEVICE)-Ax:RB2}-Seq_.PROC")
+#! Field("$(SYS){$(DEVICE)-Ax:RB2}-Seq_.LNK9",16777215,1,"$(SYS){$(DEVICE)-Ax:RB2}-Seq_.LNK9")
+#! Link("$(SYS){$(DEVICE)-Ax:RB2}-Seq_.LNK9","$(SYS){$(DEVICE)-Ax:RB3}-Seq_.PROC")
+#! Record("$(SYS){$(DEVICE)-Ax:RB3}-Seq_",3280,2980,0,1,"$(SYS){$(DEVICE)-Ax:RB3}-Seq_")
+#! Field("$(SYS){$(DEVICE)-Ax:RB3}-Seq_.LNK1",16777215,1,"$(SYS){$(DEVICE)-Ax:RB3}-Seq_.LNK1")
+#! Link("$(SYS){$(DEVICE)-Ax:RB3}-Seq_.LNK1","$(SYS){$(DEVICE)-Ax:17}-Seq_.PROC")
+#! Field("$(SYS){$(DEVICE)-Ax:RB3}-Seq_.LNK2",16777215,1,"$(SYS){$(DEVICE)-Ax:RB3}-Seq_.LNK2")
+#! Link("$(SYS){$(DEVICE)-Ax:RB3}-Seq_.LNK2","$(SYS){$(DEVICE)-Ax:18}-Seq_.PROC")
+#! Field("$(SYS){$(DEVICE)-Ax:RB3}-Seq_.LNK3",16777215,1,"$(SYS){$(DEVICE)-Ax:RB3}-Seq_.LNK3")
+#! Link("$(SYS){$(DEVICE)-Ax:RB3}-Seq_.LNK3","$(SYS){$(DEVICE)-Ax:19}-Seq_.PROC")
+#! Field("$(SYS){$(DEVICE)-Ax:RB3}-Seq_.LNK4",16777215,1,"$(SYS){$(DEVICE)-Ax:RB3}-Seq_.LNK4")
+#! Link("$(SYS){$(DEVICE)-Ax:RB3}-Seq_.LNK4","$(SYS){$(DEVICE)-Ax:20}-Seq_.PROC")
+#! Field("$(SYS){$(DEVICE)-Ax:RB3}-Seq_.LNK5",16777215,1,"$(SYS){$(DEVICE)-Ax:RB3}-Seq_.LNK5")
+#! Link("$(SYS){$(DEVICE)-Ax:RB3}-Seq_.LNK5","$(SYS){$(DEVICE)-Ax:21}-Seq_.PROC")
+#! Field("$(SYS){$(DEVICE)-Ax:RB3}-Seq_.LNK6",16777215,1,"$(SYS){$(DEVICE)-Ax:RB3}-Seq_.LNK6")
+#! Link("$(SYS){$(DEVICE)-Ax:RB3}-Seq_.LNK6","$(SYS){$(DEVICE)-Ax:22}-Seq_.PROC")
+#! Field("$(SYS){$(DEVICE)-Ax:RB3}-Seq_.LNK7",16777215,1,"$(SYS){$(DEVICE)-Ax:RB3}-Seq_.LNK7")
+#! Link("$(SYS){$(DEVICE)-Ax:RB3}-Seq_.LNK7","$(SYS){$(DEVICE)-Ax:23}-Seq_.PROC")
+#! Field("$(SYS){$(DEVICE)-Ax:RB3}-Seq_.LNK8",16777215,1,"$(SYS){$(DEVICE)-Ax:RB3}-Seq_.LNK8")
+#! Link("$(SYS){$(DEVICE)-Ax:RB3}-Seq_.LNK8","$(SYS){$(DEVICE)-Ax:24}-Seq_.PROC")
+#! Field("$(SYS){$(DEVICE)-Ax:RB3}-Seq_.PROC",16777215,1,"$(SYS){$(DEVICE)-Ax:RB3}-Seq_.PROC")
+#! Field("$(SYS){$(DEVICE)-Ax:RB3}-Seq_.LNK9",16777215,0,"$(SYS){$(DEVICE)-Ax:RB3}-Seq_.LNK9")
+#! Link("$(SYS){$(DEVICE)-Ax:RB3}-Seq_.LNK9","$(SYS){$(DEVICE)-Ax:RB4}-Seq_.PROC")
+#! Record("$(SYS){$(DEVICE)-Ax:RB4}-Seq_",2940,3241,0,1,"$(SYS){$(DEVICE)-Ax:RB4}-Seq_")
+#! Field("$(SYS){$(DEVICE)-Ax:RB4}-Seq_.LNK1",16777215,0,"$(SYS){$(DEVICE)-Ax:RB4}-Seq_.LNK1")
+#! Link("$(SYS){$(DEVICE)-Ax:RB4}-Seq_.LNK1","$(SYS){$(DEVICE)-Ax:25}-Seq_.PROC")
+#! Field("$(SYS){$(DEVICE)-Ax:RB4}-Seq_.LNK2",16777215,0,"$(SYS){$(DEVICE)-Ax:RB4}-Seq_.LNK2")
+#! Link("$(SYS){$(DEVICE)-Ax:RB4}-Seq_.LNK2","$(SYS){$(DEVICE)-Ax:26}-Seq_.PROC")
+#! Field("$(SYS){$(DEVICE)-Ax:RB4}-Seq_.LNK3",16777215,0,"$(SYS){$(DEVICE)-Ax:RB4}-Seq_.LNK3")
+#! Link("$(SYS){$(DEVICE)-Ax:RB4}-Seq_.LNK3","$(SYS){$(DEVICE)-Ax:27}-Seq_.PROC")
+#! Field("$(SYS){$(DEVICE)-Ax:RB4}-Seq_.LNK4",16777215,0,"$(SYS){$(DEVICE)-Ax:RB4}-Seq_.LNK4")
+#! Link("$(SYS){$(DEVICE)-Ax:RB4}-Seq_.LNK4","$(SYS){$(DEVICE)-Ax:28}-Seq_.PROC")
+#! Field("$(SYS){$(DEVICE)-Ax:RB4}-Seq_.LNK5",16777215,0,"$(SYS){$(DEVICE)-Ax:RB4}-Seq_.LNK5")
+#! Link("$(SYS){$(DEVICE)-Ax:RB4}-Seq_.LNK5","$(SYS){$(DEVICE)-Ax:29}-Seq_.PROC")
+#! Field("$(SYS){$(DEVICE)-Ax:RB4}-Seq_.LNK6",16777215,0,"$(SYS){$(DEVICE)-Ax:RB4}-Seq_.LNK6")
+#! Link("$(SYS){$(DEVICE)-Ax:RB4}-Seq_.LNK6","$(SYS){$(DEVICE)-Ax:30}-Seq_.PROC")
+#! Field("$(SYS){$(DEVICE)-Ax:RB4}-Seq_.LNK7",16777215,0,"$(SYS){$(DEVICE)-Ax:RB4}-Seq_.LNK7")
+#! Link("$(SYS){$(DEVICE)-Ax:RB4}-Seq_.LNK7","$(SYS){$(DEVICE)-Ax:31}-Seq_.PROC")
+#! Field("$(SYS){$(DEVICE)-Ax:RB4}-Seq_.LNK8",16777215,0,"$(SYS){$(DEVICE)-Ax:RB4}-Seq_.LNK8")
+#! Link("$(SYS){$(DEVICE)-Ax:RB4}-Seq_.LNK8","$(SYS){$(DEVICE)-Ax:32}-Seq_.PROC")
+#! Field("$(SYS){$(DEVICE)-Ax:RB4}-Seq_.PROC",16777215,0,"$(SYS){$(DEVICE)-Ax:RB4}-Seq_.PROC")
+#! Record("$(SYS){$(DEVICE)}Cnt:Axes-I",1820,2676,0,1,"$(SYS){$(DEVICE)}Cnt:Axes-I")

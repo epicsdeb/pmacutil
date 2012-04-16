@@ -1,2 +1,5 @@
 #!/bin/bash
-applypvs  -i ~/local/data/work/hg/repos/pmacUtil/pypdb/pmacUtil_pmacStatus.pot -o ~/local/data/work/hg/repos/pmacUtil/fls ~/local/data/work/hg/repos/pmacUtil/pmacUtilApp/Db/pmacStatus.vdb
+IOC_PATH=~/local/data/work/hg/repos/modules/pmacUtil
+applypvs  -i $IOC_PATH/pypdb/pmacUtil_pmacStatus.pot \
+	-o $IOC_PATH/fls \
+	$IOC_PATH/pmacUtilApp/Db/pmacStatus.db
