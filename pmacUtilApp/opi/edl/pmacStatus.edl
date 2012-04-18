@@ -341,8 +341,8 @@ bgColor index 3
 inconsistentColor index 0
 topShadowColor index 1
 botShadowColor index 11
-controlPv "$(DEVICE):ReadBack.SCAN"
-indicatorPv "$(DEVICE):ReadBack.SCAN"
+controlPv "$(SYS){$(DEVICE)}Sts:Read1-FOut_.SCAN"
+indicatorPv "$(SYS){$(DEVICE)}Sts:Read1-FOut_.SCAN"
 font "arial-bold-r-14.0"
 endObjectProperties
 
@@ -476,7 +476,7 @@ x 15
 y 520
 w 285
 h 20
-controlPv "$(DEVICE):PROGBITS"
+controlPv "$(SYS){$(DEVICE)}Val:Pgm-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -787,7 +787,7 @@ x 15
 y 155
 w 12
 h 192
-controlPv "$(DEVICE):CTRLSTAT:status1"
+controlPv "$(SYS){$(DEVICE)}Sts:1-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -1157,7 +1157,7 @@ x 185
 y 155
 w 12
 h 192
-controlPv "$(DEVICE):CTRLSTAT:status2"
+controlPv "$(SYS){$(DEVICE)}Sts:2-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -1527,7 +1527,7 @@ x 370
 y 155
 w 12
 h 192
-controlPv "$(DEVICE):CTRLSTAT:status3"
+controlPv "$(SYS){$(DEVICE)}Sts:3-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -1575,7 +1575,7 @@ x 100
 y 55
 w 155
 h 30
-controlPv "$(DEVICE):PMACTYPE"
+controlPv "$(SYS){$(DEVICE)}Type:PMAC-Sts"
 fgColor index 16
 fgAlarm
 bgColor index 10
@@ -1594,7 +1594,7 @@ x 100
 y 90
 w 155
 h 30
-controlPv "$(DEVICE):CPULOAD"
+controlPv "$(SYS){$(DEVICE)}Val:CPULoad-I"
 fgColor index 16
 fgAlarm
 bgColor index 10
@@ -1613,7 +1613,7 @@ x 420
 y 90
 w 130
 h 30
-controlPv "$(DEVICE):MACROERRS"
+controlPv "$(SYS){$(DEVICE)}Cnt:MACRO_Err-I"
 fgColor index 16
 fgAlarm
 bgColor index 10
@@ -1668,7 +1668,7 @@ x 15
 y 400
 w 285
 h 20
-controlPv "$(DEVICE):PLCDISBITS00"
+controlPv "$(SYS){$(DEVICE)}Dsbl:PLC_W0-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -1706,7 +1706,7 @@ x 15
 y 445
 w 285
 h 20
-controlPv "$(DEVICE):PLCDISBITS01"
+controlPv "$(SYS){$(DEVICE)}Dsbl:PLC_W1-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -1883,7 +1883,7 @@ x 185
 y 725
 w 120
 h 12
-controlPv "$(DEVICE):PLC_CONTROL"
+controlPv "$(SYS){$(DEVICE)}Sts:PLC_Ctrl-Sts"
 font "arial-medium-r-10.0"
 fgColor index 16
 bgColor index 10
@@ -1906,7 +1906,7 @@ x 185
 y 755
 w 120
 h 12
-controlPv "$(DEVICE):ERRREPMODE"
+controlPv "$(SYS){$(DEVICE)}Mode:ErrRep-Sts"
 font "arial-medium-r-10.0"
 fgColor index 16
 bgColor index 10
@@ -1928,7 +1928,7 @@ x 185
 y 740
 w 120
 h 12
-controlPv "$(DEVICE):IO_HANDSHAKE"
+controlPv "$(SYS){$(DEVICE)}Val:IO_HndShk-Sts"
 font "arial-medium-r-10.0"
 fgColor index 16
 bgColor index 10
@@ -2138,7 +2138,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(DEVICE):NAXES"
+visPv "$(SYS){$(DEVICE)}Cnt:Axes-I"
 visInvert
 visMin "0"
 visMax "1"
@@ -2197,7 +2197,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(DEVICE):NAXES"
+visPv "$(SYS){$(DEVICE)}Cnt:Axes-I"
 visInvert
 visMin "0"
 visMax "5"
@@ -2256,7 +2256,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(DEVICE):NAXES"
+visPv "$(SYS){$(DEVICE)}Cnt:Axes-I"
 visInvert
 visMin "0"
 visMax "9"
@@ -2315,7 +2315,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(DEVICE):NAXES"
+visPv "$(SYS){$(DEVICE)}Cnt:Axes-I"
 visInvert
 visMin "0"
 visMax "13"
@@ -2374,7 +2374,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(DEVICE):NAXES"
+visPv "$(SYS){$(DEVICE)}Cnt:Axes-I"
 visInvert
 visMin "0"
 visMax "17"
@@ -2433,7 +2433,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(DEVICE):NAXES"
+visPv "$(SYS){$(DEVICE)}Cnt:Axes-I"
 visInvert
 visMin "0"
 visMax "21"
@@ -2492,7 +2492,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(DEVICE):NAXES"
+visPv "$(SYS){$(DEVICE)}Cnt:Axes-I"
 visInvert
 visMin "0"
 visMax "25"
@@ -2551,7 +2551,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(DEVICE):NAXES"
+visPv "$(SYS){$(DEVICE)}Cnt:Axes-I"
 visInvert
 visMin "0"
 visMax "29"
@@ -2646,7 +2646,7 @@ x 15
 y 595
 w 285
 h 20
-controlPv "$(DEVICE):GPIO_INP_BITS"
+controlPv "$(SYS){$(DEVICE)}In:GPIO-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -2720,7 +2720,7 @@ x 15
 y 670
 w 285
 h 20
-controlPv "$(DEVICE):GPIO_OP_BITS"
+controlPv "$(SYS){$(DEVICE)}Out:GPIO-Sel"
 lineColor index 14
 onColor index 15
 offColor index 19
