@@ -19,7 +19,7 @@ ctlBgColor1 index 3
 ctlBgColor2 index 5
 topShadowColor index 1
 botShadowColor index 11
-title "PMAC Status Axis - $(M):$(A)"
+title "PMAC Status Axis - $(SYS){$(DEVICE)-$(A)}"
 showGrid
 snapToGrid
 gridSize 5
@@ -378,7 +378,7 @@ x 13
 y 377
 w 12
 h 12
-controlPv "$(M):$(A):status2"
+controlPv "$(DEVICE):$(A):status2"
 lineColor index 14
 onColor index 15
 offColor index 19
