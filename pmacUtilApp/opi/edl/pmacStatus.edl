@@ -2129,10 +2129,10 @@ menuLabel {
   3 "Axis 4"
 }
 symbols {
-  0 "M=$(DEVICE),A=Ax:01"
-  1 "M=$(DEVICE),A=Ax:02"
-  2 "M=$(DEVICE),A=Ax:03"
-  3 "M=$(DEVICE),A=Ax:04"
+  0 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=Ax:01"
+  1 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=Ax:02"
+  2 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=Ax:03"
+  3 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=Ax:04"
 }
 endObjectProperties
 
@@ -2188,10 +2188,10 @@ menuLabel {
   3 "Axis 8"
 }
 symbols {
-  0 "M=$(DEVICE),A=Ax:05"
-  1 "M=$(DEVICE),A=Ax:06"
-  2 "M=$(DEVICE),A=Ax:07"
-  3 "M=$(DEVICE),A=Ax:08"
+  0 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=Ax:05"
+  1 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=Ax:06"
+  2 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=Ax:07"
+  3 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=Ax:08"
 }
 endObjectProperties
 
@@ -2247,10 +2247,10 @@ menuLabel {
   3 "Axis 12"
 }
 symbols {
-  0 "M=$(DEVICE),A=Ax:09"
-  1 "M=$(DEVICE),A=Ax:10"
-  2 "M=$(DEVICE),A=Ax:11"
-  3 "M=$(DEVICE),A=Ax:12"
+  0 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=Ax:09"
+  1 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=Ax:10"
+  2 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=Ax:11"
+  3 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=Ax:12"
 }
 endObjectProperties
 
@@ -2306,10 +2306,10 @@ menuLabel {
   3 "Axis 16"
 }
 symbols {
-  0 "M=$(DEVICE),A=Ax:13"
-  1 "M=$(DEVICE),A=Ax:14"
-  2 "M=$(DEVICE),A=Ax:15"
-  3 "M=$(DEVICE),A=Ax:16"
+  0 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=Ax:13"
+  1 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=Ax:14"
+  2 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=Ax:15"
+  3 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=Ax:16"
 }
 endObjectProperties
 
@@ -2365,10 +2365,10 @@ menuLabel {
   3 "Axis 20"
 }
 symbols {
-  0 "M=$(DEVICE),A=Ax:17"
-  1 "M=$(DEVICE),A=Ax:18"
-  2 "M=$(DEVICE),A=Ax:19"
-  3 "M=$(DEVICE),A=Ax:20"
+  0 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=Ax:17"
+  1 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=Ax:18"
+  2 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=Ax:19"
+  3 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=Ax:20"
 }
 endObjectProperties
 
@@ -2424,10 +2424,10 @@ menuLabel {
   3 "Axis 24"
 }
 symbols {
-  0 "M=$(DEVICE),A=Ax:21"
-  1 "M=$(DEVICE),A=Ax:22"
-  2 "M=$(DEVICE),A=Ax:23"
-  3 "M=$(DEVICE),A=Ax:24"
+  0 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=Ax:21"
+  1 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=Ax:22"
+  2 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=Ax:23"
+  3 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=Ax:24"
 }
 endObjectProperties
 
@@ -2483,10 +2483,10 @@ menuLabel {
   3 "Axis 28"
 }
 symbols {
-  0 "M=$(DEVICE),A=Ax:25"
-  1 "M=$(DEVICE),A=Ax:26"
-  2 "M=$(DEVICE),A=Ax:27"
-  3 "M=$(DEVICE),A=Ax:28"
+  0 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=Ax:25"
+  1 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=Ax:26"
+  2 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=Ax:27"
+  3 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=Ax:28"
 }
 endObjectProperties
 
@@ -2542,10 +2542,10 @@ menuLabel {
   3 "Axis 32"
 }
 symbols {
-  0 "M=$(DEVICE),A=Ax:29"
-  1 "M=$(DEVICE),A=Ax:30"
-  2 "M=$(DEVICE),A=Ax:31"
-  3 "M=$(DEVICE),A=Ax:32"
+  0 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=Ax:29"
+  1 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=Ax:30"
+  2 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=Ax:31"
+  3 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=Ax:32"
 }
 endObjectProperties
 
