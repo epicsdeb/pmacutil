@@ -15,39 +15,39 @@ msgstr ""
 #. recordtype: ai
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/pmacStatusAxis.db:16
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/pmacStatusAxis.db:28
-msgid "$(DEVICE):AXIS$(AXIS):FOLL_ERROR"
-msgstr "$(P)$(M)Val:FollErr-I"
+msgid "$(M):$(A):FOLL_ERROR"
+msgstr "$(SYS){$(DEVICE)-$(AXIS)}Val:FollErr-I"
 
 #. recordtype: ai
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/pmacStatusAxis.db:11
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/pmacStatusAxis.db:27
-msgid "$(DEVICE):AXIS$(AXIS):POSITION"
-msgstr "$(P)$(M)Pos-I"
+msgid "$(M):$(A):POSITION"
+msgstr "$(SYS){$(DEVICE)-$(AXIS)}Pos-I"
 
 #. recordtype: seq
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/pmacStatusAxis.db:26
-msgid "$(DEVICE):AXIS$(AXIS):ReadBack"
-msgstr "$(P)$(M)RB-Seq_"
+msgid "$(M):$(A):ReadBack"
+msgstr "$(SYS){$(DEVICE)-$(AXIS)}RB-Seq_"
 
 #. recordtype: ai
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/pmacStatusAxis.db:21
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/pmacStatusAxis.db:29
-msgid "$(DEVICE):AXIS$(AXIS):VELOCITY"
-msgstr "$(P)$(M)Val:Vlcty-I"
+msgid "$(M):$(A):VELOCITY"
+msgstr "$(SYS){$(DEVICE)-$(AXIS)}Val:Vlcty-I"
 
 #. recordtype: mbbiDirect
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/pmacStatusAxis.db:42
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/pmacStatusAxis.db:30
-msgid "$(DEVICE):AXIS$(AXIS):status1"
-msgstr "$(P)$(M)Sts:1-Sts"
+msgid "$(M):$(A):status1"
+msgstr "$(SYS){$(DEVICE)-$(AXIS)}Sts:1-Sts"
 
 #. recordtype: mbbiDirect
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/pmacStatusAxis.db:48
-msgid "$(DEVICE):AXIS$(AXIS):status2"
-msgstr "$(P)$(M)Sts:2-Sts"
+msgid "$(M):$(A):status2"
+msgstr "$(SYS){$(DEVICE)-$(AXIS)}Sts:2-Sts"
 
 #. recordtype: mbbiDirect
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/pmacStatusAxis.db:52
-msgid "$(DEVICE):AXIS$(AXIS):status3"
-msgstr "$(P)$(M)Sts:2-Sts"
+msgid "$(M):$(A):status3"
+msgstr "$(SYS){$(DEVICE)-$(AXIS)}Sts:2-Sts"
 

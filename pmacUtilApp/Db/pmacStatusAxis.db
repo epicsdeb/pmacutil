@@ -8,26 +8,26 @@
 # % macro, AXIS,    Axis number
 # % macro, PORT,    Asyn port
 
-record(ai, "$(P)$(M)Pos-I") {
+record(ai, "$(DEVICE):AXIS$(AXIS):POSITION") {
   field(DTYP, "stream")
   field(INP, "@pmac.proto getVar(#$(AXIS)P) $(PORT)")
 }
 
-record(ai, "$(P)$(M)Val:FollErr-I") {
+record(ai, "$(DEVICE):AXIS$(AXIS):FOLL_ERROR") {
   field(DTYP, "stream")
   field(INP, "@pmac.proto getVar(#$(AXIS)F) $(PORT)")
 }
 
-record(ai, "$(P)$(M)Val:Vlcty-I") {
+record(ai, "$(DEVICE):AXIS$(AXIS):VELOCITY") {
   field(DTYP, "stream")
   field(INP, "@pmac.proto getVar(#$(AXIS)V) $(PORT)")
 }
 
-record(seq, "$(P)$(M)RB-Seq_") {
-  field(LNK1, "$(P)$(M)Pos-I.PROC PP")
-  field(LNK2, "$(P)$(M)Val:FollErr-I.PROC PP")
-  field(LNK3, "$(P)$(M)Val:Vlcty-I.PROC PP")
-  field(LNK4, "$(P)$(M)Sts:1-Sts.PROC PP")
+record(seq, "$(DEVICE):AXIS$(AXIS):ReadBack") {
+  field(LNK1, "$(DEVICE):AXIS$(AXIS):POSITION.PROC PP")
+  field(LNK2, "$(DEVICE):AXIS$(AXIS):FOLL_ERROR.PROC PP")
+  field(LNK3, "$(DEVICE):AXIS$(AXIS):VELOCITY.PROC PP")
+  field(LNK4, "$(DEVICE):AXIS$(AXIS):status1.PROC PP")
   field(DLY1, "0")
   field(DLY2, "0.5")
   field(DLY3, "0.5")
@@ -39,36 +39,36 @@ record(seq, "$(P)$(M)RB-Seq_") {
 }
 
 #% archiver 10 Monitor
-record(mbbiDirect, "$(P)$(M)Sts:1-Sts") {
+record(mbbiDirect, "$(DEVICE):AXIS$(AXIS):status1") {
   field(DTYP, "stream")
   field(INP, "@pmac.proto getStatus(#$(AXIS)?,$(DEVICE):AXIS$(AXIS)) $(PORT)")
 }
 
 #% archiver 10 Monitor
-record(mbbiDirect, "$(P)$(M)Sts:2-Sts") {
+record(mbbiDirect, "$(DEVICE):AXIS$(AXIS):status2") {
 }
 
 #% archiver 10 Monitor
-record(mbbiDirect, "$(P)$(M)Sts:2-Sts") {
+record(mbbiDirect, "$(DEVICE):AXIS$(AXIS):status3") {
 }
 
 #! Further lines contain data used by VisualDCT
 #! View(4433,4629,1.5)
-#! Record("$(P)$(M)Pos-I",2920,3196,0,1,"$(P)$(M)Pos-I")
-#! Record("$(P)$(M)Val:FollErr-I",2920,3336,0,1,"$(P)$(M)Val:FollErr-I")
-#! Record("$(P)$(M)Val:Vlcty-I",2920,3476,0,1,"$(P)$(M)Val:Vlcty-I")
-#! Record("$(P)$(M)RB-Seq_",3180,3194,0,1,"$(P)$(M)RB-Seq_")
-#! Field("$(P)$(M)RB-Seq_.LNK1",16777215,0,"$(P)$(M)RB-Seq_.LNK1")
-#! Link("$(P)$(M)RB-Seq_.LNK1","$(P)$(M)Pos-I")
-#! Field("$(P)$(M)RB-Seq_.LNK2",16777215,0,"$(P)$(M)RB-Seq_.LNK2")
-#! Link("$(P)$(M)RB-Seq_.LNK2","$(P)$(M)Val:FollErr-I")
-#! Field("$(P)$(M)RB-Seq_.LNK3",16777215,0,"$(P)$(M)RB-Seq_.LNK3")
-#! Link("$(P)$(M)RB-Seq_.LNK3","$(P)$(M)Val:Vlcty-I")
-#! Field("$(P)$(M)RB-Seq_.LNK4",16777215,1,"$(P)$(M)RB-Seq_.LNK4")
-#! Link("$(P)$(M)RB-Seq_.LNK4","$(P)$(M)Sts:1-Sts")
-#! Record("$(P)$(M)Sts:1-Sts",3460,3176,0,0,"$(P)$(M)Sts:1-Sts")
-#! Record("$(P)$(M)Sts:2-Sts",3460,3283,0,1,"$(P)$(M)Sts:2-Sts")
-#! Record("$(P)$(M)Sts:2-Sts",3460,3363,0,1,"$(P)$(M)Sts:2-Sts")
+#! Record("$(DEVICE):AXIS$(AXIS):POSITION",2920,3196,0,1,"$(DEVICE):AXIS$(AXIS):POSITION")
+#! Record("$(DEVICE):AXIS$(AXIS):FOLL_ERROR",2920,3336,0,1,"$(DEVICE):AXIS$(AXIS):FOLL_ERROR")
+#! Record("$(DEVICE):AXIS$(AXIS):VELOCITY",2920,3476,0,1,"$(DEVICE):AXIS$(AXIS):VELOCITY")
+#! Record("$(DEVICE):AXIS$(AXIS):ReadBack",3180,3194,0,1,"$(DEVICE):AXIS$(AXIS):ReadBack")
+#! Field("$(DEVICE):AXIS$(AXIS):ReadBack.LNK1",16777215,0,"$(DEVICE):AXIS$(AXIS):ReadBack.LNK1")
+#! Link("$(DEVICE):AXIS$(AXIS):ReadBack.LNK1","$(DEVICE):AXIS$(AXIS):POSITION")
+#! Field("$(DEVICE):AXIS$(AXIS):ReadBack.LNK2",16777215,0,"$(DEVICE):AXIS$(AXIS):ReadBack.LNK2")
+#! Link("$(DEVICE):AXIS$(AXIS):ReadBack.LNK2","$(DEVICE):AXIS$(AXIS):FOLL_ERROR")
+#! Field("$(DEVICE):AXIS$(AXIS):ReadBack.LNK3",16777215,0,"$(DEVICE):AXIS$(AXIS):ReadBack.LNK3")
+#! Link("$(DEVICE):AXIS$(AXIS):ReadBack.LNK3","$(DEVICE):AXIS$(AXIS):VELOCITY")
+#! Field("$(DEVICE):AXIS$(AXIS):ReadBack.LNK4",16777215,1,"$(DEVICE):AXIS$(AXIS):ReadBack.LNK4")
+#! Link("$(DEVICE):AXIS$(AXIS):ReadBack.LNK4","$(DEVICE):AXIS$(AXIS):status1")
+#! Record("$(DEVICE):AXIS$(AXIS):status1",3460,3176,0,0,"$(DEVICE):AXIS$(AXIS):status1")
+#! Record("$(DEVICE):AXIS$(AXIS):status2",3460,3283,0,1,"$(DEVICE):AXIS$(AXIS):status2")
+#! Record("$(DEVICE):AXIS$(AXIS):status3",3460,3363,0,1,"$(DEVICE):AXIS$(AXIS):status3")
 #! Line(Line26,4240,4500,4240,4540,0,0,0,16777215,Border0)
 #! Line(Line25,3200,4500,3200,4540,0,0,0,16777215,Border0)
 #! Line(Line24,3720,4500,3720,4540,0,0,0,16777215,Border0)
