@@ -5,8 +5,8 @@
 #% macro, ALLOW_HOMED_SET, Set to a blank to allow this axis to have its homed
 # status manually.  This is set to a comment character by default.
 
-include "basic_asyn_motor.template"
-include "motor_in_cs.template"
+#include "basic_asyn_motor.template"
+#include "motor_in_cs.template"
 
 # disable motor when homing
 record(calcout, "$(P)$(M):SDIS") {
@@ -49,7 +49,7 @@ record(stringout, "$(HOME=$(P)):HM:M$(ADDR)PV"){
 }
 
 # define a kill record
-record(ao, "$(P)$(M):KILL") {
+record(ao, "$(P)$(M)Cmd:Kill-Cmd") {
   field(DTYP, "stream")
   field(OUT, "@pmac.proto killMotor($(ADDR)) $(SPORT)")  
   field(VAL, "0")  
