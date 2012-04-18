@@ -27,7 +27,7 @@ setVar
 getStatus
 {
   out "\$1" CR;
-  in "%4x%(\$2:status2.VAL)4x%(\$2:status3.VAL)4x";
+  in "%4x%(\$2Sts:2-Sts.VAL)4x%(\$2Sts:3-Sts.VAL)4x";
 }
 
 getPlcsDisabled1
