@@ -49,7 +49,7 @@ record(stringout, "$(SYS)$(DEVICE)Addr:Homing-I"){
 }
 
 # define a kill record
-record(ao, "$(P)$(M)Cmd:Kill-Cmd") {
+record(ao, "$(SYS)$(DEVICE)Cmd:Kill-Cmd") {
   field(DTYP, "stream")
   field(OUT, "@pmac.proto killMotor($(ADDR)) $(SPORT)")  
   field(VAL, "0")  
@@ -62,29 +62,29 @@ record(calc, "$(SYS)$(DEVICE)Addr:ELoss-I") {
 
 record(ai, "$(SYS)$(DEVICE)Flt:ELoss-Sts") {
   field(DTYP, "stream")
-  field(INP, "@pmac.proto getEloss($(P)$(M)) $(SPORT)")  
+  field(INP, "@pmac.proto getEloss($(SYS)$(DEVICE)) $(SPORT)")  
   field(SCAN, "5 second")  
 }
 
 record(calcout, "$(SYS)$(DEVICE)Rst:ELoss-Cmd") {
   field(DTYP, "stream")
-  field(OUT, "@pmac.proto resetEloss($(P)$(M)) $(SPORT)") 
+  field(OUT, "@pmac.proto resetEloss($(SYS)$(DEVICE)) $(SPORT)") 
   field(DESC, "Write 0 to A to reset Eloss")
   field(CALC, "A")
   field(A, "0")  
 }
 
-$(ALLOW_HOMED_SET=#)record(bo, "$(P)$(M):HOMED") {
+$(ALLOW_HOMED_SET=#)record(bo, "$(SYS)$(DEVICE)Sts:Homed-Sts") {
 $(ALLOW_HOMED_SET=#)  field(DESC, "Set homed status for axis $(ADDR)")
 $(ALLOW_HOMED_SET=#)  field(ZNAM, "NOT HOMED")
 $(ALLOW_HOMED_SET=#)  field(ONAM, "HOMED")
-$(ALLOW_HOMED_SET=#)  field(FLNK, "$(P)$(M):HOMEDSET")
+$(ALLOW_HOMED_SET=#)  field(FLNK, "$(SYS)$(DEVICE)Sts:Homed-Sts")
 $(ALLOW_HOMED_SET=#)}
 
-$(ALLOW_HOMED_SET=#)record(calcout, "$(P)$(M):HOMEDSET") {
+$(ALLOW_HOMED_SET=#)record(calcout, "$(SYS)$(DEVICE)Sts:Homed-Calcout") {
 $(ALLOW_HOMED_SET=#)  field(DESC, "Homed status")
 $(ALLOW_HOMED_SET=#)  field(DTYP, "stream")
 $(ALLOW_HOMED_SET=#)  field(CALC, "A")
-$(ALLOW_HOMED_SET=#)  field(INPA, "$(P)$(M):HOMED")
+$(ALLOW_HOMED_SET=#)  field(INPA, "$(SYS)$(DEVICE)Sts:Homed-Sts")
 $(ALLOW_HOMED_SET=#)  field(OUT, "@pmac.proto setIntVar(m$(ADDR)45) $(SPORT)")
 $(ALLOW_HOMED_SET=#)}

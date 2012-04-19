@@ -124,12 +124,12 @@ killMotor
 
 getEloss
 {
-  out "P%(\$1:ELOSSVAR.VAL)d" CR;
+  out "P%(\$1Addr:ELoss-I.VAL)d" CR;
   in "%i";
 }
 
 resetEloss
 {
-  out "P%(\$1:ELOSSVAR.VAL)d=%d" CR;
+  out "P%(\$1Addr:ELoss-I.VAL)d=%d" CR;
   in;
 }
