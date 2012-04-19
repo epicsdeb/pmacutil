@@ -9,28 +9,28 @@
 #include "motor_in_cs.template"
 
 # disable motor when homing
-record(calcout, "$(P)$(M):SDIS") {
-  field(INPA, "$(HOME=$(P)):HM:HOMING CP")
+record(calcout, "$(SYS)$(DEVICE)Dsbl:Hmng-Calc") {
+  field(INPA, "$(SYS)$(DEVICE)Sts:Homing-Sts CP")
 }
 
 # dummy record in case we aren't homing
-record(busy, "$(HOME=$(P)):HM:HOMING") {
+record(busy, "$(SYS)$(DEVICE)Sts:Homing-Sts") {
 }
 
-record(calcout, "$(P)$(M):HMPOSASLO") {
-  field(INPA, "$(P)$(M).MRES CP")
-  field(INPB, "$(P)$(M):SCALE")  
+record(calcout, "$(SYS)$(DEVICE)Val:ASLO-I") {
+  field(INPA, "$(SYS)$(DEVICE)-Mtr.MRES CP")
+  field(INPB, "$(SYS)$(DEVICE)Val:Scale-I")  
   field(CALC, "A*B")
-  field(OUT, "$(P)$(M):HMPOS.ASLO")
+  field(OUT, "$(SYS)$(DEVICE)Pos:Raw-I.ASLO")
 }
 
 # reports position of motor without offset
-record(ai, "$(P)$(M):HMPOS") {
+record(ai, "$(SYS)$(DEVICE)Pos:Raw-I") {
   field(DTYP, "stream")
   field(INP, "@pmac.proto getVar(#$(ADDR)P) $(SPORT)")
   field(DESC, "$(DESC)")
   field(SCAN, ".2 second")
-  field(SDIS, "$(HOME=$(P)):HM:HOMING")  
+  field(SDIS, "$(SYS)$(DEVICE)Sts:Homing-Sts")  
   field(DISV, "0")  
   field(PINI, "YES")
   field(PREC, "$(PREC)")
@@ -39,13 +39,13 @@ record(ai, "$(P)$(M):HMPOS") {
 }
 
 # at startup, tell autohome template about this motor
-record(stringout, "$(P)$(M):SETHMPV") {
+record(stringout, "$(SYS)$(DEVICE)Cmd:SetHm-StringOut") {
   field(PINI, "YES")
-  field(VAL, "$(P)$(M)")
-  field(OUT, "$(HOME=$(P)):HM:M$(ADDR)PV PP")
+  field(VAL, "$(SYS)$(DEVICE)-Mtr")
+  field(OUT, "$(SYS)$(DEVICE)Addr:Homing-I PP")
 }
 
-record(stringout, "$(HOME=$(P)):HM:M$(ADDR)PV"){
+record(stringout, "$(SYS)$(DEVICE)Addr:Homing-I"){
 }
 
 # define a kill record
@@ -55,18 +55,18 @@ record(ao, "$(P)$(M)Cmd:Kill-Cmd") {
   field(VAL, "0")  
 }
 
-record(calc, "$(P)$(M):ELOSSVAR") {
+record(calc, "$(SYS)$(DEVICE)Addr:ELoss-I") {
   field(CALC, "464+$(ADDR)")
   field(PINI, "YES")
 }
 
-record(ai, "$(P)$(M):ELOSS") {
+record(ai, "$(SYS)$(DEVICE)Flt:ELoss-Sts") {
   field(DTYP, "stream")
   field(INP, "@pmac.proto getEloss($(P)$(M)) $(SPORT)")  
   field(SCAN, "5 second")  
 }
 
-record(calcout, "$(P)$(M):ELOSSRC") {
+record(calcout, "$(SYS)$(DEVICE)Rst:ELoss-Cmd") {
   field(DTYP, "stream")
   field(OUT, "@pmac.proto resetEloss($(P)$(M)) $(SPORT)") 
   field(DESC, "Write 0 to A to reset Eloss")
