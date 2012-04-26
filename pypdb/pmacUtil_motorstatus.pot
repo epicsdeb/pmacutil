@@ -1,0 +1,98 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2012-04-26 13:45-0400\n"
+"PO-Revision-Date: 2012-04-26 13:45-0400\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n" 
+"X-Poedit-SearchPath-0: /usr/lib/epics/dbd\n"
+"X-Poedit-SearchPath-1: .\n"
+
+#. recordtype: ao
+#. DESC: PMAC Axis number
+#: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/motorstatus.db:104
+#: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/motorstatus.db:97
+msgid "$(P)$(R):AXISN"
+msgstr ""
+
+#. recordtype: scalcout
+#. DESC: create the pmac cmd
+#: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/motorstatus.db:93
+#: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/motorstatus.db:108
+msgid "$(P)$(R):CMD"
+msgstr ""
+
+#. recordtype: fanout
+#: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/motorstatus.db:23
+#: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/motorstatus.db:20
+msgid "$(P)$(R):FAN1"
+msgstr ""
+
+#. recordtype: dfanout
+#: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/motorstatus.db:55
+#: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/motorstatus.db:33
+msgid "$(P)$(R):FAN2"
+msgstr ""
+
+#. recordtype: dfanout
+#: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/motorstatus.db:50
+#: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/motorstatus.db:44
+msgid "$(P)$(R):FAN3"
+msgstr ""
+
+#. recordtype: asyn
+#. DESC: get motor status
+#: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/motorstatus.db:13
+#: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/motorstatus.db:95
+#: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/motorstatus.db:98
+#: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/motorstatus.db:32
+#: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/motorstatus.db:43
+msgid "$(P)$(R):GETSTATUS"
+msgstr ""
+
+#. recordtype: scalcout
+#. DESC: parse status for X
+#: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/motorstatus.db:28
+#: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/motorstatus.db:24
+msgid "$(P)$(R):STAT1"
+msgstr ""
+
+#. recordtype: scalcout
+#. DESC: parse status for X
+#: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/motorstatus.db:39
+#: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/motorstatus.db:25
+msgid "$(P)$(R):STAT2"
+msgstr ""
+
+#. recordtype: mbbiDirect
+#. DESC: status lower bits 1-12
+#: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/motorstatus.db:60
+#: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/motorstatus.db:56
+msgid "$(P)$(R):STATUS1"
+msgstr ""
+
+#. recordtype: mbbiDirect
+#. DESC: status bits 13-24
+#: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/motorstatus.db:68
+#: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/motorstatus.db:57
+msgid "$(P)$(R):STATUS2"
+msgstr ""
+
+#. recordtype: mbbiDirect
+#. DESC: status bits 25-36
+#: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/motorstatus.db:76
+#: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/motorstatus.db:51
+msgid "$(P)$(R):STATUS3"
+msgstr ""
+
+#. recordtype: mbbiDirect
+#. DESC: status bits 37-48
+#: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/motorstatus.db:84
+#: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/motorstatus.db:52
+msgid "$(P)$(R):STATUS4"
+msgstr ""
+
