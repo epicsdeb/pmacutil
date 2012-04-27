@@ -41,7 +41,7 @@ record(seq, "$(SYS){$(DEVICE)-$(AXIS)}RB-Seq_") {
 #% archiver 10 Monitor
 record(mbbiDirect, "$(SYS){$(DEVICE)-$(AXIS)}Sts:1-Sts") {
   field(DTYP, "stream")
-  field(INP, "@pmac.proto getStatus(#$(AXIS)?,$(SYS){$DEVICE-$(AXIS)}) $(PORT)")
+  field(INP, "@pmac.proto getStatus(#$(AXIS)?,$(SYS){$(DEVICE)-$(AXIS)}) $(PORT)")
 }
 
 #% archiver 10 Monitor
