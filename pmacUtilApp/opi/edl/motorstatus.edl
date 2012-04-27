@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 987
-y 773
+x 959
+y 389
 w 381
 h 308
 font "helvetica-medium-r-18.0"
@@ -690,7 +690,7 @@ major 4
 minor 1
 release 0
 x 15
-y 65
+y 55
 w 100
 h 20
 font "helvetica-medium-r-12.0"
@@ -700,5 +700,28 @@ useDisplayBg
 value {
   "PMAC asyn port"
 }
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 10
+y 75
+w 130
+h 25
+fgColor index 35
+onColor index 20
+offColor index 20
+topShadowColor index 75
+botShadowColor index 23
+controlPv "$(SYS)$(DEVICE)Cmd:Kill-Cmd.PROC"
+pressValue "1"
+onLabel "Kill"
+offLabel "Kill"
+3d
+font "helvetica-bold-r-14.0"
 endObjectProperties
 
