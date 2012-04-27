@@ -7,9 +7,9 @@ x 1186
 y 388
 w 430
 h 515
-font "arial-medium-r-16.0"
-ctlFont "arial-bold-r-16.0"
-btnFont "arial-medium-r-16.0"
+font "helvetica-medium-r-16.0"
+ctlFont "helvetica-bold-r-16.0"
+btnFont "helvetica-medium-r-16.0"
 fgColor index 14
 bgColor index 3
 textColor index 14
@@ -118,7 +118,7 @@ x 40
 y 3
 w 385
 h 25
-font "arial-bold-r-16.0"
+font "helvetica-bold-r-16.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 48
@@ -241,7 +241,7 @@ x 0
 y 0
 w 96
 h 31
-font "arial-bold-r-14.0"
+font "helvetica-bold-r-14.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 0
@@ -265,7 +265,7 @@ x 5
 y 165
 w 71
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 8
@@ -291,7 +291,7 @@ bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
 label "EXIT"
-font "arial-medium-r-18.0"
+font "helvetica-medium-r-18.0"
 3d
 endObjectProperties
 
@@ -305,7 +305,7 @@ x 10
 y 120
 w 175
 h 25
-font "arial-bold-r-14.0"
+font "helvetica-bold-r-14.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -325,7 +325,7 @@ x 10
 y 90
 w 175
 h 25
-font "arial-bold-r-14.0"
+font "helvetica-bold-r-14.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -345,7 +345,7 @@ x 10
 y 60
 w 175
 h 25
-font "arial-bold-r-14.0"
+font "helvetica-bold-r-14.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -396,7 +396,7 @@ x 43
 y 377
 w 105
 h 12
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -435,7 +435,7 @@ x 43
 y 389
 w 106
 h 12
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -474,7 +474,7 @@ x 43
 y 401
 w 106
 h 12
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -513,7 +513,7 @@ x 43
 y 413
 w 105
 h 12
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -552,7 +552,7 @@ x 43
 y 425
 w 93
 h 12
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -591,7 +591,7 @@ x 43
 y 437
 w 63
 h 12
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -630,7 +630,7 @@ x 43
 y 449
 w 63
 h 12
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -669,7 +669,7 @@ x 43
 y 461
 w 96
 h 12
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -707,7 +707,7 @@ x 43
 y 185
 w 69
 h 12
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -746,7 +746,7 @@ x 43
 y 197
 w 156
 h 12
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -785,7 +785,7 @@ x 43
 y 209
 w 140
 h 12
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -824,7 +824,7 @@ x 43
 y 221
 w 93
 h 12
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -863,7 +863,7 @@ x 43
 y 233
 w 108
 h 12
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -902,7 +902,7 @@ x 43
 y 245
 w 111
 h 12
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -941,7 +941,7 @@ x 43
 y 257
 w 141
 h 12
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -980,7 +980,7 @@ x 43
 y 269
 w 61
 h 12
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1019,7 +1019,7 @@ x 43
 y 281
 w 96
 h 12
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1058,7 +1058,7 @@ x 43
 y 293
 w 98
 h 12
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1097,7 +1097,7 @@ x 43
 y 305
 w 71
 h 12
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1136,7 +1136,7 @@ x 43
 y 317
 w 114
 h 12
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1175,7 +1175,7 @@ x 43
 y 329
 w 118
 h 12
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1214,7 +1214,7 @@ x 43
 y 341
 w 105
 h 12
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1253,7 +1253,7 @@ x 43
 y 353
 w 115
 h 12
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1292,7 +1292,7 @@ x 43
 y 365
 w 69
 h 12
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1348,7 +1348,7 @@ x 250
 y 461
 w 104
 h 12
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1387,7 +1387,7 @@ x 250
 y 449
 w 156
 h 12
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1426,7 +1426,7 @@ x 250
 y 437
 w 162
 h 12
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1465,7 +1465,7 @@ x 250
 y 425
 w 143
 h 12
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1504,7 +1504,7 @@ x 250
 y 413
 w 83
 h 12
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1543,7 +1543,7 @@ x 250
 y 401
 w 74
 h 12
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1582,7 +1582,7 @@ x 250
 y 389
 w 81
 h 12
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1621,7 +1621,7 @@ x 250
 y 377
 w 154
 h 12
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1660,7 +1660,7 @@ x 250
 y 365
 w 80
 h 12
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1699,7 +1699,7 @@ x 250
 y 353
 w 76
 h 12
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1738,7 +1738,7 @@ x 250
 y 341
 w 80
 h 12
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1777,7 +1777,7 @@ x 250
 y 329
 w 137
 h 12
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1816,7 +1816,7 @@ x 250
 y 317
 w 64
 h 12
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1855,7 +1855,7 @@ x 250
 y 305
 w 113
 h 12
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1894,7 +1894,7 @@ x 250
 y 293
 w 163
 h 12
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1932,7 +1932,7 @@ x 250
 y 281
 w 159
 h 12
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1971,7 +1971,7 @@ x 250
 y 185
 w 150
 h 12
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -2010,7 +2010,7 @@ x 250
 y 197
 w 155
 h 12
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -2049,7 +2049,7 @@ x 250
 y 209
 w 156
 h 12
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -2088,7 +2088,7 @@ x 250
 y 221
 w 154
 h 12
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -2127,7 +2127,7 @@ x 250
 y 233
 w 119
 h 12
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -2166,7 +2166,7 @@ x 250
 y 245
 w 157
 h 12
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -2205,7 +2205,7 @@ x 250
 y 257
 w 154
 h 12
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -2244,7 +2244,7 @@ x 250
 y 269
 w 155
 h 12
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -2268,7 +2268,7 @@ x 5
 y 40
 w 58
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 8
@@ -2294,7 +2294,7 @@ fgColor index 16
 fgAlarm
 bgColor index 10
 fill
-font "arial-bold-r-14.0"
+font "helvetica-bold-r-14.0"
 fontAlign "center"
 endObjectProperties
 
@@ -2313,7 +2313,7 @@ fgColor index 16
 fgAlarm
 bgColor index 10
 fill
-font "arial-bold-r-14.0"
+font "helvetica-bold-r-14.0"
 fontAlign "center"
 endObjectProperties
 
@@ -2332,7 +2332,7 @@ fgColor index 16
 fgAlarm
 bgColor index 10
 fill
-font "arial-bold-r-14.0"
+font "helvetica-bold-r-14.0"
 fontAlign "center"
 endObjectProperties
 

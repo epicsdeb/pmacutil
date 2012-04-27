@@ -7,9 +7,9 @@ x 917
 y 53
 w 340
 h 910
-font "arial-medium-r-18.0"
-ctlFont "arial-medium-r-18.0"
-btnFont "arial-medium-r-18.0"
+font "helvetica-medium-r-18.0"
+ctlFont "helvetica-medium-r-18.0"
+btnFont "helvetica-medium-r-18.0"
 fgColor index 14
 bgColor index 3
 textColor index 14
@@ -126,7 +126,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 0
 botShadowColor index 0
-font "arial-bold-r-14.0"
+font "helvetica-bold-r-14.0"
 xPosOffset 5
 yPosOffset 5
 button3Popup
@@ -152,7 +152,7 @@ x 1
 y 3
 w 339
 h 25
-font "arial-bold-r-16.0"
+font "helvetica-bold-r-16.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 51
@@ -190,7 +190,7 @@ x 10
 y 40
 w 84
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 7
 value {
@@ -210,7 +210,7 @@ x 15
 y 650
 w 37
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 10
 useDisplayBg
@@ -237,7 +237,7 @@ fgColor index 25
 fgAlarm
 bgColor index 3
 fill
-font "arial-bold-r-14.0"
+font "helvetica-bold-r-14.0"
 lineWidth 1
 lineAlarm
 endObjectProperties
@@ -252,7 +252,7 @@ x 15
 y 285
 w 74
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 10
 useDisplayBg
@@ -279,7 +279,7 @@ fgColor index 25
 fgAlarm
 bgColor index 3
 fill
-font "arial-bold-r-14.0"
+font "helvetica-bold-r-14.0"
 lineWidth 1
 lineAlarm
 endObjectProperties
@@ -294,7 +294,7 @@ x 15
 y 250
 w 75
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 10
 useDisplayBg
@@ -319,7 +319,7 @@ fgColor index 16
 fgAlarm
 bgColor index 10
 fill
-font "arial-bold-r-14.0"
+font "helvetica-bold-r-14.0"
 endObjectProperties
 
 # (Static Text)
@@ -332,7 +332,7 @@ x 15
 y 675
 w 89
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 10
 useDisplayBg
@@ -352,7 +352,7 @@ x 285
 y 370
 w 37
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 10
 useDisplayBg
@@ -377,7 +377,7 @@ fgColor index 16
 fgAlarm
 bgColor index 10
 fill
-font "arial-bold-r-14.0"
+font "helvetica-bold-r-14.0"
 endObjectProperties
 
 # (Static Text)
@@ -390,7 +390,7 @@ x 15
 y 370
 w 127
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 10
 useDisplayBg
@@ -410,7 +410,7 @@ x 285
 y 345
 w 37
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 10
 useDisplayBg
@@ -435,7 +435,7 @@ fgColor index 16
 fgAlarm
 bgColor index 10
 fill
-font "arial-bold-r-14.0"
+font "helvetica-bold-r-14.0"
 endObjectProperties
 
 # (Static Text)
@@ -448,7 +448,7 @@ x 15
 y 345
 w 128
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 10
 useDisplayBg
@@ -468,7 +468,7 @@ x 285
 y 675
 w 37
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 10
 useDisplayBg
@@ -496,7 +496,7 @@ topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(Q):CTRL"
 indicatorPv "$(P)$(Q):CTRL:RBV"
-font "arial-bold-r-14.0"
+font "helvetica-bold-r-14.0"
 endObjectProperties
 
 # (Group)
@@ -584,7 +584,7 @@ x 0
 y 0
 w 50
 h 30
-font "arial-bold-r-14.0"
+font "helvetica-bold-r-14.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 3
@@ -613,7 +613,7 @@ bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
 label "EXIT"
-font "arial-medium-r-18.0"
+font "helvetica-medium-r-18.0"
 3d
 endObjectProperties
 
@@ -634,7 +634,7 @@ fgColor index 25
 fgAlarm
 bgColor index 3
 fill
-font "arial-bold-r-14.0"
+font "helvetica-bold-r-14.0"
 lineWidth 1
 lineAlarm
 endObjectProperties
@@ -649,7 +649,7 @@ x 15
 y 505
 w 68
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 10
 useDisplayBg
@@ -676,7 +676,7 @@ fgColor index 25
 fgAlarm
 bgColor index 3
 fill
-font "arial-bold-r-14.0"
+font "helvetica-bold-r-14.0"
 lineWidth 1
 lineAlarm
 endObjectProperties
@@ -691,7 +691,7 @@ x 15
 y 470
 w 85
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 10
 useDisplayBg
@@ -711,7 +711,7 @@ x 285
 y 590
 w 37
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 10
 useDisplayBg
@@ -736,7 +736,7 @@ fgColor index 16
 fgAlarm
 bgColor index 10
 fill
-font "arial-bold-r-14.0"
+font "helvetica-bold-r-14.0"
 endObjectProperties
 
 # (Static Text)
@@ -749,7 +749,7 @@ x 285
 y 565
 w 37
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 10
 useDisplayBg
@@ -774,7 +774,7 @@ fgColor index 16
 fgAlarm
 bgColor index 10
 fill
-font "arial-bold-r-14.0"
+font "helvetica-bold-r-14.0"
 endObjectProperties
 
 # (Static Text)
@@ -787,7 +787,7 @@ x 15
 y 565
 w 138
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 10
 useDisplayBg
@@ -807,7 +807,7 @@ x 10
 y 220
 w 51
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 7
 value {
@@ -827,7 +827,7 @@ x 10
 y 625
 w 72
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 7
 value {
@@ -847,7 +847,7 @@ x 285
 y 700
 w 37
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 10
 useDisplayBg
@@ -867,7 +867,7 @@ x 285
 y 725
 w 37
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 10
 useDisplayBg
@@ -892,7 +892,7 @@ fgColor index 16
 fgAlarm
 bgColor index 10
 fill
-font "arial-bold-r-14.0"
+font "helvetica-bold-r-14.0"
 endObjectProperties
 
 # (Static Text)
@@ -905,7 +905,7 @@ x 15
 y 725
 w 113
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 10
 useDisplayBg
@@ -930,7 +930,7 @@ fgColor index 16
 fgAlarm
 bgColor index 10
 fill
-font "arial-bold-r-14.0"
+font "helvetica-bold-r-14.0"
 endObjectProperties
 
 # (Static Text)
@@ -943,7 +943,7 @@ x 15
 y 700
 w 114
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 10
 useDisplayBg
@@ -963,7 +963,7 @@ x 285
 y 750
 w 37
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 10
 useDisplayBg
@@ -983,7 +983,7 @@ x 285
 y 775
 w 37
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 10
 useDisplayBg
@@ -1008,7 +1008,7 @@ fgColor index 16
 fgAlarm
 bgColor index 10
 fill
-font "arial-bold-r-14.0"
+font "helvetica-bold-r-14.0"
 endObjectProperties
 
 # (Static Text)
@@ -1021,7 +1021,7 @@ x 15
 y 775
 w 107
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 10
 useDisplayBg
@@ -1046,7 +1046,7 @@ fgColor index 16
 fgAlarm
 bgColor index 10
 fill
-font "arial-bold-r-14.0"
+font "helvetica-bold-r-14.0"
 endObjectProperties
 
 # (Static Text)
@@ -1059,7 +1059,7 @@ x 15
 y 750
 w 124
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 10
 useDisplayBg
@@ -1084,7 +1084,7 @@ fgColor index 16
 fgAlarm
 bgColor index 10
 fill
-font "arial-bold-r-14.0"
+font "helvetica-bold-r-14.0"
 endObjectProperties
 
 # (Static Text)
@@ -1097,7 +1097,7 @@ x 15
 y 850
 w 76
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 10
 useDisplayBg
@@ -1122,7 +1122,7 @@ fgColor index 16
 fgAlarm
 bgColor index 10
 fill
-font "arial-bold-r-14.0"
+font "helvetica-bold-r-14.0"
 endObjectProperties
 
 # (Textupdate)
@@ -1140,7 +1140,7 @@ fgColor index 14
 fgAlarm
 bgColor index 5
 fill
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -1158,7 +1158,7 @@ fgColor index 14
 fgAlarm
 bgColor index 5
 fill
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -1176,7 +1176,7 @@ fgColor index 14
 fgAlarm
 bgColor index 5
 fill
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -1194,7 +1194,7 @@ fgColor index 14
 fgAlarm
 bgColor index 5
 fill
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -1212,7 +1212,7 @@ fgColor index 16
 fgAlarm
 bgColor index 10
 fill
-font "arial-bold-r-14.0"
+font "helvetica-bold-r-14.0"
 endObjectProperties
 
 # (Static Text)
@@ -1225,7 +1225,7 @@ x 15
 y 825
 w 86
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 10
 useDisplayBg
@@ -1245,7 +1245,7 @@ x 15
 y 540
 w 306
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 10
 useDisplayBg
@@ -1265,7 +1265,7 @@ x 15
 y 320
 w 300
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 10
 useDisplayBg
@@ -1285,7 +1285,7 @@ x 10
 y 440
 w 94
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 7
 value {
@@ -1305,7 +1305,7 @@ x 15
 y 800
 w 99
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 10
 useDisplayBg
@@ -1330,7 +1330,7 @@ fgColor index 16
 fgAlarm
 bgColor index 10
 fill
-font "arial-bold-r-14.0"
+font "helvetica-bold-r-14.0"
 endObjectProperties
 
 # (Static Text)
@@ -1343,7 +1343,7 @@ x 15
 y 395
 w 141
 h 28
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 10
 useDisplayBg
@@ -1372,7 +1372,7 @@ topShadowColor index 0
 botShadowColor index 14
 controlPv "$(P)$(Q):INIT"
 3d
-font "arial-bold-r-14.0"
+font "helvetica-bold-r-14.0"
 objType "controls"
 endObjectProperties
 
@@ -1386,7 +1386,7 @@ x 15
 y 590
 w 133
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 10
 useDisplayBg

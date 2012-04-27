@@ -7,9 +7,9 @@ x 987
 y 751
 w 381
 h 308
-font "arial-medium-r-18.0"
-ctlFont "arial-medium-r-18.0"
-btnFont "arial-medium-r-18.0"
+font "helvetica-medium-r-18.0"
+ctlFont "helvetica-medium-r-18.0"
+btnFont "helvetica-medium-r-18.0"
 fgColor index 14
 bgColor index 3
 textColor index 14
@@ -88,7 +88,7 @@ x 0
 y 3
 w 380
 h 24
-font "arial-bold-r-16.0"
+font "helvetica-bold-r-16.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 48
@@ -141,7 +141,7 @@ bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
 label "EXIT"
-font "arial-medium-r-14.0"
+font "helvetica-medium-r-14.0"
 3d
 endObjectProperties
 
@@ -170,7 +170,7 @@ x 195
 y 240
 w 140
 h 20
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -189,7 +189,7 @@ x 195
 y 215
 w 140
 h 20
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -208,7 +208,7 @@ x 195
 y 190
 w 140
 h 20
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -227,7 +227,7 @@ x 195
 y 165
 w 140
 h 20
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -318,7 +318,7 @@ x 195
 y 140
 w 140
 h 20
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -355,7 +355,7 @@ x 10
 y 240
 w 140
 h 20
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -374,7 +374,7 @@ x 10
 y 215
 w 140
 h 20
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -393,7 +393,7 @@ x 10
 y 190
 w 140
 h 20
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -412,7 +412,7 @@ x 10
 y 165
 w 140
 h 20
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -503,7 +503,7 @@ x 10
 y 140
 w 140
 h 20
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -540,7 +540,7 @@ x 5
 y 35
 w 65
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 8
@@ -563,7 +563,7 @@ w 95
 h 25
 controlPv "$(SYS)$(DEVICE)Sts:1-SCalcout_"
 format "hex"
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor index 16
 fgAlarm
@@ -589,7 +589,7 @@ w 95
 h 25
 controlPv "$(SYS)$(DEVICE)Sts:2-SCalcout_"
 format "hex"
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor index 16
 fgAlarm
@@ -619,7 +619,7 @@ inconsistentColor index 20
 topShadowColor index 1
 botShadowColor index 11
 controlPv "$(SYS)$(DEVICE)Cnt:Axis-SP.SCAN"
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 endObjectProperties
 
 # (Textentry)
@@ -638,7 +638,7 @@ fgColor index 25
 fgAlarm
 bgColor index 10
 fill
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -652,7 +652,7 @@ x 245
 y 65
 w 40
 h 20
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -677,7 +677,7 @@ fgColor index 25
 fgAlarm
 bgColor index 10
 fill
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -691,7 +691,7 @@ x 15
 y 65
 w 100
 h 20
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
