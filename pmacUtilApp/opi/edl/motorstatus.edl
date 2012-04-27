@@ -93,7 +93,7 @@ fontAlign "center"
 fgColor index 14
 bgColor index 48
 value {
-  "$(P)$(R) - motor status"
+  "$(SYS)$(DEVICE) - motor status"
 }
 endObjectProperties
 
@@ -246,7 +246,7 @@ x 340
 y 190
 w 20
 h 20
-controlPv "$(P)$(R):STATUS4.B9"
+controlPv "$(SYS)$(DEVICE)Sts:4-Sts.B9"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -264,7 +264,7 @@ x 340
 y 165
 w 20
 h 20
-controlPv "$(P)$(R):STATUS4.B6"
+controlPv "$(SYS)$(DEVICE)Sts:4-Sts.B6"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -282,7 +282,7 @@ x 340
 y 140
 w 20
 h 20
-controlPv "$(P)$(R):STATUS3.BA"
+controlPv "$(SYS)$(DEVICE)Sts:3-Sts.BA"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -300,7 +300,7 @@ x 340
 y 215
 w 20
 h 20
-controlPv "$(P)$(R):STATUS4.BA"
+controlPv "$(SYS)$(DEVICE)Sts:4-Sts.BA"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -337,7 +337,7 @@ x 340
 y 240
 w 20
 h 20
-controlPv "$(P)$(R):STATUS4.BB"
+controlPv "$(SYS)$(DEVICE)Sts:4-Sts.BB"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -431,7 +431,7 @@ x 155
 y 190
 w 20
 h 20
-controlPv "$(P)$(R):STATUS1.B2"
+controlPv "$(SYS)$(DEVICE)Sts:1-Sts.B2"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -449,7 +449,7 @@ x 155
 y 165
 w 20
 h 20
-controlPv "$(P)$(R):STATUS1.B1"
+controlPv "$(SYS)$(DEVICE)Sts:1-Sts.B1"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -467,7 +467,7 @@ x 155
 y 140
 w 20
 h 20
-controlPv "$(P)$(R):STATUS1.B0"
+controlPv "$(SYS)$(DEVICE)Sts:1-Sts.B0"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -485,7 +485,7 @@ x 155
 y 215
 w 20
 h 20
-controlPv "$(P)$(R):STATUS1.BA"
+controlPv "$(SYS)$(DEVICE)Sts:1-Sts.BA"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -522,7 +522,7 @@ x 155
 y 240
 w 20
 h 20
-controlPv "$(P)$(R):STATUS1.BB"
+controlPv "$(SYS)$(DEVICE)Sts:1-Sts.BB"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -561,7 +561,7 @@ x 155
 y 105
 w 95
 h 25
-controlPv "$(P)$(R):STAT1"
+controlPv "$(SYS)$(DEVICE)Sts:1-SCalcout_"
 format "hex"
 font "arial-medium-r-12.0"
 fontAlign "center"
@@ -587,7 +587,7 @@ x 265
 y 105
 w 95
 h 25
-controlPv "$(P)$(R):STAT2"
+controlPv "$(SYS)$(DEVICE)Sts:2-SCalcout_"
 format "hex"
 font "arial-medium-r-12.0"
 fontAlign "center"
@@ -618,7 +618,7 @@ bgColor index 3
 inconsistentColor index 20
 topShadowColor index 1
 botShadowColor index 11
-controlPv "$(P)$(R):AXISN.SCAN"
+controlPv "$(SYS)$(DEVICE)Cnt:Axis-SP.SCAN"
 font "arial-medium-r-12.0"
 endObjectProperties
 
@@ -632,7 +632,7 @@ x 155
 y 55
 w 85
 h 35
-controlPv "$(P)$(R):GETSTATUS.PORT"
+controlPv "$(SYS)$(DEVICE)Sts-Asyn_.PORT"
 displayMode "decimal"
 fgColor index 25
 fgAlarm
@@ -671,7 +671,7 @@ x 290
 y 55
 w 65
 h 35
-controlPv "$(P)$(R):AXISN"
+controlPv "$(SYS)$(DEVICE)Cnt:Axis-SP"
 displayMode "decimal"
 fgColor index 25
 fgAlarm
