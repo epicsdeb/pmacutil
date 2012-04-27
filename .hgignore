@@ -9,3 +9,4 @@ O.Common/
 O.linux-x86/
 *.swp
 qt/
+*.edl~
