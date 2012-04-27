@@ -4,7 +4,7 @@ major 4
 minor 0
 release 1
 x 987
-y 751
+y 773
 w 381
 h 308
 font "helvetica-medium-r-18.0"
@@ -88,7 +88,7 @@ x 0
 y 3
 w 380
 h 24
-font "helvetica-bold-r-16.0"
+font "helvetica-medium-r-18.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 48
@@ -538,7 +538,7 @@ minor 1
 release 0
 x 5
 y 35
-w 65
+w 66
 h 14
 font "helvetica-medium-r-12.0"
 fontAlign "center"
@@ -555,7 +555,7 @@ endObjectProperties
 object activeXTextDspClass:noedit
 beginObjectProperties
 major 4
-minor 1
+minor 5
 release 0
 x 155
 y 105
@@ -575,13 +575,14 @@ useHexPrefix
 useAlarmBorder
 newPos
 objType "monitors"
+noExecuteClipMask
 endObjectProperties
 
 # (Text Monitor)
 object activeXTextDspClass:noedit
 beginObjectProperties
 major 4
-minor 1
+minor 5
 release 0
 x 265
 y 105
@@ -601,6 +602,7 @@ useHexPrefix
 useAlarmBorder
 newPos
 objType "monitors"
+noExecuteClipMask
 endObjectProperties
 
 # (Menu Button)
@@ -622,7 +624,7 @@ controlPv "$(SYS)$(DEVICE)Cnt:Axis-SP.SCAN"
 font "helvetica-medium-r-12.0"
 endObjectProperties
 
-# (Textentry)
+# (Text Entry)
 object TextentryClass
 beginObjectProperties
 major 10
@@ -661,7 +663,7 @@ value {
 }
 endObjectProperties
 
-# (Textentry)
+# (Text Entry)
 object TextentryClass
 beginObjectProperties
 major 10
