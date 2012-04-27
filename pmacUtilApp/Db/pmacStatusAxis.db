@@ -49,7 +49,7 @@ record(mbbiDirect, "$(SYS){$(DEVICE)-$(AXIS)}Sts:2-Sts") {
 }
 
 #% archiver 10 Monitor
-record(mbbiDirect, "$(SYS){$(DEVICE)-$(AXIS)}Sts:2-Sts") {
+record(mbbiDirect, "$(SYS){$(DEVICE)-$(AXIS)}Sts:3-Sts") {
 }
 
 #! Further lines contain data used by VisualDCT
