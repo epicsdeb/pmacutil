@@ -62,7 +62,7 @@ record(ai, "$(SYS){$(DEVICE)}Val:CPULoad-I") {
 # % archiver 10 Monitor
 record(mbbiDirect, "$(SYS){$(DEVICE)}Sts:1-Sts") {
   field(DTYP, "stream")
-  field(INP, "@pmac.proto getStatus(???,$(DEVICE)) $(PORT)")
+  field(INP, "@pmac.proto getStatus(???,$(SYS){$(DEVICE)}) $(PORT)")
 }
 
 # % archiver 10 Monitor
