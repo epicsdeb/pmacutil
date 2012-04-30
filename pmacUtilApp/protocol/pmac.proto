@@ -27,25 +27,7 @@ setVar
 getStatus
 {
   out "\$1" CR;
-  in "%4x%(\$2)4x%(\$3)4x";
-}
-
-getStatus1
-{
-  out "\$1" CR;
-  in "%4x%*4x%*4x";
-}
-
-getStatus2
-{
-  out "\$1" CR;
-  in "%*4x%4x%*4x";
-}
-
-getStatus3
-{
-  out "\$1" CR;
-  in "%*4x%*4x%4x";
+  in "%4x%(\$2Sts:2-Sts.VAL)4x%(\$2Sts:3-Sts.VAL)4x";
 }
 
 getPlcsDisabled1
