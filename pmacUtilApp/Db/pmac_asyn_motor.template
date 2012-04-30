@@ -1,6 +1,6 @@
 #% macro, SPORT, Asyn port for eloss commands 
 # usually PMAC_S<n> for pmacs, the name of the pmacAsynIpPort for bricks
-#% macro, HOME, Prefix for autohome instance. Defaults to $(P). If unspecified,
+#% macro, HOME, Prefix for autohome instance. Defaults to $P. If unspecified,
 # the template contains enough records to keep the motor record happy
 #% macro, ALLOW_HOMED_SET, Set to a blank to allow this axis to have its homed
 # status manually.  This is set to a comment character by default.

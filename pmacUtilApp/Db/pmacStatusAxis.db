@@ -8,26 +8,26 @@
 # % macro, AXIS,    Axis number
 # % macro, PORT,    Asyn port
 
-record(ai, "$(SYS){$(DEVICE)-$(AXIS)}Pos-I") {
+record(ai, "$(SYS){$(DEVICE)-Ax:$(AXIS)}Pos-I") {
   field(DTYP, "stream")
   field(INP, "@pmac.proto getVar(#$(AXIS)P) $(PORT)")
 }
 
-record(ai, "$(SYS){$(DEVICE)-$(AXIS)}Val:FollErr-I") {
+record(ai, "$(SYS){$(DEVICE)-Ax:$(AXIS)}Val:FollErr-I") {
   field(DTYP, "stream")
   field(INP, "@pmac.proto getVar(#$(AXIS)F) $(PORT)")
 }
 
-record(ai, "$(SYS){$(DEVICE)-$(AXIS)}Val:Vlcty-I") {
+record(ai, "$(SYS){$(DEVICE)-Ax:$(AXIS)}Val:Vlcty-I") {
   field(DTYP, "stream")
   field(INP, "@pmac.proto getVar(#$(AXIS)V) $(PORT)")
 }
 
-record(seq, "$(SYS){$(DEVICE)-$(AXIS)}RB-Seq_") {
-  field(LNK1, "$(SYS){$(DEVICE)-$(AXIS)}Pos-I.PROC PP")
-  field(LNK2, "$(SYS){$(DEVICE)-$(AXIS)}Val:FollErr-I.PROC PP")
-  field(LNK3, "$(SYS){$(DEVICE)-$(AXIS)}Val:Vlcty-I.PROC PP")
-  field(LNK4, "$(SYS){$(DEVICE)-$(AXIS)}Sts:1-Sts.PROC PP")
+record(seq, "$(SYS){$(DEVICE)-Ax:$(AXIS)}RB-Seq_") {
+  field(LNK1, "$(SYS){$(DEVICE)-Ax:$(AXIS)}Pos-I.PROC PP")
+  field(LNK2, "$(SYS){$(DEVICE)-Ax:$(AXIS)}Val:FollErr-I.PROC PP")
+  field(LNK3, "$(SYS){$(DEVICE)-Ax:$(AXIS)}Val:Vlcty-I.PROC PP")
+  field(LNK4, "$(SYS){$(DEVICE)-Ax:$(AXIS)}Sts:1-Sts.PROC PP")
   field(DLY1, "0")
   field(DLY2, "0.5")
   field(DLY3, "0.5")
@@ -39,36 +39,36 @@ record(seq, "$(SYS){$(DEVICE)-$(AXIS)}RB-Seq_") {
 }
 
 #% archiver 10 Monitor
-record(mbbiDirect, "$(SYS){$(DEVICE)-$(AXIS)}Sts:1-Sts") {
+record(mbbiDirect, "$(SYS){$(DEVICE)-Ax:$(AXIS)}Sts:1-Sts") {
   field(DTYP, "stream")
-  field(INP, "@pmac.proto getStatus(#$(AXIS)?,$(SYS){$(DEVICE)-$(AXIS)}) $(PORT)")
+  field(INP, "@pmac.proto getStatus(#$(AXIS)?,$(SYS){$(DEVICE)-Ax:$(AXIS)}) $(PORT)")
 }
 
 #% archiver 10 Monitor
-record(mbbiDirect, "$(SYS){$(DEVICE)-$(AXIS)}Sts:2-Sts") {
+record(mbbiDirect, "$(SYS){$(DEVICE)-Ax:$(AXIS)}Sts:2-Sts") {
 }
 
 #% archiver 10 Monitor
-record(mbbiDirect, "$(SYS){$(DEVICE)-$(AXIS)}Sts:3-Sts") {
+record(mbbiDirect, "$(SYS){$(DEVICE)-Ax:$(AXIS)}Sts:3-Sts") {
 }
 
 #! Further lines contain data used by VisualDCT
 #! View(4433,4629,1.5)
-#! Record("$(SYS){$(DEVICE)-$(AXIS)}Pos-I",2920,3196,0,1,"$(SYS){$(DEVICE)-$(AXIS)}Pos-I")
-#! Record("$(SYS){$(DEVICE)-$(AXIS)}Val:FollErr-I",2920,3336,0,1,"$(SYS){$(DEVICE)-$(AXIS)}Val:FollErr-I")
-#! Record("$(SYS){$(DEVICE)-$(AXIS)}Val:Vlcty-I",2920,3476,0,1,"$(SYS){$(DEVICE)-$(AXIS)}Val:Vlcty-I")
-#! Record("$(SYS){$(DEVICE)-$(AXIS)}RB-Seq_",3180,3194,0,1,"$(SYS){$(DEVICE)-$(AXIS)}RB-Seq_")
-#! Field("$(SYS){$(DEVICE)-$(AXIS)}RB-Seq_.LNK1",16777215,0,"$(SYS){$(DEVICE)-$(AXIS)}RB-Seq_.LNK1")
-#! Link("$(SYS){$(DEVICE)-$(AXIS)}RB-Seq_.LNK1","$(SYS){$(DEVICE)-$(AXIS)}Pos-I")
-#! Field("$(SYS){$(DEVICE)-$(AXIS)}RB-Seq_.LNK2",16777215,0,"$(SYS){$(DEVICE)-$(AXIS)}RB-Seq_.LNK2")
-#! Link("$(SYS){$(DEVICE)-$(AXIS)}RB-Seq_.LNK2","$(SYS){$(DEVICE)-$(AXIS)}Val:FollErr-I")
-#! Field("$(SYS){$(DEVICE)-$(AXIS)}RB-Seq_.LNK3",16777215,0,"$(SYS){$(DEVICE)-$(AXIS)}RB-Seq_.LNK3")
-#! Link("$(SYS){$(DEVICE)-$(AXIS)}RB-Seq_.LNK3","$(SYS){$(DEVICE)-$(AXIS)}Val:Vlcty-I")
-#! Field("$(SYS){$(DEVICE)-$(AXIS)}RB-Seq_.LNK4",16777215,1,"$(SYS){$(DEVICE)-$(AXIS)}RB-Seq_.LNK4")
-#! Link("$(SYS){$(DEVICE)-$(AXIS)}RB-Seq_.LNK4","$(SYS){$(DEVICE)-$(AXIS)}Sts:1-Sts")
-#! Record("$(SYS){$(DEVICE)-$(AXIS)}Sts:1-Sts",3460,3176,0,0,"$(SYS){$(DEVICE)-$(AXIS)}Sts:1-Sts")
-#! Record("$(SYS){$(DEVICE)-$(AXIS)}Sts:2-Sts",3460,3283,0,1,"$(SYS){$(DEVICE)-$(AXIS)}Sts:2-Sts")
-#! Record("$(SYS){$(DEVICE)-$(AXIS)}Sts:2-Sts",3460,3363,0,1,"$(SYS){$(DEVICE)-$(AXIS)}Sts:2-Sts")
+#! Record("$(SYS){$(DEVICE)-Ax:$(AXIS)}Pos-I",2920,3196,0,1,"$(SYS){$(DEVICE)-Ax:$(AXIS)}Pos-I")
+#! Record("$(SYS){$(DEVICE)-Ax:$(AXIS)}Val:FollErr-I",2920,3336,0,1,"$(SYS){$(DEVICE)-Ax:$(AXIS)}Val:FollErr-I")
+#! Record("$(SYS){$(DEVICE)-Ax:$(AXIS)}Val:Vlcty-I",2920,3476,0,1,"$(SYS){$(DEVICE)-Ax:$(AXIS)}Val:Vlcty-I")
+#! Record("$(SYS){$(DEVICE)-Ax:$(AXIS)}RB-Seq_",3180,3194,0,1,"$(SYS){$(DEVICE)-Ax:$(AXIS)}RB-Seq_")
+#! Field("$(SYS){$(DEVICE)-Ax:$(AXIS)}RB-Seq_.LNK1",16777215,0,"$(SYS){$(DEVICE)-Ax:$(AXIS)}RB-Seq_.LNK1")
+#! Link("$(SYS){$(DEVICE)-Ax:$(AXIS)}RB-Seq_.LNK1","$(SYS){$(DEVICE)-Ax:$(AXIS)}Pos-I")
+#! Field("$(SYS){$(DEVICE)-Ax:$(AXIS)}RB-Seq_.LNK2",16777215,0,"$(SYS){$(DEVICE)-Ax:$(AXIS)}RB-Seq_.LNK2")
+#! Link("$(SYS){$(DEVICE)-Ax:$(AXIS)}RB-Seq_.LNK2","$(SYS){$(DEVICE)-Ax:$(AXIS)}Val:FollErr-I")
+#! Field("$(SYS){$(DEVICE)-Ax:$(AXIS)}RB-Seq_.LNK3",16777215,0,"$(SYS){$(DEVICE)-Ax:$(AXIS)}RB-Seq_.LNK3")
+#! Link("$(SYS){$(DEVICE)-Ax:$(AXIS)}RB-Seq_.LNK3","$(SYS){$(DEVICE)-Ax:$(AXIS)}Val:Vlcty-I")
+#! Field("$(SYS){$(DEVICE)-Ax:$(AXIS)}RB-Seq_.LNK4",16777215,1,"$(SYS){$(DEVICE)-Ax:$(AXIS)}RB-Seq_.LNK4")
+#! Link("$(SYS){$(DEVICE)-Ax:$(AXIS)}RB-Seq_.LNK4","$(SYS){$(DEVICE)-Ax:$(AXIS)}Sts:1-Sts")
+#! Record("$(SYS){$(DEVICE)-Ax:$(AXIS)}Sts:1-Sts",3460,3176,0,0,"$(SYS){$(DEVICE)-Ax:$(AXIS)}Sts:1-Sts")
+#! Record("$(SYS){$(DEVICE)-Ax:$(AXIS)}Sts:2-Sts",3460,3283,0,1,"$(SYS){$(DEVICE)-Ax:$(AXIS)}Sts:2-Sts")
+#! Record("$(SYS){$(DEVICE)-Ax:$(AXIS)}Sts:2-Sts",3460,3363,0,1,"$(SYS){$(DEVICE)-Ax:$(AXIS)}Sts:2-Sts")
 #! Line(Line26,4240,4500,4240,4540,0,0,0,16777215,Border0)
 #! Line(Line25,3200,4500,3200,4540,0,0,0,16777215,Border0)
 #! Line(Line24,3720,4500,3720,4540,0,0,0,16777215,Border0)
