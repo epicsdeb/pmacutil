@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 1186
-y 388
+x 668
+y 129
 w 430
 h 515
 font "arial-medium-r-16.0"
@@ -19,7 +19,7 @@ ctlBgColor1 index 3
 ctlBgColor2 index 5
 topShadowColor index 1
 botShadowColor index 11
-title "PMAC Status Axis - $(SYS){$(DEVICE)-$(AXIS)}"
+title "PMAC Status Axis - $(SYS)\{$(DEVICE)-$(AXIS)\}"
 showGrid
 snapToGrid
 gridSize 5
@@ -118,7 +118,7 @@ x 40
 y 3
 w 385
 h 25
-font "arial-bold-r-16.0"
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 48
@@ -241,7 +241,7 @@ x 0
 y 0
 w 96
 h 31
-font "arial-bold-r-14.0"
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 0
@@ -263,9 +263,9 @@ minor 1
 release 0
 x 5
 y 165
-w 71
+w 76
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 8
@@ -303,9 +303,9 @@ minor 1
 release 0
 x 10
 y 120
-w 175
-h 25
-font "arial-bold-r-14.0"
+w 85
+h 14
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -323,9 +323,9 @@ minor 1
 release 0
 x 10
 y 90
-w 175
-h 25
-font "arial-bold-r-14.0"
+w 46
+h 14
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -343,9 +343,9 @@ minor 1
 release 0
 x 10
 y 60
-w 175
-h 25
-font "arial-bold-r-14.0"
+w 44
+h 14
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -378,7 +378,7 @@ x 13
 y 377
 w 12
 h 12
-controlPv "$(SYS){$(DEVICE)-$(AXIS)}Sts:2-Sts"
+controlPv "$(SYS)\{$(DEVICE)-$(AXIS)\}Sts:2-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -394,9 +394,9 @@ minor 1
 release 0
 x 43
 y 377
-w 105
-h 12
-font "arial-medium-r-10.0"
+w 127
+h 14
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -416,7 +416,7 @@ x 13
 y 389
 w 12
 h 12
-controlPv "$(SYS){$(DEVICE)-$(AXIS)}Sts:2-Sts"
+controlPv "$(SYS)\{$(DEVICE)-$(AXIS)\}Sts:2-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -433,9 +433,9 @@ minor 1
 release 0
 x 43
 y 389
-w 106
-h 12
-font "arial-medium-r-10.0"
+w 127
+h 14
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -455,7 +455,7 @@ x 13
 y 401
 w 12
 h 12
-controlPv "$(SYS){$(DEVICE)-$(AXIS)}Sts:2-Sts"
+controlPv "$(SYS)\{$(DEVICE)-$(AXIS)\}Sts:2-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -472,9 +472,9 @@ minor 1
 release 0
 x 43
 y 401
-w 106
-h 12
-font "arial-medium-r-10.0"
+w 127
+h 14
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -494,7 +494,7 @@ x 13
 y 413
 w 12
 h 12
-controlPv "$(SYS){$(DEVICE)-$(AXIS)}Sts:2-Sts"
+controlPv "$(SYS)\{$(DEVICE)-$(AXIS)\}Sts:2-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -511,9 +511,9 @@ minor 1
 release 0
 x 43
 y 413
-w 105
-h 12
-font "arial-medium-r-10.0"
+w 127
+h 14
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -533,7 +533,7 @@ x 13
 y 425
 w 12
 h 12
-controlPv "$(SYS){$(DEVICE)-$(AXIS)}Sts:2-Sts"
+controlPv "$(SYS)\{$(DEVICE)-$(AXIS)\}Sts:2-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -550,9 +550,9 @@ minor 1
 release 0
 x 43
 y 425
-w 93
-h 12
-font "arial-medium-r-10.0"
+w 111
+h 14
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -572,7 +572,7 @@ x 13
 y 437
 w 12
 h 12
-controlPv "$(SYS){$(DEVICE)-$(AXIS)}Sts:2-Sts"
+controlPv "$(SYS)\{$(DEVICE)-$(AXIS)\}Sts:2-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -589,9 +589,9 @@ minor 1
 release 0
 x 43
 y 437
-w 63
-h 12
-font "arial-medium-r-10.0"
+w 76
+h 14
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -611,7 +611,7 @@ x 13
 y 449
 w 12
 h 12
-controlPv "$(SYS){$(DEVICE)-$(AXIS)}Sts:2-Sts"
+controlPv "$(SYS)\{$(DEVICE)-$(AXIS)\}Sts:2-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -628,9 +628,9 @@ minor 1
 release 0
 x 43
 y 449
-w 63
-h 12
-font "arial-medium-r-10.0"
+w 76
+h 14
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -650,7 +650,7 @@ x 13
 y 461
 w 12
 h 12
-controlPv "$(SYS){$(DEVICE)-$(AXIS)}Sts:2-Sts"
+controlPv "$(SYS)\{$(DEVICE)-$(AXIS)\}Sts:2-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -667,9 +667,9 @@ minor 1
 release 0
 x 43
 y 461
-w 96
-h 12
-font "arial-medium-r-10.0"
+w 115
+h 14
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -689,7 +689,7 @@ x 13
 y 185
 w 12
 h 12
-controlPv "$(SYS){$(DEVICE)-$(AXIS)}Sts:2-Sts"
+controlPv "$(SYS)\{$(DEVICE)-$(AXIS)\}Sts:2-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -705,9 +705,9 @@ minor 1
 release 0
 x 43
 y 185
-w 69
-h 12
-font "arial-medium-r-10.0"
+w 83
+h 14
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -727,7 +727,7 @@ x 13
 y 197
 w 12
 h 12
-controlPv "$(SYS){$(DEVICE)-$(AXIS)}Sts:2-Sts"
+controlPv "$(SYS)\{$(DEVICE)-$(AXIS)\}Sts:2-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -744,9 +744,9 @@ minor 1
 release 0
 x 43
 y 197
-w 156
-h 12
-font "arial-medium-r-10.0"
+w 188
+h 14
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -766,7 +766,7 @@ x 13
 y 209
 w 12
 h 12
-controlPv "$(SYS){$(DEVICE)-$(AXIS)}Sts:2-Sts"
+controlPv "$(SYS)\{$(DEVICE)-$(AXIS)\}Sts:2-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -783,9 +783,9 @@ minor 1
 release 0
 x 43
 y 209
-w 140
-h 12
-font "arial-medium-r-10.0"
+w 170
+h 14
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -805,7 +805,7 @@ x 13
 y 221
 w 12
 h 12
-controlPv "$(SYS){$(DEVICE)-$(AXIS)}Sts:2-Sts"
+controlPv "$(SYS)\{$(DEVICE)-$(AXIS)\}Sts:2-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -822,9 +822,9 @@ minor 1
 release 0
 x 43
 y 221
-w 93
-h 12
-font "arial-medium-r-10.0"
+w 105
+h 14
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -844,7 +844,7 @@ x 13
 y 233
 w 12
 h 12
-controlPv "$(SYS){$(DEVICE)-$(AXIS)}Sts:2-Sts"
+controlPv "$(SYS)\{$(DEVICE)-$(AXIS)\}Sts:2-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -861,9 +861,9 @@ minor 1
 release 0
 x 43
 y 233
-w 108
-h 12
-font "arial-medium-r-10.0"
+w 127
+h 14
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -883,7 +883,7 @@ x 13
 y 245
 w 12
 h 12
-controlPv "$(SYS){$(DEVICE)-$(AXIS)}Sts:2-Sts"
+controlPv "$(SYS)\{$(DEVICE)-$(AXIS)\}Sts:2-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -900,9 +900,9 @@ minor 1
 release 0
 x 43
 y 245
-w 111
-h 12
-font "arial-medium-r-10.0"
+w 126
+h 14
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -922,7 +922,7 @@ x 13
 y 257
 w 12
 h 12
-controlPv "$(SYS){$(DEVICE)-$(AXIS)}Sts:2-Sts"
+controlPv "$(SYS)\{$(DEVICE)-$(AXIS)\}Sts:2-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -939,9 +939,9 @@ minor 1
 release 0
 x 43
 y 257
-w 141
-h 12
-font "arial-medium-r-10.0"
+w 165
+h 14
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -961,7 +961,7 @@ x 13
 y 269
 w 12
 h 12
-controlPv "$(SYS){$(DEVICE)-$(AXIS)}Sts:2-Sts"
+controlPv "$(SYS)\{$(DEVICE)-$(AXIS)\}Sts:2-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -978,9 +978,9 @@ minor 1
 release 0
 x 43
 y 269
-w 61
-h 12
-font "arial-medium-r-10.0"
+w 73
+h 14
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1000,7 +1000,7 @@ x 13
 y 281
 w 12
 h 12
-controlPv "$(SYS){$(DEVICE)-$(AXIS)}Sts:2-Sts"
+controlPv "$(SYS)\{$(DEVICE)-$(AXIS)\}Sts:2-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -1017,9 +1017,9 @@ minor 1
 release 0
 x 43
 y 281
-w 96
-h 12
-font "arial-medium-r-10.0"
+w 117
+h 14
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1039,7 +1039,7 @@ x 13
 y 293
 w 12
 h 12
-controlPv "$(SYS){$(DEVICE)-$(AXIS)}Sts:2-Sts"
+controlPv "$(SYS)\{$(DEVICE)-$(AXIS)\}Sts:2-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -1056,9 +1056,9 @@ minor 1
 release 0
 x 43
 y 293
-w 98
-h 12
-font "arial-medium-r-10.0"
+w 120
+h 14
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1078,7 +1078,7 @@ x 13
 y 305
 w 12
 h 12
-controlPv "$(SYS){$(DEVICE)-$(AXIS)}Sts:2-Sts"
+controlPv "$(SYS)\{$(DEVICE)-$(AXIS)\}Sts:2-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -1095,9 +1095,9 @@ minor 1
 release 0
 x 43
 y 305
-w 71
-h 12
-font "arial-medium-r-10.0"
+w 86
+h 14
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1117,7 +1117,7 @@ x 13
 y 317
 w 12
 h 12
-controlPv "$(SYS){$(DEVICE)-$(AXIS)}Sts:2-Sts"
+controlPv "$(SYS)\{$(DEVICE)-$(AXIS)\}Sts:2-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -1134,9 +1134,9 @@ minor 1
 release 0
 x 43
 y 317
-w 114
-h 12
-font "arial-medium-r-10.0"
+w 136
+h 14
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1156,7 +1156,7 @@ x 13
 y 329
 w 12
 h 12
-controlPv "$(SYS){$(DEVICE)-$(AXIS)}Sts:2-Sts"
+controlPv "$(SYS)\{$(DEVICE)-$(AXIS)\}Sts:2-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -1173,9 +1173,9 @@ minor 1
 release 0
 x 43
 y 329
-w 118
-h 12
-font "arial-medium-r-10.0"
+w 142
+h 14
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1195,7 +1195,7 @@ x 13
 y 341
 w 12
 h 12
-controlPv "$(SYS){$(DEVICE)-$(AXIS)}Sts:2-Sts"
+controlPv "$(SYS)\{$(DEVICE)-$(AXIS)\}Sts:2-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -1212,9 +1212,9 @@ minor 1
 release 0
 x 43
 y 341
-w 105
-h 12
-font "arial-medium-r-10.0"
+w 127
+h 14
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1234,7 +1234,7 @@ x 13
 y 353
 w 12
 h 12
-controlPv "$(SYS){$(DEVICE)-$(AXIS)}Sts:2-Sts"
+controlPv "$(SYS)\{$(DEVICE)-$(AXIS)\}Sts:2-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -1251,9 +1251,9 @@ minor 1
 release 0
 x 43
 y 353
-w 115
-h 12
-font "arial-medium-r-10.0"
+w 138
+h 14
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1273,7 +1273,7 @@ x 13
 y 365
 w 12
 h 12
-controlPv "$(SYS){$(DEVICE)-$(AXIS)}Sts:2-Sts"
+controlPv "$(SYS)\{$(DEVICE)-$(AXIS)\}Sts:2-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -1290,9 +1290,9 @@ minor 1
 release 0
 x 43
 y 365
-w 69
-h 12
-font "arial-medium-r-10.0"
+w 87
+h 14
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1329,7 +1329,7 @@ x 220
 y 461
 w 12
 h 12
-controlPv "$(SYS){$(DEVICE)-$(AXIS)}Sts:1-Sts"
+controlPv "$(SYS)\{$(DEVICE)-$(AXIS)\}Sts:1-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -1346,9 +1346,9 @@ minor 1
 release 0
 x 250
 y 461
-w 104
-h 12
-font "arial-medium-r-10.0"
+w 128
+h 14
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1368,7 +1368,7 @@ x 220
 y 449
 w 12
 h 12
-controlPv "$(SYS){$(DEVICE)-$(AXIS)}Sts:1-Sts"
+controlPv "$(SYS)\{$(DEVICE)-$(AXIS)\}Sts:1-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -1385,9 +1385,9 @@ minor 1
 release 0
 x 250
 y 449
-w 156
-h 12
-font "arial-medium-r-10.0"
+w 195
+h 14
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1407,7 +1407,7 @@ x 220
 y 437
 w 12
 h 12
-controlPv "$(SYS){$(DEVICE)-$(AXIS)}Sts:1-Sts"
+controlPv "$(SYS)\{$(DEVICE)-$(AXIS)\}Sts:1-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -1424,9 +1424,9 @@ minor 1
 release 0
 x 250
 y 437
-w 162
-h 12
-font "arial-medium-r-10.0"
+w 189
+h 14
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1446,7 +1446,7 @@ x 220
 y 425
 w 12
 h 12
-controlPv "$(SYS){$(DEVICE)-$(AXIS)}Sts:1-Sts"
+controlPv "$(SYS)\{$(DEVICE)-$(AXIS)\}Sts:1-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -1463,9 +1463,9 @@ minor 1
 release 0
 x 250
 y 425
-w 143
-h 12
-font "arial-medium-r-10.0"
+w 183
+h 14
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1485,7 +1485,7 @@ x 220
 y 413
 w 12
 h 12
-controlPv "$(SYS){$(DEVICE)-$(AXIS)}Sts:1-Sts"
+controlPv "$(SYS)\{$(DEVICE)-$(AXIS)\}Sts:1-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -1502,9 +1502,9 @@ minor 1
 release 0
 x 250
 y 413
-w 83
-h 12
-font "arial-medium-r-10.0"
+w 97
+h 14
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1524,7 +1524,7 @@ x 220
 y 401
 w 12
 h 12
-controlPv "$(SYS){$(DEVICE)-$(AXIS)}Sts:1-Sts"
+controlPv "$(SYS)\{$(DEVICE)-$(AXIS)\}Sts:1-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -1541,9 +1541,9 @@ minor 1
 release 0
 x 250
 y 401
-w 74
-h 12
-font "arial-medium-r-10.0"
+w 93
+h 14
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1563,7 +1563,7 @@ x 220
 y 389
 w 12
 h 12
-controlPv "$(SYS){$(DEVICE)-$(AXIS)}Sts:1-Sts"
+controlPv "$(SYS)\{$(DEVICE)-$(AXIS)\}Sts:1-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -1580,9 +1580,9 @@ minor 1
 release 0
 x 250
 y 389
-w 81
-h 12
-font "arial-medium-r-10.0"
+w 100
+h 14
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1602,7 +1602,7 @@ x 220
 y 377
 w 12
 h 12
-controlPv "$(SYS){$(DEVICE)-$(AXIS)}Sts:1-Sts"
+controlPv "$(SYS)\{$(DEVICE)-$(AXIS)\}Sts:1-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -1619,9 +1619,9 @@ minor 1
 release 0
 x 250
 y 377
-w 154
-h 12
-font "arial-medium-r-10.0"
+w 186
+h 14
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1641,7 +1641,7 @@ x 220
 y 365
 w 12
 h 12
-controlPv "$(SYS){$(DEVICE)-$(AXIS)}Sts:1-Sts"
+controlPv "$(SYS)\{$(DEVICE)-$(AXIS)\}Sts:1-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -1658,9 +1658,9 @@ minor 1
 release 0
 x 250
 y 365
-w 80
-h 12
-font "arial-medium-r-10.0"
+w 97
+h 14
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1680,7 +1680,7 @@ x 220
 y 353
 w 12
 h 12
-controlPv "$(SYS){$(DEVICE)-$(AXIS)}Sts:1-Sts"
+controlPv "$(SYS)\{$(DEVICE)-$(AXIS)\}Sts:1-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -1697,9 +1697,9 @@ minor 1
 release 0
 x 250
 y 353
-w 76
-h 12
-font "arial-medium-r-10.0"
+w 90
+h 14
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1719,7 +1719,7 @@ x 220
 y 341
 w 12
 h 12
-controlPv "$(SYS){$(DEVICE)-$(AXIS)}Sts:1-Sts"
+controlPv "$(SYS)\{$(DEVICE)-$(AXIS)\}Sts:1-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -1736,9 +1736,9 @@ minor 1
 release 0
 x 250
 y 341
-w 80
-h 12
-font "arial-medium-r-10.0"
+w 102
+h 14
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1758,7 +1758,7 @@ x 220
 y 329
 w 12
 h 12
-controlPv "$(SYS){$(DEVICE)-$(AXIS)}Sts:1-Sts"
+controlPv "$(SYS)\{$(DEVICE)-$(AXIS)\}Sts:1-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -1775,9 +1775,9 @@ minor 1
 release 0
 x 250
 y 329
-w 137
-h 12
-font "arial-medium-r-10.0"
+w 169
+h 14
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1797,7 +1797,7 @@ x 220
 y 317
 w 12
 h 12
-controlPv "$(SYS){$(DEVICE)-$(AXIS)}Sts:1-Sts"
+controlPv "$(SYS)\{$(DEVICE)-$(AXIS)\}Sts:1-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -1814,9 +1814,9 @@ minor 1
 release 0
 x 250
 y 317
-w 64
-h 12
-font "arial-medium-r-10.0"
+w 76
+h 14
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1836,7 +1836,7 @@ x 220
 y 305
 w 12
 h 12
-controlPv "$(SYS){$(DEVICE)-$(AXIS)}Sts:1-Sts"
+controlPv "$(SYS)\{$(DEVICE)-$(AXIS)\}Sts:1-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -1853,9 +1853,9 @@ minor 1
 release 0
 x 250
 y 305
-w 113
-h 12
-font "arial-medium-r-10.0"
+w 140
+h 14
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1875,7 +1875,7 @@ x 220
 y 293
 w 12
 h 12
-controlPv "$(SYS){$(DEVICE)-$(AXIS)}Sts:1-Sts"
+controlPv "$(SYS)\{$(DEVICE)-$(AXIS)\}Sts:1-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -1892,9 +1892,9 @@ minor 1
 release 0
 x 250
 y 293
-w 163
-h 12
-font "arial-medium-r-10.0"
+w 198
+h 14
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1914,7 +1914,7 @@ x 220
 y 281
 w 12
 h 12
-controlPv "$(SYS){$(DEVICE)-$(AXIS)}Sts:1-Sts"
+controlPv "$(SYS)\{$(DEVICE)-$(AXIS)\}Sts:1-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -1930,9 +1930,9 @@ minor 1
 release 0
 x 250
 y 281
-w 159
-h 12
-font "arial-medium-r-10.0"
+w 195
+h 14
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1952,7 +1952,7 @@ x 220
 y 185
 w 12
 h 12
-controlPv "$(SYS){$(DEVICE)-$(AXIS)}Sts:2-Sts"
+controlPv "$(SYS)\{$(DEVICE)-$(AXIS)\}Sts:2-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -1969,9 +1969,9 @@ minor 1
 release 0
 x 250
 y 185
-w 150
-h 12
-font "arial-medium-r-10.0"
+w 184
+h 14
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1991,7 +1991,7 @@ x 220
 y 197
 w 12
 h 12
-controlPv "$(SYS){$(DEVICE)-$(AXIS)}Sts:2-Sts"
+controlPv "$(SYS)\{$(DEVICE)-$(AXIS)\}Sts:2-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -2008,9 +2008,9 @@ minor 1
 release 0
 x 250
 y 197
-w 155
-h 12
-font "arial-medium-r-10.0"
+w 187
+h 14
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -2030,7 +2030,7 @@ x 220
 y 209
 w 12
 h 12
-controlPv "$(SYS){$(DEVICE)-$(AXIS)}Sts:2-Sts"
+controlPv "$(SYS)\{$(DEVICE)-$(AXIS)\}Sts:2-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -2047,9 +2047,9 @@ minor 1
 release 0
 x 250
 y 209
-w 156
-h 12
-font "arial-medium-r-10.0"
+w 188
+h 14
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -2069,7 +2069,7 @@ x 220
 y 221
 w 12
 h 12
-controlPv "$(SYS){$(DEVICE)-$(AXIS)}Sts:2-Sts"
+controlPv "$(SYS)\{$(DEVICE)-$(AXIS)\}Sts:2-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -2086,9 +2086,9 @@ minor 1
 release 0
 x 250
 y 221
-w 154
-h 12
-font "arial-medium-r-10.0"
+w 186
+h 14
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -2108,7 +2108,7 @@ x 220
 y 233
 w 12
 h 12
-controlPv "$(SYS){$(DEVICE)-$(AXIS)}Sts:2-Sts"
+controlPv "$(SYS)\{$(DEVICE)-$(AXIS)\}Sts:2-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -2125,9 +2125,9 @@ minor 1
 release 0
 x 250
 y 233
-w 119
-h 12
-font "arial-medium-r-10.0"
+w 147
+h 14
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -2147,7 +2147,7 @@ x 220
 y 245
 w 12
 h 12
-controlPv "$(SYS){$(DEVICE)-$(AXIS)}Sts:2-Sts"
+controlPv "$(SYS)\{$(DEVICE)-$(AXIS)\}Sts:2-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -2164,9 +2164,9 @@ minor 1
 release 0
 x 250
 y 245
-w 157
-h 12
-font "arial-medium-r-10.0"
+w 193
+h 14
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -2186,7 +2186,7 @@ x 220
 y 257
 w 12
 h 12
-controlPv "$(SYS){$(DEVICE)-$(AXIS)}Sts:2-Sts"
+controlPv "$(SYS)\{$(DEVICE)-$(AXIS)\}Sts:2-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -2203,9 +2203,9 @@ minor 1
 release 0
 x 250
 y 257
-w 154
-h 12
-font "arial-medium-r-10.0"
+w 182
+h 14
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -2225,7 +2225,7 @@ x 220
 y 269
 w 12
 h 12
-controlPv "$(SYS){$(DEVICE)-$(AXIS)}Sts:2-Sts"
+controlPv "$(SYS)\{$(DEVICE)-$(AXIS)\}Sts:2-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -2242,9 +2242,9 @@ minor 1
 release 0
 x 250
 y 269
-w 155
-h 12
-font "arial-medium-r-10.0"
+w 186
+h 14
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -2266,9 +2266,9 @@ minor 1
 release 0
 x 5
 y 40
-w 58
+w 64
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 8
@@ -2279,7 +2279,7 @@ autoSize
 border
 endObjectProperties
 
-# (Textupdate)
+# (Text Update)
 object TextupdateClass
 beginObjectProperties
 major 10
@@ -2289,16 +2289,16 @@ x 150
 y 60
 w 265
 h 25
-controlPv "$(SYS){$(DEVICE)-$(AXIS)}Pos-I"
+controlPv "$(SYS)\{$(DEVICE)-$(AXIS)\}Pos-I"
 fgColor index 16
 fgAlarm
 bgColor index 10
 fill
-font "arial-bold-r-14.0"
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 endObjectProperties
 
-# (Textupdate)
+# (Text Update)
 object TextupdateClass
 beginObjectProperties
 major 10
@@ -2308,16 +2308,16 @@ x 150
 y 90
 w 265
 h 25
-controlPv "$(SYS){$(DEVICE)-$(AXIS)}Val:Vlcty-I"
+controlPv "$(SYS)\{$(DEVICE)-$(AXIS)\}Val:Vlcty-I"
 fgColor index 16
 fgAlarm
 bgColor index 10
 fill
-font "arial-bold-r-14.0"
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 endObjectProperties
 
-# (Textupdate)
+# (Text Update)
 object TextupdateClass
 beginObjectProperties
 major 10
@@ -2327,12 +2327,12 @@ x 150
 y 120
 w 265
 h 25
-controlPv "$(SYS){$(DEVICE)-$(AXIS)}Val:FollErr-I"
+controlPv "$(SYS)\{$(DEVICE)-$(AXIS)\}Val:FollErr-I"
 fgColor index 16
 fgAlarm
 bgColor index 10
 fill
-font "arial-bold-r-14.0"
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 endObjectProperties
 
