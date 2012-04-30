@@ -41,15 +41,19 @@ record(seq, "$(SYS){$(DEVICE)-Ax:$(AXIS)}RB-Seq_") {
 #% archiver 10 Monitor
 record(mbbiDirect, "$(SYS){$(DEVICE)-Ax:$(AXIS)}Sts:1-Sts") {
   field(DTYP, "stream")
-  field(INP, "@pmac.proto getStatus(#$(AXIS)?,$(SYS){$(DEVICE)-Ax:$(AXIS)}) $(PORT)")
+  field(INP, "@pmac.proto getStatus1(#$(AXIS)?) $(PORT)")
 }
 
 #% archiver 10 Monitor
 record(mbbiDirect, "$(SYS){$(DEVICE)-Ax:$(AXIS)}Sts:2-Sts") {
+  field(DTYP, "stream")
+  field(INP, "@pmac.proto getStatus2(#$(AXIS)?) $(PORT)")
 }
 
 #% archiver 10 Monitor
 record(mbbiDirect, "$(SYS){$(DEVICE)-Ax:$(AXIS)}Sts:3-Sts") {
+  field(DTYP, "stream")
+  field(INP, "@pmac.proto getStatus3(#$(AXIS)?) $(PORT)")
 }
 
 #! Further lines contain data used by VisualDCT

@@ -62,15 +62,19 @@ record(ai, "$(SYS){$(DEVICE)}Val:CPULoad-I") {
 # % archiver 10 Monitor
 record(mbbiDirect, "$(SYS){$(DEVICE)}Sts:1-Sts") {
   field(DTYP, "stream")
-  field(INP, "@pmac.proto getStatus(???,$(DEVICE)) $(PORT)")
+  field(INP, "@pmac.proto getStatus1(???) $(PORT)")
 }
 
 # % archiver 10 Monitor
 record(mbbiDirect, "$(SYS){$(DEVICE)}Sts:2-Sts") {
+  field(DTYP, "stream")
+  field(INP, "@pmac.proto getStatus2(???) $(PORT)")
 }
 
 # % archiver 10 Monitor
 record(mbbiDirect, "$(SYS){$(DEVICE)}Sts:3-Sts") {
+  field(DTYP, "stream")
+  field(INP, "@pmac.proto getStatus3(???) $(PORT)")
 }
 
 record(waveform, "$(SYS){$(DEVICE)}Sts:PLC-WF_") {
