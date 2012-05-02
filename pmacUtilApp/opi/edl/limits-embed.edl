@@ -7,9 +7,9 @@ x 993
 y 842
 w 142
 h 26
-font "arial-medium-r-18.0"
-ctlFont "arial-medium-r-18.0"
-btnFont "arial-medium-r-18.0"
+font "helvetica-medium-r-18.0"
+ctlFont "helvetica-medium-r-18.0"
+btnFont "helvetica-medium-r-18.0"
 fgColor index 14
 bgColor index 3
 textColor index 14
@@ -38,7 +38,7 @@ topShadowColor index 0
 botShadowColor index 14
 controlPv "$(motor):SETLIMITS"
 indicatorPv "$(motor):SETLIMITS"
-font "arial-bold-r-14.0"
+font "helvetica-bold-r-14.0"
 endObjectProperties
 
 # (Byte)

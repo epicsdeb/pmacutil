@@ -7,9 +7,9 @@ x 1477
 y 102
 w 142
 h 26
-font "arial-medium-r-18.0"
-ctlFont "arial-medium-r-18.0"
-btnFont "arial-medium-r-18.0"
+font "helvetica-medium-r-18.0"
+ctlFont "helvetica-medium-r-18.0"
+btnFont "helvetica-medium-r-18.0"
 fgColor index 14
 bgColor index 3
 textColor index 14
@@ -50,7 +50,7 @@ y 3
 w 57
 h 16
 controlPv "$(P):$(R):STATE"
-font "arial-bold-r-14.0"
+font "helvetica-bold-r-14.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 3
@@ -74,7 +74,7 @@ y 3
 w 40
 h 16
 controlPv "$(P):$(R):COUNTDOWN"
-font "arial-bold-r-14.0"
+font "helvetica-bold-r-14.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg

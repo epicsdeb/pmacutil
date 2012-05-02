@@ -12,6 +12,9 @@ msgstr ""
 "X-Poedit-SearchPath-0: /usr/lib/epics/dbd\n"
 "X-Poedit-SearchPath-1: .\n"
 
+msgid "$(P)$(R)"
+msgstr "$(SYS)$(DEVICE)"
+
 #. recordtype: ao
 #. DESC: PMAC Axis number
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/motorstatus.db:104

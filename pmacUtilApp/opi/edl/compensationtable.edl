@@ -7,9 +7,9 @@ x 107
 y 551
 w 702
 h 551
-font "arial-medium-r-18.0"
-ctlFont "arial-medium-r-18.0"
-btnFont "arial-medium-r-18.0"
+font "helvetica-medium-r-18.0"
+ctlFont "helvetica-medium-r-18.0"
+btnFont "helvetica-medium-r-18.0"
 fgColor index 14
 bgColor index 3
 textColor index 14
@@ -119,7 +119,7 @@ x 0
 y 3
 w 700
 h 24
-font "arial-bold-r-16.0"
+font "helvetica-bold-r-16.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 48
@@ -172,7 +172,7 @@ bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
 label "EXIT"
-font "arial-bold-r-14.0"
+font "helvetica-bold-r-14.0"
 3d
 endObjectProperties
 
@@ -186,7 +186,7 @@ x 5
 y 35
 w 84
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 8
@@ -207,7 +207,7 @@ x 10
 y 60
 w 85
 h 25
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -241,7 +241,7 @@ x 5
 y 280
 w 94
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 8
@@ -273,7 +273,7 @@ onLabel "APPLY"
 offLabel "APPLY"
 3d
 useEnumNumeric
-font "arial-bold-r-14.0"
+font "helvetica-bold-r-14.0"
 endObjectProperties
 
 # (Menu Button)
@@ -292,7 +292,7 @@ inconsistentColor index 0
 topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(M):COMPTAB:DESIRED"
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 endObjectProperties
 
 # (Menu Mux PV)
@@ -309,7 +309,7 @@ fgColour index 14
 bgColour index 0
 topShadowColour index 0
 botShadowColour index 14
-font "arial-medium-r-18.0"
+font "helvetica-medium-r-18.0"
 numItems 1
 symbolTag {
   0 "?"
@@ -354,7 +354,7 @@ fgColour index 14
 bgColour index 0
 topShadowColour index 0
 botShadowColour index 14
-font "arial-medium-r-18.0"
+font "helvetica-medium-r-18.0"
 numItems 1
 symbolTag {
   0 "?"
@@ -399,7 +399,7 @@ fgColour index 14
 bgColour index 0
 topShadowColour index 0
 botShadowColour index 14
-font "arial-medium-r-18.0"
+font "helvetica-medium-r-18.0"
 numItems 1
 symbolTag {
   0 "?"
@@ -444,7 +444,7 @@ fgColour index 14
 bgColour index 0
 topShadowColour index 0
 botShadowColour index 14
-font "arial-medium-r-18.0"
+font "helvetica-medium-r-18.0"
 numItems 1
 symbolTag {
   0 "?"
@@ -489,7 +489,7 @@ fgColour index 14
 bgColour index 0
 topShadowColour index 0
 botShadowColour index 14
-font "arial-medium-r-18.0"
+font "helvetica-medium-r-18.0"
 numItems 1
 symbolTag {
   0 "?"
@@ -534,7 +534,7 @@ fgColour index 14
 bgColour index 0
 topShadowColour index 0
 botShadowColour index 14
-font "arial-medium-r-18.0"
+font "helvetica-medium-r-18.0"
 numItems 1
 symbolTag {
   0 "?"
@@ -579,7 +579,7 @@ fgColour index 14
 bgColour index 0
 topShadowColour index 0
 botShadowColour index 14
-font "arial-medium-r-18.0"
+font "helvetica-medium-r-18.0"
 numItems 1
 symbolTag {
   0 "?"
@@ -624,7 +624,7 @@ fgColour index 14
 bgColour index 0
 topShadowColour index 0
 botShadowColour index 14
-font "arial-medium-r-18.0"
+font "helvetica-medium-r-18.0"
 numItems 1
 symbolTag {
   0 "?"
@@ -666,7 +666,7 @@ y 120
 w 145
 h 25
 controlPv "$(P)$(M):COMPTAB:SOURCE"
-font "arial-medium-r-14.0"
+font "helvetica-medium-r-14.0"
 fontAlign "center"
 fgColor index 16
 fgAlarm
@@ -693,7 +693,7 @@ fgColor index 43
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 buttonLabel "ASYN"
 numCmds 3
 commandLabel {
@@ -718,7 +718,7 @@ x 290
 y 35
 w 92
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 8
@@ -739,7 +739,7 @@ x 295
 y 150
 w 120
 h 25
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -758,7 +758,7 @@ x 295
 y 210
 w 120
 h 25
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -778,7 +778,7 @@ y 150
 w 145
 h 25
 controlPv "$(P)$(M):COMPTAB:SOURCE:MRES"
-font "arial-medium-r-14.0"
+font "helvetica-medium-r-14.0"
 fontAlign "center"
 fgColor index 16
 bgColor index 10
@@ -807,7 +807,7 @@ fgColor index 25
 fgAlarm
 bgColor index 10
 fill
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -827,7 +827,7 @@ fgColor index 25
 fgAlarm
 bgColor index 10
 fill
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -841,7 +841,7 @@ x 10
 y 100
 w 85
 h 25
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -860,7 +860,7 @@ x 295
 y 120
 w 120
 h 25
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -879,7 +879,7 @@ x 295
 y 180
 w 120
 h 25
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -898,7 +898,7 @@ x 10
 y 135
 w 120
 h 25
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -925,7 +925,7 @@ yLabel "target pos"
 fgColor index 14
 bgColor index 0
 gridColor index 14
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 # Operating Modes
 nPts 1
 # X axis properties
@@ -972,7 +972,7 @@ topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(M):COMPTAB:ENABLE"
 indicatorPv "$(P)$(M):COMPTAB:ENABLERBV"
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 endObjectProperties
 
 # (Menu Button)
@@ -992,7 +992,7 @@ topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(M):COMPTAB:GENABLE"
 indicatorPv "$(P)$(M):COMPTAB:GENABLERBV"
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 endObjectProperties
 
 # (Menu Button)
@@ -1012,7 +1012,7 @@ topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(M):COMPTAB:WRAP"
 indicatorPv "$(P)$(M):COMPTAB:WRAPRBV"
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 endObjectProperties
 
 # (Text Monitor)
@@ -1026,7 +1026,7 @@ y 180
 w 145
 h 25
 controlPv "$(P)$(M):COMPTAB:TARGET"
-font "arial-medium-r-14.0"
+font "helvetica-medium-r-14.0"
 fontAlign "center"
 fgColor index 16
 bgColor index 10
@@ -1048,7 +1048,7 @@ y 210
 w 145
 h 25
 controlPv "$(P)$(M):COMPTAB:TARGET:MRES"
-font "arial-medium-r-14.0"
+font "helvetica-medium-r-14.0"
 fontAlign "center"
 fgColor index 16
 bgColor index 10
@@ -1071,7 +1071,7 @@ x 10
 y 165
 w 85
 h 25
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -1090,7 +1090,7 @@ x 10
 y 195
 w 135
 h 25
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -1109,7 +1109,7 @@ x 10
 y 225
 w 135
 h 25
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -1129,7 +1129,7 @@ y 60
 w 145
 h 25
 controlPv "$(P)$(M):COMPTAB:OCTETPORT"
-font "arial-medium-r-14.0"
+font "helvetica-medium-r-14.0"
 fontAlign "center"
 fgColor index 16
 bgColor index 10
@@ -1152,7 +1152,7 @@ x 295
 y 60
 w 120
 h 25
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -1172,7 +1172,7 @@ y 90
 w 145
 h 25
 controlPv "$(P)$(M):COMPTAB:PORT"
-font "arial-medium-r-14.0"
+font "helvetica-medium-r-14.0"
 fontAlign "center"
 fgColor index 16
 bgColor index 10
@@ -1195,7 +1195,7 @@ x 295
 y 90
 w 120
 h 25
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg

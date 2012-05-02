@@ -7,9 +7,9 @@ x 587
 y 321
 w 684
 h 331
-font "arial-medium-r-18.0"
-ctlFont "arial-medium-r-18.0"
-btnFont "arial-medium-r-18.0"
+font "helvetica-medium-r-18.0"
+ctlFont "helvetica-medium-r-18.0"
+btnFont "helvetica-medium-r-18.0"
 fgColor index 14
 bgColor index 3
 textColor index 14
@@ -89,7 +89,7 @@ x 0
 y 3
 w 685
 h 24
-font "arial-bold-r-16.0"
+font "helvetica-bold-r-16.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 48
@@ -142,7 +142,7 @@ bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
 label "EXIT"
-font "arial-bold-r-14.0"
+font "helvetica-bold-r-14.0"
 3d
 endObjectProperties
 
@@ -171,7 +171,7 @@ x 5
 y 35
 w 96
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 8
@@ -197,7 +197,7 @@ fgColor index 16
 fgAlarm
 bgColor index 10
 fill
-font "arial-bold-r-14.0"
+font "helvetica-bold-r-14.0"
 fontAlign "center"
 lineWidth 1
 lineAlarm
@@ -217,7 +217,7 @@ controlPv "$(P):HM:STATE"
 fgColor index 16
 bgColor index 10
 fill
-font "arial-bold-r-14.0"
+font "helvetica-bold-r-14.0"
 fontAlign "center"
 lineWidth 1
 endObjectProperties
@@ -232,7 +232,7 @@ x 10
 y 160
 w 170
 h 20
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -251,7 +251,7 @@ x 10
 y 50
 w 170
 h 20
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -270,7 +270,7 @@ x 10
 y 105
 w 170
 h 20
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -304,7 +304,7 @@ x 5
 y 225
 w 100
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 8
@@ -336,7 +336,7 @@ onLabel "Home"
 offLabel "Home"
 3d
 useEnumNumeric
-font "arial-bold-r-14.0"
+font "helvetica-bold-r-14.0"
 endObjectProperties
 
 # (Message Button)
@@ -359,7 +359,7 @@ releaseValue "1"
 onLabel "Abort"
 offLabel "Abort"
 3d
-font "arial-bold-r-14.0"
+font "helvetica-bold-r-14.0"
 endObjectProperties
 
 # (Byte)
@@ -405,7 +405,7 @@ x 200
 y 35
 w 74
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 8
@@ -432,7 +432,7 @@ inconsistentColor index 0
 topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P):HM:HMGRP"
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 endObjectProperties
 
 # (Static Text)
@@ -445,7 +445,7 @@ x 10
 y 240
 w 170
 h 20
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -477,7 +477,7 @@ x 205
 y 55
 w 16
 h 16
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 3
@@ -500,7 +500,7 @@ h 15
 controlPv "$(M1).DESC"
 fgColor index 14
 bgColor index 3
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 endObjectProperties
@@ -520,7 +520,7 @@ fgColor index 16
 fgAlarm
 bgColor index 10
 fill
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 lineAlarm
@@ -556,7 +556,7 @@ x 440
 y 280
 w 16
 h 16
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 3
@@ -579,7 +579,7 @@ h 15
 controlPv "$(M32).DESC"
 fgColor index 14
 bgColor index 3
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 endObjectProperties
@@ -599,7 +599,7 @@ fgColor index 16
 fgAlarm
 bgColor index 10
 fill
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 lineAlarm
@@ -635,7 +635,7 @@ x 205
 y 70
 w 16
 h 16
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 3
@@ -658,7 +658,7 @@ h 15
 controlPv "$(M2).DESC"
 fgColor index 14
 bgColor index 3
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 endObjectProperties
@@ -678,7 +678,7 @@ fgColor index 16
 fgAlarm
 bgColor index 10
 fill
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 lineAlarm
@@ -714,7 +714,7 @@ x 205
 y 85
 w 16
 h 16
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 3
@@ -737,7 +737,7 @@ h 15
 controlPv "$(M3).DESC"
 fgColor index 14
 bgColor index 3
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 endObjectProperties
@@ -757,7 +757,7 @@ fgColor index 16
 fgAlarm
 bgColor index 10
 fill
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 lineAlarm
@@ -793,7 +793,7 @@ x 205
 y 100
 w 16
 h 16
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 3
@@ -816,7 +816,7 @@ h 15
 controlPv "$(M4).DESC"
 fgColor index 14
 bgColor index 3
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 endObjectProperties
@@ -836,7 +836,7 @@ fgColor index 16
 fgAlarm
 bgColor index 10
 fill
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 lineAlarm
@@ -872,7 +872,7 @@ x 205
 y 115
 w 16
 h 16
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 3
@@ -895,7 +895,7 @@ h 15
 controlPv "$(M5).DESC"
 fgColor index 14
 bgColor index 3
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 endObjectProperties
@@ -915,7 +915,7 @@ fgColor index 16
 fgAlarm
 bgColor index 10
 fill
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 lineAlarm
@@ -951,7 +951,7 @@ x 205
 y 130
 w 16
 h 16
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 3
@@ -974,7 +974,7 @@ h 15
 controlPv "$(M6).DESC"
 fgColor index 14
 bgColor index 3
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 endObjectProperties
@@ -994,7 +994,7 @@ fgColor index 16
 fgAlarm
 bgColor index 10
 fill
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 lineAlarm
@@ -1030,7 +1030,7 @@ x 205
 y 145
 w 16
 h 16
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 3
@@ -1053,7 +1053,7 @@ h 15
 controlPv "$(M7).DESC"
 fgColor index 14
 bgColor index 3
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 endObjectProperties
@@ -1073,7 +1073,7 @@ fgColor index 16
 fgAlarm
 bgColor index 10
 fill
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 lineAlarm
@@ -1109,7 +1109,7 @@ x 205
 y 160
 w 16
 h 16
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 3
@@ -1132,7 +1132,7 @@ h 15
 controlPv "$(M8).DESC"
 fgColor index 14
 bgColor index 3
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 endObjectProperties
@@ -1152,7 +1152,7 @@ fgColor index 16
 fgAlarm
 bgColor index 10
 fill
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 lineAlarm
@@ -1188,7 +1188,7 @@ x 205
 y 175
 w 16
 h 16
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 3
@@ -1211,7 +1211,7 @@ h 15
 controlPv "$(M9).DESC"
 fgColor index 14
 bgColor index 3
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 endObjectProperties
@@ -1231,7 +1231,7 @@ fgColor index 16
 fgAlarm
 bgColor index 10
 fill
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 lineAlarm
@@ -1267,7 +1267,7 @@ x 205
 y 190
 w 16
 h 16
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 3
@@ -1290,7 +1290,7 @@ h 15
 controlPv "$(M10).DESC"
 fgColor index 14
 bgColor index 3
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 endObjectProperties
@@ -1310,7 +1310,7 @@ fgColor index 16
 fgAlarm
 bgColor index 10
 fill
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 lineAlarm
@@ -1346,7 +1346,7 @@ x 205
 y 205
 w 16
 h 16
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 3
@@ -1369,7 +1369,7 @@ h 15
 controlPv "$(M11).DESC"
 fgColor index 14
 bgColor index 3
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 endObjectProperties
@@ -1389,7 +1389,7 @@ fgColor index 16
 fgAlarm
 bgColor index 10
 fill
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 lineAlarm
@@ -1425,7 +1425,7 @@ x 205
 y 220
 w 16
 h 16
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 3
@@ -1448,7 +1448,7 @@ h 15
 controlPv "$(M12).DESC"
 fgColor index 14
 bgColor index 3
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 endObjectProperties
@@ -1468,7 +1468,7 @@ fgColor index 16
 fgAlarm
 bgColor index 10
 fill
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 lineAlarm
@@ -1504,7 +1504,7 @@ x 205
 y 235
 w 16
 h 16
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 3
@@ -1527,7 +1527,7 @@ h 15
 controlPv "$(M13).DESC"
 fgColor index 14
 bgColor index 3
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 endObjectProperties
@@ -1547,7 +1547,7 @@ fgColor index 16
 fgAlarm
 bgColor index 10
 fill
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 lineAlarm
@@ -1583,7 +1583,7 @@ x 205
 y 250
 w 16
 h 16
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 3
@@ -1606,7 +1606,7 @@ h 15
 controlPv "$(M14).DESC"
 fgColor index 14
 bgColor index 3
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 endObjectProperties
@@ -1626,7 +1626,7 @@ fgColor index 16
 fgAlarm
 bgColor index 10
 fill
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 lineAlarm
@@ -1662,7 +1662,7 @@ x 205
 y 265
 w 16
 h 16
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 3
@@ -1685,7 +1685,7 @@ h 15
 controlPv "$(M15).DESC"
 fgColor index 14
 bgColor index 3
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 endObjectProperties
@@ -1705,7 +1705,7 @@ fgColor index 16
 fgAlarm
 bgColor index 10
 fill
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 lineAlarm
@@ -1741,7 +1741,7 @@ x 205
 y 280
 w 16
 h 16
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 3
@@ -1764,7 +1764,7 @@ h 15
 controlPv "$(M16).DESC"
 fgColor index 14
 bgColor index 3
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 endObjectProperties
@@ -1784,7 +1784,7 @@ fgColor index 16
 fgAlarm
 bgColor index 10
 fill
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 lineAlarm
@@ -1820,7 +1820,7 @@ x 440
 y 55
 w 16
 h 16
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 3
@@ -1843,7 +1843,7 @@ h 15
 controlPv "$(M17).DESC"
 fgColor index 14
 bgColor index 3
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 endObjectProperties
@@ -1863,7 +1863,7 @@ fgColor index 16
 fgAlarm
 bgColor index 10
 fill
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 lineAlarm
@@ -1899,7 +1899,7 @@ x 440
 y 70
 w 16
 h 16
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 3
@@ -1922,7 +1922,7 @@ h 15
 controlPv "$(M18).DESC"
 fgColor index 14
 bgColor index 3
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 endObjectProperties
@@ -1942,7 +1942,7 @@ fgColor index 16
 fgAlarm
 bgColor index 10
 fill
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 lineAlarm
@@ -1978,7 +1978,7 @@ x 440
 y 85
 w 16
 h 16
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 3
@@ -2001,7 +2001,7 @@ h 15
 controlPv "$(M19).DESC"
 fgColor index 14
 bgColor index 3
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 endObjectProperties
@@ -2021,7 +2021,7 @@ fgColor index 16
 fgAlarm
 bgColor index 10
 fill
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 lineAlarm
@@ -2057,7 +2057,7 @@ x 440
 y 100
 w 16
 h 16
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 3
@@ -2080,7 +2080,7 @@ h 15
 controlPv "$(M20).DESC"
 fgColor index 14
 bgColor index 3
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 endObjectProperties
@@ -2100,7 +2100,7 @@ fgColor index 16
 fgAlarm
 bgColor index 10
 fill
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 lineAlarm
@@ -2136,7 +2136,7 @@ x 440
 y 115
 w 16
 h 16
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 3
@@ -2159,7 +2159,7 @@ h 15
 controlPv "$(M21).DESC"
 fgColor index 14
 bgColor index 3
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 endObjectProperties
@@ -2179,7 +2179,7 @@ fgColor index 16
 fgAlarm
 bgColor index 10
 fill
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 lineAlarm
@@ -2215,7 +2215,7 @@ x 440
 y 130
 w 16
 h 16
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 3
@@ -2238,7 +2238,7 @@ h 15
 controlPv "$(M22).DESC"
 fgColor index 14
 bgColor index 3
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 endObjectProperties
@@ -2258,7 +2258,7 @@ fgColor index 16
 fgAlarm
 bgColor index 10
 fill
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 lineAlarm
@@ -2294,7 +2294,7 @@ x 440
 y 145
 w 16
 h 16
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 3
@@ -2317,7 +2317,7 @@ h 15
 controlPv "$(M23).DESC"
 fgColor index 14
 bgColor index 3
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 endObjectProperties
@@ -2337,7 +2337,7 @@ fgColor index 16
 fgAlarm
 bgColor index 10
 fill
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 lineAlarm
@@ -2373,7 +2373,7 @@ x 440
 y 160
 w 16
 h 16
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 3
@@ -2396,7 +2396,7 @@ h 15
 controlPv "$(M24).DESC"
 fgColor index 14
 bgColor index 3
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 endObjectProperties
@@ -2416,7 +2416,7 @@ fgColor index 16
 fgAlarm
 bgColor index 10
 fill
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 lineAlarm
@@ -2452,7 +2452,7 @@ x 440
 y 175
 w 16
 h 16
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 3
@@ -2475,7 +2475,7 @@ h 15
 controlPv "$(M25).DESC"
 fgColor index 14
 bgColor index 3
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 endObjectProperties
@@ -2495,7 +2495,7 @@ fgColor index 16
 fgAlarm
 bgColor index 10
 fill
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 lineAlarm
@@ -2531,7 +2531,7 @@ x 440
 y 190
 w 16
 h 16
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 3
@@ -2554,7 +2554,7 @@ h 15
 controlPv "$(M26).DESC"
 fgColor index 14
 bgColor index 3
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 endObjectProperties
@@ -2574,7 +2574,7 @@ fgColor index 16
 fgAlarm
 bgColor index 10
 fill
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 lineAlarm
@@ -2610,7 +2610,7 @@ x 440
 y 205
 w 16
 h 16
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 3
@@ -2633,7 +2633,7 @@ h 15
 controlPv "$(M27).DESC"
 fgColor index 14
 bgColor index 3
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 endObjectProperties
@@ -2653,7 +2653,7 @@ fgColor index 16
 fgAlarm
 bgColor index 10
 fill
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 lineAlarm
@@ -2689,7 +2689,7 @@ x 440
 y 220
 w 16
 h 16
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 3
@@ -2712,7 +2712,7 @@ h 15
 controlPv "$(M28).DESC"
 fgColor index 14
 bgColor index 3
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 endObjectProperties
@@ -2732,7 +2732,7 @@ fgColor index 16
 fgAlarm
 bgColor index 10
 fill
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 lineAlarm
@@ -2768,7 +2768,7 @@ x 440
 y 235
 w 16
 h 16
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 3
@@ -2791,7 +2791,7 @@ h 15
 controlPv "$(M29).DESC"
 fgColor index 14
 bgColor index 3
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 endObjectProperties
@@ -2811,7 +2811,7 @@ fgColor index 16
 fgAlarm
 bgColor index 10
 fill
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 lineAlarm
@@ -2847,7 +2847,7 @@ x 440
 y 250
 w 16
 h 16
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 3
@@ -2870,7 +2870,7 @@ h 15
 controlPv "$(M30).DESC"
 fgColor index 14
 bgColor index 3
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 endObjectProperties
@@ -2890,7 +2890,7 @@ fgColor index 16
 fgAlarm
 bgColor index 10
 fill
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 lineAlarm
@@ -2926,7 +2926,7 @@ x 440
 y 265
 w 16
 h 16
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 3
@@ -2949,7 +2949,7 @@ h 15
 controlPv "$(M31).DESC"
 fgColor index 14
 bgColor index 3
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 endObjectProperties
@@ -2969,7 +2969,7 @@ fgColor index 16
 fgAlarm
 bgColor index 10
 fill
-font "arial-medium-r-10.0"
+font "helvetica-medium-r-10.0"
 fontAlign "center"
 lineWidth 1
 lineAlarm
@@ -2996,7 +2996,7 @@ fgColour index 14
 bgColour index 0
 topShadowColour index 0
 botShadowColour index 14
-font "arial-medium-r-18.0"
+font "helvetica-medium-r-18.0"
 numItems 1
 symbolTag {
   0 "?"
@@ -3041,7 +3041,7 @@ fgColour index 14
 bgColour index 0
 topShadowColour index 0
 botShadowColour index 14
-font "arial-medium-r-18.0"
+font "helvetica-medium-r-18.0"
 numItems 1
 symbolTag {
   0 "?"
@@ -3086,7 +3086,7 @@ fgColour index 14
 bgColour index 0
 topShadowColour index 0
 botShadowColour index 14
-font "arial-medium-r-18.0"
+font "helvetica-medium-r-18.0"
 numItems 1
 symbolTag {
   0 "?"
@@ -3131,7 +3131,7 @@ fgColour index 14
 bgColour index 0
 topShadowColour index 0
 botShadowColour index 14
-font "arial-medium-r-18.0"
+font "helvetica-medium-r-18.0"
 numItems 1
 symbolTag {
   0 "?"
@@ -3176,7 +3176,7 @@ fgColour index 14
 bgColour index 0
 topShadowColour index 0
 botShadowColour index 14
-font "arial-medium-r-18.0"
+font "helvetica-medium-r-18.0"
 numItems 1
 symbolTag {
   0 "?"
@@ -3221,7 +3221,7 @@ fgColour index 14
 bgColour index 0
 topShadowColour index 0
 botShadowColour index 14
-font "arial-medium-r-18.0"
+font "helvetica-medium-r-18.0"
 numItems 1
 symbolTag {
   0 "?"
@@ -3266,7 +3266,7 @@ fgColour index 14
 bgColour index 0
 topShadowColour index 0
 botShadowColour index 14
-font "arial-medium-r-18.0"
+font "helvetica-medium-r-18.0"
 numItems 1
 symbolTag {
   0 "?"
@@ -3311,7 +3311,7 @@ fgColour index 14
 bgColour index 0
 topShadowColour index 0
 botShadowColour index 14
-font "arial-medium-r-18.0"
+font "helvetica-medium-r-18.0"
 numItems 1
 symbolTag {
   0 "?"
@@ -3353,7 +3353,7 @@ y 180
 w 170
 h 25
 controlPv "$(P):HM:TIMEOUT"
-font "arial-bold-r-14.0"
+font "helvetica-bold-r-14.0"
 fontAlign "center"
 fgColor index 16
 bgColor index 10

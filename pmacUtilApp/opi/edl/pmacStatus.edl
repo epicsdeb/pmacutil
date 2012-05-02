@@ -3,13 +3,13 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 546
-y 22
+x 1000
+y 128
 w 560
-h 756
-font "arial-medium-r-16.0"
-ctlFont "arial-bold-r-16.0"
-btnFont "arial-medium-r-16.0"
+h 860
+font "helvetica-medium-r-16.0"
+ctlFont "helvetica-bold-r-16.0"
+btnFont "helvetica-medium-r-16.0"
 fgColor index 14
 bgColor index 3
 textColor index 14
@@ -134,7 +134,7 @@ x 30
 y 3
 w 525
 h 25
-font "helvetica-medium-r-12.0"
+font "helvetica-bold-r-16.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 48
@@ -257,7 +257,7 @@ x 0
 y 0
 w 61
 h 31
-font "helvetica-medium-r-12.0"
+font "helvetica-bold-r-14.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 0
@@ -279,7 +279,7 @@ minor 1
 release 0
 x 5
 y 40
-w 77
+w 71
 h 14
 font "helvetica-medium-r-12.0"
 fontAlign "center"
@@ -317,7 +317,7 @@ x 275
 y 55
 w 141
 h 30
-font "helvetica-medium-r-12.0"
+font "helvetica-bold-r-14.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -341,9 +341,9 @@ bgColor index 3
 inconsistentColor index 0
 topShadowColor index 1
 botShadowColor index 11
-controlPv "$(SYS)\{$(DEVICE)\}Sts:Read1-FOut_.SCAN"
-indicatorPv "$(SYS)\{$(DEVICE)\}Sts:Read1-FOut_.SCAN"
-font "arial-bold-r-14.0"
+controlPv "$(SYS){$(DEVICE)}Sts:Read1-FOut_.SCAN"
+indicatorPv "$(SYS){$(DEVICE)}Sts:Read1-FOut_.SCAN"
+font "helvetica-bold-r-14.0"
 endObjectProperties
 
 # (Static Text)
@@ -354,7 +354,7 @@ minor 1
 release 0
 x 270
 y 40
-w 43
+w 38
 h 14
 font "helvetica-medium-r-12.0"
 fontAlign "center"
@@ -375,7 +375,7 @@ minor 1
 release 0
 x 5
 y 135
-w 91
+w 87
 h 14
 font "helvetica-medium-r-12.0"
 fontAlign "center"
@@ -403,7 +403,7 @@ bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
 label "EXIT"
-font "arial-medium-r-18.0"
+font "helvetica-medium-r-18.0"
 3d
 endObjectProperties
 
@@ -417,7 +417,7 @@ x 10
 y 55
 w 85
 h 30
-font "helvetica-medium-r-12.0"
+font "helvetica-bold-r-14.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -436,7 +436,7 @@ x 10
 y 90
 w 85
 h 30
-font "helvetica-medium-r-12.0"
+font "helvetica-bold-r-14.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -453,7 +453,7 @@ minor 1
 release 0
 x 5
 y 485
-w 288
+w 281
 h 14
 font "helvetica-medium-r-12.0"
 fontAlign "center"
@@ -476,7 +476,7 @@ x 15
 y 520
 w 285
 h 20
-controlPv "$(SYS)\{$(DEVICE)\}Val:Pgm-Sts"
+controlPv "$(SYS){$(DEVICE)}Val:Pgm-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -505,9 +505,9 @@ minor 1
 release 0
 x 31
 y 335
-w 147
-h 14
-font "helvetica-medium-r-12.0"
+w 125
+h 12
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -525,9 +525,9 @@ minor 1
 release 0
 x 31
 y 323
-w 155
-h 14
-font "helvetica-medium-r-12.0"
+w 136
+h 12
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -545,9 +545,9 @@ minor 1
 release 0
 x 31
 y 311
-w 61
-h 14
-font "helvetica-medium-r-12.0"
+w 51
+h 12
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -565,9 +565,9 @@ minor 1
 release 0
 x 31
 y 299
-w 75
-h 14
-font "helvetica-medium-r-12.0"
+w 64
+h 12
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -585,9 +585,9 @@ minor 1
 release 0
 x 31
 y 287
-w 135
-h 14
-font "helvetica-medium-r-12.0"
+w 111
+h 12
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -605,9 +605,9 @@ minor 1
 release 0
 x 31
 y 275
-w 160
-h 14
-font "helvetica-medium-r-12.0"
+w 133
+h 12
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -625,9 +625,9 @@ minor 1
 release 0
 x 31
 y 263
-w 160
-h 14
-font "helvetica-medium-r-12.0"
+w 129
+h 12
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -645,9 +645,9 @@ minor 1
 release 0
 x 31
 y 251
-w 86
-h 14
-font "helvetica-medium-r-12.0"
+w 74
+h 12
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -665,9 +665,9 @@ minor 1
 release 0
 x 31
 y 239
-w 82
-h 14
-font "helvetica-medium-r-12.0"
+w 67
+h 12
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -685,9 +685,9 @@ minor 1
 release 0
 x 31
 y 227
-w 149
-h 14
-font "helvetica-medium-r-12.0"
+w 127
+h 12
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -705,9 +705,9 @@ minor 1
 release 0
 x 31
 y 215
-w 138
-h 14
-font "helvetica-medium-r-12.0"
+w 115
+h 12
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -725,9 +725,9 @@ minor 1
 release 0
 x 31
 y 203
-w 158
-h 14
-font "helvetica-medium-r-12.0"
+w 135
+h 12
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -745,9 +745,9 @@ minor 1
 release 0
 x 31
 y 191
-w 64
-h 14
-font "helvetica-medium-r-12.0"
+w 53
+h 12
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -765,9 +765,9 @@ minor 1
 release 0
 x 31
 y 179
-w 86
-h 14
-font "helvetica-medium-r-12.0"
+w 73
+h 12
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -787,7 +787,7 @@ x 15
 y 155
 w 12
 h 192
-controlPv "$(SYS)\{$(DEVICE)\}Sts:1-Sts"
+controlPv "$(SYS){$(DEVICE)}Sts:1-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -802,9 +802,9 @@ minor 1
 release 0
 x 31
 y 167
-w 149
-h 14
-font "helvetica-medium-r-12.0"
+w 127
+h 12
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -822,9 +822,9 @@ minor 1
 release 0
 x 31
 y 155
-w 138
-h 14
-font "helvetica-medium-r-12.0"
+w 115
+h 12
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -855,9 +855,9 @@ minor 1
 release 0
 x 201
 y 335
-w 81
-h 14
-font "helvetica-medium-r-12.0"
+w 67
+h 12
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -875,9 +875,9 @@ minor 1
 release 0
 x 201
 y 323
-w 91
-h 14
-font "helvetica-medium-r-12.0"
+w 76
+h 12
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -895,9 +895,9 @@ minor 1
 release 0
 x 201
 y 311
-w 135
-h 14
-font "helvetica-medium-r-12.0"
+w 113
+h 12
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -915,9 +915,9 @@ minor 1
 release 0
 x 201
 y 299
-w 105
-h 14
-font "helvetica-medium-r-12.0"
+w 87
+h 12
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -935,9 +935,9 @@ minor 1
 release 0
 x 201
 y 287
-w 145
-h 14
-font "helvetica-medium-r-12.0"
+w 122
+h 12
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -955,9 +955,9 @@ minor 1
 release 0
 x 201
 y 275
-w 86
-h 14
-font "helvetica-medium-r-12.0"
+w 72
+h 12
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -975,9 +975,9 @@ minor 1
 release 0
 x 201
 y 263
-w 64
-h 14
-font "helvetica-medium-r-12.0"
+w 54
+h 12
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -995,9 +995,9 @@ minor 1
 release 0
 x 201
 y 251
-w 77
-h 14
-font "helvetica-medium-r-12.0"
+w 69
+h 12
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1015,9 +1015,9 @@ minor 1
 release 0
 x 201
 y 239
-w 114
-h 14
-font "helvetica-medium-r-12.0"
+w 92
+h 12
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1035,9 +1035,9 @@ minor 1
 release 0
 x 201
 y 227
-w 112
-h 14
-font "helvetica-medium-r-12.0"
+w 90
+h 12
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1055,9 +1055,9 @@ minor 1
 release 0
 x 201
 y 215
-w 138
-h 14
-font "helvetica-medium-r-12.0"
+w 115
+h 12
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1075,9 +1075,9 @@ minor 1
 release 0
 x 201
 y 203
-w 114
-h 14
-font "helvetica-medium-r-12.0"
+w 93
+h 12
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1095,9 +1095,9 @@ minor 1
 release 0
 x 201
 y 191
-w 140
-h 14
-font "helvetica-medium-r-12.0"
+w 115
+h 12
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1115,9 +1115,9 @@ minor 1
 release 0
 x 201
 y 167
-w 140
-h 14
-font "helvetica-medium-r-12.0"
+w 119
+h 12
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1135,9 +1135,9 @@ minor 1
 release 0
 x 201
 y 155
-w 104
-h 14
-font "helvetica-medium-r-12.0"
+w 89
+h 12
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1157,7 +1157,7 @@ x 185
 y 155
 w 12
 h 192
-controlPv "$(SYS)\{$(DEVICE)\}Sts:2-Sts"
+controlPv "$(SYS){$(DEVICE)}Sts:2-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -1172,9 +1172,9 @@ minor 1
 release 0
 x 201
 y 179
-w 191
-h 14
-font "helvetica-medium-r-12.0"
+w 162
+h 12
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1205,9 +1205,9 @@ minor 1
 release 0
 x 385
 y 336
-w 138
-h 14
-font "helvetica-medium-r-12.0"
+w 115
+h 12
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1225,9 +1225,9 @@ minor 1
 release 0
 x 385
 y 323
-w 138
-h 14
-font "helvetica-medium-r-12.0"
+w 115
+h 12
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1245,9 +1245,9 @@ minor 1
 release 0
 x 385
 y 311
-w 138
-h 14
-font "helvetica-medium-r-12.0"
+w 115
+h 12
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1265,9 +1265,9 @@ minor 1
 release 0
 x 385
 y 299
-w 138
-h 14
-font "helvetica-medium-r-12.0"
+w 115
+h 12
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1285,9 +1285,9 @@ minor 1
 release 0
 x 385
 y 287
-w 138
-h 14
-font "helvetica-medium-r-12.0"
+w 115
+h 12
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1305,9 +1305,9 @@ minor 1
 release 0
 x 385
 y 275
-w 138
-h 14
-font "helvetica-medium-r-12.0"
+w 115
+h 12
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1325,9 +1325,9 @@ minor 1
 release 0
 x 385
 y 263
-w 138
-h 14
-font "helvetica-medium-r-12.0"
+w 115
+h 12
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1345,9 +1345,9 @@ minor 1
 release 0
 x 385
 y 251
-w 138
-h 14
-font "helvetica-medium-r-12.0"
+w 115
+h 12
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1365,9 +1365,9 @@ minor 1
 release 0
 x 385
 y 239
-w 138
-h 14
-font "helvetica-medium-r-12.0"
+w 115
+h 12
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1385,9 +1385,9 @@ minor 1
 release 0
 x 385
 y 227
-w 138
-h 14
-font "helvetica-medium-r-12.0"
+w 115
+h 12
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1405,9 +1405,9 @@ minor 1
 release 0
 x 385
 y 215
-w 138
-h 14
-font "helvetica-medium-r-12.0"
+w 115
+h 12
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1425,9 +1425,9 @@ minor 1
 release 0
 x 385
 y 203
-w 138
-h 14
-font "helvetica-medium-r-12.0"
+w 115
+h 12
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1445,9 +1445,9 @@ minor 1
 release 0
 x 385
 y 191
-w 86
-h 14
-font "helvetica-medium-r-12.0"
+w 76
+h 12
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1465,9 +1465,9 @@ minor 1
 release 0
 x 385
 y 179
-w 163
-h 14
-font "helvetica-medium-r-12.0"
+w 137
+h 12
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1485,9 +1485,9 @@ minor 1
 release 0
 x 385
 y 167
-w 98
-h 14
-font "helvetica-medium-r-12.0"
+w 81
+h 12
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1505,9 +1505,9 @@ minor 1
 release 0
 x 385
 y 155
-w 98
-h 14
-font "helvetica-medium-r-12.0"
+w 81
+h 12
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -1527,7 +1527,7 @@ x 370
 y 155
 w 12
 h 192
-controlPv "$(SYS)\{$(DEVICE)\}Sts:3-Sts"
+controlPv "$(SYS){$(DEVICE)}Sts:3-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -1556,7 +1556,7 @@ x 275
 y 90
 w 141
 h 30
-font "helvetica-medium-r-12.0"
+font "helvetica-bold-r-14.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -1565,7 +1565,7 @@ value {
 }
 endObjectProperties
 
-# (Text Update)
+# (Textupdate)
 object TextupdateClass
 beginObjectProperties
 major 10
@@ -1575,16 +1575,16 @@ x 100
 y 55
 w 155
 h 30
-controlPv "$(SYS)\{$(DEVICE)\}Type:PMAC-Sts"
+controlPv "$(SYS){$(DEVICE)}Type:PMAC-Sts"
 fgColor index 16
 fgAlarm
 bgColor index 10
 fill
-font "helvetica-medium-r-12.0"
+font "helvetica-bold-r-14.0"
 fontAlign "center"
 endObjectProperties
 
-# (Text Update)
+# (Textupdate)
 object TextupdateClass
 beginObjectProperties
 major 10
@@ -1594,16 +1594,16 @@ x 100
 y 90
 w 155
 h 30
-controlPv "$(SYS)\{$(DEVICE)\}Val:CPULoad-I"
+controlPv "$(SYS){$(DEVICE)}Val:CPULoad-I"
 fgColor index 16
 fgAlarm
 bgColor index 10
 fill
-font "helvetica-medium-r-12.0"
+font "helvetica-bold-r-14.0"
 fontAlign "center"
 endObjectProperties
 
-# (Text Update)
+# (Textupdate)
 object TextupdateClass
 beginObjectProperties
 major 10
@@ -1613,12 +1613,12 @@ x 420
 y 90
 w 130
 h 30
-controlPv "$(SYS)\{$(DEVICE)\}Cnt:MACRO_Err-I"
+controlPv "$(SYS){$(DEVICE)}Cnt:MACRO_Err-I"
 fgColor index 16
 fgAlarm
 bgColor index 10
 fill
-font "helvetica-medium-r-12.0"
+font "helvetica-bold-r-14.0"
 fontAlign "center"
 endObjectProperties
 
@@ -1645,7 +1645,7 @@ minor 1
 release 0
 x 5
 y 365
-w 97
+w 96
 h 14
 font "helvetica-medium-r-12.0"
 fontAlign "center"
@@ -1668,7 +1668,7 @@ x 15
 y 400
 w 285
 h 20
-controlPv "$(SYS)\{$(DEVICE)\}Dsbl:PLC_W0-Sts"
+controlPv "$(SYS){$(DEVICE)}Dsbl:PLC_W0-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -1706,7 +1706,7 @@ x 15
 y 445
 w 285
 h 20
-controlPv "$(SYS)\{$(DEVICE)\}Dsbl:PLC_W1-Sts"
+controlPv "$(SYS){$(DEVICE)}Dsbl:PLC_W1-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -1773,14 +1773,14 @@ endObjectProperties
 object activeXTextDspClass:noedit
 beginObjectProperties
 major 4
-minor 5
+minor 4
 release 0
 x 185
 y 800
 w 120
 h 12
 controlPv "$(DEVICE):VME_ADDR_MODE"
-font "helvetica-medium-r-12.0"
+font "helvetica-medium-r-10.0"
 fgColor index 16
 bgColor index 10
 limitsFromDb
@@ -1799,9 +1799,9 @@ minor 1
 release 0
 x 10
 y 800
-w 156
-h 14
-font "helvetica-medium-r-12.0"
+w 126
+h 12
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -1819,9 +1819,9 @@ minor 1
 release 0
 x 10
 y 815
-w 141
-h 14
-font "helvetica-medium-r-12.0"
+w 117
+h 12
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -1835,14 +1835,14 @@ endObjectProperties
 object activeXTextDspClass:noedit
 beginObjectProperties
 major 4
-minor 5
+minor 4
 release 0
 x 185
 y 815
 w 120
 h 12
 controlPv "$(DEVICE):VME_INTLVL"
-font "helvetica-medium-r-12.0"
+font "helvetica-medium-r-10.0"
 fgColor index 16
 bgColor index 10
 limitsFromDb
@@ -1861,9 +1861,9 @@ minor 1
 release 0
 x 10
 y 725
-w 140
-h 14
-font "helvetica-medium-r-12.0"
+w 118
+h 12
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -1877,14 +1877,14 @@ endObjectProperties
 object activeXTextDspClass:noedit
 beginObjectProperties
 major 4
-minor 5
+minor 4
 release 0
 x 185
 y 725
 w 120
 h 12
-controlPv "$(SYS)\{$(DEVICE)\}Sts:PLC_Ctrl-Sts"
-font "helvetica-medium-r-12.0"
+controlPv "$(SYS){$(DEVICE)}Sts:PLC_Ctrl-Sts"
+font "helvetica-medium-r-10.0"
 fgColor index 16
 bgColor index 10
 autoHeight
@@ -1900,14 +1900,14 @@ endObjectProperties
 object activeXTextDspClass:noedit
 beginObjectProperties
 major 4
-minor 5
+minor 4
 release 0
 x 185
 y 755
 w 120
 h 12
-controlPv "$(SYS)\{$(DEVICE)\}Mode:ErrRep-Sts"
-font "helvetica-medium-r-12.0"
+controlPv "$(SYS){$(DEVICE)}Mode:ErrRep-Sts"
+font "helvetica-medium-r-10.0"
 fgColor index 16
 bgColor index 10
 limitsFromDb
@@ -1922,14 +1922,14 @@ endObjectProperties
 object activeXTextDspClass:noedit
 beginObjectProperties
 major 4
-minor 5
+minor 4
 release 0
 x 185
 y 740
 w 120
 h 12
-controlPv "$(SYS)\{$(DEVICE)\}Val:IO_HndShk-Sts"
-font "helvetica-medium-r-12.0"
+controlPv "$(SYS){$(DEVICE)}Val:IO_HndShk-Sts"
+font "helvetica-medium-r-10.0"
 fgColor index 16
 bgColor index 10
 limitsFromDb
@@ -1948,9 +1948,9 @@ minor 1
 release 0
 x 10
 y 740
-w 150
-h 14
-font "helvetica-medium-r-12.0"
+w 123
+h 12
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -1968,9 +1968,9 @@ minor 1
 release 0
 x 10
 y 755
-w 142
-h 14
-font "helvetica-medium-r-12.0"
+w 119
+h 12
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -1984,14 +1984,14 @@ endObjectProperties
 object activeXTextDspClass:noedit
 beginObjectProperties
 major 4
-minor 5
+minor 4
 release 0
 x 185
 y 770
 w 120
 h 12
 controlPv "$(DEVICE):DPRAM_COMMS_INT"
-font "helvetica-medium-r-12.0"
+font "helvetica-medium-r-10.0"
 fgColor index 16
 bgColor index 10
 limitsFromDb
@@ -2006,14 +2006,14 @@ endObjectProperties
 object activeXTextDspClass:noedit
 beginObjectProperties
 major 4
-minor 5
+minor 4
 release 0
 x 185
 y 785
 w 120
 h 12
 controlPv "$(DEVICE):DPRAM_COMMS"
-font "helvetica-medium-r-12.0"
+font "helvetica-medium-r-10.0"
 fgColor index 16
 bgColor index 10
 limitsFromDb
@@ -2032,9 +2032,9 @@ minor 1
 release 0
 x 10
 y 785
-w 154
-h 14
-font "helvetica-medium-r-12.0"
+w 129
+h 12
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -2052,9 +2052,9 @@ minor 1
 release 0
 x 10
 y 770
-w 203
-h 14
-font "helvetica-medium-r-12.0"
+w 173
+h 12
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -2072,7 +2072,7 @@ minor 1
 release 0
 x 5
 y 710
-w 101
+w 97
 h 14
 font "helvetica-medium-r-12.0"
 fontAlign "center"
@@ -2102,7 +2102,7 @@ beginGroup
 object relatedDisplayClass
 beginObjectProperties
 major 4
-minor 3
+minor 2
 release 0
 x 320
 y 365
@@ -2112,7 +2112,7 @@ fgColor index 43
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-14.0"
+font "helvetica-bold-r-14.0"
 buttonLabel "Axes 1 - 4"
 numPvs 4
 numDsps 4
@@ -2138,7 +2138,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(SYS)\{$(DEVICE)\}Cnt:Axes-I"
+visPv "$(SYS){$(DEVICE)}Cnt:Axes-I"
 visInvert
 visMin "0"
 visMax "1"
@@ -2161,7 +2161,7 @@ beginGroup
 object relatedDisplayClass
 beginObjectProperties
 major 4
-minor 3
+minor 2
 release 0
 x 320
 y 400
@@ -2171,7 +2171,7 @@ fgColor index 43
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-14.0"
+font "helvetica-bold-r-14.0"
 buttonLabel "Axes 5 - 8"
 numPvs 4
 numDsps 4
@@ -2197,7 +2197,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(SYS)\{$(DEVICE)\}Cnt:Axes-I"
+visPv "$(SYS){$(DEVICE)}Cnt:Axes-I"
 visInvert
 visMin "0"
 visMax "5"
@@ -2220,7 +2220,7 @@ beginGroup
 object relatedDisplayClass
 beginObjectProperties
 major 4
-minor 3
+minor 2
 release 0
 x 320
 y 435
@@ -2230,7 +2230,7 @@ fgColor index 43
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-14.0"
+font "helvetica-bold-r-14.0"
 buttonLabel "Axes 9 - 12"
 numPvs 4
 numDsps 4
@@ -2256,7 +2256,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(SYS)\{$(DEVICE)\}Cnt:Axes-I"
+visPv "$(SYS){$(DEVICE)}Cnt:Axes-I"
 visInvert
 visMin "0"
 visMax "9"
@@ -2279,7 +2279,7 @@ beginGroup
 object relatedDisplayClass
 beginObjectProperties
 major 4
-minor 3
+minor 2
 release 0
 x 320
 y 470
@@ -2289,7 +2289,7 @@ fgColor index 43
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-14.0"
+font "helvetica-bold-r-14.0"
 buttonLabel "Axes 13 - 16"
 numPvs 4
 numDsps 4
@@ -2315,7 +2315,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(SYS)\{$(DEVICE)\}Cnt:Axes-I"
+visPv "$(SYS){$(DEVICE)}Cnt:Axes-I"
 visInvert
 visMin "0"
 visMax "13"
@@ -2338,7 +2338,7 @@ beginGroup
 object relatedDisplayClass
 beginObjectProperties
 major 4
-minor 3
+minor 2
 release 0
 x 320
 y 505
@@ -2348,7 +2348,7 @@ fgColor index 43
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-14.0"
+font "helvetica-bold-r-14.0"
 buttonLabel "Axes 17 - 20"
 numPvs 4
 numDsps 4
@@ -2374,7 +2374,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(SYS)\{$(DEVICE)\}Cnt:Axes-I"
+visPv "$(SYS){$(DEVICE)}Cnt:Axes-I"
 visInvert
 visMin "0"
 visMax "17"
@@ -2397,7 +2397,7 @@ beginGroup
 object relatedDisplayClass
 beginObjectProperties
 major 4
-minor 3
+minor 2
 release 0
 x 320
 y 540
@@ -2407,7 +2407,7 @@ fgColor index 43
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-14.0"
+font "helvetica-bold-r-14.0"
 buttonLabel "Axes 21 - 24"
 numPvs 4
 numDsps 4
@@ -2433,7 +2433,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(SYS)\{$(DEVICE)\}Cnt:Axes-I"
+visPv "$(SYS){$(DEVICE)}Cnt:Axes-I"
 visInvert
 visMin "0"
 visMax "21"
@@ -2456,7 +2456,7 @@ beginGroup
 object relatedDisplayClass
 beginObjectProperties
 major 4
-minor 3
+minor 2
 release 0
 x 320
 y 575
@@ -2466,7 +2466,7 @@ fgColor index 43
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-14.0"
+font "helvetica-bold-r-14.0"
 buttonLabel "Axes 25 - 28"
 numPvs 4
 numDsps 4
@@ -2492,7 +2492,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(SYS)\{$(DEVICE)\}Cnt:Axes-I"
+visPv "$(SYS){$(DEVICE)}Cnt:Axes-I"
 visInvert
 visMin "0"
 visMax "25"
@@ -2515,7 +2515,7 @@ beginGroup
 object relatedDisplayClass
 beginObjectProperties
 major 4
-minor 3
+minor 2
 release 0
 x 320
 y 610
@@ -2525,7 +2525,7 @@ fgColor index 43
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-14.0"
+font "helvetica-bold-r-14.0"
 buttonLabel "Axes 29 - 32"
 numPvs 4
 numDsps 4
@@ -2551,7 +2551,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(SYS)\{$(DEVICE)\}Cnt:Axes-I"
+visPv "$(SYS){$(DEVICE)}Cnt:Axes-I"
 visInvert
 visMin "0"
 visMax "29"
@@ -2561,7 +2561,7 @@ endObjectProperties
 object activeXTextDspClass:noedit
 beginObjectProperties
 major 4
-minor 5
+minor 4
 release 0
 x 185
 y 830
@@ -2569,7 +2569,7 @@ w 120
 h 12
 controlPv "$(DEVICE):VME_DPRAMBASE"
 format "hex"
-font "helvetica-medium-r-12.0"
+font "helvetica-medium-r-10.0"
 fgColor index 16
 bgColor index 10
 limitsFromDb
@@ -2588,9 +2588,9 @@ minor 1
 release 0
 x 10
 y 830
-w 188
-h 14
-font "helvetica-medium-r-12.0"
+w 153
+h 12
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -2623,7 +2623,7 @@ minor 1
 release 0
 x 5
 y 560
-w 147
+w 144
 h 14
 font "helvetica-medium-r-12.0"
 fontAlign "center"
@@ -2646,7 +2646,7 @@ x 15
 y 595
 w 285
 h 20
-controlPv "$(SYS)\{$(DEVICE)\}In:GPIO-Sts"
+controlPv "$(SYS){$(DEVICE)}In:GPIO-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -2697,7 +2697,7 @@ minor 1
 release 0
 x 5
 y 635
-w 157
+w 154
 h 14
 font "helvetica-medium-r-12.0"
 fontAlign "center"
@@ -2720,7 +2720,7 @@ x 15
 y 670
 w 285
 h 20
-controlPv "$(SYS)\{$(DEVICE)\}Out:GPIO-Sel"
+controlPv "$(SYS){$(DEVICE)}Out:GPIO-Sel"
 lineColor index 14
 onColor index 15
 offColor index 19
