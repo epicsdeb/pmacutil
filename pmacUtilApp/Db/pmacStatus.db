@@ -228,112 +228,15 @@ record(mbbi, "$(SYS){$(PMAC)}Mode:ErrRep-Sts") {
   field(THST, "BELL+CR+ERR(3)")
 }
 
-record(seq, "$(SYS){$(PMAC)-Ax:01}-Seq_") {
-}
-
-record(seq, "$(SYS){$(PMAC)-Ax:02}-Seq_") {
-}
-
-record(seq, "$(SYS){$(PMAC)-Ax:03}-Seq_") {
-}
-
-record(seq, "$(SYS){$(PMAC)-Ax:04}-Seq_") {
-}
-
-record(seq, "$(SYS){$(PMAC)-Ax:05}-Seq_") {
-}
-
-record(seq, "$(SYS){$(PMAC)-Ax:06}-Seq_") {
-}
-
-record(seq, "$(SYS){$(PMAC)-Ax:07}-Seq_") {
-}
-
-record(seq, "$(SYS){$(PMAC)-Ax:08}-Seq_") {
-}
-
-record(seq, "$(SYS){$(PMAC)-Ax:09}-Seq_") {
-}
-
-record(seq, "$(SYS){$(PMAC)-Ax:10}-Seq_") {
-}
-
-record(seq, "$(SYS){$(PMAC)-Ax:11}-Seq_") {
-}
-
-record(seq, "$(SYS){$(PMAC)-Ax:12}-Seq_") {
-}
-
-record(seq, "$(SYS){$(PMAC)-Ax:13}-Seq_") {
-}
-
-record(seq, "$(SYS){$(PMAC)-Ax:14}-Seq_") {
-}
-
-record(seq, "$(SYS){$(PMAC)-Ax:15}-Seq_") {
-}
-
-record(seq, "$(SYS){$(PMAC)-Ax:16}-Seq_") {
-}
-
-record(seq, "$(SYS){$(PMAC)-Ax:17}-Seq_") {
-}
-
-record(seq, "$(SYS){$(PMAC)-Ax:18}-Seq_") {
-}
-
-record(seq, "$(SYS){$(PMAC)-Ax:19}-Seq_") {
-}
-
-record(seq, "$(SYS){$(PMAC)-Ax:20}-Seq_") {
-}
-
-record(seq, "$(SYS){$(PMAC)-Ax:21}-Seq_") {
-}
-
-record(seq, "$(SYS){$(PMAC)-Ax:22}-Seq_") {
-}
-
-record(seq, "$(SYS){$(PMAC)-Ax:23}-Seq_") {
-}
-
-record(seq, "$(SYS){$(PMAC)-Ax:24}-Seq_") {
-}
-
-record(seq, "$(SYS){$(PMAC)-Ax:25}-Seq_") {
-}
-
-record(seq, "$(SYS){$(PMAC)-Ax:26}-Seq_") {
-}
-
-record(seq, "$(SYS){$(PMAC)-Ax:27}-Seq_") {
-}
-
-record(seq, "$(SYS){$(PMAC)-Ax:28}-Seq_") {
-}
-
-record(seq, "$(SYS){$(PMAC)-Ax:29}-Seq_") {
-}
-
-record(seq, "$(SYS){$(PMAC)-Ax:30}-Seq_") {
-}
-
-record(seq, "$(SYS){$(PMAC)-Ax:31}-Seq_") {
-}
-
-record(seq, "$(SYS){$(PMAC)-Ax:32}-Seq_") {
-}
-
 record(seq, "$(SYS){$(PMAC)-Ax:RB1}-Seq_") {
-  field(LNK1, "$(SYS){$(PMAC)-Ax:01}-Seq_.PROC PP")
-  field(LNK2, "$(SYS){$(PMAC)-Ax:02}-Seq_.PROC PP")
-  field(LNK3, "$(SYS){$(PMAC)-Ax:03}-Seq_.PROC PP")
-  field(LNK4, "$(SYS){$(PMAC)-Ax:04}-Seq_.PROC PP")
-  field(LNK5, "$(SYS){$(PMAC)-Ax:05}-Seq_.PROC PP")
-  field(LNK6, "$(SYS){$(PMAC)-Ax:06}-Seq_.PROC PP")
-  field(LNK7, "$(SYS){$(PMAC)-Ax:07}-Seq_.PROC PP")
-  field(LNK8, "$(SYS){$(PMAC)-Ax:08}-Seq_.PROC PP")
-  field(LNK9, "$(SYS){$(PMAC)-Ax:RB2}-Seq_.PROC PP")
+  field(LNK1, "$(SYS){$(PMAC)-Ax:1}-Seq_.PROC PP")
+  field(LNK2, "$(SYS){$(PMAC)-Ax:2}-Seq_.PROC PP")
+  field(LNK3, "$(SYS){$(PMAC)-Ax:3}-Seq_.PROC PP")
+  field(LNK4, "$(SYS){$(PMAC)-Ax:4}-Seq_.PROC PP")
+  field(LNK5, "$(SYS){$(PMAC)-Ax:5}-Seq_.PROC PP")
+  field(LNK6, "$(SYS){$(PMAC)-Ax:6}-Seq_.PROC PP")
+  field(LNK7, "$(SYS){$(PMAC)-Ax:7}-Seq_.PROC PP")
+  field(LNK8, "$(SYS){$(PMAC)-Ax:8}-Seq_.PROC PP")
   field(DLY1, "0")
   field(DLY2, "0.5")
   field(DLY3, "0.5")
@@ -353,94 +256,6 @@ record(seq, "$(SYS){$(PMAC)-Ax:RB1}-Seq_") {
   field(DOL8, "1")
   field(DOL9, "1")
 }
-
-record(seq, "$(SYS){$(PMAC)-Ax:RB2}-Seq_") {
-  field(LNK1, "$(SYS){$(PMAC)-Ax:09}-Seq_.PROC PP")
-  field(LNK2, "$(SYS){$(PMAC)-Ax:10}-Seq_.PROC PP")
-  field(LNK3, "$(SYS){$(PMAC)-Ax:11}-Seq_.PROC PP")
-  field(LNK4, "$(SYS){$(PMAC)-Ax:12}-Seq_.PROC PP")
-  field(LNK5, "$(SYS){$(PMAC)-Ax:13}-Seq_.PROC PP")
-  field(LNK6, "$(SYS){$(PMAC)-Ax:14}-Seq_.PROC PP")
-  field(LNK7, "$(SYS){$(PMAC)-Ax:15}-Seq_.PROC PP")
-  field(LNK8, "$(SYS){$(PMAC)-Ax:16}-Seq_.PROC PP")
-  field(LNK9, "$(SYS){$(PMAC)-Ax:RB3}-Seq_.PROC PP")
-  field(DLY1, "0")
-  field(DLY2, "0.5")
-  field(DLY3, "0.5")
-  field(DLY4, "0.5")
-  field(DLY5, "0.5")
-  field(DLY6, "0.5")
-  field(DLY7, "0.5")
-  field(DLY8, "0.5")
-  field(DLY9, "0.5")
-  field(DOL1, "1")
-  field(DOL2, "1")
-  field(DOL3, "1")
-  field(DOL4, "1")
-  field(DOL5, "1")
-  field(DOL6, "1")
-  field(DOL7, "1")
-  field(DOL8, "1")
-  field(DOL9, "1")
-}
-
-record(seq, "$(SYS){$(PMAC)-Ax:RB3}-Seq_") {
-  field(LNK1, "$(SYS){$(PMAC)-Ax:17}-Seq_.PROC PP")
-  field(LNK2, "$(SYS){$(PMAC)-Ax:18}-Seq_.PROC PP")
-  field(LNK3, "$(SYS){$(PMAC)-Ax:19}-Seq_.PROC PP")
-  field(LNK4, "$(SYS){$(PMAC)-Ax:20}-Seq_.PROC PP")
-  field(LNK5, "$(SYS){$(PMAC)-Ax:21}-Seq_.PROC PP")
-  field(LNK6, "$(SYS){$(PMAC)-Ax:22}-Seq_.PROC PP")
-  field(LNK7, "$(SYS){$(PMAC)-Ax:23}-Seq_.PROC PP")
-  field(LNK8, "$(SYS){$(PMAC)-Ax:24}-Seq_.PROC PP")
-  field(LNK9, "$(SYS){$(PMAC)-Ax:RB4}-Seq_.PROC PP")
-  field(DLY1, "0")
-  field(DLY2, "0.5")
-  field(DLY3, "0.5")
-  field(DLY4, "0.5")
-  field(DLY5, "0.5")
-  field(DLY6, "0.5")
-  field(DLY7, "0.5")
-  field(DLY8, "0.5")
-  field(DLY9, "0.5")
-  field(DOL1, "1")
-  field(DOL2, "1")
-  field(DOL3, "1")
-  field(DOL4, "1")
-  field(DOL5, "1")
-  field(DOL6, "1")
-  field(DOL7, "1")
-  field(DOL8, "1")
-  field(DOL9, "1")
-}
-
-record(seq, "$(SYS){$(PMAC)-Ax:RB4}-Seq_") {
-  field(LNK1, "$(SYS){$(PMAC)-Ax:25}-Seq_.PROC PP")
-  field(LNK2, "$(SYS){$(PMAC)-Ax:26}-Seq_.PROC PP")
-  field(LNK3, "$(SYS){$(PMAC)-Ax:27}-Seq_.PROC PP")
-  field(LNK4, "$(SYS){$(PMAC)-Ax:28}-Seq_.PROC PP")
-  field(LNK5, "$(SYS){$(PMAC)-Ax:29}-Seq_.PROC PP")
-  field(LNK6, "$(SYS){$(PMAC)-Ax:30}-Seq_.PROC PP")
-  field(LNK7, "$(SYS){$(PMAC)-Ax:31}-Seq_.PROC PP")
-  field(LNK8, "$(SYS){$(PMAC)-Ax:32}-Seq_.PROC PP")
-  field(DLY1, "0")
-  field(DLY2, "0.5")
-  field(DLY3, "0.5")
-  field(DLY4, "0.5")
-  field(DLY5, "0.5")
-  field(DLY6, "0.5")
-  field(DLY7, "0.5")
-  field(DLY8, "0.5")
-  field(DOL1, "1")
-  field(DOL2, "1")
-  field(DOL3, "1")
-  field(DOL4, "1")
-  field(DOL5, "1")
-  field(DOL6, "1")
-  field(DOL7, "1")
-  field(DOL8, "1")
-}
-
 
 record(longin, "$(SYS){$(PMAC)}Cnt:Axes-I") {
   field(PINI, "YES")
