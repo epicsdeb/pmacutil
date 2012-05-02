@@ -49,5 +49,5 @@ msgstr "$(SYS){$(DEVICE)-$(AXIS)}Sts:2-Sts"
 #. recordtype: mbbiDirect
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/pmacStatusAxis.db:52
 msgid "$(M):AXIS$(A):status3"
-msgstr "$(SYS){$(DEVICE)-$(AXIS)}Sts:2-Sts"
+msgstr "$(SYS){$(DEVICE)-$(AXIS)}Sts:3-Sts"
 

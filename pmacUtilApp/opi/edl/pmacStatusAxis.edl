@@ -689,7 +689,7 @@ x 13
 y 185
 w 12
 h 12
-controlPv "$(SYS)\{$(DEVICE)-Ax:$(AXIS)\}Sts:2-Sts"
+controlPv "$(SYS)\{$(DEVICE)-Ax:$(AXIS)\}Sts:3-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -727,7 +727,7 @@ x 13
 y 197
 w 12
 h 12
-controlPv "$(SYS)\{$(DEVICE)-Ax:$(AXIS)\}Sts:2-Sts"
+controlPv "$(SYS)\{$(DEVICE)-Ax:$(AXIS)\}Sts:3-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -766,7 +766,7 @@ x 13
 y 209
 w 12
 h 12
-controlPv "$(SYS)\{$(DEVICE)-Ax:$(AXIS)\}Sts:2-Sts"
+controlPv "$(SYS)\{$(DEVICE)-Ax:$(AXIS)\}Sts:3-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -805,7 +805,7 @@ x 13
 y 221
 w 12
 h 12
-controlPv "$(SYS)\{$(DEVICE)-Ax:$(AXIS)\}Sts:2-Sts"
+controlPv "$(SYS)\{$(DEVICE)-Ax:$(AXIS)\}Sts:3-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -844,7 +844,7 @@ x 13
 y 233
 w 12
 h 12
-controlPv "$(SYS)\{$(DEVICE)-Ax:$(AXIS)\}Sts:2-Sts"
+controlPv "$(SYS)\{$(DEVICE)-Ax:$(AXIS)\}Sts:3-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -883,7 +883,7 @@ x 13
 y 245
 w 12
 h 12
-controlPv "$(SYS)\{$(DEVICE)-Ax:$(AXIS)\}Sts:2-Sts"
+controlPv "$(SYS)\{$(DEVICE)-Ax:$(AXIS)\}Sts:3-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -922,7 +922,7 @@ x 13
 y 257
 w 12
 h 12
-controlPv "$(SYS)\{$(DEVICE)-Ax:$(AXIS)\}Sts:2-Sts"
+controlPv "$(SYS)\{$(DEVICE)-Ax:$(AXIS)\}Sts:3-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -961,7 +961,7 @@ x 13
 y 269
 w 12
 h 12
-controlPv "$(SYS)\{$(DEVICE)-Ax:$(AXIS)\}Sts:2-Sts"
+controlPv "$(SYS)\{$(DEVICE)-Ax:$(AXIS)\}Sts:3-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -1000,7 +1000,7 @@ x 13
 y 281
 w 12
 h 12
-controlPv "$(SYS)\{$(DEVICE)-Ax:$(AXIS)\}Sts:2-Sts"
+controlPv "$(SYS)\{$(DEVICE)-Ax:$(AXIS)\}Sts:3-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -1039,7 +1039,7 @@ x 13
 y 293
 w 12
 h 12
-controlPv "$(SYS)\{$(DEVICE)-Ax:$(AXIS)\}Sts:2-Sts"
+controlPv "$(SYS)\{$(DEVICE)-Ax:$(AXIS)\}Sts:3-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -1078,7 +1078,7 @@ x 13
 y 305
 w 12
 h 12
-controlPv "$(SYS)\{$(DEVICE)-Ax:$(AXIS)\}Sts:2-Sts"
+controlPv "$(SYS)\{$(DEVICE)-Ax:$(AXIS)\}Sts:3-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -1117,7 +1117,7 @@ x 13
 y 317
 w 12
 h 12
-controlPv "$(SYS)\{$(DEVICE)-Ax:$(AXIS)\}Sts:2-Sts"
+controlPv "$(SYS)\{$(DEVICE)-Ax:$(AXIS)\}Sts:3-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -1156,7 +1156,7 @@ x 13
 y 329
 w 12
 h 12
-controlPv "$(SYS)\{$(DEVICE)-Ax:$(AXIS)\}Sts:2-Sts"
+controlPv "$(SYS)\{$(DEVICE)-Ax:$(AXIS)\}Sts:3-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -1195,7 +1195,7 @@ x 13
 y 341
 w 12
 h 12
-controlPv "$(SYS)\{$(DEVICE)-Ax:$(AXIS)\}Sts:2-Sts"
+controlPv "$(SYS)\{$(DEVICE)-Ax:$(AXIS)\}Sts:3-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -1234,7 +1234,7 @@ x 13
 y 353
 w 12
 h 12
-controlPv "$(SYS)\{$(DEVICE)-Ax:$(AXIS)\}Sts:2-Sts"
+controlPv "$(SYS)\{$(DEVICE)-Ax:$(AXIS)\}Sts:3-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -1273,7 +1273,7 @@ x 13
 y 365
 w 12
 h 12
-controlPv "$(SYS)\{$(DEVICE)-Ax:$(AXIS)\}Sts:2-Sts"
+controlPv "$(SYS)\{$(DEVICE)-Ax:$(AXIS)\}Sts:3-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
