@@ -25,7 +25,7 @@
 # This associates an edm screen with the template
 # % gui, $(name=), edm, autohome.edl, P=$(P)
 
-record(asyn, "$(P):HM:ASYN1") {
+record(asyn, "$(SYS)$(DEVICE)Cmd:Home-Asyn_") {
   field(DESC, "User cmd to PMAC")
   field(SCAN, "Passive")
   field(PINI, "NO")
@@ -33,30 +33,30 @@ record(asyn, "$(P):HM:ASYN1") {
   field(PORT, "$(PORT)")
 }
 
-record(stringout, "$(P):HM:ABORT") {
+record(stringout, "$(SYS)$(DEVICE)Abort:Home-Cmd") {
   field(DESC, "Send abort cmd")
   field(SCAN, "Passive")
   field(PINI, "NO")
   field(DTYP, "Soft Channel")
   field(VAL, "P$(PLC)01=2")
-  field(OUT, "$(P):HM:ASYN1.AOUT PP")
+  field(OUT, "$(SYS)$(DEVICE)Cmd:Home-Asyn_.AOUT PP")
 }
 
 # This will read the P variables P$(PLC)01 and P$(PLC)00
 # from the PMAC in one command.
-record(asyn, "$(P):HM:ASYN2") {
+record(asyn, "$(SYS)$(DEVICE)Sts:Home-Asyn_") {
   field(DESC, "Read homing status from PMAC")
   field(SCAN, ".2 second")
   field(PINI, "NO")
   field(DTYP, "asynRecordDevice")
   field(PORT, "$(PORT)")
   field(AOUT, "P$(PLC)01 P$(PLC)00 P$(PLC)02")
-  field(FLNK, "$(P):HM:FAN1")
+  field(FLNK, "$(SYS)$(DEVICE)Sts:Home-FOut_")
   field(DISV, "0")
-  field(SDIS, "$(P):HM:HOMING")
+  field(SDIS, "$(SYS)$(DEVICE)Sts:Homing-Sts")
 }
 
-record(scalcout, "$(P):HM:PARSE1") {
+record(scalcout, "$(SYS)$(DEVICE)Sts:Home-SCalcout_") {
   field(DESC, "Parse PMAC response to P$(PLC)01")
   field(DTYP, "Soft Channel")
   field(SCAN, "Passive")
@@ -64,12 +64,12 @@ record(scalcout, "$(P):HM:PARSE1") {
   field(CALC, "SSCANF(AA,'%d %*d %*d')")
   field(OOPT, "On Change")
   field(DOPT, "Use CALC")
-  field(INAA, "$(P):HM:ASYN2.AINP")
-  field(FLNK, "$(P):HM:STATUS")
+  field(INAA, "$(SYS)$(DEVICE)Sts:Home-Asyn_.AINP")
+  field(FLNK, "$(SYS)$(DEVICE)Sts:Homing-Sts")
   field(PREC, "0")
 }
 
-record(scalcout, "$(P):HM:PARSE2") {
+record(scalcout, "$(SYS)$(DEVICE)State:Home-SCalcout_") {
   field(DESC, "Parse PMAC response to P$(PLC)00")
   field(DTYP, "Soft Channel")
   field(SCAN, "Passive")
@@ -77,12 +77,12 @@ record(scalcout, "$(P):HM:PARSE2") {
   field(CALC, "SSCANF(AA,'%*d %d %*d')")
   field(OOPT, "On Change")
   field(DOPT, "Use CALC")
-  field(INAA, "$(P):HM:ASYN2.AINP")
-  field(FLNK, "$(P):HM:STATE")
+  field(INAA, "$(SYS)$(DEVICE)Sts:Home-Asyn_.AINP")
+  field(FLNK, "$(SYS)$(DEVICE)State:Home-Sts")
   field(PREC, "0")
 }
 
-record(mbbi, "$(P):HM:STATUS") {
+record(mbbi, "$(SYS)$(DEVICE)Sts:Homing-Sts") {
   field(DESC, "Homing status")
   field(SCAN, "Passive")
   field(PINI, "YES")
@@ -95,8 +95,8 @@ record(mbbi, "$(P):HM:STATUS") {
   field(ONST, "Homing")
   field(TWST, "Aborted")
   field(THST, "Timeout")
-  field(FLNK, "$(P):HM:CHECK")
-  field(INP, "$(P):HM:PARSE1")
+  field(FLNK, "$(SYS)$(DEVICE)Sts:HomeCheck-Sts")
+  field(INP, "$(SYS)$(DEVICE)Sts:Home-SCalcout_")
   field(FRVL, "4")
   field(FVVL, "5")
   field(SXVL, "6")
@@ -115,7 +115,7 @@ record(mbbi, "$(P):HM:STATUS") {
   field(SVST, "Invalid Setting")
 }
 
-record(mbbi, "$(P):HM:STATE") {
+record(mbbi, "$(SYS)$(DEVICE)State:Home-Sts") {
   field(DESC, "Homing state")
   field(SCAN, "Passive")
   field(PINI, "YES")
@@ -130,7 +130,7 @@ record(mbbi, "$(P):HM:STATE") {
   field(THST, "Move to pos lim")
   field(FRVL, "4")
   field(FRST, "Homing")
-  field(INP, "$(P):HM:PARSE2")
+  field(INP, "$(SYS)$(DEVICE)State:Home-SCalcout_")
   field(FVVL, "5")
   field(FVST, "Post home move")
   field(SXVL, "6")
@@ -153,76 +153,76 @@ record(mbbi, "$(P):HM:STATE") {
   field(FTST, "$(STATE14=)")
 }
 
-record(busy, "$(P):HM:HOMING") {
-  field(FLNK, "$(P):HM:HOMED")
+record(busy, "$(SYS)$(DEVICE)Sts:Homing-Sts") {
+  field(FLNK, "$(SYS)$(DEVICE)Sts:Homed-Sts")
 }
 
-record(bo, "$(P):HM:HOME") {
+record(bo, "$(SYS)$(DEVICE)Start:Home-Cmd") {
   field(SCAN, "Passive")
   field(PINI, "NO")
   field(DTYP, "Soft Channel")
-  field(FLNK, "$(P):HM:START")
+  field(FLNK, "$(SYS)$(DEVICE)Start:Home-Calcout_")
 }
 
 
-record(calcout, "$(P):HM:CHECK") {
+record(calcout, "$(SYS)$(DEVICE)Sts:HomeCheck-Sts") {
   field(CALC, "A==1")
-  field(INPA, "$(P):HM:PARSE1 PP")
-  field(OUT, "$(P):HM:HOMING CA")
+  field(INPA, "$(SYS)$(DEVICE)Sts:Home-SCalcout_ PP")
+  field(OUT, "$(SYS)$(DEVICE)Sts:Homing-Sts CA")
   field(OOPT, "When Zero")
   field(DOPT, "Use CALC")
 }
 
-record(fanout, "$(P):HM:FAN1") {
-  field(FLNK, "$(P):HM:PARSE1")
-  field(LNK1, "$(P):HM:PARSE2")
-  field(LNK2, "$(P):HM:PARSE3")
+record(fanout, "$(SYS)$(DEVICE)Sts:Home-FOut_") {
+  field(FLNK, "$(SYS)$(DEVICE)Sts:Home-SCalcout_")
+  field(LNK1, "$(SYS)$(DEVICE)State:Home-SCalcout_")
+  field(LNK2, "$(SYS)$(DEVICE)Sts:HomeGroup-SCalcout_")
 }
 
-record(bo, "$(P):HM:HOMED") {
+record(bo, "$(SYS)$(DEVICE)Sts:Homed-Sts") {
   field(SCAN, "Passive")
   field(PINI, "NO")
   field(DTYP, "Soft Channel")
-  field(FLNK, "$(P):HM:HOME")
-  field(OUT, "$(P):HM:HOME PP")
+  field(FLNK, "$(SYS)$(DEVICE)Start:Home-Cmd")
+  field(OUT, "$(SYS)$(DEVICE)Start:Home-Cmd PP")
   field(VAL, "0")
 }
 
-record(bo, "$(P):HM:BUF1") {
+record(bo, "$(SYS)$(DEVICE)Start:HomeBuf-Cmd") {
   field(SCAN, "Passive")
   field(PINI, "NO")
   field(DTYP, "Soft Channel")
-  field(FLNK, "$(P):HM:STARTHMP")
-  field(OUT, "$(P):HM:HOMING PP")
+  field(FLNK, "$(SYS)$(DEVICE)Start:Home-Stringout_")
+  field(OUT, "$(SYS)$(DEVICE)Sts:Homing-Sts PP")
 }
 
-record(calcout, "$(P):HM:START") {
+record(calcout, "$(SYS)$(DEVICE)Start:Home-Calcout_") {
   field(DESC, "Check if usr started")
   field(SCAN, "Passive")
   field(PINI, "NO")
   field(DTYP, "Soft Channel")
   field(CALC, "A")
-  field(INPA, "$(P):HM:HOME PP")
-  field(OUT, "$(P):HM:BUF1 PP")
+  field(INPA, "$(SYS)$(DEVICE)Start:Home-Cmd PP")
+  field(OUT, "$(SYS)$(DEVICE)Start:HomeBuf-Cmd PP")
   field(OOPT, "Transition To Non-zero")
   field(DOPT, "Use CALC")
 }
 
-record(stringout, "$(P):HM:STARTHMP") {
+record(stringout, "$(SYS)$(DEVICE)Start:Home-Stringout_") {
   field(DESC, "Start homing plc/prog")
   field(SCAN, "Passive")
   field(PINI, "NO")
   field(DTYP, "Soft Channel")
   field(VAL, "ENABLE PLC$(PLC)")
-  field(OUT, "$(P):HM:ASYN1.AOUT PP")
+  field(OUT, "$(SYS)$(DEVICE)Cmd:Home-Asyn_.AOUT PP")
 }
 
-record(mbbo, "$(P):HM:HMGRP") {
+record(mbbo, "$(SYS)$(DEVICE)Val:HomeGroup-Sel") {
   field(DESC, "Homing group")
   field(SCAN, "Passive")
   field(PINI, "YES")
   field(DTYP, "Soft Channel")
-  field(FLNK, "$(P):HM:SENDGRP")
+  field(FLNK, "$(SYS)$(DEVICE)Val:HomeGroup-SCalcout")
   field(ZRVL, "0")
   field(ONVL, "1")
   field(TWVL, "2")
@@ -244,124 +244,124 @@ record(mbbo, "$(P):HM:HMGRP") {
   field(IVOV, "0")
 }
 
-record(scalcout, "$(P):HM:SENDGRP") {
+record(scalcout, "$(SYS)$(DEVICE)Val:HomeGroup-SCalcout") {
   field(DESC, "Select group on pmac")
   field(SCAN, "Passive")
   field(DTYP, "Soft Channel")
   field(CALC, "PRINTF('P$(PLC)02=%i',A)")
-  field(INPA, "$(P):HM:HMGRP PP")
-  field(OUT, "$(P):HM:ASYN1.AOUT PP")
+  field(INPA, "$(SYS)$(DEVICE)Val:HomeGroup-Sel PP")
+  field(OUT, "$(SYS)$(DEVICE)Cmd:Home-Asyn_.AOUT PP")
   field(OOPT, "Every Time")
   field(DOPT, "Use CALC")
 }
 
-record(scalcout, "$(P):HM:PARSE3") {
+record(scalcout, "$(SYS)$(DEVICE)Sts:HomeGroup-SCalcout_") {
   field(DESC, "Parse pmac P$(PLC)02")
   field(SCAN, "Passive")
   field(PINI, "NO")
   field(DTYP, "Soft Channel")
   field(CALC, "SSCANF(AA,'%*d %*d %d')")
-  field(INAA, "$(P):HM:ASYN2.AINP")
+  field(INAA, "$(SYS)$(DEVICE)Sts:Home-Asyn_.AINP")
   field(OOPT, "On Change")
   field(DOPT, "Use CALC")
   field(PREC, "0")
-  field(OUT, "$(P):HM:PARSE4 PP")
+  field(OUT, "$(SYS)$(DEVICE)Sts:HomeGroup-Longout_ PP")
 }
 
-record(ao, "$(P):HM:PLC") {
+record(ao, "$(SYS)$(DEVICE)Val:PLC-I") {
   field(DTYP, "Soft Channel")
   field(VAL, "$(PLC)")
 }
 
-record(scalcout, "$(P):HM:TI2") {
+record(scalcout, "$(SYS)$(DEVICE)Time:Home-SCalcout_") {
   field(DESC, "create string with ivar")
   field(SCAN, "Passive")
   field(DTYP, "Soft Channel")
   field(CALC, "PRINTF('i%i i10',A)")
-  field(OUT, "$(P):HM:ASYN3.AOUT PP")
+  field(OUT, "$(SYS)$(DEVICE)Val:Timer-Asyn_.AOUT PP")
   field(OOPT, "Every Time")
   field(DOPT, "Use CALC")
 }
 
-record(calcout, "$(P):HM:TI1") {
+record(calcout, "$(SYS)$(DEVICE)Time:Home-Calcout_") {
   field(DESC, "calc timer ivar")
   field(SCAN, "Passive")
   field(PINI, "YES")
   field(CALC, "5111+(A&30)*50+A%2")
-  field(INPA, "$(P):HM:PLC PP")
-  field(OUT, "$(P):HM:TI2.A PP")
+  field(INPA, "$(SYS)$(DEVICE)Val:PLC-I PP")
+  field(OUT, "$(SYS)$(DEVICE)Time:Home-SCalcout_.A PP")
   field(OOPT, "Every Time")
   field(DOPT, "Use CALC")
 }
 
-record(asyn, "$(P):HM:ASYN3") {
+record(asyn, "$(SYS)$(DEVICE)Val:Timer-Asyn_") {
   field(DESC, "Read timer")
   field(SCAN, ".2 second")
   field(PINI, "NO")
-  field(SDIS, "$(P):HM:HOMING")
-  field(FLNK, "$(P):HM:FAN2")
+  field(SDIS, "$(SYS)$(DEVICE)Sts:Homing-Sts")
+  field(FLNK, "$(SYS)$(DEVICE)")
   field(PORT, "$(PORT)")
   field(DISV, "0")
 }
 
-record(scalcout, "$(P):HM:TIMER") {
+record(scalcout, "$(SYS)$(DEVICE)Time:Home-I") {
   field(DESC, "parse timer")
   field(DTYP, "Soft Channel")
   field(CALC, "SSCANF(AA, '%d %*d')")
-  field(INAA, "$(P):HM:ASYN3.AINP")
+  field(INAA, "$(SYS)$(DEVICE)Val:Timer-Asyn_.AINP")
   field(OOPT, "On Change")
   field(DOPT, "Use CALC")
 }
 
-record(fanout, "$(P):HM:FAN2") {
-  field(FLNK, "$(P):HM:TIMER")
-  field(LNK1, "$(P):HM:I10")
+record(fanout, "$(SYS)$(DEVICE)") {
+  field(FLNK, "$(SYS)$(DEVICE)Time:Home-I")
+  field(LNK1, "$(SYS)$(DEVICE)Val:Timer-SCalcout_")
 }
 
-record(scalcout, "$(P):HM:I10") {
+record(scalcout, "$(SYS)$(DEVICE)Val:Timer-SCalcout_") {
   field(DESC, "parse timer")
   field(DTYP, "Soft Channel")
-  field(FLNK, "$(P):HM:TIMEOUT")
+  field(FLNK, "$(SYS)$(DEVICE)Time:MaxHome-Calcout_")
   field(CALC, "SSCANF(AA, '%*d %d')")
-  field(INAA, "$(P):HM:ASYN3.AINP")
+  field(INAA, "$(SYS)$(DEVICE)Val:Timer-Asyn_.AINP")
   field(OOPT, "On Change")
   field(DOPT, "Use CALC")
 }
 
-record(calcout, "$(P):HM:TIMEOUT") {
+record(calcout, "$(SYS)$(DEVICE)Time:MaxHome-Calcout_") {
   field(SCAN, "Passive")
   field(DTYP, "Soft Channel")
   field(CALC, "A/8388608*B/1000")
-  field(INPA, "$(P):HM:TIMER")
-  field(INPB, "$(P):HM:I10")
+  field(INPA, "$(SYS)$(DEVICE)Time:Home-I")
+  field(INPB, "$(SYS)$(DEVICE)Val:Timer-SCalcout_")
   field(OOPT, "On Change")
   field(DOPT, "Use CALC")
   field(EGU, "s")
   field(PREC, "3")
 }
 
-record(stringout, "$(P):HM:M1PV") {
+record(stringout, "$(SYS)$(DEVICE)Sts:HomeMtr1-Stringout_") {
 }
 
-record(stringout, "$(P):HM:M2PV") {
+record(stringout, "$(SYS)$(DEVICE)Sts:HomeMtr2-Stringout_") {
 }
 
-record(stringout, "$(P):HM:M3PV") {
+record(stringout, "$(SYS)$(DEVICE)Sts:HomeMtr3-Stringout_") {
 }
 
-record(stringout, "$(P):HM:M4PV") {
+record(stringout, "$(SYS)$(DEVICE)Sts:HomeMtr4-Stringout_") {
 }
 
-record(stringout, "$(P):HM:M5PV") {
+record(stringout, "$(SYS)$(DEVICE)Sts:HomeMtr5-Stringout_") {
 }
 
-record(stringout, "$(P):HM:M6PV") {
+record(stringout, "$(SYS)$(DEVICE)Sts:HomeMtr6-Stringout_") {
 }
 
-record(stringout, "$(P):HM:M7PV") {
+record(stringout, "$(SYS)$(DEVICE)Sts:HomeMtr7-Stringout_") {
 }
 
-record(stringout, "$(P):HM:M8PV") {
+record(stringout, "$(SYS)$(DEVICE)Sts:HomeMtr8-Stringout_") {
 }
 
 record(stringout, "$(P):HM:M9PV") {
@@ -436,150 +436,150 @@ record(stringout, "$(P):HM:M31PV") {
 record(stringout, "$(P):HM:M32PV") {
 }
 
-record(longout, "$(P):HM:PARSE4") {
+record(longout, "$(SYS)$(DEVICE)Sts:HomeGroup-Longout_") {
   field(DTYP, "Soft Channel")
-  field(OUT, "$(P):HM:HMGRP PP")
+  field(OUT, "$(SYS)$(DEVICE)Val:HomeGroup-Sel PP")
 }
 
 #! Further lines contain data used by VisualDCT
 #! View(1720,1811,1.1)
-#! Record("$(P):HM:ASYN1",2060,2274,0,1,"$(P):HM:ASYN1")
-#! Field("$(P):HM:ASYN1.AOUT",16777215,0,"$(P):HM:ASYN1.AOUT")
-#! Record("$(P):HM:ABORT",2080,2500,0,1,"$(P):HM:ABORT")
-#! Field("$(P):HM:ABORT.OUT",16777215,0,"$(P):HM:ABORT.OUT")
-#! Link("$(P):HM:ABORT.OUT","$(P):HM:ASYN1.AOUT")
-#! Record("$(P):HM:ASYN2",2340,2098,0,1,"$(P):HM:ASYN2")
-#! Field("$(P):HM:ASYN2.FLNK",16777215,1,"$(P):HM:ASYN2.FLNK")
-#! Link("$(P):HM:ASYN2.FLNK","$(P):HM:ASYN2/FLNK")
-#! Field("$(P):HM:ASYN2.SDIS",16777215,1,"$(P):HM:ASYN2.SDIS")
-#! Link("$(P):HM:ASYN2.SDIS","$(P):HM:HOMING.VAL")
-#! Field("$(P):HM:ASYN2.AINP",16777215,1,"$(P):HM:ASYN2.AINP")
-#! Connector("$(P):HM:ASYN2/FLNK","$(P):HM:FAN1",2600,2210,16777215,"",0)
-#! Record("$(P):HM:PARSE1",2980,2084,0,0,"$(P):HM:PARSE1")
-#! Field("$(P):HM:PARSE1.VAL",16777215,1,"$(P):HM:PARSE1.VAL")
-#! Field("$(P):HM:PARSE1.FLNK",16777215,1,"$(P):HM:PARSE1.FLNK")
-#! Link("$(P):HM:PARSE1.FLNK","$(P):HM:PARSE1/FLNK")
-#! Field("$(P):HM:PARSE1.INAA",16777215,0,"$(P):HM:PARSE1.INAA")
-#! Link("$(P):HM:PARSE1.INAA","$(P):HM:ASYN2.AINP")
-#! Connector("$(P):HM:PARSE1/FLNK","$(P):HM:STATUS",3200,2186,16777215,"",0)
-#! Record("$(P):HM:PARSE2",2960,2424,0,0,"$(P):HM:PARSE2")
-#! Field("$(P):HM:PARSE2.FLNK",16777215,1,"$(P):HM:PARSE2.FLNK")
-#! Link("$(P):HM:PARSE2.FLNK","$(P):HM:STATE")
-#! Field("$(P):HM:PARSE2.INAA",16777215,0,"$(P):HM:PARSE2.INAA")
-#! Link("$(P):HM:PARSE2.INAA","$(P):HM:ASYN2.AINP")
-#! Field("$(P):HM:PARSE2.VAL",16777215,1,"$(P):HM:PARSE2.VAL")
-#! Record("$(P):HM:STATUS",3260,1824,0,0,"$(P):HM:STATUS")
-#! Field("$(P):HM:STATUS.FLNK",16777215,0,"$(P):HM:STATUS.FLNK")
-#! Link("$(P):HM:STATUS.FLNK","$(P):HM:STATUS/FLNK1")
-#! Field("$(P):HM:STATUS.INP",16777215,0,"$(P):HM:STATUS.INP")
-#! Link("$(P):HM:STATUS.INP","$(P):HM:PARSE1.VAL")
+#! Record("$(SYS)$(DEVICE)Cmd:Home-Asyn_",2060,2274,0,1,"$(SYS)$(DEVICE)Cmd:Home-Asyn_")
+#! Field("$(SYS)$(DEVICE)Cmd:Home-Asyn_.AOUT",16777215,0,"$(SYS)$(DEVICE)Cmd:Home-Asyn_.AOUT")
+#! Record("$(SYS)$(DEVICE)Abort:Home-Cmd",2080,2500,0,1,"$(SYS)$(DEVICE)Abort:Home-Cmd")
+#! Field("$(SYS)$(DEVICE)Abort:Home-Cmd.OUT",16777215,0,"$(SYS)$(DEVICE)Abort:Home-Cmd.OUT")
+#! Link("$(SYS)$(DEVICE)Abort:Home-Cmd.OUT","$(SYS)$(DEVICE)Cmd:Home-Asyn_.AOUT")
+#! Record("$(SYS)$(DEVICE)Sts:Home-Asyn_",2340,2098,0,1,"$(SYS)$(DEVICE)Sts:Home-Asyn_")
+#! Field("$(SYS)$(DEVICE)Sts:Home-Asyn_.FLNK",16777215,1,"$(SYS)$(DEVICE)Sts:Home-Asyn_.FLNK")
+#! Link("$(SYS)$(DEVICE)Sts:Home-Asyn_.FLNK","$(P):HM:ASYN2/FLNK")
+#! Field("$(SYS)$(DEVICE)Sts:Home-Asyn_.SDIS",16777215,1,"$(SYS)$(DEVICE)Sts:Home-Asyn_.SDIS")
+#! Link("$(SYS)$(DEVICE)Sts:Home-Asyn_.SDIS","$(SYS)$(DEVICE)Sts:Homing-Sts.VAL")
+#! Field("$(SYS)$(DEVICE)Sts:Home-Asyn_.AINP",16777215,1,"$(SYS)$(DEVICE)Sts:Home-Asyn_.AINP")
+#! Connector("$(P):HM:ASYN2/FLNK","$(SYS)$(DEVICE)Sts:Home-FOut_",2600,2210,16777215,"",0)
+#! Record("$(SYS)$(DEVICE)Sts:Home-SCalcout_",2980,2084,0,0,"$(SYS)$(DEVICE)Sts:Home-SCalcout_")
+#! Field("$(SYS)$(DEVICE)Sts:Home-SCalcout_.VAL",16777215,1,"$(SYS)$(DEVICE)Sts:Home-SCalcout_.VAL")
+#! Field("$(SYS)$(DEVICE)Sts:Home-SCalcout_.FLNK",16777215,1,"$(SYS)$(DEVICE)Sts:Home-SCalcout_.FLNK")
+#! Link("$(SYS)$(DEVICE)Sts:Home-SCalcout_.FLNK","$(P):HM:PARSE1/FLNK")
+#! Field("$(SYS)$(DEVICE)Sts:Home-SCalcout_.INAA",16777215,0,"$(SYS)$(DEVICE)Sts:Home-SCalcout_.INAA")
+#! Link("$(SYS)$(DEVICE)Sts:Home-SCalcout_.INAA","$(SYS)$(DEVICE)Sts:Home-Asyn_.AINP")
+#! Connector("$(P):HM:PARSE1/FLNK","$(SYS)$(DEVICE)Sts:Homing-Sts",3200,2186,16777215,"",0)
+#! Record("$(SYS)$(DEVICE)State:Home-SCalcout_",2960,2424,0,0,"$(SYS)$(DEVICE)State:Home-SCalcout_")
+#! Field("$(SYS)$(DEVICE)State:Home-SCalcout_.FLNK",16777215,1,"$(SYS)$(DEVICE)State:Home-SCalcout_.FLNK")
+#! Link("$(SYS)$(DEVICE)State:Home-SCalcout_.FLNK","$(SYS)$(DEVICE)State:Home-Sts")
+#! Field("$(SYS)$(DEVICE)State:Home-SCalcout_.INAA",16777215,0,"$(SYS)$(DEVICE)State:Home-SCalcout_.INAA")
+#! Link("$(SYS)$(DEVICE)State:Home-SCalcout_.INAA","$(SYS)$(DEVICE)Sts:Home-Asyn_.AINP")
+#! Field("$(SYS)$(DEVICE)State:Home-SCalcout_.VAL",16777215,1,"$(SYS)$(DEVICE)State:Home-SCalcout_.VAL")
+#! Record("$(SYS)$(DEVICE)Sts:Homing-Sts",3260,1824,0,0,"$(SYS)$(DEVICE)Sts:Homing-Sts")
+#! Field("$(SYS)$(DEVICE)Sts:Homing-Sts.FLNK",16777215,0,"$(SYS)$(DEVICE)Sts:Homing-Sts.FLNK")
+#! Link("$(SYS)$(DEVICE)Sts:Homing-Sts.FLNK","$(P):HM:STATUS/FLNK1")
+#! Field("$(SYS)$(DEVICE)Sts:Homing-Sts.INP",16777215,0,"$(SYS)$(DEVICE)Sts:Homing-Sts.INP")
+#! Link("$(SYS)$(DEVICE)Sts:Homing-Sts.INP","$(SYS)$(DEVICE)Sts:Home-SCalcout_.VAL")
 #! Connector("$(P):HM:STATUS/FLNK1","$(P):HM:STATUS/FLNK",3180,2115,16777215,"",0)
-#! Connector("$(P):HM:STATUS/FLNK","$(P):HM:CHECK",3037,1920,16777215,"",0)
-#! Record("$(P):HM:STATE",3260,2334,0,0,"$(P):HM:STATE")
-#! Field("$(P):HM:STATE.INP",16777215,0,"$(P):HM:STATE.INP")
-#! Link("$(P):HM:STATE.INP","$(P):HM:PARSE2.VAL")
-#! Record("$(P):HM:HOMING",2360,1790,0,1,"$(P):HM:HOMING")
-#! Field("$(P):HM:HOMING.FLNK",16777215,0,"$(P):HM:HOMING.FLNK")
-#! Link("$(P):HM:HOMING.FLNK","$(P):HM:HOMED")
-#! Field("$(P):HM:HOMING.VAL",16777215,1,"$(P):HM:HOMING.VAL")
-#! Record("$(P):HM:HOME",1480,2028,0,0,"$(P):HM:HOME")
-#! Field("$(P):HM:HOME.FLNK",16777215,1,"$(P):HM:HOME.FLNK")
-#! Link("$(P):HM:HOME.FLNK","$(P):HM:START")
-#! Field("$(P):HM:HOME.VAL",16777215,1,"$(P):HM:HOME.VAL")
-#! Record("$(P):HM:CHECK",2700,1794,0,1,"$(P):HM:CHECK")
-#! Field("$(P):HM:CHECK.OUT",16777215,0,"$(P):HM:CHECK.OUT")
-#! Link("$(P):HM:CHECK.OUT","$(P):HM:HOMING.VAL")
-#! Field("$(P):HM:CHECK.INPA",16777215,1,"$(P):HM:CHECK.INPA")
-#! Link("$(P):HM:CHECK.INPA","$(P):HM:PARSE1.VAL")
-#! Record("$(P):HM:FAN1",2660,2081,0,0,"$(P):HM:FAN1")
-#! Field("$(P):HM:FAN1.FLNK",16777215,1,"$(P):HM:FAN1.FLNK")
-#! Link("$(P):HM:FAN1.FLNK","$(P):HM:PARSE1")
-#! Field("$(P):HM:FAN1.LNK1",16777215,1,"$(P):HM:FAN1.LNK1")
-#! Link("$(P):HM:FAN1.LNK1","$(P):HM:FAN1/LNK1")
-#! Field("$(P):HM:FAN1.LNK2",16777215,1,"$(P):HM:FAN1.LNK2")
-#! Link("$(P):HM:FAN1.LNK2","$(P):HM:FAN1/LNK2")
-#! Connector("$(P):HM:FAN1/LNK2","$(P):HM:PARSE3",2880,2426,16777215,"",0)
-#! Connector("$(P):HM:FAN1/LNK1","$(P):HM:PARSE2",2900,2366,16777215,"",0)
-#! Record("$(P):HM:HOMED",1540,1800,0,1,"$(P):HM:HOMED")
-#! Field("$(P):HM:HOMED.OUT",16777215,0,"$(P):HM:HOMED.OUT")
-#! Link("$(P):HM:HOMED.OUT","$(P):HM:HOMED/OUT")
-#! Field("$(P):HM:HOMED.FLNK",16777215,0,"$(P):HM:HOMED.FLNK")
-#! Link("$(P):HM:HOMED.FLNK","$(P):HM:HOME")
-#! Connector("$(P):HM:HOMED/OUT","$(P):HM:HOME.VAL",1420,2060,16777215,"",0)
-#! Record("$(P):HM:BUF1",2020,2054,0,0,"$(P):HM:BUF1")
-#! Field("$(P):HM:BUF1.VAL",16777215,1,"$(P):HM:BUF1.VAL")
-#! Field("$(P):HM:BUF1.OUT",16777215,1,"$(P):HM:BUF1.OUT")
-#! Link("$(P):HM:BUF1.OUT","$(P):HM:HOMING.VAL")
-#! Field("$(P):HM:BUF1.FLNK",16777215,0,"$(P):HM:BUF1.FLNK")
-#! Link("$(P):HM:BUF1.FLNK","$(P):HM:STARTHMP")
-#! Record("$(P):HM:START",1760,1978,0,0,"$(P):HM:START")
-#! Field("$(P):HM:START.INPA",16777215,0,"$(P):HM:START.INPA")
-#! Link("$(P):HM:START.INPA","$(P):HM:HOME.VAL")
-#! Field("$(P):HM:START.OUT",16777215,1,"$(P):HM:START.OUT")
-#! Link("$(P):HM:START.OUT","$(P):HM:BUF1.VAL")
-#! Record("$(P):HM:STARTHMP",1640,2260,0,1,"$(P):HM:STARTHMP")
-#! Field("$(P):HM:STARTHMP.OUT",16777215,1,"$(P):HM:STARTHMP.OUT")
-#! Link("$(P):HM:STARTHMP.OUT","$(P):HM:ASYN1.AOUT")
-#! Record("$(P):HM:HMGRP",1420,2428,0,1,"$(P):HM:HMGRP")
-#! Field("$(P):HM:HMGRP.VAL",16777215,1,"$(P):HM:HMGRP.VAL")
-#! Field("$(P):HM:HMGRP.FLNK",16777215,1,"$(P):HM:HMGRP.FLNK")
-#! Link("$(P):HM:HMGRP.FLNK","$(P):HM:SENDGRP")
-#! Record("$(P):HM:SENDGRP",1760,2451,0,0,"$(P):HM:SENDGRP")
-#! Field("$(P):HM:SENDGRP.INPA",16777215,0,"$(P):HM:SENDGRP.INPA")
-#! Link("$(P):HM:SENDGRP.INPA","$(P):HM:HMGRP.VAL")
-#! Field("$(P):HM:SENDGRP.OUT",16777215,1,"$(P):HM:SENDGRP.OUT")
-#! Link("$(P):HM:SENDGRP.OUT","$(P):HM:ASYN1.AOUT")
-#! Record("$(P):HM:PARSE3",2320,2524,0,1,"$(P):HM:PARSE3")
-#! Field("$(P):HM:PARSE3.INAA",16777215,1,"$(P):HM:PARSE3.INAA")
-#! Link("$(P):HM:PARSE3.INAA","$(P):HM:ASYN2.AINP")
-#! Field("$(P):HM:PARSE3.OUT",16777215,0,"$(P):HM:PARSE3.OUT")
-#! Link("$(P):HM:PARSE3.OUT","$(P):HM:PARSE4.VAL")
-#! Record("$(P):HM:PLC",1680,3116,0,1,"$(P):HM:PLC")
-#! Field("$(P):HM:PLC.VAL",16777215,1,"$(P):HM:PLC.VAL")
-#! Record("$(P):HM:TI2",2300,3106,0,1,"$(P):HM:TI2")
-#! Field("$(P):HM:TI2.A",16777215,0,"$(P):HM:TI2.A")
-#! Field("$(P):HM:TI2.OUT",16777215,1,"$(P):HM:TI2.OUT")
-#! Link("$(P):HM:TI2.OUT","$(P):HM:ASYN3.AOUT")
-#! Record("$(P):HM:TI1",1960,3071,0,1,"$(P):HM:TI1")
-#! Field("$(P):HM:TI1.INPA",16777215,0,"$(P):HM:TI1.INPA")
-#! Link("$(P):HM:TI1.INPA","$(P):HM:PLC.VAL")
-#! Field("$(P):HM:TI1.OUT",16777215,1,"$(P):HM:TI1.OUT")
-#! Link("$(P):HM:TI1.OUT","$(P):HM:TI2.A")
-#! Record("$(P):HM:ASYN3",2660,3106,0,1,"$(P):HM:ASYN3")
-#! Field("$(P):HM:ASYN3.SDIS",16777215,0,"$(P):HM:ASYN3.SDIS")
-#! Link("$(P):HM:ASYN3.SDIS","$(P):HM:HOMING.VAL")
-#! Field("$(P):HM:ASYN3.AOUT",16777215,0,"$(P):HM:ASYN3.AOUT")
-#! Field("$(P):HM:ASYN3.AINP",16777215,1,"$(P):HM:ASYN3.AINP")
-#! Field("$(P):HM:ASYN3.FLNK",16777215,0,"$(P):HM:ASYN3.FLNK")
-#! Link("$(P):HM:ASYN3.FLNK","$(P):HM:FAN2")
-#! Record("$(P):HM:TIMER",2980,3240,0,0,"$(P):HM:TIMER")
-#! Field("$(P):HM:TIMER.INAA",16777215,0,"$(P):HM:TIMER.INAA")
-#! Link("$(P):HM:TIMER.INAA","$(P):HM:ASYN3.AINP")
-#! Field("$(P):HM:TIMER.VAL",16777215,1,"$(P):HM:TIMER.VAL")
-#! Record("$(P):HM:FAN2",2560,3396,0,0,"$(P):HM:FAN2")
-#! Field("$(P):HM:FAN2.FLNK",16777215,1,"$(P):HM:FAN2.FLNK")
-#! Link("$(P):HM:FAN2.FLNK","$(P):HM:TIMER")
-#! Field("$(P):HM:FAN2.LNK1",16777215,1,"$(P):HM:FAN2.LNK1")
-#! Link("$(P):HM:FAN2.LNK1","$(P):HM:I10")
-#! Record("$(P):HM:I10",2980,3446,0,0,"$(P):HM:I10")
-#! Field("$(P):HM:I10.FLNK",16777215,1,"$(P):HM:I10.FLNK")
-#! Link("$(P):HM:I10.FLNK","$(P):HM:TIMEOUT")
-#! Field("$(P):HM:I10.INAA",16777215,0,"$(P):HM:I10.INAA")
-#! Link("$(P):HM:I10.INAA","$(P):HM:ASYN3.AINP")
-#! Field("$(P):HM:I10.VAL",16777215,1,"$(P):HM:I10.VAL")
-#! Record("$(P):HM:TIMEOUT",3300,3318,16777215,0,"$(P):HM:TIMEOUT")
-#! Field("$(P):HM:TIMEOUT.INPA",16777215,0,"$(P):HM:TIMEOUT.INPA")
-#! Link("$(P):HM:TIMEOUT.INPA","$(P):HM:TIMER.VAL")
-#! Field("$(P):HM:TIMEOUT.INPB",16777215,0,"$(P):HM:TIMEOUT.INPB")
-#! Link("$(P):HM:TIMEOUT.INPB","$(P):HM:I10.VAL")
-#! Record("$(P):HM:M1PV",20,23,0,0,"$(P):HM:M1PV")
-#! Record("$(P):HM:M2PV",260,23,0,0,"$(P):HM:M2PV")
-#! Record("$(P):HM:M3PV",500,23,0,0,"$(P):HM:M3PV")
-#! Record("$(P):HM:M4PV",740,23,0,0,"$(P):HM:M4PV")
-#! Record("$(P):HM:M5PV",980,23,0,0,"$(P):HM:M5PV")
-#! Record("$(P):HM:M6PV",1220,23,0,0,"$(P):HM:M6PV")
-#! Record("$(P):HM:M7PV",1460,23,0,0,"$(P):HM:M7PV")
-#! Record("$(P):HM:M8PV",1700,23,0,0,"$(P):HM:M8PV")
+#! Connector("$(P):HM:STATUS/FLNK","$(SYS)$(DEVICE)Sts:HomeCheck-Sts",3037,1920,16777215,"",0)
+#! Record("$(SYS)$(DEVICE)State:Home-Sts",3260,2334,0,0,"$(SYS)$(DEVICE)State:Home-Sts")
+#! Field("$(SYS)$(DEVICE)State:Home-Sts.INP",16777215,0,"$(SYS)$(DEVICE)State:Home-Sts.INP")
+#! Link("$(SYS)$(DEVICE)State:Home-Sts.INP","$(SYS)$(DEVICE)State:Home-SCalcout_.VAL")
+#! Record("$(SYS)$(DEVICE)Sts:Homing-Sts",2360,1790,0,1,"$(SYS)$(DEVICE)Sts:Homing-Sts")
+#! Field("$(SYS)$(DEVICE)Sts:Homing-Sts.FLNK",16777215,0,"$(SYS)$(DEVICE)Sts:Homing-Sts.FLNK")
+#! Link("$(SYS)$(DEVICE)Sts:Homing-Sts.FLNK","$(SYS)$(DEVICE)Sts:Homed-Sts")
+#! Field("$(SYS)$(DEVICE)Sts:Homing-Sts.VAL",16777215,1,"$(SYS)$(DEVICE)Sts:Homing-Sts.VAL")
+#! Record("$(SYS)$(DEVICE)Start:Home-Cmd",1480,2028,0,0,"$(SYS)$(DEVICE)Start:Home-Cmd")
+#! Field("$(SYS)$(DEVICE)Start:Home-Cmd.FLNK",16777215,1,"$(SYS)$(DEVICE)Start:Home-Cmd.FLNK")
+#! Link("$(SYS)$(DEVICE)Start:Home-Cmd.FLNK","$(SYS)$(DEVICE)Start:Home-Calcout_")
+#! Field("$(SYS)$(DEVICE)Start:Home-Cmd.VAL",16777215,1,"$(SYS)$(DEVICE)Start:Home-Cmd.VAL")
+#! Record("$(SYS)$(DEVICE)Sts:HomeCheck-Sts",2700,1794,0,1,"$(SYS)$(DEVICE)Sts:HomeCheck-Sts")
+#! Field("$(SYS)$(DEVICE)Sts:HomeCheck-Sts.OUT",16777215,0,"$(SYS)$(DEVICE)Sts:HomeCheck-Sts.OUT")
+#! Link("$(SYS)$(DEVICE)Sts:HomeCheck-Sts.OUT","$(SYS)$(DEVICE)Sts:Homing-Sts.VAL")
+#! Field("$(SYS)$(DEVICE)Sts:HomeCheck-Sts.INPA",16777215,1,"$(SYS)$(DEVICE)Sts:HomeCheck-Sts.INPA")
+#! Link("$(SYS)$(DEVICE)Sts:HomeCheck-Sts.INPA","$(SYS)$(DEVICE)Sts:Home-SCalcout_.VAL")
+#! Record("$(SYS)$(DEVICE)Sts:Home-FOut_",2660,2081,0,0,"$(SYS)$(DEVICE)Sts:Home-FOut_")
+#! Field("$(SYS)$(DEVICE)Sts:Home-FOut_.FLNK",16777215,1,"$(SYS)$(DEVICE)Sts:Home-FOut_.FLNK")
+#! Link("$(SYS)$(DEVICE)Sts:Home-FOut_.FLNK","$(SYS)$(DEVICE)Sts:Home-SCalcout_")
+#! Field("$(SYS)$(DEVICE)Sts:Home-FOut_.LNK1",16777215,1,"$(SYS)$(DEVICE)Sts:Home-FOut_.LNK1")
+#! Link("$(SYS)$(DEVICE)Sts:Home-FOut_.LNK1","$(P):HM:FAN1/LNK1")
+#! Field("$(SYS)$(DEVICE)Sts:Home-FOut_.LNK2",16777215,1,"$(SYS)$(DEVICE)Sts:Home-FOut_.LNK2")
+#! Link("$(SYS)$(DEVICE)Sts:Home-FOut_.LNK2","$(P):HM:FAN1/LNK2")
+#! Connector("$(P):HM:FAN1/LNK2","$(SYS)$(DEVICE)Sts:HomeGroup-SCalcout_",2880,2426,16777215,"",0)
+#! Connector("$(P):HM:FAN1/LNK1","$(SYS)$(DEVICE)State:Home-SCalcout_",2900,2366,16777215,"",0)
+#! Record("$(SYS)$(DEVICE)Sts:Homed-Sts",1540,1800,0,1,"$(SYS)$(DEVICE)Sts:Homed-Sts")
+#! Field("$(SYS)$(DEVICE)Sts:Homed-Sts.OUT",16777215,0,"$(SYS)$(DEVICE)Sts:Homed-Sts.OUT")
+#! Link("$(SYS)$(DEVICE)Sts:Homed-Sts.OUT","$(P):HM:HOMED/OUT")
+#! Field("$(SYS)$(DEVICE)Sts:Homed-Sts.FLNK",16777215,0,"$(SYS)$(DEVICE)Sts:Homed-Sts.FLNK")
+#! Link("$(SYS)$(DEVICE)Sts:Homed-Sts.FLNK","$(SYS)$(DEVICE)Start:Home-Cmd")
+#! Connector("$(P):HM:HOMED/OUT","$(SYS)$(DEVICE)Start:Home-Cmd.VAL",1420,2060,16777215,"",0)
+#! Record("$(SYS)$(DEVICE)Start:HomeBuf-Cmd",2020,2054,0,0,"$(SYS)$(DEVICE)Start:HomeBuf-Cmd")
+#! Field("$(SYS)$(DEVICE)Start:HomeBuf-Cmd.VAL",16777215,1,"$(SYS)$(DEVICE)Start:HomeBuf-Cmd.VAL")
+#! Field("$(SYS)$(DEVICE)Start:HomeBuf-Cmd.OUT",16777215,1,"$(SYS)$(DEVICE)Start:HomeBuf-Cmd.OUT")
+#! Link("$(SYS)$(DEVICE)Start:HomeBuf-Cmd.OUT","$(SYS)$(DEVICE)Sts:Homing-Sts.VAL")
+#! Field("$(SYS)$(DEVICE)Start:HomeBuf-Cmd.FLNK",16777215,0,"$(SYS)$(DEVICE)Start:HomeBuf-Cmd.FLNK")
+#! Link("$(SYS)$(DEVICE)Start:HomeBuf-Cmd.FLNK","$(SYS)$(DEVICE)Start:Home-Stringout_")
+#! Record("$(SYS)$(DEVICE)Start:Home-Calcout_",1760,1978,0,0,"$(SYS)$(DEVICE)Start:Home-Calcout_")
+#! Field("$(SYS)$(DEVICE)Start:Home-Calcout_.INPA",16777215,0,"$(SYS)$(DEVICE)Start:Home-Calcout_.INPA")
+#! Link("$(SYS)$(DEVICE)Start:Home-Calcout_.INPA","$(SYS)$(DEVICE)Start:Home-Cmd.VAL")
+#! Field("$(SYS)$(DEVICE)Start:Home-Calcout_.OUT",16777215,1,"$(SYS)$(DEVICE)Start:Home-Calcout_.OUT")
+#! Link("$(SYS)$(DEVICE)Start:Home-Calcout_.OUT","$(SYS)$(DEVICE)Start:HomeBuf-Cmd.VAL")
+#! Record("$(SYS)$(DEVICE)Start:Home-Stringout_",1640,2260,0,1,"$(SYS)$(DEVICE)Start:Home-Stringout_")
+#! Field("$(SYS)$(DEVICE)Start:Home-Stringout_.OUT",16777215,1,"$(SYS)$(DEVICE)Start:Home-Stringout_.OUT")
+#! Link("$(SYS)$(DEVICE)Start:Home-Stringout_.OUT","$(SYS)$(DEVICE)Cmd:Home-Asyn_.AOUT")
+#! Record("$(SYS)$(DEVICE)Val:HomeGroup-Sel",1420,2428,0,1,"$(SYS)$(DEVICE)Val:HomeGroup-Sel")
+#! Field("$(SYS)$(DEVICE)Val:HomeGroup-Sel.VAL",16777215,1,"$(SYS)$(DEVICE)Val:HomeGroup-Sel.VAL")
+#! Field("$(SYS)$(DEVICE)Val:HomeGroup-Sel.FLNK",16777215,1,"$(SYS)$(DEVICE)Val:HomeGroup-Sel.FLNK")
+#! Link("$(SYS)$(DEVICE)Val:HomeGroup-Sel.FLNK","$(SYS)$(DEVICE)Val:HomeGroup-SCalcout")
+#! Record("$(SYS)$(DEVICE)Val:HomeGroup-SCalcout",1760,2451,0,0,"$(SYS)$(DEVICE)Val:HomeGroup-SCalcout")
+#! Field("$(SYS)$(DEVICE)Val:HomeGroup-SCalcout.INPA",16777215,0,"$(SYS)$(DEVICE)Val:HomeGroup-SCalcout.INPA")
+#! Link("$(SYS)$(DEVICE)Val:HomeGroup-SCalcout.INPA","$(SYS)$(DEVICE)Val:HomeGroup-Sel.VAL")
+#! Field("$(SYS)$(DEVICE)Val:HomeGroup-SCalcout.OUT",16777215,1,"$(SYS)$(DEVICE)Val:HomeGroup-SCalcout.OUT")
+#! Link("$(SYS)$(DEVICE)Val:HomeGroup-SCalcout.OUT","$(SYS)$(DEVICE)Cmd:Home-Asyn_.AOUT")
+#! Record("$(SYS)$(DEVICE)Sts:HomeGroup-SCalcout_",2320,2524,0,1,"$(SYS)$(DEVICE)Sts:HomeGroup-SCalcout_")
+#! Field("$(SYS)$(DEVICE)Sts:HomeGroup-SCalcout_.INAA",16777215,1,"$(SYS)$(DEVICE)Sts:HomeGroup-SCalcout_.INAA")
+#! Link("$(SYS)$(DEVICE)Sts:HomeGroup-SCalcout_.INAA","$(SYS)$(DEVICE)Sts:Home-Asyn_.AINP")
+#! Field("$(SYS)$(DEVICE)Sts:HomeGroup-SCalcout_.OUT",16777215,0,"$(SYS)$(DEVICE)Sts:HomeGroup-SCalcout_.OUT")
+#! Link("$(SYS)$(DEVICE)Sts:HomeGroup-SCalcout_.OUT","$(SYS)$(DEVICE)Sts:HomeGroup-Longout_.VAL")
+#! Record("$(SYS)$(DEVICE)Val:PLC-I",1680,3116,0,1,"$(SYS)$(DEVICE)Val:PLC-I")
+#! Field("$(SYS)$(DEVICE)Val:PLC-I.VAL",16777215,1,"$(SYS)$(DEVICE)Val:PLC-I.VAL")
+#! Record("$(SYS)$(DEVICE)Time:Home-SCalcout_",2300,3106,0,1,"$(SYS)$(DEVICE)Time:Home-SCalcout_")
+#! Field("$(SYS)$(DEVICE)Time:Home-SCalcout_.A",16777215,0,"$(SYS)$(DEVICE)Time:Home-SCalcout_.A")
+#! Field("$(SYS)$(DEVICE)Time:Home-SCalcout_.OUT",16777215,1,"$(SYS)$(DEVICE)Time:Home-SCalcout_.OUT")
+#! Link("$(SYS)$(DEVICE)Time:Home-SCalcout_.OUT","$(SYS)$(DEVICE)Val:Timer-Asyn_.AOUT")
+#! Record("$(SYS)$(DEVICE)Time:Home-Calcout_",1960,3071,0,1,"$(SYS)$(DEVICE)Time:Home-Calcout_")
+#! Field("$(SYS)$(DEVICE)Time:Home-Calcout_.INPA",16777215,0,"$(SYS)$(DEVICE)Time:Home-Calcout_.INPA")
+#! Link("$(SYS)$(DEVICE)Time:Home-Calcout_.INPA","$(SYS)$(DEVICE)Val:PLC-I.VAL")
+#! Field("$(SYS)$(DEVICE)Time:Home-Calcout_.OUT",16777215,1,"$(SYS)$(DEVICE)Time:Home-Calcout_.OUT")
+#! Link("$(SYS)$(DEVICE)Time:Home-Calcout_.OUT","$(SYS)$(DEVICE)Time:Home-SCalcout_.A")
+#! Record("$(SYS)$(DEVICE)Val:Timer-Asyn_",2660,3106,0,1,"$(SYS)$(DEVICE)Val:Timer-Asyn_")
+#! Field("$(SYS)$(DEVICE)Val:Timer-Asyn_.SDIS",16777215,0,"$(SYS)$(DEVICE)Val:Timer-Asyn_.SDIS")
+#! Link("$(SYS)$(DEVICE)Val:Timer-Asyn_.SDIS","$(SYS)$(DEVICE)Sts:Homing-Sts.VAL")
+#! Field("$(SYS)$(DEVICE)Val:Timer-Asyn_.AOUT",16777215,0,"$(SYS)$(DEVICE)Val:Timer-Asyn_.AOUT")
+#! Field("$(SYS)$(DEVICE)Val:Timer-Asyn_.AINP",16777215,1,"$(SYS)$(DEVICE)Val:Timer-Asyn_.AINP")
+#! Field("$(SYS)$(DEVICE)Val:Timer-Asyn_.FLNK",16777215,0,"$(SYS)$(DEVICE)Val:Timer-Asyn_.FLNK")
+#! Link("$(SYS)$(DEVICE)Val:Timer-Asyn_.FLNK","$(SYS)$(DEVICE)")
+#! Record("$(SYS)$(DEVICE)Time:Home-I",2980,3240,0,0,"$(SYS)$(DEVICE)Time:Home-I")
+#! Field("$(SYS)$(DEVICE)Time:Home-I.INAA",16777215,0,"$(SYS)$(DEVICE)Time:Home-I.INAA")
+#! Link("$(SYS)$(DEVICE)Time:Home-I.INAA","$(SYS)$(DEVICE)Val:Timer-Asyn_.AINP")
+#! Field("$(SYS)$(DEVICE)Time:Home-I.VAL",16777215,1,"$(SYS)$(DEVICE)Time:Home-I.VAL")
+#! Record("$(SYS)$(DEVICE)",2560,3396,0,0,"$(SYS)$(DEVICE)")
+#! Field("$(SYS)$(DEVICE).FLNK",16777215,1,"$(SYS)$(DEVICE).FLNK")
+#! Link("$(SYS)$(DEVICE).FLNK","$(SYS)$(DEVICE)Time:Home-I")
+#! Field("$(SYS)$(DEVICE).LNK1",16777215,1,"$(SYS)$(DEVICE).LNK1")
+#! Link("$(SYS)$(DEVICE).LNK1","$(SYS)$(DEVICE)Val:Timer-SCalcout_")
+#! Record("$(SYS)$(DEVICE)Val:Timer-SCalcout_",2980,3446,0,0,"$(SYS)$(DEVICE)Val:Timer-SCalcout_")
+#! Field("$(SYS)$(DEVICE)Val:Timer-SCalcout_.FLNK",16777215,1,"$(SYS)$(DEVICE)Val:Timer-SCalcout_.FLNK")
+#! Link("$(SYS)$(DEVICE)Val:Timer-SCalcout_.FLNK","$(SYS)$(DEVICE)Time:MaxHome-Calcout_")
+#! Field("$(SYS)$(DEVICE)Val:Timer-SCalcout_.INAA",16777215,0,"$(SYS)$(DEVICE)Val:Timer-SCalcout_.INAA")
+#! Link("$(SYS)$(DEVICE)Val:Timer-SCalcout_.INAA","$(SYS)$(DEVICE)Val:Timer-Asyn_.AINP")
+#! Field("$(SYS)$(DEVICE)Val:Timer-SCalcout_.VAL",16777215,1,"$(SYS)$(DEVICE)Val:Timer-SCalcout_.VAL")
+#! Record("$(SYS)$(DEVICE)Time:MaxHome-Calcout_",3300,3318,16777215,0,"$(SYS)$(DEVICE)Time:MaxHome-Calcout_")
+#! Field("$(SYS)$(DEVICE)Time:MaxHome-Calcout_.INPA",16777215,0,"$(SYS)$(DEVICE)Time:MaxHome-Calcout_.INPA")
+#! Link("$(SYS)$(DEVICE)Time:MaxHome-Calcout_.INPA","$(SYS)$(DEVICE)Time:Home-I.VAL")
+#! Field("$(SYS)$(DEVICE)Time:MaxHome-Calcout_.INPB",16777215,0,"$(SYS)$(DEVICE)Time:MaxHome-Calcout_.INPB")
+#! Link("$(SYS)$(DEVICE)Time:MaxHome-Calcout_.INPB","$(SYS)$(DEVICE)Val:Timer-SCalcout_.VAL")
+#! Record("$(SYS)$(DEVICE)Sts:HomeMtr1-Stringout_",20,23,0,0,"$(SYS)$(DEVICE)Sts:HomeMtr1-Stringout_")
+#! Record("$(SYS)$(DEVICE)Sts:HomeMtr2-Stringout_",260,23,0,0,"$(SYS)$(DEVICE)Sts:HomeMtr2-Stringout_")
+#! Record("$(SYS)$(DEVICE)Sts:HomeMtr3-Stringout_",500,23,0,0,"$(SYS)$(DEVICE)Sts:HomeMtr3-Stringout_")
+#! Record("$(SYS)$(DEVICE)Sts:HomeMtr4-Stringout_",740,23,0,0,"$(SYS)$(DEVICE)Sts:HomeMtr4-Stringout_")
+#! Record("$(SYS)$(DEVICE)Sts:HomeMtr5-Stringout_",980,23,0,0,"$(SYS)$(DEVICE)Sts:HomeMtr5-Stringout_")
+#! Record("$(SYS)$(DEVICE)Sts:HomeMtr6-Stringout_",1220,23,0,0,"$(SYS)$(DEVICE)Sts:HomeMtr6-Stringout_")
+#! Record("$(SYS)$(DEVICE)Sts:HomeMtr7-Stringout_",1460,23,0,0,"$(SYS)$(DEVICE)Sts:HomeMtr7-Stringout_")
+#! Record("$(SYS)$(DEVICE)Sts:HomeMtr8-Stringout_",1700,23,0,0,"$(SYS)$(DEVICE)Sts:HomeMtr8-Stringout_")
 #! Record("$(P):HM:M9PV",1940,23,0,0,"$(P):HM:M9PV")
 #! Record("$(P):HM:M10PV",2180,23,0,0,"$(P):HM:M10PV")
 #! Record("$(P):HM:M11PV",2420,23,0,0,"$(P):HM:M11PV")
@@ -604,7 +604,7 @@ record(longout, "$(P):HM:PARSE4") {
 #! Record("$(P):HM:M30PV",3140,23,0,0,"$(P):HM:M30PV")
 #! Record("$(P):HM:M31PV",3380,23,0,0,"$(P):HM:M31PV")
 #! Record("$(P):HM:M32PV",3620,23,0,0,"$(P):HM:M32PV")
-#! Record("$(P):HM:PARSE4",1960,2716,0,1,"$(P):HM:PARSE4")
-#! Field("$(P):HM:PARSE4.VAL",16777215,1,"$(P):HM:PARSE4.VAL")
-#! Field("$(P):HM:PARSE4.OUT",16777215,0,"$(P):HM:PARSE4.OUT")
-#! Link("$(P):HM:PARSE4.OUT","$(P):HM:HMGRP.VAL")
+#! Record("$(SYS)$(DEVICE)Sts:HomeGroup-Longout_",1960,2716,0,1,"$(SYS)$(DEVICE)Sts:HomeGroup-Longout_")
+#! Field("$(SYS)$(DEVICE)Sts:HomeGroup-Longout_.VAL",16777215,1,"$(SYS)$(DEVICE)Sts:HomeGroup-Longout_.VAL")
+#! Field("$(SYS)$(DEVICE)Sts:HomeGroup-Longout_.OUT",16777215,0,"$(SYS)$(DEVICE)Sts:HomeGroup-Longout_.OUT")
+#! Link("$(SYS)$(DEVICE)Sts:HomeGroup-Longout_.OUT","$(SYS)$(DEVICE)Val:HomeGroup-Sel.VAL")

@@ -19,7 +19,7 @@ ctlBgColor1 index 0
 ctlBgColor2 index 14
 topShadowColor index 0
 botShadowColor index 14
-title "Homing - $(P)"
+title "Homing - $(SYS)$(DEVICE)"
 showGrid
 snapToGrid
 gridSize 5
@@ -192,7 +192,7 @@ x 10
 y 125
 w 170
 h 25
-controlPv "$(P):HM:STATUS"
+controlPv "$(SYS)$(DEVICE)Sts:Homing-Sts"
 fgColor index 16
 fgAlarm
 bgColor index 10
@@ -213,7 +213,7 @@ x 10
 y 70
 w 170
 h 25
-controlPv "$(P):HM:STATE"
+controlPv "$(SYS)$(DEVICE)State:Home-Sts"
 fgColor index 16
 bgColor index 10
 fill
@@ -330,7 +330,7 @@ onColor index 4
 offColor index 3
 topShadowColor index 1
 botShadowColor index 11
-controlPv "$(P):HM:HOME"
+controlPv "$(SYS)$(DEVICE)Start:Home-Cmd"
 pressValue "1"
 onLabel "Home"
 offLabel "Home"
@@ -354,7 +354,7 @@ onColor index 3
 offColor index 3
 topShadowColor index 1
 botShadowColor index 11
-controlPv "$(P):HM:ABORT.PROC"
+controlPv "$(SYS)$(DEVICE)Abort:Home-Cmd.PROC"
 releaseValue "1"
 onLabel "Abort"
 offLabel "Abort"
@@ -372,7 +372,7 @@ x 85
 y 295
 w 20
 h 20
-controlPv "$(P):HM:HOMING"
+controlPv "$(SYS)$(DEVICE)Sts:Homing-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -431,7 +431,7 @@ bgColor index 3
 inconsistentColor index 0
 topShadowColor index 1
 botShadowColor index 11
-controlPv "$(P):HM:HMGRP"
+controlPv "$(SYS)$(DEVICE)Val:HomeGroup-Sel"
 font "helvetica-medium-r-12.0"
 endObjectProperties
 
@@ -528,7 +528,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(P):HM:M1PV.SEVR"
+visPv "$(SYS)$(DEVICE)Sts:HomeMtr1-Stringout_.SEVR"
 visMin "0"
 visMax "1"
 endObjectProperties
@@ -686,7 +686,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(P):HM:M2PV.SEVR"
+visPv "$(SYS)$(DEVICE)Sts:HomeMtr2-Stringout_.SEVR"
 visMin "0"
 visMax "1"
 endObjectProperties
@@ -765,7 +765,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(P):HM:M3PV.SEVR"
+visPv "$(SYS)$(DEVICE)Sts:HomeMtr3-Stringout_.SEVR"
 visMin "0"
 visMax "1"
 endObjectProperties
@@ -844,7 +844,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(P):HM:M4PV.SEVR"
+visPv "$(SYS)$(DEVICE)Sts:HomeMtr4-Stringout_.SEVR"
 visMin "0"
 visMax "1"
 endObjectProperties
@@ -923,7 +923,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(P):HM:M5PV.SEVR"
+visPv "$(SYS)$(DEVICE)Sts:HomeMtr5-Stringout_.SEVR"
 visMin "0"
 visMax "1"
 endObjectProperties
@@ -1002,7 +1002,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(P):HM:M6PV.SEVR"
+visPv "$(SYS)$(DEVICE)Sts:HomeMtr6-Stringout_.SEVR"
 visMin "0"
 visMax "1"
 endObjectProperties
@@ -1081,7 +1081,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(P):HM:M7PV.SEVR"
+visPv "$(SYS)$(DEVICE)Sts:HomeMtr7-Stringout_.SEVR"
 visMin "0"
 visMax "1"
 endObjectProperties
@@ -1160,7 +1160,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(P):HM:M8PV.SEVR"
+visPv "$(SYS)$(DEVICE)Sts:HomeMtr8-Stringout_.SEVR"
 visMin "0"
 visMax "1"
 endObjectProperties
@@ -3005,25 +3005,25 @@ symbol0 {
   0 "M1"
 }
 PV0 {
-  0 "$(P):HM:M1PV"
+  0 "$(SYS)$(DEVICE)Sts:HomeMtr1-Stringout_"
 }
 symbol1 {
   0 "M2"
 }
 PV1 {
-  0 "$(P):HM:M2PV"
+  0 "$(SYS)$(DEVICE)Sts:HomeMtr2-Stringout_"
 }
 symbol2 {
   0 "M3"
 }
 PV2 {
-  0 "$(P):HM:M3PV"
+  0 "$(SYS)$(DEVICE)Sts:HomeMtr3-Stringout_"
 }
 symbol3 {
   0 "M4"
 }
 PV3 {
-  0 "$(P):HM:M4PV"
+  0 "$(SYS)$(DEVICE)Sts:HomeMtr4-Stringout_"
 }
 endObjectProperties
 
@@ -3050,25 +3050,25 @@ symbol0 {
   0 "M5"
 }
 PV0 {
-  0 "$(P):HM:M5PV"
+  0 "$(SYS)$(DEVICE)Sts:HomeMtr5-Stringout_"
 }
 symbol1 {
   0 "M6"
 }
 PV1 {
-  0 "$(P):HM:M6PV"
+  0 "$(SYS)$(DEVICE)Sts:HomeMtr6-Stringout_"
 }
 symbol2 {
   0 "M7"
 }
 PV2 {
-  0 "$(P):HM:M7PV"
+  0 "$(SYS)$(DEVICE)Sts:HomeMtr7-Stringout_"
 }
 symbol3 {
   0 "M8"
 }
 PV3 {
-  0 "$(P):HM:M8PV"
+  0 "$(SYS)$(DEVICE)Sts:HomeMtr8-Stringout_"
 }
 endObjectProperties
 
@@ -3352,7 +3352,7 @@ x 10
 y 180
 w 170
 h 25
-controlPv "$(P):HM:TIMEOUT"
+controlPv "$(SYS)$(DEVICE)Time:MaxHome-Calcout_"
 font "helvetica-bold-r-14.0"
 fontAlign "center"
 fgColor index 16
