@@ -1,0 +1,25 @@
+== Introduction ==
+This directory contains two types of files:
+* scripts to automate the creation and application of translation templates
+* translation templates
+
+The purpose of these translations is to convert from one naming convention to
+another. The templates currently convert from the DLS naming convention to the
+NSLS-II naming convention.
+
+== Prerequisites ==
+=== PYPDB ===
+The "pypdb" applications written by Michael Davidsaver must be installed and
+accessible  on the path. The two applications that are required are:
+* getpvs
+* applypvs
+
+=== EPICS ===
+The DBD files for each record type need to be available on the machine creating
+the translation templates. They are not required for applying the PVs to an
+existing database or EDM file.
+
+== Usage ==
+The scripts show the command line details for creating and applying templates.
+After creating a template, it must be manually edited to give the correct
+translations for each PV name.
