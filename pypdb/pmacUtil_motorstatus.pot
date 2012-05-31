@@ -20,7 +20,7 @@ msgstr "$(SYS)$(DEVICE)"
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/motorstatus.db:104
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/motorstatus.db:97
 msgid "$(P)$(R):AXISN"
-msgstr "$(SYS)$(DEVICE)Cnt:Axis-SP"
+msgstr "$(SYS)$(DEVICE)Cnt:Ax-SP"
 
 #. recordtype: scalcout
 #. DESC: create the pmac cmd

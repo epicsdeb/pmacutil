@@ -620,7 +620,7 @@ bgColor index 3
 inconsistentColor index 20
 topShadowColor index 1
 botShadowColor index 11
-controlPv "$(SYS)$(DEVICE)Cnt:Axis-SP.SCAN"
+controlPv "$(SYS)$(DEVICE)Cnt:Ax-SP.SCAN"
 font "helvetica-medium-r-12.0"
 endObjectProperties
 
@@ -673,7 +673,7 @@ x 290
 y 55
 w 65
 h 35
-controlPv "$(SYS)$(DEVICE)Cnt:Axis-SP"
+controlPv "$(SYS)$(DEVICE)Cnt:Ax-SP"
 displayMode "decimal"
 fgColor index 25
 fgAlarm
