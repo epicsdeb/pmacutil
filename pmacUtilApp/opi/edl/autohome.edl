@@ -19,7 +19,7 @@ ctlBgColor1 index 0
 ctlBgColor2 index 14
 topShadowColor index 0
 botShadowColor index 14
-title "Homing - $(SYS)$(DEVICE)"
+title "Homing - $(P)$(M)"
 showGrid
 snapToGrid
 gridSize 5
@@ -89,12 +89,12 @@ x 0
 y 3
 w 685
 h 24
-font "helvetica-bold-r-16.0"
+font "helvetica-bold-r-18.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 48
 value {
-  "Homing - $(P)"
+  "Homing - $(P)$(M)"
 }
 endObjectProperties
 
@@ -192,7 +192,7 @@ x 10
 y 125
 w 170
 h 25
-controlPv "$(SYS)$(DEVICE)Sts:Homing-Sts"
+controlPv "$(P)$(M)Pgm:Home-Sts"
 fgColor index 16
 fgAlarm
 bgColor index 10
@@ -213,7 +213,7 @@ x 10
 y 70
 w 170
 h 25
-controlPv "$(SYS)$(DEVICE)State:Home-Sts"
+controlPv "$(P)$(M)Sts:Home-Sts"
 fgColor index 16
 bgColor index 10
 fill
@@ -330,7 +330,7 @@ onColor index 4
 offColor index 3
 topShadowColor index 1
 botShadowColor index 11
-controlPv "$(SYS)$(DEVICE)Start:Home-Cmd"
+controlPv "$(P)$(M)Start:Home-Cmd"
 pressValue "1"
 onLabel "Home"
 offLabel "Home"
@@ -354,7 +354,7 @@ onColor index 3
 offColor index 3
 topShadowColor index 1
 botShadowColor index 11
-controlPv "$(SYS)$(DEVICE)Abort:Home-Cmd.PROC"
+controlPv "$(P)$(M)Abort:Home-Cmd.PROC"
 releaseValue "1"
 onLabel "Abort"
 offLabel "Abort"
@@ -372,7 +372,7 @@ x 85
 y 295
 w 20
 h 20
-controlPv "$(SYS)$(DEVICE)Sts:Homing-Sts"
+controlPv "$(P)$(M)Sts:Homing-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -431,7 +431,7 @@ bgColor index 3
 inconsistentColor index 0
 topShadowColor index 1
 botShadowColor index 11
-controlPv "$(SYS)$(DEVICE)Val:HomeGroup-Sel"
+controlPv "$(P)$(M)Group:Home-Sel"
 font "helvetica-medium-r-12.0"
 endObjectProperties
 
@@ -528,7 +528,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(SYS)$(DEVICE)Sts:HomeMtr1-Stringout_.SEVR"
+visPv "$(P)$(M)Sts:HomeMtr1-StringOut_.SEVR"
 visMin "0"
 visMax "1"
 endObjectProperties
@@ -607,7 +607,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(P):HM:M32PV.SEVR"
+visPv "$(P)$(M)Sts:HomeMtr32-StringOut_.SEVR"
 visMin "0"
 visMax "1"
 endObjectProperties
@@ -686,7 +686,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(SYS)$(DEVICE)Sts:HomeMtr2-Stringout_.SEVR"
+visPv "$(P)$(M)Sts:HomeMtr2-StringOut_.SEVR"
 visMin "0"
 visMax "1"
 endObjectProperties
@@ -765,7 +765,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(SYS)$(DEVICE)Sts:HomeMtr3-Stringout_.SEVR"
+visPv "$(P)$(M)Sts:HomeMtr3-StringOut_.SEVR"
 visMin "0"
 visMax "1"
 endObjectProperties
@@ -844,7 +844,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(SYS)$(DEVICE)Sts:HomeMtr4-Stringout_.SEVR"
+visPv "$(P)$(M)Sts:HomeMtr4-StringOut_.SEVR"
 visMin "0"
 visMax "1"
 endObjectProperties
@@ -923,7 +923,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(SYS)$(DEVICE)Sts:HomeMtr5-Stringout_.SEVR"
+visPv "$(P)$(M)Sts:HomeMtr5-StringOut_.SEVR"
 visMin "0"
 visMax "1"
 endObjectProperties
@@ -1002,7 +1002,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(SYS)$(DEVICE)Sts:HomeMtr6-Stringout_.SEVR"
+visPv "$(P)$(M)Sts:HomeMtr6-StringOut_.SEVR"
 visMin "0"
 visMax "1"
 endObjectProperties
@@ -1081,7 +1081,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(SYS)$(DEVICE)Sts:HomeMtr7-Stringout_.SEVR"
+visPv "$(P)$(M)Sts:HomeMtr7-StringOut_.SEVR"
 visMin "0"
 visMax "1"
 endObjectProperties
@@ -1160,7 +1160,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(SYS)$(DEVICE)Sts:HomeMtr8-Stringout_.SEVR"
+visPv "$(P)$(M)Sts:HomeMtr8-StringOut_.SEVR"
 visMin "0"
 visMax "1"
 endObjectProperties
@@ -1239,7 +1239,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(P):HM:M9PV.SEVR"
+visPv "$(P)$(M)Sts:HomeMtr9-StringOut_.SEVR"
 visMin "0"
 visMax "1"
 endObjectProperties
@@ -1318,7 +1318,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(P):HM:M10PV.SEVR"
+visPv "$(P)$(M)Sts:HomeMtr10-StringOut_.SEVR"
 visMin "0"
 visMax "1"
 endObjectProperties
@@ -1397,7 +1397,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(P):HM:M11PV.SEVR"
+visPv "$(P)$(M)Sts:HomeMtr11-StringOut_.SEVR"
 visMin "0"
 visMax "1"
 endObjectProperties
@@ -1476,7 +1476,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(P):HM:M12PV.SEVR"
+visPv "$(P)$(M)Sts:HomeMtr12-StringOut_.SEVR"
 visMin "0"
 visMax "1"
 endObjectProperties
@@ -1555,7 +1555,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(P):HM:M13PV.SEVR"
+visPv "$(P)$(M)Sts:HomeMtr13-StringOut_.SEVR"
 visMin "0"
 visMax "1"
 endObjectProperties
@@ -1634,7 +1634,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(P):HM:M14PV.SEVR"
+visPv "$(P)$(M)Sts:HomeMtr14-StringOut_.SEVR"
 visMin "0"
 visMax "1"
 endObjectProperties
@@ -1713,7 +1713,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(P):HM:M15PV.SEVR"
+visPv "$(P)$(M)Sts:HomeMtr15-StringOut_.SEVR"
 visMin "0"
 visMax "1"
 endObjectProperties
@@ -1792,7 +1792,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(P):HM:M16PV.SEVR"
+visPv "$(P)$(M)Sts:HomeMtr16-StringOut_.SEVR"
 visMin "0"
 visMax "1"
 endObjectProperties
@@ -1871,7 +1871,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(P):HM:M17PV.SEVR"
+visPv "$(P)$(M)Sts:HomeMtr17-StringOut_.SEVR"
 visMin "0"
 visMax "1"
 endObjectProperties
@@ -1950,7 +1950,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(P):HM:M18PV.SEVR"
+visPv "$(P)$(M)Sts:HomeMtr18-StringOut_.SEVR"
 visMin "0"
 visMax "1"
 endObjectProperties
@@ -2029,7 +2029,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(P):HM:M19PV.SEVR"
+visPv "$(P)$(M)Sts:HomeMtr19-StringOut_.SEVR"
 visMin "0"
 visMax "1"
 endObjectProperties
@@ -2108,7 +2108,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(P):HM:M20PV.SEVR"
+visPv "$(P)$(M)Sts:HomeMtr20-StringOut_.SEVR"
 visMin "0"
 visMax "1"
 endObjectProperties
@@ -2187,7 +2187,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(P):HM:M21PV.SEVR"
+visPv "$(P)$(M)Sts:HomeMtr21-StringOut_.SEVR"
 visMin "0"
 visMax "1"
 endObjectProperties
@@ -2266,7 +2266,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(P):HM:M22PV.SEVR"
+visPv "$(P)$(M)Sts:HomeMtr22-StringOut_.SEVR"
 visMin "0"
 visMax "1"
 endObjectProperties
@@ -2345,7 +2345,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(P):HM:M23PV.SEVR"
+visPv "$(P)$(M)Sts:HomeMtr23-StringOut_.SEVR"
 visMin "0"
 visMax "1"
 endObjectProperties
@@ -2424,7 +2424,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(P):HM:M24PV.SEVR"
+visPv "$(P)$(M)Sts:HomeMtr24-StringOut_.SEVR"
 visMin "0"
 visMax "1"
 endObjectProperties
@@ -2503,7 +2503,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(P):HM:M25PV.SEVR"
+visPv "$(P)$(M)Sts:HomeMtr25-StringOut_.SEVR"
 visMin "0"
 visMax "1"
 endObjectProperties
@@ -2582,7 +2582,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(P):HM:M26PV.SEVR"
+visPv "$(P)$(M)Sts:HomeMtr26-StringOut_.SEVR"
 visMin "0"
 visMax "1"
 endObjectProperties
@@ -2661,7 +2661,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(P):HM:M27PV.SEVR"
+visPv "$(P)$(M)Sts:HomeMtr27-StringOut_.SEVR"
 visMin "0"
 visMax "1"
 endObjectProperties
@@ -2740,7 +2740,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(P):HM:M28PV.SEVR"
+visPv "$(P)$(M)Sts:HomeMtr28-StringOut_.SEVR"
 visMin "0"
 visMax "1"
 endObjectProperties
@@ -2819,7 +2819,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(P):HM:M29PV.SEVR"
+visPv "$(P)$(M)Sts:HomeMtr29-StringOut_.SEVR"
 visMin "0"
 visMax "1"
 endObjectProperties
@@ -2898,7 +2898,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(P):HM:M30PV.SEVR"
+visPv "$(P)$(M)Sts:HomeMtr30-StringOut_.SEVR"
 visMin "0"
 visMax "1"
 endObjectProperties
@@ -2977,13 +2977,13 @@ endObjectProperties
 
 endGroup
 
-visPv "$(P):HM:M31PV.SEVR"
+visPv "$(P)$(M)Sts:HomeMtr31-StringOut_.SEVR"
 visMin "0"
 visMax "1"
 endObjectProperties
 
 # (Menu Mux PV)
-object menuMuxPVClass
+object menuMuxClass
 beginObjectProperties
 major 4
 minor 0
@@ -3005,30 +3005,30 @@ symbol0 {
   0 "M1"
 }
 PV0 {
-  0 "$(SYS)$(DEVICE)Sts:HomeMtr1-Stringout_"
+  0 "$(P)$(M)Sts:HomeMtr1-StringOut_"
 }
 symbol1 {
   0 "M2"
 }
 PV1 {
-  0 "$(SYS)$(DEVICE)Sts:HomeMtr2-Stringout_"
+  0 "$(P)$(M)Sts:HomeMtr2-StringOut_"
 }
 symbol2 {
   0 "M3"
 }
 PV2 {
-  0 "$(SYS)$(DEVICE)Sts:HomeMtr3-Stringout_"
+  0 "$(P)$(M)Sts:HomeMtr3-StringOut_"
 }
 symbol3 {
   0 "M4"
 }
 PV3 {
-  0 "$(SYS)$(DEVICE)Sts:HomeMtr4-Stringout_"
+  0 "$(P)$(M)Sts:HomeMtr4-StringOut_"
 }
 endObjectProperties
 
 # (Menu Mux PV)
-object menuMuxPVClass
+object menuMuxClass
 beginObjectProperties
 major 4
 minor 0
@@ -3050,30 +3050,30 @@ symbol0 {
   0 "M5"
 }
 PV0 {
-  0 "$(SYS)$(DEVICE)Sts:HomeMtr5-Stringout_"
+  0 "$(P)$(M)Sts:HomeMtr5-StringOut_"
 }
 symbol1 {
   0 "M6"
 }
 PV1 {
-  0 "$(SYS)$(DEVICE)Sts:HomeMtr6-Stringout_"
+  0 "$(P)$(M)Sts:HomeMtr6-StringOut_"
 }
 symbol2 {
   0 "M7"
 }
 PV2 {
-  0 "$(SYS)$(DEVICE)Sts:HomeMtr7-Stringout_"
+  0 "$(P)$(M)Sts:HomeMtr7-StringOut_"
 }
 symbol3 {
   0 "M8"
 }
 PV3 {
-  0 "$(SYS)$(DEVICE)Sts:HomeMtr8-Stringout_"
+  0 "$(P)$(M)Sts:HomeMtr8-StringOut_"
 }
 endObjectProperties
 
 # (Menu Mux PV)
-object menuMuxPVClass
+object menuMuxClass
 beginObjectProperties
 major 4
 minor 0
@@ -3095,30 +3095,30 @@ symbol0 {
   0 "M9"
 }
 PV0 {
-  0 "$(P):HM:M9PV"
+  0 "$(P)$(M)Sts:HomeMtr9-StringOut_"
 }
 symbol1 {
   0 "M10"
 }
 PV1 {
-  0 "$(P):HM:M10PV"
+  0 "$(P)$(M)Sts:HomeMtr10-StringOut_"
 }
 symbol2 {
   0 "M11"
 }
 PV2 {
-  0 "$(P):HM:M11PV"
+  0 "$(P)$(M)Sts:HomeMtr11-StringOut_"
 }
 symbol3 {
   0 "M12"
 }
 PV3 {
-  0 "$(P):HM:M12PV"
+  0 "$(P)$(M)Sts:HomeMtr12-StringOut_"
 }
 endObjectProperties
 
 # (Menu Mux PV)
-object menuMuxPVClass
+object menuMuxClass
 beginObjectProperties
 major 4
 minor 0
@@ -3140,30 +3140,30 @@ symbol0 {
   0 "M13"
 }
 PV0 {
-  0 "$(P):HM:M13PV"
+  0 "$(P)$(M)Sts:HomeMtr13-StringOut_"
 }
 symbol1 {
   0 "M14"
 }
 PV1 {
-  0 "$(P):HM:M14PV"
+  0 "$(P)$(M)Sts:HomeMtr14-StringOut_"
 }
 symbol2 {
   0 "M15"
 }
 PV2 {
-  0 "$(P):HM:M15PV"
+  0 "$(P)$(M)Sts:HomeMtr15-StringOut_"
 }
 symbol3 {
   0 "M16"
 }
 PV3 {
-  0 "$(P):HM:M16PV"
+  0 "$(P)$(M)Sts:HomeMtr16-StringOut_"
 }
 endObjectProperties
 
 # (Menu Mux PV)
-object menuMuxPVClass
+object menuMuxClass
 beginObjectProperties
 major 4
 minor 0
@@ -3185,30 +3185,30 @@ symbol0 {
   0 "M17"
 }
 PV0 {
-  0 "$(P):HM:M17PV"
+  0 "$(P)$(M)Sts:HomeMtr17-StringOut_"
 }
 symbol1 {
   0 "M18"
 }
 PV1 {
-  0 "$(P):HM:M18PV"
+  0 "$(P)$(M)Sts:HomeMtr18-StringOut_"
 }
 symbol2 {
   0 "M19"
 }
 PV2 {
-  0 "$(P):HM:M19PV"
+  0 "$(P)$(M)Sts:HomeMtr19-StringOut_"
 }
 symbol3 {
   0 "M20"
 }
 PV3 {
-  0 "$(P):HM:M20PV"
+  0 "$(P)$(M)Sts:HomeMtr20-StringOut_"
 }
 endObjectProperties
 
 # (Menu Mux PV)
-object menuMuxPVClass
+object menuMuxClass
 beginObjectProperties
 major 4
 minor 0
@@ -3230,30 +3230,30 @@ symbol0 {
   0 "M21"
 }
 PV0 {
-  0 "$(P):HM:M21PV"
+  0 "$(P)$(M)Sts:HomeMtr21-StringOut_"
 }
 symbol1 {
   0 "M22"
 }
 PV1 {
-  0 "$(P):HM:M22PV"
+  0 "$(P)$(M)Sts:HomeMtr22-StringOut_"
 }
 symbol2 {
   0 "M23"
 }
 PV2 {
-  0 "$(P):HM:M23PV"
+  0 "$(P)$(M)Sts:HomeMtr23-StringOut_"
 }
 symbol3 {
   0 "M24"
 }
 PV3 {
-  0 "$(P):HM:M24PV"
+  0 "$(P)$(M)Sts:HomeMtr24-StringOut_"
 }
 endObjectProperties
 
 # (Menu Mux PV)
-object menuMuxPVClass
+object menuMuxClass
 beginObjectProperties
 major 4
 minor 0
@@ -3275,30 +3275,30 @@ symbol0 {
   0 "M25"
 }
 PV0 {
-  0 "$(P):HM:M25PV"
+  0 "$(P)$(M)Sts:HomeMtr25-StringOut_"
 }
 symbol1 {
   0 "M26"
 }
 PV1 {
-  0 "$(P):HM:M26PV"
+  0 "$(P)$(M)Sts:HomeMtr26-StringOut_"
 }
 symbol2 {
   0 "M27"
 }
 PV2 {
-  0 "$(P):HM:M27PV"
+  0 "$(P)$(M)Sts:HomeMtr27-StringOut_"
 }
 symbol3 {
   0 "M28"
 }
 PV3 {
-  0 "$(P):HM:M28PV"
+  0 "$(P)$(M)Sts:HomeMtr28-StringOut_"
 }
 endObjectProperties
 
 # (Menu Mux PV)
-object menuMuxPVClass
+object menuMuxClass
 beginObjectProperties
 major 4
 minor 0
@@ -3320,25 +3320,25 @@ symbol0 {
   0 "M29"
 }
 PV0 {
-  0 "$(P):HM:M29PV"
+  0 "$(P)$(M)Sts:HomeMtr29-StringOut_"
 }
 symbol1 {
   0 "M30"
 }
 PV1 {
-  0 "$(P):HM:M30PV"
+  0 "$(P)$(M)Sts:HomeMtr30-StringOut_"
 }
 symbol2 {
   0 "M31"
 }
 PV2 {
-  0 "$(P):HM:M31PV"
+  0 "$(P)$(M)Sts:HomeMtr31-StringOut_"
 }
 symbol3 {
   0 "M32"
 }
 PV3 {
-  0 "$(P):HM:M32PV"
+  0 "$(P)$(M)Sts:HomeMtr32-StringOut_"
 }
 endObjectProperties
 
@@ -3352,7 +3352,7 @@ x 10
 y 180
 w 170
 h 25
-controlPv "$(SYS)$(DEVICE)Time:MaxHome-Calcout_"
+controlPv "$(P)$(M)Timeout:Home-I"
 font "helvetica-bold-r-14.0"
 fontAlign "center"
 fgColor index 16
