@@ -6,7 +6,8 @@
 # % macro, __doc__, Provides PVs to start and monitor homing via homing PLCs 
 # that conform to the DLS standard. If you use custom homing states then be 
 # sure to label them here
-# % macro, P, Pv Prefix
+# % macro, SYS, System Prefix
+# % macro, DEV, Device name 
 # % macro, PLC, PLC number
 # % macro, PORT, Serial port to do communications across
 # % macro, GRP1, Homing group 1 description
@@ -23,9 +24,9 @@
 # % macro, name, Object name and gui association name
 
 # This associates an edm screen with the template
-# % gui, $(name=), edm, autohome.edl, P=$(P)$(M)
+# % gui, $(name=), edm, autohome.edl, P=$(SYS)$(DEV)
 
-record(asyn, "$(P)$(M)Cmd:Home-Asyn_") {
+record(asyn, "$(SYS)$(DEV)Cmd:Home-Asyn_") {
   field(DESC, "User cmd to PMAC")
   field(SCAN, "Passive")
   field(PINI, "NO")
@@ -33,30 +34,30 @@ record(asyn, "$(P)$(M)Cmd:Home-Asyn_") {
   field(PORT, "$(PORT)")
 }
 
-record(stringout, "$(P)$(M)Abort:Home-Cmd") {
+record(stringout, "$(SYS)$(DEV)Abort:Home-Cmd") {
   field(DESC, "Send abort cmd")
   field(SCAN, "Passive")
   field(PINI, "NO")
   field(DTYP, "Soft Channel")
   field(VAL, "P$(PLC)01=2")
-  field(OUT, "$(P)$(M)Cmd:Home-Asyn_.AOUT PP")
+  field(OUT, "$(SYS)$(DEV)Cmd:Home-Asyn_.AOUT PP")
 }
 
 # This will read the P variables P$(PLC)01 and P$(PLC)00
 # from the PMAC in one command.
-record(asyn, "$(P)$(M)Sts:Home-Asyn_") {
+record(asyn, "$(SYS)$(DEV)Sts:Home-Asyn_") {
   field(DESC, "Read homing status from PMAC")
   field(SCAN, ".2 second")
   field(PINI, "NO")
   field(DTYP, "asynRecordDevice")
   field(PORT, "$(PORT)")
   field(AOUT, "P$(PLC)01 P$(PLC)00 P$(PLC)02")
-  field(FLNK, "$(P)$(M)Sts:Home-FOut_")
+  field(FLNK, "$(SYS)$(DEV)Sts:Home-FOut_")
   field(DISV, "0")
-  field(SDIS, "$(P)$(M)Sts:Homing-Sts")
+  field(SDIS, "$(SYS)$(DEV)Sts:Homing-Sts")
 }
 
-record(scalcout, "$(P)$(M)Pgm:Home-SCalcOut_") {
+record(scalcout, "$(SYS)$(DEV)Pgm:Home-SCalcOut_") {
   field(DESC, "Parse PMAC response to P$(PLC)01")
   field(DTYP, "Soft Channel")
   field(SCAN, "Passive")
@@ -64,12 +65,12 @@ record(scalcout, "$(P)$(M)Pgm:Home-SCalcOut_") {
   field(CALC, "SSCANF(AA,'%d %*d %*d')")
   field(OOPT, "On Change")
   field(DOPT, "Use CALC")
-  field(INAA, "$(P)$(M)Sts:Home-Asyn_.AINP")
-  field(FLNK, "$(P)$(M)Pgm:Home-Sts")
+  field(INAA, "$(SYS)$(DEV)Sts:Home-Asyn_.AINP")
+  field(FLNK, "$(SYS)$(DEV)Pgm:Home-Sts")
   field(PREC, "0")
 }
 
-record(scalcout, "$(P)$(M)Sts:Home-SCalcOut_") {
+record(scalcout, "$(SYS)$(DEV)Sts:Home-SCalcOut_") {
   field(DESC, "Parse PMAC response to P$(PLC)00")
   field(DTYP, "Soft Channel")
   field(SCAN, "Passive")
@@ -77,12 +78,12 @@ record(scalcout, "$(P)$(M)Sts:Home-SCalcOut_") {
   field(CALC, "SSCANF(AA,'%*d %d %*d')")
   field(OOPT, "On Change")
   field(DOPT, "Use CALC")
-  field(INAA, "$(P)$(M)Sts:Home-Asyn_.AINP")
-  field(FLNK, "$(P)$(M)Sts:Home-Sts")
+  field(INAA, "$(SYS)$(DEV)Sts:Home-Asyn_.AINP")
+  field(FLNK, "$(SYS)$(DEV)Sts:Home-Sts")
   field(PREC, "0")
 }
 
-record(mbbi, "$(P)$(M)Pgm:Home-Sts") {
+record(mbbi, "$(SYS)$(DEV)Pgm:Home-Sts") {
   field(DESC, "Homing status")
   field(SCAN, "Passive")
   field(PINI, "YES")
@@ -95,8 +96,8 @@ record(mbbi, "$(P)$(M)Pgm:Home-Sts") {
   field(ONST, "Homing")
   field(TWST, "Aborted")
   field(THST, "Timeout")
-  field(FLNK, "$(P)$(M)Check:Home-Sts")
-  field(INP, "$(P)$(M)Pgm:Home-SCalcOut_")
+  field(FLNK, "$(SYS)$(DEV)Check:Home-Sts")
+  field(INP, "$(SYS)$(DEV)Pgm:Home-SCalcOut_")
   field(FRVL, "4")
   field(FVVL, "5")
   field(SXVL, "6")
@@ -115,7 +116,7 @@ record(mbbi, "$(P)$(M)Pgm:Home-Sts") {
   field(SVST, "Invalid Setting")
 }
 
-record(mbbi, "$(P)$(M)Sts:Home-Sts") {
+record(mbbi, "$(SYS)$(DEV)Sts:Home-Sts") {
   field(DESC, "Homing state")
   field(SCAN, "Passive")
   field(PINI, "YES")
@@ -130,7 +131,7 @@ record(mbbi, "$(P)$(M)Sts:Home-Sts") {
   field(THST, "Move to pos lim")
   field(FRVL, "4")
   field(FRST, "Homing")
-  field(INP, "$(P)$(M)Sts:Home-SCalcOut_")
+  field(INP, "$(SYS)$(DEV)Sts:Home-SCalcOut_")
   field(FVVL, "5")
   field(FVST, "Post home move")
   field(SXVL, "6")
@@ -153,76 +154,76 @@ record(mbbi, "$(P)$(M)Sts:Home-Sts") {
   field(FTST, "$(STATE14=)")
 }
 
-record(busy, "$(P)$(M)Sts:Homing-Sts") {
-  field(FLNK, "$(P)$(M)Sts:Homed-Sts")
+record(busy, "$(SYS)$(DEV)Sts:Homing-Sts") {
+  field(FLNK, "$(SYS)$(DEV)Sts:Homed-Sts")
 }
 
-record(bo, "$(P)$(M)Start:Home-Cmd") {
+record(bo, "$(SYS)$(DEV)Start:Home-Cmd") {
   field(SCAN, "Passive")
   field(PINI, "NO")
   field(DTYP, "Soft Channel")
-  field(FLNK, "$(P)$(M)Start:Home-CalcOut_")
+  field(FLNK, "$(SYS)$(DEV)Start:Home-CalcOut_")
 }
 
 
-record(calcout, "$(P)$(M)Check:Home-Sts") {
+record(calcout, "$(SYS)$(DEV)Check:Home-Sts") {
   field(CALC, "A==1")
-  field(INPA, "$(P)$(M)Pgm:Home-SCalcOut_ PP")
-  field(OUT, "$(P)$(M)Sts:Homing-Sts CA")
+  field(INPA, "$(SYS)$(DEV)Pgm:Home-SCalcOut_ PP")
+  field(OUT, "$(SYS)$(DEV)Sts:Homing-Sts CA")
   field(OOPT, "When Zero")
   field(DOPT, "Use CALC")
 }
 
-record(fanout, "$(P)$(M)Sts:Home-FOut_") {
-  field(FLNK, "$(P)$(M)Pgm:Home-SCalcOut_")
-  field(LNK1, "$(P)$(M)Sts:Home-SCalcOut_")
-  field(LNK2, "$(P)$(M)Group:Home-SCalcOut_")
+record(fanout, "$(SYS)$(DEV)Sts:Home-FOut_") {
+  field(FLNK, "$(SYS)$(DEV)Pgm:Home-SCalcOut_")
+  field(LNK1, "$(SYS)$(DEV)Sts:Home-SCalcOut_")
+  field(LNK2, "$(SYS)$(DEV)Group:Home-SCalcOut_")
 }
 
-record(bo, "$(P)$(M)Sts:Homed-Sts") {
+record(bo, "$(SYS)$(DEV)Sts:Homed-Sts") {
   field(SCAN, "Passive")
   field(PINI, "NO")
   field(DTYP, "Soft Channel")
-  field(FLNK, "$(P)$(M)Start:Home-Cmd")
-  field(OUT, "$(P)$(M)Start:Home-Cmd PP")
+  field(FLNK, "$(SYS)$(DEV)Start:Home-Cmd")
+  field(OUT, "$(SYS)$(DEV)Start:Home-Cmd PP")
   field(VAL, "0")
 }
 
-record(bo, "$(P)$(M)Start:HomeBuf-Sts_") {
+record(bo, "$(SYS)$(DEV)Start:HomeBuf-Sts_") {
   field(SCAN, "Passive")
   field(PINI, "NO")
   field(DTYP, "Soft Channel")
-  field(FLNK, "$(P)$(M)Start:Home-StringOut")
-  field(OUT, "$(P)$(M)Sts:Homing-Sts PP")
+  field(FLNK, "$(SYS)$(DEV)Start:Home-StringOut")
+  field(OUT, "$(SYS)$(DEV)Sts:Homing-Sts PP")
 }
 
-record(calcout, "$(P)$(M)Start:Home-CalcOut_") {
+record(calcout, "$(SYS)$(DEV)Start:Home-CalcOut_") {
   field(DESC, "Check if usr started")
   field(SCAN, "Passive")
   field(PINI, "NO")
   field(DTYP, "Soft Channel")
   field(CALC, "A")
-  field(INPA, "$(P)$(M)Start:Home-Cmd PP")
-  field(OUT, "$(P)$(M)Start:HomeBuf-Sts_ PP")
+  field(INPA, "$(SYS)$(DEV)Start:Home-Cmd PP")
+  field(OUT, "$(SYS)$(DEV)Start:HomeBuf-Sts_ PP")
   field(OOPT, "Transition To Non-zero")
   field(DOPT, "Use CALC")
 }
 
-record(stringout, "$(P)$(M)Start:Home-StringOut") {
+record(stringout, "$(SYS)$(DEV)Start:Home-StringOut") {
   field(DESC, "Start homing plc/prog")
   field(SCAN, "Passive")
   field(PINI, "NO")
   field(DTYP, "Soft Channel")
   field(VAL, "ENABLE PLC$(PLC)")
-  field(OUT, "$(P)$(M)Cmd:Home-Asyn_.AOUT PP")
+  field(OUT, "$(SYS)$(DEV)Cmd:Home-Asyn_.AOUT PP")
 }
 
-record(mbbo, "$(P)$(M)Group:Home-Sel") {
+record(mbbo, "$(SYS)$(DEV)Group:Home-Sel") {
   field(DESC, "Homing group")
   field(SCAN, "Passive")
   field(PINI, "YES")
   field(DTYP, "Soft Channel")
-  field(FLNK, "$(P)$(M)Group:Send-SCalcOut")
+  field(FLNK, "$(SYS)$(DEV)Group:Send-SCalcOut")
   field(ZRVL, "0")
   field(ONVL, "1")
   field(TWVL, "2")
@@ -244,367 +245,367 @@ record(mbbo, "$(P)$(M)Group:Home-Sel") {
   field(IVOV, "0")
 }
 
-record(scalcout, "$(P)$(M)Group:Send-SCalcOut") {
+record(scalcout, "$(SYS)$(DEV)Group:Send-SCalcOut") {
   field(DESC, "Select group on pmac")
   field(SCAN, "Passive")
   field(DTYP, "Soft Channel")
   field(CALC, "PRINTF('P$(PLC)02=%i',A)")
-  field(INPA, "$(P)$(M)Group:Home-Sel PP")
-  field(OUT, "$(P)$(M)Cmd:Home-Asyn_.AOUT PP")
+  field(INPA, "$(SYS)$(DEV)Group:Home-Sel PP")
+  field(OUT, "$(SYS)$(DEV)Cmd:Home-Asyn_.AOUT PP")
   field(OOPT, "Every Time")
   field(DOPT, "Use CALC")
 }
 
-record(scalcout, "$(P)$(M)Group:Home-SCalcOut_") {
+record(scalcout, "$(SYS)$(DEV)Group:Home-SCalcOut_") {
   field(DESC, "Parse pmac P$(PLC)02")
   field(SCAN, "Passive")
   field(PINI, "NO")
   field(DTYP, "Soft Channel")
   field(CALC, "SSCANF(AA,'%*d %*d %d')")
-  field(INAA, "$(P)$(M)Sts:Home-Asyn_.AINP")
+  field(INAA, "$(SYS)$(DEV)Sts:Home-Asyn_.AINP")
   field(OOPT, "On Change")
   field(DOPT, "Use CALC")
   field(PREC, "0")
-  field(OUT, "$(P)$(M)Group:Home-LongOut_ PP")
+  field(OUT, "$(SYS)$(DEV)Group:Home-LongOut_ PP")
 }
 
-record(ao, "$(P)$(M)Num:HomePLC-I") {
+record(ao, "$(SYS)$(DEV)Num:HomePLC-I") {
   field(DTYP, "Soft Channel")
   field(VAL, "$(PLC)")
 }
 
-record(scalcout, "$(P)$(M)Timer:Home-SCalcOut_") {
+record(scalcout, "$(SYS)$(DEV)Timer:Home-SCalcOut_") {
   field(DESC, "create string with ivar")
   field(SCAN, "Passive")
   field(DTYP, "Soft Channel")
   field(CALC, "PRINTF('i%i i10',A)")
-  field(OUT, "$(P)$(M)Timer:Home-Asyn_.AOUT PP")
+  field(OUT, "$(SYS)$(DEV)Timer:Home-Asyn_.AOUT PP")
   field(OOPT, "Every Time")
   field(DOPT, "Use CALC")
 }
 
-record(calcout, "$(P)$(M)Timer:Home-CalcOut_") {
+record(calcout, "$(SYS)$(DEV)Timer:Home-CalcOut_") {
   field(DESC, "calc timer ivar")
   field(SCAN, "Passive")
   field(PINI, "YES")
   field(CALC, "5111+(A&30)*50+A%2")
-  field(INPA, "$(P)$(M)Num:HomePLC-I PP")
-  field(OUT, "$(P)$(M)Timer:Home-SCalcOut_.A PP")
+  field(INPA, "$(SYS)$(DEV)Num:HomePLC-I PP")
+  field(OUT, "$(SYS)$(DEV)Timer:Home-SCalcOut_.A PP")
   field(OOPT, "Every Time")
   field(DOPT, "Use CALC")
 }
 
-record(asyn, "$(P)$(M)Timer:Home-Asyn_") {
+record(asyn, "$(SYS)$(DEV)Timer:Home-Asyn_") {
   field(DESC, "Read timer")
   field(SCAN, ".2 second")
   field(PINI, "NO")
-  field(SDIS, "$(P)$(M)Sts:Homing-Sts")
-  field(FLNK, "$(P)$(M)Timer:Home-FOut_")
+  field(SDIS, "$(SYS)$(DEV)Sts:Homing-Sts")
+  field(FLNK, "$(SYS)$(DEV)Timer:Home-FOut_")
   field(PORT, "$(PORT)")
   field(DISV, "0")
 }
 
-record(scalcout, "$(P)$(M)Timer:Home-I") {
+record(scalcout, "$(SYS)$(DEV)Timer:Home-I") {
   field(DESC, "parse timer")
   field(DTYP, "Soft Channel")
   field(CALC, "SSCANF(AA, '%d %*d')")
-  field(INAA, "$(P)$(M)Timer:Home-Asyn_.AINP")
+  field(INAA, "$(SYS)$(DEV)Timer:Home-Asyn_.AINP")
   field(OOPT, "On Change")
   field(DOPT, "Use CALC")
 }
 
-record(fanout, "$(P)$(M)Timer:Home-FOut_") {
-  field(FLNK, "$(P)$(M)Timer:Home-I")
-  field(LNK1, "$(P)$(M)Timeout:Home-SCalcOut_")
+record(fanout, "$(SYS)$(DEV)Timer:Home-FOut_") {
+  field(FLNK, "$(SYS)$(DEV)Timer:Home-I")
+  field(LNK1, "$(SYS)$(DEV)Timeout:Home-SCalcOut_")
 }
 
-record(scalcout, "$(P)$(M)Timeout:Home-SCalcOut_") {
+record(scalcout, "$(SYS)$(DEV)Timeout:Home-SCalcOut_") {
   field(DESC, "parse timer")
   field(DTYP, "Soft Channel")
-  field(FLNK, "$(P)$(M)Timeout:Home-I")
+  field(FLNK, "$(SYS)$(DEV)Timeout:Home-I")
   field(CALC, "SSCANF(AA, '%*d %d')")
-  field(INAA, "$(P)$(M)Timer:Home-Asyn_.AINP")
+  field(INAA, "$(SYS)$(DEV)Timer:Home-Asyn_.AINP")
   field(OOPT, "On Change")
   field(DOPT, "Use CALC")
 }
 
-record(calcout, "$(P)$(M)Timeout:Home-I") {
+record(calcout, "$(SYS)$(DEV)Timeout:Home-I") {
   field(SCAN, "Passive")
   field(DTYP, "Soft Channel")
   field(CALC, "A/8388608*B/1000")
-  field(INPA, "$(P)$(M)Timer:Home-I")
-  field(INPB, "$(P)$(M)Timeout:Home-SCalcOut_")
+  field(INPA, "$(SYS)$(DEV)Timer:Home-I")
+  field(INPB, "$(SYS)$(DEV)Timeout:Home-SCalcOut_")
   field(OOPT, "On Change")
   field(DOPT, "Use CALC")
   field(EGU, "s")
   field(PREC, "1")
 }
 
-record(stringout, "$(P)$(M)Sts:HomeMtr1-StringOut_") {
+record(stringout, "$(SYS)$(DEV)Sts:HomeMtr1-StringOut_") {
 }
 
-record(stringout, "$(P)$(M)Sts:HomeMtr2-StringOut_") {
+record(stringout, "$(SYS)$(DEV)Sts:HomeMtr2-StringOut_") {
 }
 
-record(stringout, "$(P)$(M)Sts:HomeMtr3-StringOut_") {
+record(stringout, "$(SYS)$(DEV)Sts:HomeMtr3-StringOut_") {
 }
 
-record(stringout, "$(P)$(M)Sts:HomeMtr4-StringOut_") {
+record(stringout, "$(SYS)$(DEV)Sts:HomeMtr4-StringOut_") {
 }
 
-record(stringout, "$(P)$(M)Sts:HomeMtr5-StringOut_") {
+record(stringout, "$(SYS)$(DEV)Sts:HomeMtr5-StringOut_") {
 }
 
-record(stringout, "$(P)$(M)Sts:HomeMtr6-StringOut_") {
+record(stringout, "$(SYS)$(DEV)Sts:HomeMtr6-StringOut_") {
 }
 
-record(stringout, "$(P)$(M)Sts:HomeMtr7-StringOut_") {
+record(stringout, "$(SYS)$(DEV)Sts:HomeMtr7-StringOut_") {
 }
 
-record(stringout, "$(P)$(M)Sts:HomeMtr8-StringOut_") {
+record(stringout, "$(SYS)$(DEV)Sts:HomeMtr8-StringOut_") {
 }
 
-record(stringout, "$(P)$(M)Sts:HomeMtr9-StringOut_") {
+record(stringout, "$(SYS)$(DEV)Sts:HomeMtr9-StringOut_") {
 }
 
-record(stringout, "$(P)$(M)Sts:HomeMtr10-StringOut_") {
+record(stringout, "$(SYS)$(DEV)Sts:HomeMtr10-StringOut_") {
 }
 
-record(stringout, "$(P)$(M)Sts:HomeMtr11-StringOut_") {
+record(stringout, "$(SYS)$(DEV)Sts:HomeMtr11-StringOut_") {
 }
 
-record(stringout, "$(P)$(M)Sts:HomeMtr12-StringOut_") {
+record(stringout, "$(SYS)$(DEV)Sts:HomeMtr12-StringOut_") {
 }
 
-record(stringout, "$(P)$(M)Sts:HomeMtr13-StringOut_") {
+record(stringout, "$(SYS)$(DEV)Sts:HomeMtr13-StringOut_") {
 }
 
-record(stringout, "$(P)$(M)Sts:HomeMtr14-StringOut_") {
+record(stringout, "$(SYS)$(DEV)Sts:HomeMtr14-StringOut_") {
 }
 
-record(stringout, "$(P)$(M)Sts:HomeMtr15-StringOut_") {
+record(stringout, "$(SYS)$(DEV)Sts:HomeMtr15-StringOut_") {
 }
 
-record(stringout, "$(P)$(M)Sts:HomeMtr16-StringOut_") {
+record(stringout, "$(SYS)$(DEV)Sts:HomeMtr16-StringOut_") {
 }
 
-record(stringout, "$(P)$(M)Sts:HomeMtr17-StringOut_") {
+record(stringout, "$(SYS)$(DEV)Sts:HomeMtr17-StringOut_") {
 }
 
-record(stringout, "$(P)$(M)Sts:HomeMtr18-StringOut_") {
+record(stringout, "$(SYS)$(DEV)Sts:HomeMtr18-StringOut_") {
 }
 
-record(stringout, "$(P)$(M)Sts:HomeMtr19-StringOut_") {
+record(stringout, "$(SYS)$(DEV)Sts:HomeMtr19-StringOut_") {
 }
 
-record(stringout, "$(P)$(M)Sts:HomeMtr20-StringOut_") {
+record(stringout, "$(SYS)$(DEV)Sts:HomeMtr20-StringOut_") {
 }
 
-record(stringout, "$(P)$(M)Sts:HomeMtr21-StringOut_") {
+record(stringout, "$(SYS)$(DEV)Sts:HomeMtr21-StringOut_") {
 }
 
-record(stringout, "$(P)$(M)Sts:HomeMtr22-StringOut_") {
+record(stringout, "$(SYS)$(DEV)Sts:HomeMtr22-StringOut_") {
 }
 
-record(stringout, "$(P)$(M)Sts:HomeMtr23-StringOut_") {
+record(stringout, "$(SYS)$(DEV)Sts:HomeMtr23-StringOut_") {
 }
 
-record(stringout, "$(P)$(M)Sts:HomeMtr24-StringOut_") {
+record(stringout, "$(SYS)$(DEV)Sts:HomeMtr24-StringOut_") {
 }
 
-record(stringout, "$(P)$(M)Sts:HomeMtr25-StringOut_") {
+record(stringout, "$(SYS)$(DEV)Sts:HomeMtr25-StringOut_") {
 }
 
-record(stringout, "$(P)$(M)Sts:HomeMtr26-StringOut_") {
+record(stringout, "$(SYS)$(DEV)Sts:HomeMtr26-StringOut_") {
 }
 
-record(stringout, "$(P)$(M)Sts:HomeMtr27-StringOut_") {
+record(stringout, "$(SYS)$(DEV)Sts:HomeMtr27-StringOut_") {
 }
 
-record(stringout, "$(P)$(M)Sts:HomeMtr28-StringOut_") {
+record(stringout, "$(SYS)$(DEV)Sts:HomeMtr28-StringOut_") {
 }
 
-record(stringout, "$(P)$(M)Sts:HomeMtr29-StringOut_") {
+record(stringout, "$(SYS)$(DEV)Sts:HomeMtr29-StringOut_") {
 }
 
-record(stringout, "$(P)$(M)Sts:HomeMtr30-StringOut_") {
+record(stringout, "$(SYS)$(DEV)Sts:HomeMtr30-StringOut_") {
 }
 
-record(stringout, "$(P)$(M)Sts:HomeMtr31-StringOut_") {
+record(stringout, "$(SYS)$(DEV)Sts:HomeMtr31-StringOut_") {
 }
 
-record(stringout, "$(P)$(M)Sts:HomeMtr32-StringOut_") {
+record(stringout, "$(SYS)$(DEV)Sts:HomeMtr32-StringOut_") {
 }
 
-record(longout, "$(P)$(M)Group:Home-LongOut_") {
+record(longout, "$(SYS)$(DEV)Group:Home-LongOut_") {
   field(DTYP, "Soft Channel")
-  field(OUT, "$(P)$(M)Group:Home-Sel PP")
+  field(OUT, "$(SYS)$(DEV)Group:Home-Sel PP")
 }
 
 #! Further lines contain data used by VisualDCT
 #! View(1720,1811,1.1)
-#! Record("$(P)$(M)Cmd:Home-Asyn_",2060,2274,0,1,"$(P)$(M)Cmd:Home-Asyn_")
-#! Field("$(P)$(M)Cmd:Home-Asyn_.AOUT",16777215,0,"$(P)$(M)Cmd:Home-Asyn_.AOUT")
-#! Record("$(P)$(M)Abort:Home-Cmd",2080,2500,0,1,"$(P)$(M)Abort:Home-Cmd")
-#! Field("$(P)$(M)Abort:Home-Cmd.OUT",16777215,0,"$(P)$(M)Abort:Home-Cmd.OUT")
-#! Link("$(P)$(M)Abort:Home-Cmd.OUT","$(P)$(M)Cmd:Home-Asyn_.AOUT")
-#! Record("$(P)$(M)Sts:Home-Asyn_",2340,2098,0,1,"$(P)$(M)Sts:Home-Asyn_")
-#! Field("$(P)$(M)Sts:Home-Asyn_.FLNK",16777215,1,"$(P)$(M)Sts:Home-Asyn_.FLNK")
-#! Link("$(P)$(M)Sts:Home-Asyn_.FLNK","$(P)$(M)Sts:Home-Asyn_/FLNK")
-#! Field("$(P)$(M)Sts:Home-Asyn_.SDIS",16777215,1,"$(P)$(M)Sts:Home-Asyn_.SDIS")
-#! Link("$(P)$(M)Sts:Home-Asyn_.SDIS","$(P)$(M)Sts:Homing-Sts.VAL")
-#! Field("$(P)$(M)Sts:Home-Asyn_.AINP",16777215,1,"$(P)$(M)Sts:Home-Asyn_.AINP")
-#! Connector("$(P)$(M)Sts:Home-Asyn_/FLNK","$(P)$(M)Sts:Home-FOut_",2600,2210,16777215,"",0)
-#! Record("$(P)$(M)Pgm:Home-SCalcOut_",2980,2084,0,0,"$(P)$(M)Pgm:Home-SCalcOut_")
-#! Field("$(P)$(M)Pgm:Home-SCalcOut_.VAL",16777215,1,"$(P)$(M)Pgm:Home-SCalcOut_.VAL")
-#! Field("$(P)$(M)Pgm:Home-SCalcOut_.FLNK",16777215,1,"$(P)$(M)Pgm:Home-SCalcOut_.FLNK")
-#! Link("$(P)$(M)Pgm:Home-SCalcOut_.FLNK","$(P)$(M)Pgm:Home-SCalcOut_/FLNK")
-#! Field("$(P)$(M)Pgm:Home-SCalcOut_.INAA",16777215,0,"$(P)$(M)Pgm:Home-SCalcOut_.INAA")
-#! Link("$(P)$(M)Pgm:Home-SCalcOut_.INAA","$(P)$(M)Sts:Home-Asyn_.AINP")
-#! Connector("$(P)$(M)Pgm:Home-SCalcOut_/FLNK","$(P)$(M)Pgm:Home-Sts",3200,2186,16777215,"",0)
-#! Record("$(P)$(M)Sts:Home-SCalcOut_",2960,2424,0,0,"$(P)$(M)Sts:Home-SCalcOut_")
-#! Field("$(P)$(M)Sts:Home-SCalcOut_.FLNK",16777215,1,"$(P)$(M)Sts:Home-SCalcOut_.FLNK")
-#! Link("$(P)$(M)Sts:Home-SCalcOut_.FLNK","$(P)$(M)Sts:Home-Sts")
-#! Field("$(P)$(M)Sts:Home-SCalcOut_.INAA",16777215,0,"$(P)$(M)Sts:Home-SCalcOut_.INAA")
-#! Link("$(P)$(M)Sts:Home-SCalcOut_.INAA","$(P)$(M)Sts:Home-Asyn_.AINP")
-#! Field("$(P)$(M)Sts:Home-SCalcOut_.VAL",16777215,1,"$(P)$(M)Sts:Home-SCalcOut_.VAL")
-#! Record("$(P)$(M)Pgm:Home-Sts",3260,1824,0,0,"$(P)$(M)Pgm:Home-Sts")
-#! Field("$(P)$(M)Pgm:Home-Sts.FLNK",16777215,0,"$(P)$(M)Pgm:Home-Sts.FLNK")
-#! Link("$(P)$(M)Pgm:Home-Sts.FLNK","$(P)$(M)Pgm:Home-Sts/FLNK1")
-#! Field("$(P)$(M)Pgm:Home-Sts.INP",16777215,0,"$(P)$(M)Pgm:Home-Sts.INP")
-#! Link("$(P)$(M)Pgm:Home-Sts.INP","$(P)$(M)Pgm:Home-SCalcOut_.VAL")
-#! Connector("$(P)$(M)Pgm:Home-Sts/FLNK1","$(P)$(M)Pgm:Home-Sts/FLNK",3180,2115,16777215,"",0)
-#! Connector("$(P)$(M)Pgm:Home-Sts/FLNK","$(P)$(M)Check:Home-Sts",3037,1920,16777215,"",0)
-#! Record("$(P)$(M)Sts:Home-Sts",3260,2334,0,0,"$(P)$(M)Sts:Home-Sts")
-#! Field("$(P)$(M)Sts:Home-Sts.INP",16777215,0,"$(P)$(M)Sts:Home-Sts.INP")
-#! Link("$(P)$(M)Sts:Home-Sts.INP","$(P)$(M)Sts:Home-SCalcOut_.VAL")
-#! Record("$(P)$(M)Sts:Homing-Sts",2360,1790,0,1,"$(P)$(M)Sts:Homing-Sts")
-#! Field("$(P)$(M)Sts:Homing-Sts.FLNK",16777215,0,"$(P)$(M)Sts:Homing-Sts.FLNK")
-#! Link("$(P)$(M)Sts:Homing-Sts.FLNK","$(P)$(M)Sts:Homed-Sts")
-#! Field("$(P)$(M)Sts:Homing-Sts.VAL",16777215,1,"$(P)$(M)Sts:Homing-Sts.VAL")
-#! Record("$(P)$(M)Start:Home-Cmd",1480,2028,0,0,"$(P)$(M)Start:Home-Cmd")
-#! Field("$(P)$(M)Start:Home-Cmd.FLNK",16777215,1,"$(P)$(M)Start:Home-Cmd.FLNK")
-#! Link("$(P)$(M)Start:Home-Cmd.FLNK","$(P)$(M)Start:Home-CalcOut_")
-#! Field("$(P)$(M)Start:Home-Cmd.VAL",16777215,1,"$(P)$(M)Start:Home-Cmd.VAL")
-#! Record("$(P)$(M)Check:Home-Sts",2700,1794,0,1,"$(P)$(M)Check:Home-Sts")
-#! Field("$(P)$(M)Check:Home-Sts.OUT",16777215,0,"$(P)$(M)Check:Home-Sts.OUT")
-#! Link("$(P)$(M)Check:Home-Sts.OUT","$(P)$(M)Sts:Homing-Sts.VAL")
-#! Field("$(P)$(M)Check:Home-Sts.INPA",16777215,1,"$(P)$(M)Check:Home-Sts.INPA")
-#! Link("$(P)$(M)Check:Home-Sts.INPA","$(P)$(M)Pgm:Home-SCalcOut_.VAL")
-#! Record("$(P)$(M)Sts:Home-FOut_",2660,2081,0,0,"$(P)$(M)Sts:Home-FOut_")
-#! Field("$(P)$(M)Sts:Home-FOut_.FLNK",16777215,1,"$(P)$(M)Sts:Home-FOut_.FLNK")
-#! Link("$(P)$(M)Sts:Home-FOut_.FLNK","$(P)$(M)Pgm:Home-SCalcOut_")
-#! Field("$(P)$(M)Sts:Home-FOut_.LNK1",16777215,1,"$(P)$(M)Sts:Home-FOut_.LNK1")
-#! Link("$(P)$(M)Sts:Home-FOut_.LNK1","$(P)$(M)Sts:Home-FOut_/LNK1")
-#! Field("$(P)$(M)Sts:Home-FOut_.LNK2",16777215,1,"$(P)$(M)Sts:Home-FOut_.LNK2")
-#! Link("$(P)$(M)Sts:Home-FOut_.LNK2","$(P)$(M)Sts:Home-FOut_/LNK2")
-#! Connector("$(P)$(M)Sts:Home-FOut_/LNK2","$(P)$(M)Group:Home-SCalcOut_",2880,2426,16777215,"",0)
-#! Connector("$(P)$(M)Sts:Home-FOut_/LNK1","$(P)$(M)Sts:Home-SCalcOut_",2900,2366,16777215,"",0)
-#! Record("$(P)$(M)Sts:Homed-Sts",1540,1800,0,1,"$(P)$(M)Sts:Homed-Sts")
-#! Field("$(P)$(M)Sts:Homed-Sts.OUT",16777215,0,"$(P)$(M)Sts:Homed-Sts.OUT")
-#! Link("$(P)$(M)Sts:Homed-Sts.OUT","$(P)$(M)Sts:Homed-Sts/OUT")
-#! Field("$(P)$(M)Sts:Homed-Sts.FLNK",16777215,0,"$(P)$(M)Sts:Homed-Sts.FLNK")
-#! Link("$(P)$(M)Sts:Homed-Sts.FLNK","$(P)$(M)Start:Home-Cmd")
-#! Connector("$(P)$(M)Sts:Homed-Sts/OUT","$(P)$(M)Start:Home-Cmd.VAL",1420,2060,16777215,"",0)
-#! Record("$(P)$(M)Start:HomeBuf-Sts_",2020,2054,0,0,"$(P)$(M)Start:HomeBuf-Sts_")
-#! Field("$(P)$(M)Start:HomeBuf-Sts_.VAL",16777215,1,"$(P)$(M)Start:HomeBuf-Sts_.VAL")
-#! Field("$(P)$(M)Start:HomeBuf-Sts_.OUT",16777215,1,"$(P)$(M)Start:HomeBuf-Sts_.OUT")
-#! Link("$(P)$(M)Start:HomeBuf-Sts_.OUT","$(P)$(M)Sts:Homing-Sts.VAL")
-#! Field("$(P)$(M)Start:HomeBuf-Sts_.FLNK",16777215,0,"$(P)$(M)Start:HomeBuf-Sts_.FLNK")
-#! Link("$(P)$(M)Start:HomeBuf-Sts_.FLNK","$(P)$(M)Start:Home-StringOut")
-#! Record("$(P)$(M)Start:Home-CalcOut_",1760,1978,0,0,"$(P)$(M)Start:Home-CalcOut_")
-#! Field("$(P)$(M)Start:Home-CalcOut_.INPA",16777215,0,"$(P)$(M)Start:Home-CalcOut_.INPA")
-#! Link("$(P)$(M)Start:Home-CalcOut_.INPA","$(P)$(M)Start:Home-Cmd.VAL")
-#! Field("$(P)$(M)Start:Home-CalcOut_.OUT",16777215,1,"$(P)$(M)Start:Home-CalcOut_.OUT")
-#! Link("$(P)$(M)Start:Home-CalcOut_.OUT","$(P)$(M)Start:HomeBuf-Sts_.VAL")
-#! Record("$(P)$(M)Start:Home-StringOut",1640,2260,0,1,"$(P)$(M)Start:Home-StringOut")
-#! Field("$(P)$(M)Start:Home-StringOut.OUT",16777215,1,"$(P)$(M)Start:Home-StringOut.OUT")
-#! Link("$(P)$(M)Start:Home-StringOut.OUT","$(P)$(M)Cmd:Home-Asyn_.AOUT")
-#! Record("$(P)$(M)Group:Home-Sel",1420,2428,0,1,"$(P)$(M)Group:Home-Sel")
-#! Field("$(P)$(M)Group:Home-Sel.VAL",16777215,1,"$(P)$(M)Group:Home-Sel.VAL")
-#! Field("$(P)$(M)Group:Home-Sel.FLNK",16777215,1,"$(P)$(M)Group:Home-Sel.FLNK")
-#! Link("$(P)$(M)Group:Home-Sel.FLNK","$(P)$(M)Group:Send-SCalcOut")
-#! Record("$(P)$(M)Group:Send-SCalcOut",1760,2451,0,0,"$(P)$(M)Group:Send-SCalcOut")
-#! Field("$(P)$(M)Group:Send-SCalcOut.INPA",16777215,0,"$(P)$(M)Group:Send-SCalcOut.INPA")
-#! Link("$(P)$(M)Group:Send-SCalcOut.INPA","$(P)$(M)Group:Home-Sel.VAL")
-#! Field("$(P)$(M)Group:Send-SCalcOut.OUT",16777215,1,"$(P)$(M)Group:Send-SCalcOut.OUT")
-#! Link("$(P)$(M)Group:Send-SCalcOut.OUT","$(P)$(M)Cmd:Home-Asyn_.AOUT")
-#! Record("$(P)$(M)Group:Home-SCalcOut_",2320,2524,0,1,"$(P)$(M)Group:Home-SCalcOut_")
-#! Field("$(P)$(M)Group:Home-SCalcOut_.INAA",16777215,1,"$(P)$(M)Group:Home-SCalcOut_.INAA")
-#! Link("$(P)$(M)Group:Home-SCalcOut_.INAA","$(P)$(M)Sts:Home-Asyn_.AINP")
-#! Field("$(P)$(M)Group:Home-SCalcOut_.OUT",16777215,0,"$(P)$(M)Group:Home-SCalcOut_.OUT")
-#! Link("$(P)$(M)Group:Home-SCalcOut_.OUT","$(P)$(M)Group:Home-LongOut_.VAL")
-#! Record("$(P)$(M)Num:HomePLC-I",1680,3116,0,1,"$(P)$(M)Num:HomePLC-I")
-#! Field("$(P)$(M)Num:HomePLC-I.VAL",16777215,1,"$(P)$(M)Num:HomePLC-I.VAL")
-#! Record("$(P)$(M)Timer:Home-SCalcOut_",2300,3106,0,1,"$(P)$(M)Timer:Home-SCalcOut_")
-#! Field("$(P)$(M)Timer:Home-SCalcOut_.A",16777215,0,"$(P)$(M)Timer:Home-SCalcOut_.A")
-#! Field("$(P)$(M)Timer:Home-SCalcOut_.OUT",16777215,1,"$(P)$(M)Timer:Home-SCalcOut_.OUT")
-#! Link("$(P)$(M)Timer:Home-SCalcOut_.OUT","$(P)$(M)Timer:Home-Asyn_.AOUT")
-#! Record("$(P)$(M)Timer:Home-CalcOut_",1960,3071,0,1,"$(P)$(M)Timer:Home-CalcOut_")
-#! Field("$(P)$(M)Timer:Home-CalcOut_.INPA",16777215,0,"$(P)$(M)Timer:Home-CalcOut_.INPA")
-#! Link("$(P)$(M)Timer:Home-CalcOut_.INPA","$(P)$(M)Num:HomePLC-I.VAL")
-#! Field("$(P)$(M)Timer:Home-CalcOut_.OUT",16777215,1,"$(P)$(M)Timer:Home-CalcOut_.OUT")
-#! Link("$(P)$(M)Timer:Home-CalcOut_.OUT","$(P)$(M)Timer:Home-SCalcOut_.A")
-#! Record("$(P)$(M)Timer:Home-Asyn_",2660,3106,0,1,"$(P)$(M)Timer:Home-Asyn_")
-#! Field("$(P)$(M)Timer:Home-Asyn_.SDIS",16777215,0,"$(P)$(M)Timer:Home-Asyn_.SDIS")
-#! Link("$(P)$(M)Timer:Home-Asyn_.SDIS","$(P)$(M)Sts:Homing-Sts.VAL")
-#! Field("$(P)$(M)Timer:Home-Asyn_.AOUT",16777215,0,"$(P)$(M)Timer:Home-Asyn_.AOUT")
-#! Field("$(P)$(M)Timer:Home-Asyn_.AINP",16777215,1,"$(P)$(M)Timer:Home-Asyn_.AINP")
-#! Field("$(P)$(M)Timer:Home-Asyn_.FLNK",16777215,0,"$(P)$(M)Timer:Home-Asyn_.FLNK")
-#! Link("$(P)$(M)Timer:Home-Asyn_.FLNK","$(P)$(M)Timer:Home-FOut_")
-#! Record("$(P)$(M)Timer:Home-I",2980,3240,0,0,"$(P)$(M)Timer:Home-I")
-#! Field("$(P)$(M)Timer:Home-I.INAA",16777215,0,"$(P)$(M)Timer:Home-I.INAA")
-#! Link("$(P)$(M)Timer:Home-I.INAA","$(P)$(M)Timer:Home-Asyn_.AINP")
-#! Field("$(P)$(M)Timer:Home-I.VAL",16777215,1,"$(P)$(M)Timer:Home-I.VAL")
-#! Record("$(P)$(M)Timer:Home-FOut_",2560,3396,0,0,"$(P)$(M)Timer:Home-FOut_")
-#! Field("$(P)$(M)Timer:Home-FOut_.FLNK",16777215,1,"$(P)$(M)Timer:Home-FOut_.FLNK")
-#! Link("$(P)$(M)Timer:Home-FOut_.FLNK","$(P)$(M)Timer:Home-I")
-#! Field("$(P)$(M)Timer:Home-FOut_.LNK1",16777215,1,"$(P)$(M)Timer:Home-FOut_.LNK1")
-#! Link("$(P)$(M)Timer:Home-FOut_.LNK1","$(P)$(M)Timeout:Home-SCalcOut_")
-#! Record("$(P)$(M)Timeout:Home-SCalcOut_",2980,3446,0,0,"$(P)$(M)Timeout:Home-SCalcOut_")
-#! Field("$(P)$(M)Timeout:Home-SCalcOut_.FLNK",16777215,1,"$(P)$(M)Timeout:Home-SCalcOut_.FLNK")
-#! Link("$(P)$(M)Timeout:Home-SCalcOut_.FLNK","$(P)$(M)Timeout:Home-I")
-#! Field("$(P)$(M)Timeout:Home-SCalcOut_.INAA",16777215,0,"$(P)$(M)Timeout:Home-SCalcOut_.INAA")
-#! Link("$(P)$(M)Timeout:Home-SCalcOut_.INAA","$(P)$(M)Timer:Home-Asyn_.AINP")
-#! Field("$(P)$(M)Timeout:Home-SCalcOut_.VAL",16777215,1,"$(P)$(M)Timeout:Home-SCalcOut_.VAL")
-#! Record("$(P)$(M)Timeout:Home-I",3300,3318,16777215,0,"$(P)$(M)Timeout:Home-I")
-#! Field("$(P)$(M)Timeout:Home-I.INPA",16777215,0,"$(P)$(M)Timeout:Home-I.INPA")
-#! Link("$(P)$(M)Timeout:Home-I.INPA","$(P)$(M)Timer:Home-I.VAL")
-#! Field("$(P)$(M)Timeout:Home-I.INPB",16777215,0,"$(P)$(M)Timeout:Home-I.INPB")
-#! Link("$(P)$(M)Timeout:Home-I.INPB","$(P)$(M)Timeout:Home-SCalcOut_.VAL")
-#! Record("$(P)$(M)Sts:HomeMtr1-StringOut_",20,23,0,0,"$(P)$(M)Sts:HomeMtr1-StringOut_")
-#! Record("$(P)$(M)Sts:HomeMtr2-StringOut_",260,23,0,0,"$(P)$(M)Sts:HomeMtr2-StringOut_")
-#! Record("$(P)$(M)Sts:HomeMtr3-StringOut_",500,23,0,0,"$(P)$(M)Sts:HomeMtr3-StringOut_")
-#! Record("$(P)$(M)Sts:HomeMtr4-StringOut_",740,23,0,0,"$(P)$(M)Sts:HomeMtr4-StringOut_")
-#! Record("$(P)$(M)Sts:HomeMtr5-StringOut_",980,23,0,0,"$(P)$(M)Sts:HomeMtr5-StringOut_")
-#! Record("$(P)$(M)Sts:HomeMtr6-StringOut_",1220,23,0,0,"$(P)$(M)Sts:HomeMtr6-StringOut_")
-#! Record("$(P)$(M)Sts:HomeMtr7-StringOut_",1460,23,0,0,"$(P)$(M)Sts:HomeMtr7-StringOut_")
-#! Record("$(P)$(M)Sts:HomeMtr8-StringOut_",1700,23,0,0,"$(P)$(M)Sts:HomeMtr8-StringOut_")
-#! Record("$(P)$(M)Sts:HomeMtr9-StringOut_",1940,23,0,0,"$(P)$(M)Sts:HomeMtr9-StringOut_")
-#! Record("$(P)$(M)Sts:HomeMtr10-StringOut_",2180,23,0,0,"$(P)$(M)Sts:HomeMtr10-StringOut_")
-#! Record("$(P)$(M)Sts:HomeMtr11-StringOut_",2420,23,0,0,"$(P)$(M)Sts:HomeMtr11-StringOut_")
-#! Record("$(P)$(M)Sts:HomeMtr12-StringOut_",2660,23,0,0,"$(P)$(M)Sts:HomeMtr12-StringOut_")
-#! Record("$(P)$(M)Sts:HomeMtr13-StringOut_",2900,23,0,0,"$(P)$(M)Sts:HomeMtr13-StringOut_")
-#! Record("$(P)$(M)Sts:HomeMtr14-StringOut_",3140,23,0,0,"$(P)$(M)Sts:HomeMtr14-StringOut_")
-#! Record("$(P)$(M)Sts:HomeMtr15-StringOut_",3380,23,0,0,"$(P)$(M)Sts:HomeMtr15-StringOut_")
-#! Record("$(P)$(M)Sts:HomeMtr16-StringOut_",3620,23,0,0,"$(P)$(M)Sts:HomeMtr16-StringOut_")
-#! Record("$(P)$(M)Sts:HomeMtr17-StringOut_",20,23,0,0,"$(P)$(M)Sts:HomeMtr17-StringOut_")
-#! Record("$(P)$(M)Sts:HomeMtr18-StringOut_",260,23,0,0,"$(P)$(M)Sts:HomeMtr18-StringOut_")
-#! Record("$(P)$(M)Sts:HomeMtr19-StringOut_",500,23,0,0,"$(P)$(M)Sts:HomeMtr19-StringOut_")
-#! Record("$(P)$(M)Sts:HomeMtr20-StringOut_",740,23,0,0,"$(P)$(M)Sts:HomeMtr20-StringOut_")
-#! Record("$(P)$(M)Sts:HomeMtr21-StringOut_",980,23,0,0,"$(P)$(M)Sts:HomeMtr21-StringOut_")
-#! Record("$(P)$(M)Sts:HomeMtr22-StringOut_",1220,23,0,0,"$(P)$(M)Sts:HomeMtr22-StringOut_")
-#! Record("$(P)$(M)Sts:HomeMtr23-StringOut_",1460,23,0,0,"$(P)$(M)Sts:HomeMtr23-StringOut_")
-#! Record("$(P)$(M)Sts:HomeMtr24-StringOut_",1700,23,0,0,"$(P)$(M)Sts:HomeMtr24-StringOut_")
-#! Record("$(P)$(M)Sts:HomeMtr25-StringOut_",1940,23,0,0,"$(P)$(M)Sts:HomeMtr25-StringOut_")
-#! Record("$(P)$(M)Sts:HomeMtr26-StringOut_",2180,23,0,0,"$(P)$(M)Sts:HomeMtr26-StringOut_")
-#! Record("$(P)$(M)Sts:HomeMtr27-StringOut_",2420,23,0,0,"$(P)$(M)Sts:HomeMtr27-StringOut_")
-#! Record("$(P)$(M)Sts:HomeMtr28-StringOut_",2660,23,0,0,"$(P)$(M)Sts:HomeMtr28-StringOut_")
-#! Record("$(P)$(M)Sts:HomeMtr29-StringOut_",2900,23,0,0,"$(P)$(M)Sts:HomeMtr29-StringOut_")
-#! Record("$(P)$(M)Sts:HomeMtr30-StringOut_",3140,23,0,0,"$(P)$(M)Sts:HomeMtr30-StringOut_")
-#! Record("$(P)$(M)Sts:HomeMtr31-StringOut_",3380,23,0,0,"$(P)$(M)Sts:HomeMtr31-StringOut_")
-#! Record("$(P)$(M)Sts:HomeMtr32-StringOut_",3620,23,0,0,"$(P)$(M)Sts:HomeMtr32-StringOut_")
-#! Record("$(P)$(M)Group:Home-LongOut_",1960,2716,0,1,"$(P)$(M)Group:Home-LongOut_")
-#! Field("$(P)$(M)Group:Home-LongOut_.VAL",16777215,1,"$(P)$(M)Group:Home-LongOut_.VAL")
-#! Field("$(P)$(M)Group:Home-LongOut_.OUT",16777215,0,"$(P)$(M)Group:Home-LongOut_.OUT")
-#! Link("$(P)$(M)Group:Home-LongOut_.OUT","$(P)$(M)Group:Home-Sel.VAL")
+#! Record("$(SYS)$(DEV)Cmd:Home-Asyn_",2060,2274,0,1,"$(SYS)$(DEV)Cmd:Home-Asyn_")
+#! Field("$(SYS)$(DEV)Cmd:Home-Asyn_.AOUT",16777215,0,"$(SYS)$(DEV)Cmd:Home-Asyn_.AOUT")
+#! Record("$(SYS)$(DEV)Abort:Home-Cmd",2080,2500,0,1,"$(SYS)$(DEV)Abort:Home-Cmd")
+#! Field("$(SYS)$(DEV)Abort:Home-Cmd.OUT",16777215,0,"$(SYS)$(DEV)Abort:Home-Cmd.OUT")
+#! Link("$(SYS)$(DEV)Abort:Home-Cmd.OUT","$(SYS)$(DEV)Cmd:Home-Asyn_.AOUT")
+#! Record("$(SYS)$(DEV)Sts:Home-Asyn_",2340,2098,0,1,"$(SYS)$(DEV)Sts:Home-Asyn_")
+#! Field("$(SYS)$(DEV)Sts:Home-Asyn_.FLNK",16777215,1,"$(SYS)$(DEV)Sts:Home-Asyn_.FLNK")
+#! Link("$(SYS)$(DEV)Sts:Home-Asyn_.FLNK","$(SYS)$(DEV)Sts:Home-Asyn_/FLNK")
+#! Field("$(SYS)$(DEV)Sts:Home-Asyn_.SDIS",16777215,1,"$(SYS)$(DEV)Sts:Home-Asyn_.SDIS")
+#! Link("$(SYS)$(DEV)Sts:Home-Asyn_.SDIS","$(SYS)$(DEV)Sts:Homing-Sts.VAL")
+#! Field("$(SYS)$(DEV)Sts:Home-Asyn_.AINP",16777215,1,"$(SYS)$(DEV)Sts:Home-Asyn_.AINP")
+#! Connector("$(SYS)$(DEV)Sts:Home-Asyn_/FLNK","$(SYS)$(DEV)Sts:Home-FOut_",2600,2210,16777215,"",0)
+#! Record("$(SYS)$(DEV)Pgm:Home-SCalcOut_",2980,2084,0,0,"$(SYS)$(DEV)Pgm:Home-SCalcOut_")
+#! Field("$(SYS)$(DEV)Pgm:Home-SCalcOut_.VAL",16777215,1,"$(SYS)$(DEV)Pgm:Home-SCalcOut_.VAL")
+#! Field("$(SYS)$(DEV)Pgm:Home-SCalcOut_.FLNK",16777215,1,"$(SYS)$(DEV)Pgm:Home-SCalcOut_.FLNK")
+#! Link("$(SYS)$(DEV)Pgm:Home-SCalcOut_.FLNK","$(SYS)$(DEV)Pgm:Home-SCalcOut_/FLNK")
+#! Field("$(SYS)$(DEV)Pgm:Home-SCalcOut_.INAA",16777215,0,"$(SYS)$(DEV)Pgm:Home-SCalcOut_.INAA")
+#! Link("$(SYS)$(DEV)Pgm:Home-SCalcOut_.INAA","$(SYS)$(DEV)Sts:Home-Asyn_.AINP")
+#! Connector("$(SYS)$(DEV)Pgm:Home-SCalcOut_/FLNK","$(SYS)$(DEV)Pgm:Home-Sts",3200,2186,16777215,"",0)
+#! Record("$(SYS)$(DEV)Sts:Home-SCalcOut_",2960,2424,0,0,"$(SYS)$(DEV)Sts:Home-SCalcOut_")
+#! Field("$(SYS)$(DEV)Sts:Home-SCalcOut_.FLNK",16777215,1,"$(SYS)$(DEV)Sts:Home-SCalcOut_.FLNK")
+#! Link("$(SYS)$(DEV)Sts:Home-SCalcOut_.FLNK","$(SYS)$(DEV)Sts:Home-Sts")
+#! Field("$(SYS)$(DEV)Sts:Home-SCalcOut_.INAA",16777215,0,"$(SYS)$(DEV)Sts:Home-SCalcOut_.INAA")
+#! Link("$(SYS)$(DEV)Sts:Home-SCalcOut_.INAA","$(SYS)$(DEV)Sts:Home-Asyn_.AINP")
+#! Field("$(SYS)$(DEV)Sts:Home-SCalcOut_.VAL",16777215,1,"$(SYS)$(DEV)Sts:Home-SCalcOut_.VAL")
+#! Record("$(SYS)$(DEV)Pgm:Home-Sts",3260,1824,0,0,"$(SYS)$(DEV)Pgm:Home-Sts")
+#! Field("$(SYS)$(DEV)Pgm:Home-Sts.FLNK",16777215,0,"$(SYS)$(DEV)Pgm:Home-Sts.FLNK")
+#! Link("$(SYS)$(DEV)Pgm:Home-Sts.FLNK","$(SYS)$(DEV)Pgm:Home-Sts/FLNK1")
+#! Field("$(SYS)$(DEV)Pgm:Home-Sts.INP",16777215,0,"$(SYS)$(DEV)Pgm:Home-Sts.INP")
+#! Link("$(SYS)$(DEV)Pgm:Home-Sts.INP","$(SYS)$(DEV)Pgm:Home-SCalcOut_.VAL")
+#! Connector("$(SYS)$(DEV)Pgm:Home-Sts/FLNK1","$(SYS)$(DEV)Pgm:Home-Sts/FLNK",3180,2115,16777215,"",0)
+#! Connector("$(SYS)$(DEV)Pgm:Home-Sts/FLNK","$(SYS)$(DEV)Check:Home-Sts",3037,1920,16777215,"",0)
+#! Record("$(SYS)$(DEV)Sts:Home-Sts",3260,2334,0,0,"$(SYS)$(DEV)Sts:Home-Sts")
+#! Field("$(SYS)$(DEV)Sts:Home-Sts.INP",16777215,0,"$(SYS)$(DEV)Sts:Home-Sts.INP")
+#! Link("$(SYS)$(DEV)Sts:Home-Sts.INP","$(SYS)$(DEV)Sts:Home-SCalcOut_.VAL")
+#! Record("$(SYS)$(DEV)Sts:Homing-Sts",2360,1790,0,1,"$(SYS)$(DEV)Sts:Homing-Sts")
+#! Field("$(SYS)$(DEV)Sts:Homing-Sts.FLNK",16777215,0,"$(SYS)$(DEV)Sts:Homing-Sts.FLNK")
+#! Link("$(SYS)$(DEV)Sts:Homing-Sts.FLNK","$(SYS)$(DEV)Sts:Homed-Sts")
+#! Field("$(SYS)$(DEV)Sts:Homing-Sts.VAL",16777215,1,"$(SYS)$(DEV)Sts:Homing-Sts.VAL")
+#! Record("$(SYS)$(DEV)Start:Home-Cmd",1480,2028,0,0,"$(SYS)$(DEV)Start:Home-Cmd")
+#! Field("$(SYS)$(DEV)Start:Home-Cmd.FLNK",16777215,1,"$(SYS)$(DEV)Start:Home-Cmd.FLNK")
+#! Link("$(SYS)$(DEV)Start:Home-Cmd.FLNK","$(SYS)$(DEV)Start:Home-CalcOut_")
+#! Field("$(SYS)$(DEV)Start:Home-Cmd.VAL",16777215,1,"$(SYS)$(DEV)Start:Home-Cmd.VAL")
+#! Record("$(SYS)$(DEV)Check:Home-Sts",2700,1794,0,1,"$(SYS)$(DEV)Check:Home-Sts")
+#! Field("$(SYS)$(DEV)Check:Home-Sts.OUT",16777215,0,"$(SYS)$(DEV)Check:Home-Sts.OUT")
+#! Link("$(SYS)$(DEV)Check:Home-Sts.OUT","$(SYS)$(DEV)Sts:Homing-Sts.VAL")
+#! Field("$(SYS)$(DEV)Check:Home-Sts.INPA",16777215,1,"$(SYS)$(DEV)Check:Home-Sts.INPA")
+#! Link("$(SYS)$(DEV)Check:Home-Sts.INPA","$(SYS)$(DEV)Pgm:Home-SCalcOut_.VAL")
+#! Record("$(SYS)$(DEV)Sts:Home-FOut_",2660,2081,0,0,"$(SYS)$(DEV)Sts:Home-FOut_")
+#! Field("$(SYS)$(DEV)Sts:Home-FOut_.FLNK",16777215,1,"$(SYS)$(DEV)Sts:Home-FOut_.FLNK")
+#! Link("$(SYS)$(DEV)Sts:Home-FOut_.FLNK","$(SYS)$(DEV)Pgm:Home-SCalcOut_")
+#! Field("$(SYS)$(DEV)Sts:Home-FOut_.LNK1",16777215,1,"$(SYS)$(DEV)Sts:Home-FOut_.LNK1")
+#! Link("$(SYS)$(DEV)Sts:Home-FOut_.LNK1","$(SYS)$(DEV)Sts:Home-FOut_/LNK1")
+#! Field("$(SYS)$(DEV)Sts:Home-FOut_.LNK2",16777215,1,"$(SYS)$(DEV)Sts:Home-FOut_.LNK2")
+#! Link("$(SYS)$(DEV)Sts:Home-FOut_.LNK2","$(SYS)$(DEV)Sts:Home-FOut_/LNK2")
+#! Connector("$(SYS)$(DEV)Sts:Home-FOut_/LNK2","$(SYS)$(DEV)Group:Home-SCalcOut_",2880,2426,16777215,"",0)
+#! Connector("$(SYS)$(DEV)Sts:Home-FOut_/LNK1","$(SYS)$(DEV)Sts:Home-SCalcOut_",2900,2366,16777215,"",0)
+#! Record("$(SYS)$(DEV)Sts:Homed-Sts",1540,1800,0,1,"$(SYS)$(DEV)Sts:Homed-Sts")
+#! Field("$(SYS)$(DEV)Sts:Homed-Sts.OUT",16777215,0,"$(SYS)$(DEV)Sts:Homed-Sts.OUT")
+#! Link("$(SYS)$(DEV)Sts:Homed-Sts.OUT","$(SYS)$(DEV)Sts:Homed-Sts/OUT")
+#! Field("$(SYS)$(DEV)Sts:Homed-Sts.FLNK",16777215,0,"$(SYS)$(DEV)Sts:Homed-Sts.FLNK")
+#! Link("$(SYS)$(DEV)Sts:Homed-Sts.FLNK","$(SYS)$(DEV)Start:Home-Cmd")
+#! Connector("$(SYS)$(DEV)Sts:Homed-Sts/OUT","$(SYS)$(DEV)Start:Home-Cmd.VAL",1420,2060,16777215,"",0)
+#! Record("$(SYS)$(DEV)Start:HomeBuf-Sts_",2020,2054,0,0,"$(SYS)$(DEV)Start:HomeBuf-Sts_")
+#! Field("$(SYS)$(DEV)Start:HomeBuf-Sts_.VAL",16777215,1,"$(SYS)$(DEV)Start:HomeBuf-Sts_.VAL")
+#! Field("$(SYS)$(DEV)Start:HomeBuf-Sts_.OUT",16777215,1,"$(SYS)$(DEV)Start:HomeBuf-Sts_.OUT")
+#! Link("$(SYS)$(DEV)Start:HomeBuf-Sts_.OUT","$(SYS)$(DEV)Sts:Homing-Sts.VAL")
+#! Field("$(SYS)$(DEV)Start:HomeBuf-Sts_.FLNK",16777215,0,"$(SYS)$(DEV)Start:HomeBuf-Sts_.FLNK")
+#! Link("$(SYS)$(DEV)Start:HomeBuf-Sts_.FLNK","$(SYS)$(DEV)Start:Home-StringOut")
+#! Record("$(SYS)$(DEV)Start:Home-CalcOut_",1760,1978,0,0,"$(SYS)$(DEV)Start:Home-CalcOut_")
+#! Field("$(SYS)$(DEV)Start:Home-CalcOut_.INPA",16777215,0,"$(SYS)$(DEV)Start:Home-CalcOut_.INPA")
+#! Link("$(SYS)$(DEV)Start:Home-CalcOut_.INPA","$(SYS)$(DEV)Start:Home-Cmd.VAL")
+#! Field("$(SYS)$(DEV)Start:Home-CalcOut_.OUT",16777215,1,"$(SYS)$(DEV)Start:Home-CalcOut_.OUT")
+#! Link("$(SYS)$(DEV)Start:Home-CalcOut_.OUT","$(SYS)$(DEV)Start:HomeBuf-Sts_.VAL")
+#! Record("$(SYS)$(DEV)Start:Home-StringOut",1640,2260,0,1,"$(SYS)$(DEV)Start:Home-StringOut")
+#! Field("$(SYS)$(DEV)Start:Home-StringOut.OUT",16777215,1,"$(SYS)$(DEV)Start:Home-StringOut.OUT")
+#! Link("$(SYS)$(DEV)Start:Home-StringOut.OUT","$(SYS)$(DEV)Cmd:Home-Asyn_.AOUT")
+#! Record("$(SYS)$(DEV)Group:Home-Sel",1420,2428,0,1,"$(SYS)$(DEV)Group:Home-Sel")
+#! Field("$(SYS)$(DEV)Group:Home-Sel.VAL",16777215,1,"$(SYS)$(DEV)Group:Home-Sel.VAL")
+#! Field("$(SYS)$(DEV)Group:Home-Sel.FLNK",16777215,1,"$(SYS)$(DEV)Group:Home-Sel.FLNK")
+#! Link("$(SYS)$(DEV)Group:Home-Sel.FLNK","$(SYS)$(DEV)Group:Send-SCalcOut")
+#! Record("$(SYS)$(DEV)Group:Send-SCalcOut",1760,2451,0,0,"$(SYS)$(DEV)Group:Send-SCalcOut")
+#! Field("$(SYS)$(DEV)Group:Send-SCalcOut.INPA",16777215,0,"$(SYS)$(DEV)Group:Send-SCalcOut.INPA")
+#! Link("$(SYS)$(DEV)Group:Send-SCalcOut.INPA","$(SYS)$(DEV)Group:Home-Sel.VAL")
+#! Field("$(SYS)$(DEV)Group:Send-SCalcOut.OUT",16777215,1,"$(SYS)$(DEV)Group:Send-SCalcOut.OUT")
+#! Link("$(SYS)$(DEV)Group:Send-SCalcOut.OUT","$(SYS)$(DEV)Cmd:Home-Asyn_.AOUT")
+#! Record("$(SYS)$(DEV)Group:Home-SCalcOut_",2320,2524,0,1,"$(SYS)$(DEV)Group:Home-SCalcOut_")
+#! Field("$(SYS)$(DEV)Group:Home-SCalcOut_.INAA",16777215,1,"$(SYS)$(DEV)Group:Home-SCalcOut_.INAA")
+#! Link("$(SYS)$(DEV)Group:Home-SCalcOut_.INAA","$(SYS)$(DEV)Sts:Home-Asyn_.AINP")
+#! Field("$(SYS)$(DEV)Group:Home-SCalcOut_.OUT",16777215,0,"$(SYS)$(DEV)Group:Home-SCalcOut_.OUT")
+#! Link("$(SYS)$(DEV)Group:Home-SCalcOut_.OUT","$(SYS)$(DEV)Group:Home-LongOut_.VAL")
+#! Record("$(SYS)$(DEV)Num:HomePLC-I",1680,3116,0,1,"$(SYS)$(DEV)Num:HomePLC-I")
+#! Field("$(SYS)$(DEV)Num:HomePLC-I.VAL",16777215,1,"$(SYS)$(DEV)Num:HomePLC-I.VAL")
+#! Record("$(SYS)$(DEV)Timer:Home-SCalcOut_",2300,3106,0,1,"$(SYS)$(DEV)Timer:Home-SCalcOut_")
+#! Field("$(SYS)$(DEV)Timer:Home-SCalcOut_.A",16777215,0,"$(SYS)$(DEV)Timer:Home-SCalcOut_.A")
+#! Field("$(SYS)$(DEV)Timer:Home-SCalcOut_.OUT",16777215,1,"$(SYS)$(DEV)Timer:Home-SCalcOut_.OUT")
+#! Link("$(SYS)$(DEV)Timer:Home-SCalcOut_.OUT","$(SYS)$(DEV)Timer:Home-Asyn_.AOUT")
+#! Record("$(SYS)$(DEV)Timer:Home-CalcOut_",1960,3071,0,1,"$(SYS)$(DEV)Timer:Home-CalcOut_")
+#! Field("$(SYS)$(DEV)Timer:Home-CalcOut_.INPA",16777215,0,"$(SYS)$(DEV)Timer:Home-CalcOut_.INPA")
+#! Link("$(SYS)$(DEV)Timer:Home-CalcOut_.INPA","$(SYS)$(DEV)Num:HomePLC-I.VAL")
+#! Field("$(SYS)$(DEV)Timer:Home-CalcOut_.OUT",16777215,1,"$(SYS)$(DEV)Timer:Home-CalcOut_.OUT")
+#! Link("$(SYS)$(DEV)Timer:Home-CalcOut_.OUT","$(SYS)$(DEV)Timer:Home-SCalcOut_.A")
+#! Record("$(SYS)$(DEV)Timer:Home-Asyn_",2660,3106,0,1,"$(SYS)$(DEV)Timer:Home-Asyn_")
+#! Field("$(SYS)$(DEV)Timer:Home-Asyn_.SDIS",16777215,0,"$(SYS)$(DEV)Timer:Home-Asyn_.SDIS")
+#! Link("$(SYS)$(DEV)Timer:Home-Asyn_.SDIS","$(SYS)$(DEV)Sts:Homing-Sts.VAL")
+#! Field("$(SYS)$(DEV)Timer:Home-Asyn_.AOUT",16777215,0,"$(SYS)$(DEV)Timer:Home-Asyn_.AOUT")
+#! Field("$(SYS)$(DEV)Timer:Home-Asyn_.AINP",16777215,1,"$(SYS)$(DEV)Timer:Home-Asyn_.AINP")
+#! Field("$(SYS)$(DEV)Timer:Home-Asyn_.FLNK",16777215,0,"$(SYS)$(DEV)Timer:Home-Asyn_.FLNK")
+#! Link("$(SYS)$(DEV)Timer:Home-Asyn_.FLNK","$(SYS)$(DEV)Timer:Home-FOut_")
+#! Record("$(SYS)$(DEV)Timer:Home-I",2980,3240,0,0,"$(SYS)$(DEV)Timer:Home-I")
+#! Field("$(SYS)$(DEV)Timer:Home-I.INAA",16777215,0,"$(SYS)$(DEV)Timer:Home-I.INAA")
+#! Link("$(SYS)$(DEV)Timer:Home-I.INAA","$(SYS)$(DEV)Timer:Home-Asyn_.AINP")
+#! Field("$(SYS)$(DEV)Timer:Home-I.VAL",16777215,1,"$(SYS)$(DEV)Timer:Home-I.VAL")
+#! Record("$(SYS)$(DEV)Timer:Home-FOut_",2560,3396,0,0,"$(SYS)$(DEV)Timer:Home-FOut_")
+#! Field("$(SYS)$(DEV)Timer:Home-FOut_.FLNK",16777215,1,"$(SYS)$(DEV)Timer:Home-FOut_.FLNK")
+#! Link("$(SYS)$(DEV)Timer:Home-FOut_.FLNK","$(SYS)$(DEV)Timer:Home-I")
+#! Field("$(SYS)$(DEV)Timer:Home-FOut_.LNK1",16777215,1,"$(SYS)$(DEV)Timer:Home-FOut_.LNK1")
+#! Link("$(SYS)$(DEV)Timer:Home-FOut_.LNK1","$(SYS)$(DEV)Timeout:Home-SCalcOut_")
+#! Record("$(SYS)$(DEV)Timeout:Home-SCalcOut_",2980,3446,0,0,"$(SYS)$(DEV)Timeout:Home-SCalcOut_")
+#! Field("$(SYS)$(DEV)Timeout:Home-SCalcOut_.FLNK",16777215,1,"$(SYS)$(DEV)Timeout:Home-SCalcOut_.FLNK")
+#! Link("$(SYS)$(DEV)Timeout:Home-SCalcOut_.FLNK","$(SYS)$(DEV)Timeout:Home-I")
+#! Field("$(SYS)$(DEV)Timeout:Home-SCalcOut_.INAA",16777215,0,"$(SYS)$(DEV)Timeout:Home-SCalcOut_.INAA")
+#! Link("$(SYS)$(DEV)Timeout:Home-SCalcOut_.INAA","$(SYS)$(DEV)Timer:Home-Asyn_.AINP")
+#! Field("$(SYS)$(DEV)Timeout:Home-SCalcOut_.VAL",16777215,1,"$(SYS)$(DEV)Timeout:Home-SCalcOut_.VAL")
+#! Record("$(SYS)$(DEV)Timeout:Home-I",3300,3318,16777215,0,"$(SYS)$(DEV)Timeout:Home-I")
+#! Field("$(SYS)$(DEV)Timeout:Home-I.INPA",16777215,0,"$(SYS)$(DEV)Timeout:Home-I.INPA")
+#! Link("$(SYS)$(DEV)Timeout:Home-I.INPA","$(SYS)$(DEV)Timer:Home-I.VAL")
+#! Field("$(SYS)$(DEV)Timeout:Home-I.INPB",16777215,0,"$(SYS)$(DEV)Timeout:Home-I.INPB")
+#! Link("$(SYS)$(DEV)Timeout:Home-I.INPB","$(SYS)$(DEV)Timeout:Home-SCalcOut_.VAL")
+#! Record("$(SYS)$(DEV)Sts:HomeMtr1-StringOut_",20,23,0,0,"$(SYS)$(DEV)Sts:HomeMtr1-StringOut_")
+#! Record("$(SYS)$(DEV)Sts:HomeMtr2-StringOut_",260,23,0,0,"$(SYS)$(DEV)Sts:HomeMtr2-StringOut_")
+#! Record("$(SYS)$(DEV)Sts:HomeMtr3-StringOut_",500,23,0,0,"$(SYS)$(DEV)Sts:HomeMtr3-StringOut_")
+#! Record("$(SYS)$(DEV)Sts:HomeMtr4-StringOut_",740,23,0,0,"$(SYS)$(DEV)Sts:HomeMtr4-StringOut_")
+#! Record("$(SYS)$(DEV)Sts:HomeMtr5-StringOut_",980,23,0,0,"$(SYS)$(DEV)Sts:HomeMtr5-StringOut_")
+#! Record("$(SYS)$(DEV)Sts:HomeMtr6-StringOut_",1220,23,0,0,"$(SYS)$(DEV)Sts:HomeMtr6-StringOut_")
+#! Record("$(SYS)$(DEV)Sts:HomeMtr7-StringOut_",1460,23,0,0,"$(SYS)$(DEV)Sts:HomeMtr7-StringOut_")
+#! Record("$(SYS)$(DEV)Sts:HomeMtr8-StringOut_",1700,23,0,0,"$(SYS)$(DEV)Sts:HomeMtr8-StringOut_")
+#! Record("$(SYS)$(DEV)Sts:HomeMtr9-StringOut_",1940,23,0,0,"$(SYS)$(DEV)Sts:HomeMtr9-StringOut_")
+#! Record("$(SYS)$(DEV)Sts:HomeMtr10-StringOut_",2180,23,0,0,"$(SYS)$(DEV)Sts:HomeMtr10-StringOut_")
+#! Record("$(SYS)$(DEV)Sts:HomeMtr11-StringOut_",2420,23,0,0,"$(SYS)$(DEV)Sts:HomeMtr11-StringOut_")
+#! Record("$(SYS)$(DEV)Sts:HomeMtr12-StringOut_",2660,23,0,0,"$(SYS)$(DEV)Sts:HomeMtr12-StringOut_")
+#! Record("$(SYS)$(DEV)Sts:HomeMtr13-StringOut_",2900,23,0,0,"$(SYS)$(DEV)Sts:HomeMtr13-StringOut_")
+#! Record("$(SYS)$(DEV)Sts:HomeMtr14-StringOut_",3140,23,0,0,"$(SYS)$(DEV)Sts:HomeMtr14-StringOut_")
+#! Record("$(SYS)$(DEV)Sts:HomeMtr15-StringOut_",3380,23,0,0,"$(SYS)$(DEV)Sts:HomeMtr15-StringOut_")
+#! Record("$(SYS)$(DEV)Sts:HomeMtr16-StringOut_",3620,23,0,0,"$(SYS)$(DEV)Sts:HomeMtr16-StringOut_")
+#! Record("$(SYS)$(DEV)Sts:HomeMtr17-StringOut_",20,23,0,0,"$(SYS)$(DEV)Sts:HomeMtr17-StringOut_")
+#! Record("$(SYS)$(DEV)Sts:HomeMtr18-StringOut_",260,23,0,0,"$(SYS)$(DEV)Sts:HomeMtr18-StringOut_")
+#! Record("$(SYS)$(DEV)Sts:HomeMtr19-StringOut_",500,23,0,0,"$(SYS)$(DEV)Sts:HomeMtr19-StringOut_")
+#! Record("$(SYS)$(DEV)Sts:HomeMtr20-StringOut_",740,23,0,0,"$(SYS)$(DEV)Sts:HomeMtr20-StringOut_")
+#! Record("$(SYS)$(DEV)Sts:HomeMtr21-StringOut_",980,23,0,0,"$(SYS)$(DEV)Sts:HomeMtr21-StringOut_")
+#! Record("$(SYS)$(DEV)Sts:HomeMtr22-StringOut_",1220,23,0,0,"$(SYS)$(DEV)Sts:HomeMtr22-StringOut_")
+#! Record("$(SYS)$(DEV)Sts:HomeMtr23-StringOut_",1460,23,0,0,"$(SYS)$(DEV)Sts:HomeMtr23-StringOut_")
+#! Record("$(SYS)$(DEV)Sts:HomeMtr24-StringOut_",1700,23,0,0,"$(SYS)$(DEV)Sts:HomeMtr24-StringOut_")
+#! Record("$(SYS)$(DEV)Sts:HomeMtr25-StringOut_",1940,23,0,0,"$(SYS)$(DEV)Sts:HomeMtr25-StringOut_")
+#! Record("$(SYS)$(DEV)Sts:HomeMtr26-StringOut_",2180,23,0,0,"$(SYS)$(DEV)Sts:HomeMtr26-StringOut_")
+#! Record("$(SYS)$(DEV)Sts:HomeMtr27-StringOut_",2420,23,0,0,"$(SYS)$(DEV)Sts:HomeMtr27-StringOut_")
+#! Record("$(SYS)$(DEV)Sts:HomeMtr28-StringOut_",2660,23,0,0,"$(SYS)$(DEV)Sts:HomeMtr28-StringOut_")
+#! Record("$(SYS)$(DEV)Sts:HomeMtr29-StringOut_",2900,23,0,0,"$(SYS)$(DEV)Sts:HomeMtr29-StringOut_")
+#! Record("$(SYS)$(DEV)Sts:HomeMtr30-StringOut_",3140,23,0,0,"$(SYS)$(DEV)Sts:HomeMtr30-StringOut_")
+#! Record("$(SYS)$(DEV)Sts:HomeMtr31-StringOut_",3380,23,0,0,"$(SYS)$(DEV)Sts:HomeMtr31-StringOut_")
+#! Record("$(SYS)$(DEV)Sts:HomeMtr32-StringOut_",3620,23,0,0,"$(SYS)$(DEV)Sts:HomeMtr32-StringOut_")
+#! Record("$(SYS)$(DEV)Group:Home-LongOut_",1960,2716,0,1,"$(SYS)$(DEV)Group:Home-LongOut_")
+#! Field("$(SYS)$(DEV)Group:Home-LongOut_.VAL",16777215,1,"$(SYS)$(DEV)Group:Home-LongOut_.VAL")
+#! Field("$(SYS)$(DEV)Group:Home-LongOut_.OUT",16777215,0,"$(SYS)$(DEV)Group:Home-LongOut_.OUT")
+#! Link("$(SYS)$(DEV)Group:Home-LongOut_.OUT","$(SYS)$(DEV)Group:Home-Sel.VAL")
