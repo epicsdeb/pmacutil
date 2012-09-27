@@ -1,11 +1,11 @@
 # Database for enabling PMAC PLC
 
 record(stringout, "$(SYS)$(DEV)Enbl:PLC$(PLC)-StringOut") {
-	field(DESC, "Enable PLC $(PLC)"
+	field(DESC, "Enable PLC $(PLC)")
 	field(SCAN, "Passive")
 	field(PINI, "NO")
 	field(DTYP, "Soft Channel")
-	field(OUT,  "$(SYS)$(DEV)Enbl:PLC$(PLC)-Asyn_ PP"
+	field(OUT,  "$(SYS)$(DEV)Enbl:PLC$(PLC)-Asyn_.AOUT PP")
 	field(VAL,  "ENABLE PLC $(PLC)")
 }
 
