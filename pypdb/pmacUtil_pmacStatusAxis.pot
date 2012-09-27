@@ -16,38 +16,38 @@ msgstr ""
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/pmacStatusAxis.db:16
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/pmacStatusAxis.db:28
 msgid "$(M):AXIS$(A):FOLL_ERROR"
-msgstr "$(SYS){$(DEVICE)-$(AXIS)}Val:FollErr-I"
+msgstr "$(SYS){$(DEV)-$(AXIS)}Val:FollErr-I"
 
 #. recordtype: ai
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/pmacStatusAxis.db:11
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/pmacStatusAxis.db:27
 msgid "$(M):AXIS$(A):POSITION"
-msgstr "$(SYS){$(DEVICE)-$(AXIS)}Pos-I"
+msgstr "$(SYS){$(DEV)-$(AXIS)}Pos-I"
 
 #. recordtype: seq
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/pmacStatusAxis.db:26
 msgid "$(M):AXIS$(A):ReadBack"
-msgstr "$(SYS){$(DEVICE)-$(AXIS)}RB-Seq_"
+msgstr "$(SYS){$(DEV)-$(AXIS)}RB-Seq_"
 
 #. recordtype: ai
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/pmacStatusAxis.db:21
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/pmacStatusAxis.db:29
 msgid "$(M):AXIS$(A):VELOCITY"
-msgstr "$(SYS){$(DEVICE)-$(AXIS)}Val:Vlcty-I"
+msgstr "$(SYS){$(DEV)-$(AXIS)}Val:Vlcty-I"
 
 #. recordtype: mbbiDirect
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/pmacStatusAxis.db:42
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/pmacStatusAxis.db:30
 msgid "$(M):AXIS$(A):status1"
-msgstr "$(SYS){$(DEVICE)-$(AXIS)}Sts:1-Sts"
+msgstr "$(SYS){$(DEV)-$(AXIS)}Sts:1-Sts"
 
 #. recordtype: mbbiDirect
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/pmacStatusAxis.db:48
 msgid "$(M):AXIS$(A):status2"
-msgstr "$(SYS){$(DEVICE)-$(AXIS)}Sts:2-Sts"
+msgstr "$(SYS){$(DEV)-$(AXIS)}Sts:2-Sts"
 
 #. recordtype: mbbiDirect
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/pmacStatusAxis.db:52
 msgid "$(M):AXIS$(A):status3"
-msgstr "$(SYS){$(DEVICE)-$(AXIS)}Sts:3-Sts"
+msgstr "$(SYS){$(DEV)-$(AXIS)}Sts:3-Sts"
 

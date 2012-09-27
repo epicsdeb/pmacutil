@@ -16,7 +16,7 @@ msgstr ""
 #. DESC: Send abort cmd
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:36
 msgid "$(P):HM:ABORT"
-msgstr "$(SYS)$(DEVICE)Abort:Home-Cmd"
+msgstr "$(SYS)$(DEV)Abort:Home-Cmd"
 
 #. recordtype: asyn
 #. DESC: User cmd to PMAC
@@ -25,7 +25,7 @@ msgstr "$(SYS)$(DEVICE)Abort:Home-Cmd"
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:253
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:217
 msgid "$(P):HM:ASYN1"
-msgstr "$(SYS)$(DEVICE)Cmd:Home-Asyn_"
+msgstr "$(SYS)$(DEV)Cmd:Home-Asyn_"
 
 #. recordtype: asyn
 #. DESC: Read homing status from PMAC
@@ -34,7 +34,7 @@ msgstr "$(SYS)$(DEVICE)Cmd:Home-Asyn_"
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:80
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:67
 msgid "$(P):HM:ASYN2"
-msgstr "$(SYS)$(DEVICE)Sts:Home-Asyn_"
+msgstr "$(SYS)$(DEV)Sts:Home-Asyn_"
 
 #. recordtype: asyn
 #. DESC: Read timer
@@ -43,31 +43,31 @@ msgstr "$(SYS)$(DEVICE)Sts:Home-Asyn_"
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:311
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:326
 msgid "$(P):HM:ASYN3"
-msgstr "$(SYS)$(DEVICE)Val:Timer-Asyn_"
+msgstr "$(SYS)$(DEV)Val:Timer-Asyn_"
 
 #. recordtype: bo
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:191
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:206
 msgid "$(P):HM:BUF1"
-msgstr "$(SYS)$(DEVICE)Start:HomeBuf-Cmd"
+msgstr "$(SYS)$(DEV)Start:HomeBuf-Cmd"
 
 #. recordtype: calcout
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:168
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:98
 msgid "$(P):HM:CHECK"
-msgstr "$(SYS)$(DEVICE)Sts:HomeCheck-Sts"
+msgstr "$(SYS)$(DEV)Sts:HomeCheck-Sts"
 
 #. recordtype: fanout
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:176
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:54
 msgid "$(P):HM:FAN1"
-msgstr "$(SYS)$(DEVICE)Sts:Home-FOut_"
+msgstr "$(SYS)$(DEV)Sts:Home-FOut_"
 
 #. recordtype: fanout
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:316
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:302
 msgid "$(P):HM:FAN2"
-msgstr "$(SYS)$(DEVICE)"
+msgstr "$(SYS)$(DEV)"
 
 #. recordtype: mbbo
 #. DESC: Homing group
@@ -75,7 +75,7 @@ msgstr "$(SYS)$(DEVICE)"
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:252
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:441
 msgid "$(P):HM:HMGRP"
-msgstr "$(SYS)$(DEVICE)Val:HomeGroup-Sel"
+msgstr "$(SYS)$(DEV)Val:HomeGroup-Sel"
 
 #. recordtype: bo
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:160
@@ -83,12 +83,12 @@ msgstr "$(SYS)$(DEVICE)Val:HomeGroup-Sel"
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:187
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:205
 msgid "$(P):HM:HOME"
-msgstr "$(SYS)$(DEVICE)Start:Home-Cmd"
+msgstr "$(SYS)$(DEV)Start:Home-Cmd"
 
 #. recordtype: bo
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:182
 msgid "$(P):HM:HOMED"
-msgstr "$(SYS)$(DEVICE)Sts:Homed-Sts"
+msgstr "$(SYS)$(DEV)Sts:Homed-Sts"
 
 #. recordtype: <unknown>
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:156
@@ -97,7 +97,7 @@ msgstr "$(SYS)$(DEVICE)Sts:Homed-Sts"
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:196
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:171
 msgid "$(P):HM:HOMING"
-msgstr "$(SYS)$(DEVICE)Sts:Homing-Sts"
+msgstr "$(SYS)$(DEV)Sts:Homing-Sts"
 
 #. recordtype: scalcout
 #. DESC: parse timer
@@ -105,47 +105,47 @@ msgstr "$(SYS)$(DEVICE)Sts:Homing-Sts"
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:336
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:318
 msgid "$(P):HM:I10"
-msgstr "$(SYS)$(DEVICE)Val:Timer-SCalcout_"
+msgstr "$(SYS)$(DEV)Val:Timer-SCalcout_"
 
 #. recordtype: stringout
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:343
 msgid "$(P):HM:M1PV"
-msgstr "$(SYS)$(DEVICE)Sts:HomeMtr1-Stringout_"
+msgstr "$(SYS)$(DEV)Sts:HomeMtr1-Stringout_"
 
 #. recordtype: stringout
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:346
 msgid "$(P):HM:M2PV"
-msgstr "$(SYS)$(DEVICE)Sts:HomeMtr2-Stringout_"
+msgstr "$(SYS)$(DEV)Sts:HomeMtr2-Stringout_"
 
 #. recordtype: stringout
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:349
 msgid "$(P):HM:M3PV"
-msgstr "$(SYS)$(DEVICE)Sts:HomeMtr3-Stringout_"
+msgstr "$(SYS)$(DEV)Sts:HomeMtr3-Stringout_"
 
 #. recordtype: stringout
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:352
 msgid "$(P):HM:M4PV"
-msgstr "$(SYS)$(DEVICE)Sts:HomeMtr4-Stringout_"
+msgstr "$(SYS)$(DEV)Sts:HomeMtr4-Stringout_"
 
 #. recordtype: stringout
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:355
 msgid "$(P):HM:M5PV"
-msgstr "$(SYS)$(DEVICE)Sts:HomeMtr5-Stringout_"
+msgstr "$(SYS)$(DEV)Sts:HomeMtr5-Stringout_"
 
 #. recordtype: stringout
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:358
 msgid "$(P):HM:M6PV"
-msgstr "$(SYS)$(DEVICE)Sts:HomeMtr6-Stringout_"
+msgstr "$(SYS)$(DEV)Sts:HomeMtr6-Stringout_"
 
 #. recordtype: stringout
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:361
 msgid "$(P):HM:M7PV"
-msgstr "$(SYS)$(DEVICE)Sts:HomeMtr7-Stringout_"
+msgstr "$(SYS)$(DEV)Sts:HomeMtr7-Stringout_"
 
 #. recordtype: stringout
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:364
 msgid "$(P):HM:M8PV"
-msgstr "$(SYS)$(DEVICE)Sts:HomeMtr8-Stringout_"
+msgstr "$(SYS)$(DEV)Sts:HomeMtr8-Stringout_"
 
 #. recordtype: scalcout
 #. DESC: Parse PMAC response to P$(PLC)01
@@ -154,7 +154,7 @@ msgstr "$(SYS)$(DEVICE)Sts:HomeMtr8-Stringout_"
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:99
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:170
 msgid "$(P):HM:PARSE1"
-msgstr "$(SYS)$(DEVICE)Sts:Home-SCalcout_"
+msgstr "$(SYS)$(DEV)Sts:Home-SCalcout_"
 
 #. recordtype: scalcout
 #. DESC: Parse PMAC response to P$(PLC)00
@@ -162,81 +162,81 @@ msgstr "$(SYS)$(DEVICE)Sts:Home-SCalcout_"
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:133
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:178
 msgid "$(P):HM:PARSE2"
-msgstr "$(SYS)$(DEVICE)State:Home-SCalcout_"
+msgstr "$(SYS)$(DEV)State:Home-SCalcout_"
 
 #. recordtype: scalcout
 #. DESC: Parse pmac P$(PLC)02
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:258
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:179
 msgid "$(P):HM:PARSE3"
-msgstr "$(SYS)$(DEVICE)Sts:HomeGroup-SCalcout_"
+msgstr "$(SYS)$(DEV)Sts:HomeGroup-SCalcout_"
 
 #. recordtype: longout
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:439
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:268
 msgid "$(P):HM:PARSE4"
-msgstr "$(SYS)$(DEVICE)Sts:HomeGroup-Longout_"
+msgstr "$(SYS)$(DEV)Sts:HomeGroup-Longout_"
 
 #. recordtype: ao
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:271
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:291
 msgid "$(P):HM:PLC"
-msgstr "$(SYS)$(DEVICE)Val:PLC-I"
+msgstr "$(SYS)$(DEV)Val:PLC-I"
 
 #. recordtype: scalcout
 #. DESC: Select group on pmac
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:247
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:225
 msgid "$(P):HM:SENDGRP"
-msgstr "$(SYS)$(DEVICE)Val:HomeGroup-SCalcout"
+msgstr "$(SYS)$(DEV)Val:HomeGroup-SCalcout"
 
 #. recordtype: calcout
 #. DESC: Check if usr started
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:199
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:164
 msgid "$(P):HM:START"
-msgstr "$(SYS)$(DEVICE)Start:Home-Calcout_"
+msgstr "$(SYS)$(DEV)Start:Home-Calcout_"
 
 #. recordtype: stringout
 #. DESC: Start homing plc/prog
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:211
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:195
 msgid "$(P):HM:STARTHMP"
-msgstr "$(SYS)$(DEVICE)Start:Home-Stringout_"
+msgstr "$(SYS)$(DEV)Start:Home-Stringout_"
 
 #. recordtype: mbbi
 #. DESC: Homing state
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:118
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:81
 msgid "$(P):HM:STATE"
-msgstr "$(SYS)$(DEVICE)State:Home-Sts"
+msgstr "$(SYS)$(DEV)State:Home-Sts"
 
 #. recordtype: mbbi
 #. DESC: Homing status
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:85
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:68
 msgid "$(P):HM:STATUS"
-msgstr "$(SYS)$(DEVICE)Sts:Homing-Sts"
+msgstr "$(SYS)$(DEV)Sts:Homing-Sts"
 
 #. recordtype: calcout
 #. DESC: calc timer ivar
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:286
 msgid "$(P):HM:TI1"
-msgstr "$(SYS)$(DEVICE)Time:Home-Calcout_"
+msgstr "$(SYS)$(DEV)Time:Home-Calcout_"
 
 #. recordtype: scalcout
 #. DESC: create string with ivar
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:276
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:292
 msgid "$(P):HM:TI2"
-msgstr "$(SYS)$(DEVICE)Time:Home-SCalcout_"
+msgstr "$(SYS)$(DEV)Time:Home-SCalcout_"
 
 #. recordtype: calcout
 #. EGU: s
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:331
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:324
 msgid "$(P):HM:TIMEOUT"
-msgstr "$(SYS)$(DEVICE)Time:MaxHome-Calcout_"
+msgstr "$(SYS)$(DEV)Time:MaxHome-Calcout_"
 
 #. recordtype: scalcout
 #. DESC: parse timer
@@ -244,5 +244,5 @@ msgstr "$(SYS)$(DEVICE)Time:MaxHome-Calcout_"
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:335
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/autohome.db:317
 msgid "$(P):HM:TIMER"
-msgstr "$(SYS)$(DEVICE)Time:Home-I"
+msgstr "$(SYS)$(DEV)Time:Home-I"
 

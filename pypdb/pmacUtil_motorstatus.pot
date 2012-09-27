@@ -13,39 +13,39 @@ msgstr ""
 "X-Poedit-SearchPath-1: .\n"
 
 msgid "$(P)$(R)"
-msgstr "$(SYS)$(DEVICE)"
+msgstr "$(SYS)$(DEV)"
 
 #. recordtype: ao
 #. DESC: PMAC Axis number
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/motorstatus.db:104
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/motorstatus.db:97
 msgid "$(P)$(R):AXISN"
-msgstr "$(SYS)$(DEVICE)Cnt:Ax-SP"
+msgstr "$(SYS)$(DEV)Cnt:Ax-SP"
 
 #. recordtype: scalcout
 #. DESC: create the pmac cmd
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/motorstatus.db:93
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/motorstatus.db:108
 msgid "$(P)$(R):CMD"
-msgstr "$(SYS)$(DEVICE)Cmd-SCalcout_"
+msgstr "$(SYS)$(DEV)Cmd-SCalcout_"
 
 #. recordtype: fanout
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/motorstatus.db:23
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/motorstatus.db:20
 msgid "$(P)$(R):FAN1"
-msgstr "$(SYS)$(DEVICE)Sts:1-FOut_"
+msgstr "$(SYS)$(DEV)Sts:1-FOut_"
 
 #. recordtype: dfanout
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/motorstatus.db:55
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/motorstatus.db:33
 msgid "$(P)$(R):FAN2"
-msgstr "$(SYS)$(DEVICE)Sts:2-FOut_"
+msgstr "$(SYS)$(DEV)Sts:2-FOut_"
 
 #. recordtype: dfanout
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/motorstatus.db:50
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/motorstatus.db:44
 msgid "$(P)$(R):FAN3"
-msgstr "$(SYS)$(DEVICE)Sts:3-FOut_"
+msgstr "$(SYS)$(DEV)Sts:3-FOut_"
 
 #. recordtype: asyn
 #. DESC: get motor status
@@ -55,47 +55,47 @@ msgstr "$(SYS)$(DEVICE)Sts:3-FOut_"
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/motorstatus.db:32
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/motorstatus.db:43
 msgid "$(P)$(R):GETSTATUS"
-msgstr "$(SYS)$(DEVICE)Sts-Asyn_"
+msgstr "$(SYS)$(DEV)Sts-Asyn_"
 
 #. recordtype: scalcout
 #. DESC: parse status for X
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/motorstatus.db:28
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/motorstatus.db:24
 msgid "$(P)$(R):STAT1"
-msgstr "$(SYS)$(DEVICE)Sts:1-SCalcout_"
+msgstr "$(SYS)$(DEV)Sts:1-SCalcout_"
 
 #. recordtype: scalcout
 #. DESC: parse status for X
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/motorstatus.db:39
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/motorstatus.db:25
 msgid "$(P)$(R):STAT2"
-msgstr "$(SYS)$(DEVICE)Sts:2-SCalcout_"
+msgstr "$(SYS)$(DEV)Sts:2-SCalcout_"
 
 #. recordtype: mbbiDirect
 #. DESC: status lower bits 1-12
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/motorstatus.db:60
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/motorstatus.db:56
 msgid "$(P)$(R):STATUS1"
-msgstr "$(SYS)$(DEVICE)Sts:1-Sts"
+msgstr "$(SYS)$(DEV)Sts:1-Sts"
 
 #. recordtype: mbbiDirect
 #. DESC: status bits 13-24
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/motorstatus.db:68
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/motorstatus.db:57
 msgid "$(P)$(R):STATUS2"
-msgstr "$(SYS)$(DEVICE)Sts:2-Sts"
+msgstr "$(SYS)$(DEV)Sts:2-Sts"
 
 #. recordtype: mbbiDirect
 #. DESC: status bits 25-36
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/motorstatus.db:76
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/motorstatus.db:51
 msgid "$(P)$(R):STATUS3"
-msgstr "$(SYS)$(DEVICE)Sts:3-Sts"
+msgstr "$(SYS)$(DEV)Sts:3-Sts"
 
 #. recordtype: mbbiDirect
 #. DESC: status bits 37-48
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/motorstatus.db:84
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/motorstatus.db:52
 msgid "$(P)$(R):STATUS4"
-msgstr "$(SYS)$(DEVICE)Sts:4-Sts"
+msgstr "$(SYS)$(DEV)Sts:4-Sts"
 

@@ -16,34 +16,34 @@ msgstr ""
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/pmac_asyn_motor.template:33
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/pmac_asyn_motor.template:13
 msgid "$(HOME=$(P)):HM:HOMING"
-msgstr "$(SYS)$(DEVICE)Sts:Homing-Sts"
+msgstr "$(SYS)$(DEV)Sts:Homing-Sts"
 
 #. recordtype: stringout
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/pmac_asyn_motor.template:48
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/pmac_asyn_motor.template:45
 msgid "$(HOME=$(P)):HM:M$(ADDR)PV"
-msgstr "$(SYS)$(DEVICE)Addr:Homing-I"
+msgstr "$(SYS)$(DEV)Addr:Homing-I"
 
 #. recordtype: <unknown>
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/pmac_asyn_motor.template:21
 msgid "$(P)$(M)"
-msgstr "$(SYS)$(DEVICE)-Mtr"
+msgstr "$(SYS)$(DEV)-Mtr"
 
 #. recordtype: ai
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/pmac_asyn_motor.template:63
 msgid "$(P)$(M):ELOSS"
-msgstr "$(SYS)$(DEVICE)Flt:ELoss-Sts"
+msgstr "$(SYS)$(DEV)Flt:ELoss-Sts"
 
 #. recordtype: calcout
 #. DESC: Write 0 to A to reset Eloss
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/pmac_asyn_motor.template:69
 msgid "$(P)$(M):ELOSSRC"
-msgstr "$(SYS)$(DEVICE)Rst:ELoss-Cmd"
+msgstr "$(SYS)$(DEV)Rst:ELoss-Cmd"
 
 #. recordtype: calc
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/pmac_asyn_motor.template:58
 msgid "$(P)$(M):ELOSSVAR"
-msgstr "$(SYS)$(DEVICE)Addr:ELoss-I"
+msgstr "$(SYS)$(DEV)Addr:ELoss-I"
 
 #. recordtype: ai
 #. DESC: $(DESC)
@@ -51,30 +51,30 @@ msgstr "$(SYS)$(DEVICE)Addr:ELoss-I"
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/pmac_asyn_motor.template:28
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/pmac_asyn_motor.template:24
 msgid "$(P)$(M):HMPOS"
-msgstr "$(SYS)$(DEVICE)Pos:Raw-I"
+msgstr "$(SYS)$(DEV)Pos:Raw-I"
 
 #. recordtype: calcout
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/pmac_asyn_motor.template:20
 msgid "$(P)$(M):HMPOSASLO"
-msgstr "$(SYS)$(DEVICE)Val:ASLO-I"
+msgstr "$(SYS)$(DEV)Val:ASLO-I"
 
 #. recordtype: <unknown>
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/pmac_asyn_motor.template:22
 msgid "$(P)$(M):SCALE"
-msgstr "$(SYS)$(DEVICE)Val:Scale-I"
+msgstr "$(SYS)$(DEV)Val:Scale-I"
 
 #. recordtype: calcout
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/pmac_asyn_motor.template:12
 msgid "$(P)$(M):SDIS"
-msgstr "$(SYS)$(DEVICE)Dsbl:Hmng-Calc"
+msgstr "$(SYS)$(DEV)Dsbl:Hmng-Calc"
 
 #. recordtype: stringout
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/pmac_asyn_motor.template:42
 msgid "$(P)$(M):SETHMPV"
-msgstr "$(SYS)$(DEVICE)Cmd:SetHm-StringOut"
+msgstr "$(SYS)$(DEV)Cmd:SetHm-StringOut"
 
 #. recordtype: ao
 #: /home/wlewis/local/data/work/hg/repos/modules/pmacUtil/pmacUtilApp/Db/pmac_asyn_motor.template:52
 msgid "$(P)$(M):KILL"
-msgstr "$(SYS)$(DEVICE)Cmd:Kill-Cmd"
+msgstr "$(SYS)$(DEV)Cmd:Kill-Cmd"
 

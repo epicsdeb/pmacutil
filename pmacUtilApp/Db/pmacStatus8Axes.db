@@ -12,56 +12,56 @@
 #   NAXES - Number of axes, default is 8
 
 expand("pmacStatusAxis.vdb", pmacStatusAxis) {
-  macro(DEVICE, "$(DEVICE)")
+  macro(DEVICE, "$(DEV)")
   macro(PORT, "$(PORT)")
   macro(AXIS, "1")
 }
 
 expand("pmacStatusAxis.vdb", pmacStatusAxis2) {
-  macro(DEVICE, "$(DEVICE)")
+  macro(DEVICE, "$(DEV)")
   macro(PORT, "$(PORT)")
   macro(AXIS, "2")
 }
 
 expand("pmacStatusAxis.vdb", pmacStatusAxis3) {
-  macro(DEVICE, "$(DEVICE)")
+  macro(DEVICE, "$(DEV)")
   macro(PORT, "$(PORT)")
   macro(AXIS, "3")
 }
 
 expand("pmacStatusAxis.vdb", pmacStatusAxis4) {
-  macro(DEVICE, "$(DEVICE)")
+  macro(DEVICE, "$(DEV)")
   macro(PORT, "$(PORT)")
   macro(AXIS, "4")
 }
 
 expand("pmacStatusAxis.vdb", pmacStatusAxis5) {
-  macro(DEVICE, "$(DEVICE)")
+  macro(DEVICE, "$(DEV)")
   macro(PORT, "$(PORT)")
   macro(AXIS, "5")
 }
 
 expand("pmacStatusAxis.vdb", pmacStatusAxis6) {
-  macro(DEVICE, "$(DEVICE)")
+  macro(DEVICE, "$(DEV)")
   macro(PORT, "$(PORT)")
   macro(AXIS, "6")
 }
 
 expand("pmacStatusAxis.vdb", pmacStatusAxis7) {
-  macro(DEVICE, "$(DEVICE)")
+  macro(DEVICE, "$(DEV)")
   macro(PORT, "$(PORT)")
   macro(AXIS, "7")
 }
 
 expand("pmacStatusAxis.vdb", pmacStatusAxis8) {
-  macro(DEVICE, "$(DEVICE)")
+  macro(DEVICE, "$(DEV)")
   macro(PORT, "$(PORT)")
   macro(AXIS, "8")
 }
 
 
 expand("pmacStatus.vdb", pmacStatus) {
-  macro(DEVICE, "$(DEVICE)")
+  macro(DEVICE, "$(DEV)")
   macro(PORT, "$(PORT)")
   macro(VERSION, "$(VERSION=1)")
   macro(NAXES, "$(NAXES=8)")
