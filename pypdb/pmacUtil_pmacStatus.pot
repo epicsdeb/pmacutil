@@ -387,7 +387,7 @@ msgstr "$(SYS){$(DEV)}Val:Pgm-GenSub_"
 #. recordtype: fanout
 #: ../pmacUtilApp/Db/pmacStatus.vdb:18
 msgid "$(DEV):ReadBack"
-msgstr "$(SYS){$(DEV)}Sts:Read1-FOut_"
+msgstr "$(SYS){$(DEV)}Sts:Read1-FOut"
 
 #. recordtype: fanout
 #: ../pmacUtilApp/Db/pmacStatus.vdb:29

@@ -15,7 +15,7 @@
 # % gui, $(name=), edm, pmacStatus.edl, pmac=$(PMAC)
 #
 # Scan rate for pmac status, plc querying, cpu load querying
-record(fanout, "$(SYS){$(PMAC)}Sts:Read1-FOut_") {
+record(fanout, "$(SYS){$(PMAC)}Sts:Read1-FOut") {
   field(SCAN, "1 second")
   field(FLNK, "$(SYS){$(PMAC)}Sts:Read2-FOut_")
   field(LNK1, "$(SYS){$(PMAC)}Sts:1-Sts")
@@ -264,19 +264,19 @@ record(longin, "$(SYS){$(PMAC)}Cnt:Axes-I") {
 
 #! Further lines contain data used by VisualDCT
 #! View(1463,2287,1.0)
-#! Record("$(SYS){$(PMAC)}Sts:Read1-FOut_",3320,1966,0,1,"$(SYS){$(PMAC)}Sts:Read1-FOut_")
-#! Field("$(SYS){$(PMAC)}Sts:Read1-FOut_.LNK3",16777215,0,"$(SYS){$(PMAC)}Sts:Read1-FOut_.LNK3")
-#! Link("$(SYS){$(PMAC)}Sts:Read1-FOut_.LNK3","$(SYS){$(PMAC)}Sts:PLC-WF_")
-#! Field("$(SYS){$(PMAC)}Sts:Read1-FOut_.LNK4",16777215,0,"$(SYS){$(PMAC)}Sts:Read1-FOut_.LNK4")
-#! Link("$(SYS){$(PMAC)}Sts:Read1-FOut_.LNK4","$(SYS){$(PMAC)}Val:Pgm-WF_")
-#! Field("$(SYS){$(PMAC)}Sts:Read1-FOut_.LNK1",16777215,1,"$(SYS){$(PMAC)}Sts:Read1-FOut_.LNK1")
-#! Link("$(SYS){$(PMAC)}Sts:Read1-FOut_.LNK1","$(SYS){$(PMAC)}Sts:1-Sts")
-#! Field("$(SYS){$(PMAC)}Sts:Read1-FOut_.LNK5",16777215,1,"$(SYS){$(PMAC)}Sts:Read1-FOut_.LNK5")
-#! Link("$(SYS){$(PMAC)}Sts:Read1-FOut_.LNK5","$(SYS){$(PMAC)}Cnt:MACRO_Err-I")
-#! Field("$(SYS){$(PMAC)}Sts:Read1-FOut_.LNK2",16777215,1,"$(SYS){$(PMAC)}Sts:Read1-FOut_.LNK2")
-#! Link("$(SYS){$(PMAC)}Sts:Read1-FOut_.LNK2","$(SYS){$(PMAC)}Val:CPULoad-I")
-#! Field("$(SYS){$(PMAC)}Sts:Read1-FOut_.LNK6",16777215,0,"$(SYS){$(PMAC)}Sts:Read1-FOut_.LNK6")
-#! Link("$(SYS){$(PMAC)}Sts:Read1-FOut_.LNK6","$(SYS){$(PMAC)-Ax:RB1}-Seq_")
+#! Record("$(SYS){$(PMAC)}Sts:Read1-FOut",3320,1966,0,1,"$(SYS){$(PMAC)}Sts:Read1-FOut")
+#! Field("$(SYS){$(PMAC)}Sts:Read1-FOut.LNK3",16777215,0,"$(SYS){$(PMAC)}Sts:Read1-FOut.LNK3")
+#! Link("$(SYS){$(PMAC)}Sts:Read1-FOut.LNK3","$(SYS){$(PMAC)}Sts:PLC-WF_")
+#! Field("$(SYS){$(PMAC)}Sts:Read1-FOut.LNK4",16777215,0,"$(SYS){$(PMAC)}Sts:Read1-FOut.LNK4")
+#! Link("$(SYS){$(PMAC)}Sts:Read1-FOut.LNK4","$(SYS){$(PMAC)}Val:Pgm-WF_")
+#! Field("$(SYS){$(PMAC)}Sts:Read1-FOut.LNK1",16777215,1,"$(SYS){$(PMAC)}Sts:Read1-FOut.LNK1")
+#! Link("$(SYS){$(PMAC)}Sts:Read1-FOut.LNK1","$(SYS){$(PMAC)}Sts:1-Sts")
+#! Field("$(SYS){$(PMAC)}Sts:Read1-FOut.LNK5",16777215,1,"$(SYS){$(PMAC)}Sts:Read1-FOut.LNK5")
+#! Link("$(SYS){$(PMAC)}Sts:Read1-FOut.LNK5","$(SYS){$(PMAC)}Cnt:MACRO_Err-I")
+#! Field("$(SYS){$(PMAC)}Sts:Read1-FOut.LNK2",16777215,1,"$(SYS){$(PMAC)}Sts:Read1-FOut.LNK2")
+#! Link("$(SYS){$(PMAC)}Sts:Read1-FOut.LNK2","$(SYS){$(PMAC)}Val:CPULoad-I")
+#! Field("$(SYS){$(PMAC)}Sts:Read1-FOut.LNK6",16777215,0,"$(SYS){$(PMAC)}Sts:Read1-FOut.LNK6")
+#! Link("$(SYS){$(PMAC)}Sts:Read1-FOut.LNK6","$(SYS){$(PMAC)-Ax:RB1}-Seq_")
 #! Record("$(SYS){$(PMAC)}Type:PMAC-Sts",2180,2506,0,0,"$(SYS){$(PMAC)}Type:PMAC-Sts")
 #! Field("$(SYS){$(PMAC)}Type:PMAC-Sts.INP",16777215,0,"$(SYS){$(PMAC)}Type:PMAC-Sts.INP")
 #! Record("$(SYS){$(PMAC)}Val:CPULoad-I",3600,2260,0,0,"$(SYS){$(PMAC)}Val:CPULoad-I")
