@@ -1,0 +1,2975 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display typeId="org.csstudio.opibuilder.Display" version="1.0">
+  <auto_zoom_to_fit_all>false</auto_zoom_to_fit_all>
+  <macros>
+    <include_parent_macros>true</include_parent_macros>
+  </macros>
+  <wuid>638b5397:135775a0b46:-8000</wuid>
+  <boy_version>3.1.2.201212190928</boy_version>
+  <scripts />
+  <show_ruler>true</show_ruler>
+  <height>330</height>
+  <name></name>
+  <snap_to_geometry>true</snap_to_geometry>
+  <show_grid>true</show_grid>
+  <background_color>
+    <color name="default_bg" red="200" green="200" blue="200" />
+  </background_color>
+  <foreground_color>
+    <color name="MEDM_COLOR_6" red="158" green="158" blue="158" />
+  </foreground_color>
+  <widget_type>Display</widget_type>
+  <show_close_button>true</show_close_button>
+  <width>400</width>
+  <rules />
+  <show_edit_range>true</show_edit_range>
+  <grid_space>10</grid_space>
+  <auto_scale_widgets>
+    <auto_scale_widgets>false</auto_scale_widgets>
+    <min_width>-1</min_width>
+    <min_height>-1</min_height>
+  </auto_scale_widgets>
+  <actions hook="false" hook_all="false" />
+  <y>-1</y>
+  <x>-1</x>
+  <widget typeId="org.csstudio.opibuilder.widgets.Rectangle" version="1.0">
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <visible>true</visible>
+    <fill_level>0.0</fill_level>
+    <line_color>
+      <color red="128" green="0" blue="255" />
+    </line_color>
+    <wuid>-e503e06:13ccb3a4232:-7e53</wuid>
+    <bg_gradient_color>
+      <color red="255" green="255" blue="255" />
+    </bg_gradient_color>
+    <scripts />
+    <height>31</height>
+    <anti_alias>true</anti_alias>
+    <name>Rectangle</name>
+    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+    <alpha>255</alpha>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <transparent>false</transparent>
+    <pv_name></pv_name>
+    <background_color>
+      <color name="MEDM_COLOR_26" red="89" green="126" blue="225" />
+    </background_color>
+    <foreground_color>
+      <color red="255" green="0" blue="0" />
+    </foreground_color>
+    <widget_type>Rectangle</widget_type>
+    <enabled>true</enabled>
+    <fg_gradient_color>
+      <color red="255" green="255" blue="255" />
+    </fg_gradient_color>
+    <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+    <font>
+      <opifont.name fontName="Lucida Grande" height="11" style="0">Default</opifont.name>
+    </font>
+    <width>401</width>
+    <line_style>0</line_style>
+    <border_style>0</border_style>
+    <rules />
+    <pv_value />
+    <border_width>1</border_width>
+    <line_width>0</line_width>
+    <horizontal_fill>true</horizontal_fill>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <actions hook="false" hook_all="false" />
+    <y>0</y>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    <x>0</x>
+    <gradient>false</gradient>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+    <visible>true</visible>
+    <vertical_alignment>1</vertical_alignment>
+    <wuid>-e503e06:13ccb3a4232:-7e71</wuid>
+    <auto_size>false</auto_size>
+    <scripts />
+    <height>31</height>
+    <name>Label</name>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <transparent>true</transparent>
+    <show_scrollbar>false</show_scrollbar>
+    <background_color>
+      <color red="255" green="255" blue="255" />
+    </background_color>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <widget_type>Label</widget_type>
+    <enabled>true</enabled>
+    <text>$(DEV) PMAC Axis $(AXIS) Status</text>
+    <font>
+      <opifont.name fontName="Lucida Grande" height="18" style="1">Header 1</opifont.name>
+    </font>
+    <width>401</width>
+    <border_style>0</border_style>
+    <rules />
+    <border_width>1</border_width>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <actions hook="false" hook_all="false" />
+    <y>0</y>
+    <wrap_words>true</wrap_words>
+    <tooltip></tooltip>
+    <x>0</x>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0">
+    <macros>
+      <include_parent_macros>true</include_parent_macros>
+    </macros>
+    <visible>true</visible>
+    <wuid>-e503e06:13ccb3a4232:-7e02</wuid>
+    <scripts />
+    <height>81</height>
+    <name>Tab 0</name>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <transparent>true</transparent>
+    <show_scrollbar>true</show_scrollbar>
+    <background_color>
+      <color red="240" green="240" blue="240" />
+    </background_color>
+    <foreground_color>
+      <color red="192" green="192" blue="192" />
+    </foreground_color>
+    <widget_type>Grouping Container</widget_type>
+    <enabled>true</enabled>
+    <font>
+      <opifont.name fontName="Lucida Grande" height="11" style="0">Default</opifont.name>
+    </font>
+    <width>381</width>
+    <border_style>3</border_style>
+    <rules />
+    <lock_children>false</lock_children>
+    <border_width>1</border_width>
+    <border_color>
+      <color name="default_fg" red="0" green="0" blue="0" />
+    </border_color>
+    <actions hook="false" hook_all="false" />
+    <y>40</y>
+    <tooltip></tooltip>
+    <x>10</x>
+    <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+      <visible>true</visible>
+      <vertical_alignment>1</vertical_alignment>
+      <wuid>-191b87bc:13cc9bd1570:9b9</wuid>
+      <auto_size>true</auto_size>
+      <scripts />
+      <height>15</height>
+      <name>Label</name>
+      <scale_options>
+        <width_scalable>true</width_scalable>
+        <height_scalable>true</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <transparent>false</transparent>
+      <show_scrollbar>false</show_scrollbar>
+      <background_color>
+        <color name="MEDM_COLOR_5" red="174" green="174" blue="174" />
+      </background_color>
+      <foreground_color>
+        <color red="0" green="0" blue="0" />
+      </foreground_color>
+      <widget_type>Label</widget_type>
+      <enabled>true</enabled>
+      <text>Axis information</text>
+      <font>
+        <opifont.name fontName="Lucida Grande" height="11" style="0">Default</opifont.name>
+      </font>
+      <width>92</width>
+      <border_style>1</border_style>
+      <rules />
+      <border_width>1</border_width>
+      <border_color>
+        <color name="default_fg" red="0" green="0" blue="0" />
+      </border_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <actions hook="false" hook_all="false" />
+      <y>0</y>
+      <wrap_words>true</wrap_words>
+      <tooltip></tooltip>
+      <x>0</x>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+      <visible>true</visible>
+      <vertical_alignment>1</vertical_alignment>
+      <wuid>-191b87bc:13cc9bd1570:a2c</wuid>
+      <auto_size>false</auto_size>
+      <scripts />
+      <height>15</height>
+      <name>Label_1</name>
+      <scale_options>
+        <width_scalable>true</width_scalable>
+        <height_scalable>true</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <transparent>true</transparent>
+      <show_scrollbar>false</show_scrollbar>
+      <background_color>
+        <color red="255" green="255" blue="255" />
+      </background_color>
+      <foreground_color>
+        <color red="0" green="0" blue="0" />
+      </foreground_color>
+      <widget_type>Label</widget_type>
+      <enabled>true</enabled>
+      <text>Position</text>
+      <font>
+        <opifont.name fontName="Lucida Grande" height="11" style="0">Default</opifont.name>
+      </font>
+      <width>60</width>
+      <border_style>0</border_style>
+      <rules />
+      <border_width>1</border_width>
+      <border_color>
+        <color red="0" green="128" blue="255" />
+      </border_color>
+      <horizontal_alignment>0</horizontal_alignment>
+      <actions hook="false" hook_all="false" />
+      <y>20</y>
+      <wrap_words>true</wrap_words>
+      <tooltip></tooltip>
+      <x>10</x>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0">
+      <border_alarm_sensitive>true</border_alarm_sensitive>
+      <visible>true</visible>
+      <vertical_alignment>1</vertical_alignment>
+      <show_units>true</show_units>
+      <wuid>-191b87bc:13cc9bd1570:b1a</wuid>
+      <auto_size>false</auto_size>
+      <rotation_angle>0.0</rotation_angle>
+      <scripts />
+      <height>15</height>
+      <name>Text Update</name>
+      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+      <scale_options>
+        <width_scalable>true</width_scalable>
+        <height_scalable>true</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <format_type>0</format_type>
+      <precision_from_pv>true</precision_from_pv>
+      <transparent>true</transparent>
+      <pv_name>$(SYS){$(DEV)-Ax:$(AXIS)}Pos-I</pv_name>
+      <background_color>
+        <color red="255" green="255" blue="255" />
+      </background_color>
+      <foreground_color>
+        <color red="0" green="0" blue="0" />
+      </foreground_color>
+      <widget_type>Text Update</widget_type>
+      <enabled>true</enabled>
+      <text>######</text>
+      <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+      <precision>0</precision>
+      <font>
+        <opifont.name fontName="Lucida Grande" height="11" style="0">Default</opifont.name>
+      </font>
+      <width>111</width>
+      <border_style>4</border_style>
+      <rules />
+      <pv_value />
+      <border_width>1</border_width>
+      <border_color>
+        <color red="0" green="128" blue="255" />
+      </border_color>
+      <horizontal_alignment>0</horizontal_alignment>
+      <actions hook="false" hook_all="false" />
+      <y>20</y>
+      <wrap_words>false</wrap_words>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+      <x>100</x>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+      <visible>true</visible>
+      <vertical_alignment>1</vertical_alignment>
+      <wuid>-191b87bc:13cc9bd1570:b2b</wuid>
+      <auto_size>false</auto_size>
+      <scripts />
+      <height>15</height>
+      <name>Label_1</name>
+      <scale_options>
+        <width_scalable>true</width_scalable>
+        <height_scalable>true</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <transparent>true</transparent>
+      <show_scrollbar>false</show_scrollbar>
+      <background_color>
+        <color red="255" green="255" blue="255" />
+      </background_color>
+      <foreground_color>
+        <color red="0" green="0" blue="0" />
+      </foreground_color>
+      <widget_type>Label</widget_type>
+      <enabled>true</enabled>
+      <text>Velocity Load</text>
+      <font>
+        <opifont.name fontName="Lucida Grande" height="11" style="0">Default</opifont.name>
+      </font>
+      <width>60</width>
+      <border_style>0</border_style>
+      <rules />
+      <border_width>1</border_width>
+      <border_color>
+        <color red="0" green="128" blue="255" />
+      </border_color>
+      <horizontal_alignment>0</horizontal_alignment>
+      <actions hook="false" hook_all="false" />
+      <y>40</y>
+      <wrap_words>true</wrap_words>
+      <tooltip></tooltip>
+      <x>10</x>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0">
+      <border_alarm_sensitive>true</border_alarm_sensitive>
+      <visible>true</visible>
+      <vertical_alignment>1</vertical_alignment>
+      <show_units>true</show_units>
+      <wuid>-191b87bc:13cc9bd1570:b2c</wuid>
+      <auto_size>false</auto_size>
+      <rotation_angle>0.0</rotation_angle>
+      <scripts />
+      <height>15</height>
+      <name>Text Update</name>
+      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+      <scale_options>
+        <width_scalable>true</width_scalable>
+        <height_scalable>true</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <format_type>0</format_type>
+      <precision_from_pv>true</precision_from_pv>
+      <transparent>true</transparent>
+      <pv_name>$(SYS){$(DEV)-Ax:$(AXIS)}Val:Vlcty-I</pv_name>
+      <background_color>
+        <color red="255" green="255" blue="255" />
+      </background_color>
+      <foreground_color>
+        <color red="0" green="0" blue="0" />
+      </foreground_color>
+      <widget_type>Text Update</widget_type>
+      <enabled>true</enabled>
+      <text>######</text>
+      <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+      <precision>0</precision>
+      <font>
+        <opifont.name fontName="Lucida Grande" height="11" style="0">Default</opifont.name>
+      </font>
+      <width>111</width>
+      <border_style>4</border_style>
+      <rules />
+      <pv_value />
+      <border_width>1</border_width>
+      <border_color>
+        <color red="0" green="128" blue="255" />
+      </border_color>
+      <horizontal_alignment>0</horizontal_alignment>
+      <actions hook="false" hook_all="false" />
+      <y>40</y>
+      <wrap_words>false</wrap_words>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+      <x>100</x>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+      <visible>true</visible>
+      <vertical_alignment>1</vertical_alignment>
+      <wuid>-e503e06:13ccb3a4232:-7d84</wuid>
+      <auto_size>false</auto_size>
+      <scripts />
+      <height>15</height>
+      <name>Label_1</name>
+      <scale_options>
+        <width_scalable>true</width_scalable>
+        <height_scalable>true</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <transparent>true</transparent>
+      <show_scrollbar>false</show_scrollbar>
+      <background_color>
+        <color red="255" green="255" blue="255" />
+      </background_color>
+      <foreground_color>
+        <color red="0" green="0" blue="0" />
+      </foreground_color>
+      <widget_type>Label</widget_type>
+      <enabled>true</enabled>
+      <text>Following error</text>
+      <font>
+        <opifont.name fontName="Lucida Grande" height="11" style="0">Default</opifont.name>
+      </font>
+      <width>82</width>
+      <border_style>0</border_style>
+      <rules />
+      <border_width>1</border_width>
+      <border_color>
+        <color red="0" green="128" blue="255" />
+      </border_color>
+      <horizontal_alignment>0</horizontal_alignment>
+      <actions hook="false" hook_all="false" />
+      <y>60</y>
+      <wrap_words>true</wrap_words>
+      <tooltip></tooltip>
+      <x>10</x>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0">
+      <border_alarm_sensitive>true</border_alarm_sensitive>
+      <visible>true</visible>
+      <vertical_alignment>1</vertical_alignment>
+      <show_units>true</show_units>
+      <wuid>-e503e06:13ccb3a4232:-7d83</wuid>
+      <auto_size>false</auto_size>
+      <rotation_angle>0.0</rotation_angle>
+      <scripts />
+      <height>15</height>
+      <name>Text Update</name>
+      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+      <scale_options>
+        <width_scalable>true</width_scalable>
+        <height_scalable>true</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <format_type>0</format_type>
+      <precision_from_pv>true</precision_from_pv>
+      <transparent>true</transparent>
+      <pv_name>$(SYS){$(DEV)-Ax:$(AXIS)}Val:FollErr-I</pv_name>
+      <background_color>
+        <color red="255" green="255" blue="255" />
+      </background_color>
+      <foreground_color>
+        <color red="0" green="0" blue="0" />
+      </foreground_color>
+      <widget_type>Text Update</widget_type>
+      <enabled>true</enabled>
+      <text>######</text>
+      <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+      <precision>0</precision>
+      <font>
+        <opifont.name fontName="Lucida Grande" height="11" style="0">Default</opifont.name>
+      </font>
+      <width>111</width>
+      <border_style>4</border_style>
+      <rules />
+      <pv_value />
+      <border_width>1</border_width>
+      <border_color>
+        <color red="0" green="128" blue="255" />
+      </border_color>
+      <horizontal_alignment>0</horizontal_alignment>
+      <actions hook="false" hook_all="false" />
+      <y>60</y>
+      <wrap_words>false</wrap_words>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+      <x>100</x>
+    </widget>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0">
+    <macros>
+      <include_parent_macros>true</include_parent_macros>
+    </macros>
+    <visible>true</visible>
+    <wuid>-e503e06:13ccb3a4232:-7bc2</wuid>
+    <scripts />
+    <height>195</height>
+    <name>Tab 0_2</name>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <transparent>true</transparent>
+    <show_scrollbar>true</show_scrollbar>
+    <background_color>
+      <color red="240" green="240" blue="240" />
+    </background_color>
+    <foreground_color>
+      <color red="192" green="192" blue="192" />
+    </foreground_color>
+    <widget_type>Grouping Container</widget_type>
+    <enabled>true</enabled>
+    <font>
+      <opifont.name fontName="Lucida Grande" height="11" style="0">Default</opifont.name>
+    </font>
+    <width>381</width>
+    <border_style>3</border_style>
+    <rules />
+    <lock_children>false</lock_children>
+    <border_width>1</border_width>
+    <border_color>
+      <color name="default_fg" red="0" green="0" blue="0" />
+    </border_color>
+    <actions hook="false" hook_all="false" />
+    <y>130</y>
+    <tooltip></tooltip>
+    <x>10</x>
+    <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+      <visible>true</visible>
+      <vertical_alignment>1</vertical_alignment>
+      <wuid>-191b87bc:13cc9bd1570:cef</wuid>
+      <auto_size>true</auto_size>
+      <scripts />
+      <height>15</height>
+      <name>Label</name>
+      <scale_options>
+        <width_scalable>true</width_scalable>
+        <height_scalable>true</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <transparent>false</transparent>
+      <show_scrollbar>false</show_scrollbar>
+      <background_color>
+        <color name="MEDM_COLOR_5" red="174" green="174" blue="174" />
+      </background_color>
+      <foreground_color>
+        <color red="0" green="0" blue="0" />
+      </foreground_color>
+      <widget_type>Label</widget_type>
+      <enabled>true</enabled>
+      <text>PMAC Status</text>
+      <font>
+        <opifont.name fontName="Lucida Grande" height="11" style="0">Default</opifont.name>
+      </font>
+      <width>69</width>
+      <border_style>1</border_style>
+      <rules />
+      <border_width>1</border_width>
+      <border_color>
+        <color name="default_fg" red="0" green="0" blue="0" />
+      </border_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <actions hook="false" hook_all="false" />
+      <y>0</y>
+      <wrap_words>true</wrap_words>
+      <tooltip></tooltip>
+      <x>0</x>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0">
+      <macros>
+        <include_parent_macros>true</include_parent_macros>
+      </macros>
+      <visible>true</visible>
+      <wuid>-e503e06:13ccb3a4232:-7a6e</wuid>
+      <scripts />
+      <height>171</height>
+      <name>Tab 0</name>
+      <scale_options>
+        <width_scalable>true</width_scalable>
+        <height_scalable>true</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <transparent>true</transparent>
+      <show_scrollbar>false</show_scrollbar>
+      <background_color>
+        <color red="240" green="240" blue="240" />
+      </background_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192" />
+      </foreground_color>
+      <widget_type>Grouping Container</widget_type>
+      <enabled>true</enabled>
+      <font>
+        <opifont.name fontName="Lucida Grande" height="11" style="0">Default</opifont.name>
+      </font>
+      <width>371</width>
+      <border_style>0</border_style>
+      <rules />
+      <lock_children>true</lock_children>
+      <border_width>1</border_width>
+      <border_color>
+        <color red="0" green="128" blue="255" />
+      </border_color>
+      <actions hook="false" hook_all="false" />
+      <y>20</y>
+      <tooltip></tooltip>
+      <x>0</x>
+      <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0">
+        <macros>
+          <include_parent_macros>true</include_parent_macros>
+        </macros>
+        <visible>true</visible>
+        <wuid>-e503e06:13ccb3a4232:-7a76</wuid>
+        <scripts />
+        <height>170</height>
+        <name>Tab 0_1</name>
+        <scale_options>
+          <width_scalable>true</width_scalable>
+          <height_scalable>true</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <transparent>true</transparent>
+        <show_scrollbar>false</show_scrollbar>
+        <background_color>
+          <color red="240" green="240" blue="240" />
+        </background_color>
+        <foreground_color>
+          <color red="192" green="192" blue="192" />
+        </foreground_color>
+        <widget_type>Grouping Container</widget_type>
+        <enabled>true</enabled>
+        <font>
+          <opifont.name fontName="Lucida Grande" height="11" style="0">Default</opifont.name>
+        </font>
+        <width>121</width>
+        <border_style>0</border_style>
+        <rules />
+        <lock_children>true</lock_children>
+        <border_width>1</border_width>
+        <border_color>
+          <color red="0" green="128" blue="255" />
+        </border_color>
+        <actions hook="false" hook_all="false" />
+        <y>0</y>
+        <tooltip></tooltip>
+        <x>249</x>
+        <widget typeId="org.csstudio.opibuilder.widgets.bytemonitor" version="1.0">
+          <border_alarm_sensitive>true</border_alarm_sensitive>
+          <visible>true</visible>
+          <wuid>-191b87bc:13cc9bd1570:d16</wuid>
+          <bitReverse>true</bitReverse>
+          <scripts />
+          <square_led>true</square_led>
+          <startBit>0</startBit>
+          <on_color>
+            <color red="0" green="255" blue="0" />
+          </on_color>
+          <height>170</height>
+          <name>Byte Monitor</name>
+          <forecolor_alarm_sensitive>true</forecolor_alarm_sensitive>
+          <scale_options>
+            <width_scalable>true</width_scalable>
+            <height_scalable>true</height_scalable>
+            <keep_wh_ratio>false</keep_wh_ratio>
+          </scale_options>
+          <off_color>
+            <color red="0" green="100" blue="0" />
+          </off_color>
+          <pv_name>$(SYS){$(DEV)-Ax:$(AXIS)}Sts:3-Sts</pv_name>
+          <background_color>
+            <color red="240" green="240" blue="240" />
+          </background_color>
+          <foreground_color>
+            <color red="192" green="192" blue="192" />
+          </foreground_color>
+          <widget_type>Byte Monitor</widget_type>
+          <enabled>true</enabled>
+          <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+          <numBits>16</numBits>
+          <font>
+            <opifont.name fontName="Lucida Grande" height="11" style="0">Default</opifont.name>
+          </font>
+          <width>20</width>
+          <border_style>4</border_style>
+          <effect_3d>true</effect_3d>
+          <rules />
+          <pv_value />
+          <border_width>1</border_width>
+          <horizontal>false</horizontal>
+          <border_color>
+            <color red="0" green="128" blue="255" />
+          </border_color>
+          <actions hook="false" hook_all="false" />
+          <y>0</y>
+          <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+          <x>0</x>
+        </widget>
+        <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0">
+          <macros>
+            <include_parent_macros>true</include_parent_macros>
+          </macros>
+          <visible>true</visible>
+          <wuid>-e503e06:13ccb3a4232:-7a78</wuid>
+          <scripts />
+          <height>160</height>
+          <name>Tab 0_1</name>
+          <scale_options>
+            <width_scalable>true</width_scalable>
+            <height_scalable>true</height_scalable>
+            <keep_wh_ratio>false</keep_wh_ratio>
+          </scale_options>
+          <transparent>true</transparent>
+          <show_scrollbar>false</show_scrollbar>
+          <background_color>
+            <color red="240" green="240" blue="240" />
+          </background_color>
+          <foreground_color>
+            <color red="192" green="192" blue="192" />
+          </foreground_color>
+          <widget_type>Grouping Container</widget_type>
+          <enabled>true</enabled>
+          <font>
+            <opifont.name fontName="Lucida Grande" height="11" style="0">Default</opifont.name>
+          </font>
+          <width>101</width>
+          <border_style>0</border_style>
+          <rules />
+          <lock_children>true</lock_children>
+          <border_width>1</border_width>
+          <border_color>
+            <color red="0" green="128" blue="255" />
+          </border_color>
+          <actions hook="false" hook_all="false" />
+          <y>0</y>
+          <tooltip></tooltip>
+          <x>20</x>
+          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+            <visible>true</visible>
+            <vertical_alignment>1</vertical_alignment>
+            <wuid>-191b87bc:13cc9bd1570:d74</wuid>
+            <auto_size>false</auto_size>
+            <scripts />
+            <height>10</height>
+            <name>Label_1</name>
+            <scale_options>
+              <width_scalable>true</width_scalable>
+              <height_scalable>true</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <transparent>true</transparent>
+            <show_scrollbar>false</show_scrollbar>
+            <background_color>
+              <color red="255" green="255" blue="255" />
+            </background_color>
+            <foreground_color>
+              <color red="0" green="0" blue="0" />
+            </foreground_color>
+            <widget_type>Label</widget_type>
+            <enabled>true</enabled>
+            <text>In-position true</text>
+            <font>
+              <fontdata fontName="Lucida Grande" height="8" style="0" />
+            </font>
+            <width>101</width>
+            <border_style>0</border_style>
+            <rules />
+            <border_width>1</border_width>
+            <border_color>
+              <color red="0" green="128" blue="255" />
+            </border_color>
+            <horizontal_alignment>0</horizontal_alignment>
+            <actions hook="false" hook_all="false" />
+            <y>150</y>
+            <wrap_words>true</wrap_words>
+            <tooltip></tooltip>
+            <x>0</x>
+          </widget>
+          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+            <visible>true</visible>
+            <vertical_alignment>1</vertical_alignment>
+            <wuid>-191b87bc:13cc9bd1570:d8c</wuid>
+            <auto_size>false</auto_size>
+            <scripts />
+            <height>10</height>
+            <name>Label_1</name>
+            <scale_options>
+              <width_scalable>true</width_scalable>
+              <height_scalable>true</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <transparent>true</transparent>
+            <show_scrollbar>false</show_scrollbar>
+            <background_color>
+              <color red="255" green="255" blue="255" />
+            </background_color>
+            <foreground_color>
+              <color red="0" green="0" blue="0" />
+            </foreground_color>
+            <widget_type>Label</widget_type>
+            <enabled>true</enabled>
+            <text>Warning following error</text>
+            <font>
+              <fontdata fontName="Lucida Grande" height="8" style="0" />
+            </font>
+            <width>101</width>
+            <border_style>0</border_style>
+            <rules />
+            <border_width>1</border_width>
+            <border_color>
+              <color red="0" green="128" blue="255" />
+            </border_color>
+            <horizontal_alignment>0</horizontal_alignment>
+            <actions hook="false" hook_all="false" />
+            <y>140</y>
+            <wrap_words>true</wrap_words>
+            <tooltip></tooltip>
+            <x>0</x>
+          </widget>
+          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+            <visible>true</visible>
+            <vertical_alignment>1</vertical_alignment>
+            <wuid>-191b87bc:13cc9bd1570:dbc</wuid>
+            <auto_size>false</auto_size>
+            <scripts />
+            <height>10</height>
+            <name>Label_1</name>
+            <scale_options>
+              <width_scalable>true</width_scalable>
+              <height_scalable>true</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <transparent>true</transparent>
+            <show_scrollbar>false</show_scrollbar>
+            <background_color>
+              <color red="255" green="255" blue="255" />
+            </background_color>
+            <foreground_color>
+              <color red="0" green="0" blue="0" />
+            </foreground_color>
+            <widget_type>Label</widget_type>
+            <enabled>true</enabled>
+            <text>Fatal following error</text>
+            <font>
+              <fontdata fontName="Lucida Grande" height="8" style="0" />
+            </font>
+            <width>101</width>
+            <border_style>0</border_style>
+            <rules />
+            <border_width>1</border_width>
+            <border_color>
+              <color red="0" green="128" blue="255" />
+            </border_color>
+            <horizontal_alignment>0</horizontal_alignment>
+            <actions hook="false" hook_all="false" />
+            <y>130</y>
+            <wrap_words>true</wrap_words>
+            <tooltip></tooltip>
+            <x>0</x>
+          </widget>
+          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+            <visible>true</visible>
+            <vertical_alignment>1</vertical_alignment>
+            <wuid>-191b87bc:13cc9bd1570:dcc</wuid>
+            <auto_size>false</auto_size>
+            <scripts />
+            <height>10</height>
+            <name>Label_1</name>
+            <scale_options>
+              <width_scalable>true</width_scalable>
+              <height_scalable>true</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <transparent>true</transparent>
+            <show_scrollbar>false</show_scrollbar>
+            <background_color>
+              <color red="255" green="255" blue="255" />
+            </background_color>
+            <foreground_color>
+              <color red="0" green="0" blue="0" />
+            </foreground_color>
+            <widget_type>Label</widget_type>
+            <enabled>true</enabled>
+            <text>Amplifier fault error</text>
+            <font>
+              <fontdata fontName="Lucida Grande" height="8" style="0" />
+            </font>
+            <width>101</width>
+            <border_style>0</border_style>
+            <rules />
+            <border_width>1</border_width>
+            <border_color>
+              <color red="0" green="128" blue="255" />
+            </border_color>
+            <horizontal_alignment>0</horizontal_alignment>
+            <actions hook="false" hook_all="false" />
+            <y>120</y>
+            <wrap_words>true</wrap_words>
+            <tooltip></tooltip>
+            <x>0</x>
+          </widget>
+          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+            <visible>true</visible>
+            <vertical_alignment>1</vertical_alignment>
+            <wuid>-191b87bc:13cc9bd1570:dcc</wuid>
+            <auto_size>false</auto_size>
+            <scripts />
+            <height>10</height>
+            <name>Label_1</name>
+            <scale_options>
+              <width_scalable>true</width_scalable>
+              <height_scalable>true</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <transparent>true</transparent>
+            <show_scrollbar>false</show_scrollbar>
+            <background_color>
+              <color red="255" green="255" blue="255" />
+            </background_color>
+            <foreground_color>
+              <color red="0" green="0" blue="0" />
+            </foreground_color>
+            <widget_type>Label</widget_type>
+            <enabled>true</enabled>
+            <text>Backlash direction flag</text>
+            <font>
+              <fontdata fontName="Lucida Grande" height="8" style="0" />
+            </font>
+            <width>101</width>
+            <border_style>0</border_style>
+            <rules />
+            <border_width>1</border_width>
+            <border_color>
+              <color red="0" green="128" blue="255" />
+            </border_color>
+            <horizontal_alignment>0</horizontal_alignment>
+            <actions hook="false" hook_all="false" />
+            <y>110</y>
+            <wrap_words>true</wrap_words>
+            <tooltip></tooltip>
+            <x>0</x>
+          </widget>
+          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+            <visible>true</visible>
+            <vertical_alignment>1</vertical_alignment>
+            <wuid>-191b87bc:13cc9bd1570:dcc</wuid>
+            <auto_size>false</auto_size>
+            <scripts />
+            <height>10</height>
+            <name>Label_1</name>
+            <scale_options>
+              <width_scalable>true</width_scalable>
+              <height_scalable>true</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <transparent>true</transparent>
+            <show_scrollbar>false</show_scrollbar>
+            <background_color>
+              <color red="255" green="255" blue="255" />
+            </background_color>
+            <foreground_color>
+              <color red="0" green="0" blue="0" />
+            </foreground_color>
+            <widget_type>Label</widget_type>
+            <enabled>true</enabled>
+            <text>I2T amplifier fault error</text>
+            <font>
+              <fontdata fontName="Lucida Grande" height="8" style="0" />
+            </font>
+            <width>101</width>
+            <border_style>0</border_style>
+            <rules />
+            <border_width>1</border_width>
+            <border_color>
+              <color red="0" green="128" blue="255" />
+            </border_color>
+            <horizontal_alignment>0</horizontal_alignment>
+            <actions hook="false" hook_all="false" />
+            <y>100</y>
+            <wrap_words>true</wrap_words>
+            <tooltip></tooltip>
+            <x>0</x>
+          </widget>
+          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+            <visible>true</visible>
+            <vertical_alignment>1</vertical_alignment>
+            <wuid>-191b87bc:13cc9bd1570:dcc</wuid>
+            <auto_size>false</auto_size>
+            <scripts />
+            <height>10</height>
+            <name>Label_1</name>
+            <scale_options>
+              <width_scalable>true</width_scalable>
+              <height_scalable>true</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <transparent>true</transparent>
+            <show_scrollbar>false</show_scrollbar>
+            <background_color>
+              <color red="255" green="255" blue="255" />
+            </background_color>
+            <foreground_color>
+              <color red="0" green="0" blue="0" />
+            </foreground_color>
+            <widget_type>Label</widget_type>
+            <enabled>true</enabled>
+            <text>Integrated fatal foll. err.</text>
+            <font>
+              <fontdata fontName="Lucida Grande" height="8" style="0" />
+            </font>
+            <width>101</width>
+            <border_style>0</border_style>
+            <rules />
+            <border_width>1</border_width>
+            <border_color>
+              <color red="0" green="128" blue="255" />
+            </border_color>
+            <horizontal_alignment>0</horizontal_alignment>
+            <actions hook="false" hook_all="false" />
+            <y>90</y>
+            <wrap_words>true</wrap_words>
+            <tooltip></tooltip>
+            <x>0</x>
+          </widget>
+          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+            <visible>true</visible>
+            <vertical_alignment>1</vertical_alignment>
+            <wuid>-191b87bc:13cc9bd1570:dcc</wuid>
+            <auto_size>false</auto_size>
+            <scripts />
+            <height>10</height>
+            <name>Label_1</name>
+            <scale_options>
+              <width_scalable>true</width_scalable>
+              <height_scalable>true</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <transparent>true</transparent>
+            <show_scrollbar>false</show_scrollbar>
+            <background_color>
+              <color red="255" green="255" blue="255" />
+            </background_color>
+            <foreground_color>
+              <color red="0" green="0" blue="0" />
+            </foreground_color>
+            <widget_type>Label</widget_type>
+            <enabled>true</enabled>
+            <text>Trigger move</text>
+            <font>
+              <fontdata fontName="Lucida Grande" height="8" style="0" />
+            </font>
+            <width>101</width>
+            <border_style>0</border_style>
+            <rules />
+            <border_width>1</border_width>
+            <border_color>
+              <color red="0" green="128" blue="255" />
+            </border_color>
+            <horizontal_alignment>0</horizontal_alignment>
+            <actions hook="false" hook_all="false" />
+            <y>80</y>
+            <wrap_words>true</wrap_words>
+            <tooltip></tooltip>
+            <x>0</x>
+          </widget>
+          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+            <visible>true</visible>
+            <vertical_alignment>1</vertical_alignment>
+            <wuid>-191b87bc:13cc9bd1570:dcc</wuid>
+            <auto_size>false</auto_size>
+            <scripts />
+            <height>10</height>
+            <name>Label_1</name>
+            <scale_options>
+              <width_scalable>true</width_scalable>
+              <height_scalable>true</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <transparent>true</transparent>
+            <show_scrollbar>false</show_scrollbar>
+            <background_color>
+              <color red="255" green="255" blue="255" />
+            </background_color>
+            <foreground_color>
+              <color red="0" green="0" blue="0" />
+            </foreground_color>
+            <widget_type>Label</widget_type>
+            <enabled>true</enabled>
+            <text>Phasing search error</text>
+            <font>
+              <fontdata fontName="Lucida Grande" height="8" style="0" />
+            </font>
+            <width>101</width>
+            <border_style>0</border_style>
+            <rules />
+            <border_width>1</border_width>
+            <border_color>
+              <color red="0" green="128" blue="255" />
+            </border_color>
+            <horizontal_alignment>0</horizontal_alignment>
+            <actions hook="false" hook_all="false" />
+            <y>70</y>
+            <wrap_words>true</wrap_words>
+            <tooltip></tooltip>
+            <x>0</x>
+          </widget>
+          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+            <visible>true</visible>
+            <vertical_alignment>1</vertical_alignment>
+            <wuid>-191b87bc:13cc9bd1570:dcc</wuid>
+            <auto_size>false</auto_size>
+            <scripts />
+            <height>10</height>
+            <name>Label_1</name>
+            <scale_options>
+              <width_scalable>true</width_scalable>
+              <height_scalable>true</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <transparent>true</transparent>
+            <show_scrollbar>false</show_scrollbar>
+            <background_color>
+              <color red="255" green="255" blue="255" />
+            </background_color>
+            <foreground_color>
+              <color red="0" green="0" blue="0" />
+            </foreground_color>
+            <widget_type>Label</widget_type>
+            <enabled>true</enabled>
+            <text>Motor phase request</text>
+            <font>
+              <fontdata fontName="Lucida Grande" height="8" style="0" />
+            </font>
+            <width>101</width>
+            <border_style>0</border_style>
+            <rules />
+            <border_width>1</border_width>
+            <border_color>
+              <color red="0" green="128" blue="255" />
+            </border_color>
+            <horizontal_alignment>0</horizontal_alignment>
+            <actions hook="false" hook_all="false" />
+            <y>60</y>
+            <wrap_words>true</wrap_words>
+            <tooltip></tooltip>
+            <x>0</x>
+          </widget>
+          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+            <visible>true</visible>
+            <vertical_alignment>1</vertical_alignment>
+            <wuid>-191b87bc:13cc9bd1570:dcc</wuid>
+            <auto_size>false</auto_size>
+            <scripts />
+            <height>11</height>
+            <name>Label_1</name>
+            <scale_options>
+              <width_scalable>true</width_scalable>
+              <height_scalable>true</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <transparent>true</transparent>
+            <show_scrollbar>false</show_scrollbar>
+            <background_color>
+              <color red="255" green="255" blue="255" />
+            </background_color>
+            <foreground_color>
+              <color red="0" green="0" blue="0" />
+            </foreground_color>
+            <widget_type>Label</widget_type>
+            <enabled>true</enabled>
+            <text>Home complete</text>
+            <font>
+              <fontdata fontName="Lucida Grande" height="8" style="0" />
+            </font>
+            <width>101</width>
+            <border_style>0</border_style>
+            <rules />
+            <border_width>1</border_width>
+            <border_color>
+              <color red="0" green="128" blue="255" />
+            </border_color>
+            <horizontal_alignment>0</horizontal_alignment>
+            <actions hook="false" hook_all="false" />
+            <y>49</y>
+            <wrap_words>true</wrap_words>
+            <tooltip></tooltip>
+            <x>0</x>
+          </widget>
+          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+            <visible>true</visible>
+            <vertical_alignment>1</vertical_alignment>
+            <wuid>-191b87bc:13cc9bd1570:dcc</wuid>
+            <auto_size>false</auto_size>
+            <scripts />
+            <height>10</height>
+            <name>Label_1</name>
+            <scale_options>
+              <width_scalable>true</width_scalable>
+              <height_scalable>true</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <transparent>true</transparent>
+            <show_scrollbar>false</show_scrollbar>
+            <background_color>
+              <color red="255" green="255" blue="255" />
+            </background_color>
+            <foreground_color>
+              <color red="0" green="0" blue="0" />
+            </foreground_color>
+            <widget_type>Label</widget_type>
+            <enabled>true</enabled>
+            <text>Stopped on limit</text>
+            <font>
+              <fontdata fontName="Lucida Grande" height="8" style="0" />
+            </font>
+            <width>101</width>
+            <border_style>0</border_style>
+            <rules />
+            <border_width>1</border_width>
+            <border_color>
+              <color red="0" green="128" blue="255" />
+            </border_color>
+            <horizontal_alignment>0</horizontal_alignment>
+            <actions hook="false" hook_all="false" />
+            <y>40</y>
+            <wrap_words>true</wrap_words>
+            <tooltip></tooltip>
+            <x>0</x>
+          </widget>
+          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+            <visible>true</visible>
+            <vertical_alignment>1</vertical_alignment>
+            <wuid>-191b87bc:13cc9bd1570:dcc</wuid>
+            <auto_size>false</auto_size>
+            <scripts />
+            <height>10</height>
+            <name>Label_1</name>
+            <scale_options>
+              <width_scalable>true</width_scalable>
+              <height_scalable>true</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <transparent>true</transparent>
+            <show_scrollbar>false</show_scrollbar>
+            <background_color>
+              <color red="255" green="255" blue="255" />
+            </background_color>
+            <foreground_color>
+              <color red="0" green="0" blue="0" />
+            </foreground_color>
+            <widget_type>Label</widget_type>
+            <enabled>true</enabled>
+            <text>Desired pos. limit stop</text>
+            <font>
+              <fontdata fontName="Lucida Grande" height="8" style="0" />
+            </font>
+            <width>101</width>
+            <border_style>0</border_style>
+            <rules />
+            <border_width>1</border_width>
+            <border_color>
+              <color red="0" green="128" blue="255" />
+            </border_color>
+            <horizontal_alignment>0</horizontal_alignment>
+            <actions hook="false" hook_all="false" />
+            <y>30</y>
+            <wrap_words>true</wrap_words>
+            <tooltip></tooltip>
+            <x>0</x>
+          </widget>
+          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+            <visible>true</visible>
+            <vertical_alignment>1</vertical_alignment>
+            <wuid>-191b87bc:13cc9bd1570:dcc</wuid>
+            <auto_size>false</auto_size>
+            <scripts />
+            <height>10</height>
+            <name>Label_1</name>
+            <scale_options>
+              <width_scalable>true</width_scalable>
+              <height_scalable>true</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <transparent>true</transparent>
+            <show_scrollbar>false</show_scrollbar>
+            <background_color>
+              <color red="255" green="255" blue="255" />
+            </background_color>
+            <foreground_color>
+              <color red="0" green="0" blue="0" />
+            </foreground_color>
+            <widget_type>Label</widget_type>
+            <enabled>true</enabled>
+            <text>Foreground in-position</text>
+            <font>
+              <fontdata fontName="Lucida Grande" height="8" style="0" />
+            </font>
+            <width>101</width>
+            <border_style>0</border_style>
+            <rules />
+            <border_width>1</border_width>
+            <border_color>
+              <color red="0" green="128" blue="255" />
+            </border_color>
+            <horizontal_alignment>0</horizontal_alignment>
+            <actions hook="false" hook_all="false" />
+            <y>20</y>
+            <wrap_words>true</wrap_words>
+            <tooltip></tooltip>
+            <x>0</x>
+          </widget>
+          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+            <visible>true</visible>
+            <vertical_alignment>1</vertical_alignment>
+            <wuid>-191b87bc:13cc9bd1570:dcc</wuid>
+            <auto_size>false</auto_size>
+            <scripts />
+            <height>10</height>
+            <name>Label_1</name>
+            <scale_options>
+              <width_scalable>true</width_scalable>
+              <height_scalable>true</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <transparent>true</transparent>
+            <show_scrollbar>false</show_scrollbar>
+            <background_color>
+              <color red="255" green="255" blue="255" />
+            </background_color>
+            <foreground_color>
+              <color red="0" green="0" blue="0" />
+            </foreground_color>
+            <widget_type>Label</widget_type>
+            <enabled>true</enabled>
+            <text>(Reserved)</text>
+            <font>
+              <fontdata fontName="Lucida Grande" height="8" style="0" />
+            </font>
+            <width>101</width>
+            <border_style>0</border_style>
+            <rules />
+            <border_width>1</border_width>
+            <border_color>
+              <color red="0" green="128" blue="255" />
+            </border_color>
+            <horizontal_alignment>0</horizontal_alignment>
+            <actions hook="false" hook_all="false" />
+            <y>10</y>
+            <wrap_words>true</wrap_words>
+            <tooltip></tooltip>
+            <x>0</x>
+          </widget>
+          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+            <visible>true</visible>
+            <vertical_alignment>1</vertical_alignment>
+            <wuid>-191b87bc:13cc9bd1570:dcc</wuid>
+            <auto_size>false</auto_size>
+            <scripts />
+            <height>10</height>
+            <name>Label_1</name>
+            <scale_options>
+              <width_scalable>true</width_scalable>
+              <height_scalable>true</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <transparent>true</transparent>
+            <show_scrollbar>false</show_scrollbar>
+            <background_color>
+              <color red="255" green="255" blue="255" />
+            </background_color>
+            <foreground_color>
+              <color red="0" green="0" blue="0" />
+            </foreground_color>
+            <widget_type>Label</widget_type>
+            <enabled>true</enabled>
+            <text>Assigned to CS</text>
+            <font>
+              <fontdata fontName="Lucida Grande" height="8" style="0" />
+            </font>
+            <width>101</width>
+            <border_style>0</border_style>
+            <rules />
+            <border_width>1</border_width>
+            <border_color>
+              <color red="0" green="128" blue="255" />
+            </border_color>
+            <horizontal_alignment>0</horizontal_alignment>
+            <actions hook="false" hook_all="false" />
+            <y>0</y>
+            <wrap_words>true</wrap_words>
+            <tooltip></tooltip>
+            <x>0</x>
+          </widget>
+        </widget>
+      </widget>
+      <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0">
+        <macros>
+          <include_parent_macros>true</include_parent_macros>
+        </macros>
+        <visible>true</visible>
+        <wuid>-e503e06:13ccb3a4232:-7a74</wuid>
+        <scripts />
+        <height>170</height>
+        <name>Tab 0</name>
+        <scale_options>
+          <width_scalable>true</width_scalable>
+          <height_scalable>true</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <transparent>true</transparent>
+        <show_scrollbar>false</show_scrollbar>
+        <background_color>
+          <color red="240" green="240" blue="240" />
+        </background_color>
+        <foreground_color>
+          <color red="192" green="192" blue="192" />
+        </foreground_color>
+        <widget_type>Grouping Container</widget_type>
+        <enabled>true</enabled>
+        <font>
+          <opifont.name fontName="Lucida Grande" height="11" style="0">Default</opifont.name>
+        </font>
+        <width>121</width>
+        <border_style>0</border_style>
+        <rules />
+        <lock_children>true</lock_children>
+        <border_width>1</border_width>
+        <border_color>
+          <color red="0" green="128" blue="255" />
+        </border_color>
+        <actions hook="false" hook_all="false" />
+        <y>0</y>
+        <tooltip></tooltip>
+        <x>119</x>
+        <widget typeId="org.csstudio.opibuilder.widgets.bytemonitor" version="1.0">
+          <border_alarm_sensitive>true</border_alarm_sensitive>
+          <visible>true</visible>
+          <wuid>-191b87bc:13cc9bd1570:eb4</wuid>
+          <bitReverse>true</bitReverse>
+          <scripts />
+          <square_led>true</square_led>
+          <startBit>0</startBit>
+          <on_color>
+            <color red="0" green="255" blue="0" />
+          </on_color>
+          <height>170</height>
+          <name>Byte Monitor</name>
+          <forecolor_alarm_sensitive>true</forecolor_alarm_sensitive>
+          <scale_options>
+            <width_scalable>true</width_scalable>
+            <height_scalable>true</height_scalable>
+            <keep_wh_ratio>false</keep_wh_ratio>
+          </scale_options>
+          <off_color>
+            <color red="0" green="100" blue="0" />
+          </off_color>
+          <pv_name>$(SYS){$(DEV)-Ax:$(AXIS)}Sts:2-Sts</pv_name>
+          <background_color>
+            <color red="240" green="240" blue="240" />
+          </background_color>
+          <foreground_color>
+            <color red="192" green="192" blue="192" />
+          </foreground_color>
+          <widget_type>Byte Monitor</widget_type>
+          <enabled>true</enabled>
+          <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+          <numBits>16</numBits>
+          <font>
+            <opifont.name fontName="Lucida Grande" height="11" style="0">Default</opifont.name>
+          </font>
+          <width>20</width>
+          <border_style>4</border_style>
+          <effect_3d>true</effect_3d>
+          <rules />
+          <pv_value />
+          <border_width>1</border_width>
+          <horizontal>false</horizontal>
+          <border_color>
+            <color red="0" green="128" blue="255" />
+          </border_color>
+          <actions hook="false" hook_all="false" />
+          <y>0</y>
+          <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+          <x>0</x>
+        </widget>
+        <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0">
+          <macros>
+            <include_parent_macros>true</include_parent_macros>
+          </macros>
+          <visible>true</visible>
+          <wuid>-e503e06:13ccb3a4232:-7a7a</wuid>
+          <scripts />
+          <height>160</height>
+          <name>Tab 0</name>
+          <scale_options>
+            <width_scalable>true</width_scalable>
+            <height_scalable>true</height_scalable>
+            <keep_wh_ratio>false</keep_wh_ratio>
+          </scale_options>
+          <transparent>true</transparent>
+          <show_scrollbar>false</show_scrollbar>
+          <background_color>
+            <color red="240" green="240" blue="240" />
+          </background_color>
+          <foreground_color>
+            <color red="192" green="192" blue="192" />
+          </foreground_color>
+          <widget_type>Grouping Container</widget_type>
+          <enabled>true</enabled>
+          <font>
+            <opifont.name fontName="Lucida Grande" height="11" style="0">Default</opifont.name>
+          </font>
+          <width>101</width>
+          <border_style>0</border_style>
+          <rules />
+          <lock_children>true</lock_children>
+          <border_width>1</border_width>
+          <border_color>
+            <color red="0" green="128" blue="255" />
+          </border_color>
+          <actions hook="false" hook_all="false" />
+          <y>0</y>
+          <tooltip></tooltip>
+          <x>20</x>
+          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+            <visible>true</visible>
+            <vertical_alignment>1</vertical_alignment>
+            <wuid>-191b87bc:13cc9bd1570:eb5</wuid>
+            <auto_size>false</auto_size>
+            <scripts />
+            <height>10</height>
+            <name>Label_17</name>
+            <scale_options>
+              <width_scalable>true</width_scalable>
+              <height_scalable>true</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <transparent>true</transparent>
+            <show_scrollbar>false</show_scrollbar>
+            <background_color>
+              <color red="255" green="255" blue="255" />
+            </background_color>
+            <foreground_color>
+              <color red="0" green="0" blue="0" />
+            </foreground_color>
+            <widget_type>Label</widget_type>
+            <enabled>true</enabled>
+            <text>CS Axis definition bit 0</text>
+            <font>
+              <fontdata fontName="Lucida Grande" height="8" style="0" />
+            </font>
+            <width>101</width>
+            <border_style>0</border_style>
+            <rules />
+            <border_width>1</border_width>
+            <border_color>
+              <color red="0" green="128" blue="255" />
+            </border_color>
+            <horizontal_alignment>0</horizontal_alignment>
+            <actions hook="false" hook_all="false" />
+            <y>150</y>
+            <wrap_words>true</wrap_words>
+            <tooltip></tooltip>
+            <x>0</x>
+          </widget>
+          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+            <visible>true</visible>
+            <vertical_alignment>1</vertical_alignment>
+            <wuid>-191b87bc:13cc9bd1570:eb6</wuid>
+            <auto_size>false</auto_size>
+            <scripts />
+            <height>10</height>
+            <name>Label_18</name>
+            <scale_options>
+              <width_scalable>true</width_scalable>
+              <height_scalable>true</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <transparent>true</transparent>
+            <show_scrollbar>false</show_scrollbar>
+            <background_color>
+              <color red="255" green="255" blue="255" />
+            </background_color>
+            <foreground_color>
+              <color red="0" green="0" blue="0" />
+            </foreground_color>
+            <widget_type>Label</widget_type>
+            <enabled>true</enabled>
+            <text>CS Axis definition bit 1</text>
+            <font>
+              <fontdata fontName="Lucida Grande" height="8" style="0" />
+            </font>
+            <width>101</width>
+            <border_style>0</border_style>
+            <rules />
+            <border_width>1</border_width>
+            <border_color>
+              <color red="0" green="128" blue="255" />
+            </border_color>
+            <horizontal_alignment>0</horizontal_alignment>
+            <actions hook="false" hook_all="false" />
+            <y>140</y>
+            <wrap_words>true</wrap_words>
+            <tooltip></tooltip>
+            <x>0</x>
+          </widget>
+          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+            <visible>true</visible>
+            <vertical_alignment>1</vertical_alignment>
+            <wuid>-191b87bc:13cc9bd1570:eb7</wuid>
+            <auto_size>false</auto_size>
+            <scripts />
+            <height>10</height>
+            <name>Label_19</name>
+            <scale_options>
+              <width_scalable>true</width_scalable>
+              <height_scalable>true</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <transparent>true</transparent>
+            <show_scrollbar>false</show_scrollbar>
+            <background_color>
+              <color red="255" green="255" blue="255" />
+            </background_color>
+            <foreground_color>
+              <color red="0" green="0" blue="0" />
+            </foreground_color>
+            <widget_type>Label</widget_type>
+            <enabled>true</enabled>
+            <text>CS Axis definition bit 2</text>
+            <font>
+              <fontdata fontName="Lucida Grande" height="8" style="0" />
+            </font>
+            <width>101</width>
+            <border_style>0</border_style>
+            <rules />
+            <border_width>1</border_width>
+            <border_color>
+              <color red="0" green="128" blue="255" />
+            </border_color>
+            <horizontal_alignment>0</horizontal_alignment>
+            <actions hook="false" hook_all="false" />
+            <y>130</y>
+            <wrap_words>true</wrap_words>
+            <tooltip></tooltip>
+            <x>0</x>
+          </widget>
+          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+            <visible>true</visible>
+            <vertical_alignment>1</vertical_alignment>
+            <wuid>-191b87bc:13cc9bd1570:eb8</wuid>
+            <auto_size>false</auto_size>
+            <scripts />
+            <height>10</height>
+            <name>Label_20</name>
+            <scale_options>
+              <width_scalable>true</width_scalable>
+              <height_scalable>true</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <transparent>true</transparent>
+            <show_scrollbar>false</show_scrollbar>
+            <background_color>
+              <color red="255" green="255" blue="255" />
+            </background_color>
+            <foreground_color>
+              <color red="0" green="0" blue="0" />
+            </foreground_color>
+            <widget_type>Label</widget_type>
+            <enabled>true</enabled>
+            <text>CS Axis definition bit 3</text>
+            <font>
+              <fontdata fontName="Lucida Grande" height="8" style="0" />
+            </font>
+            <width>101</width>
+            <border_style>0</border_style>
+            <rules />
+            <border_width>1</border_width>
+            <border_color>
+              <color red="0" green="128" blue="255" />
+            </border_color>
+            <horizontal_alignment>0</horizontal_alignment>
+            <actions hook="false" hook_all="false" />
+            <y>120</y>
+            <wrap_words>true</wrap_words>
+            <tooltip></tooltip>
+            <x>0</x>
+          </widget>
+          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+            <visible>true</visible>
+            <vertical_alignment>1</vertical_alignment>
+            <wuid>-191b87bc:13cc9bd1570:eb9</wuid>
+            <auto_size>false</auto_size>
+            <scripts />
+            <height>10</height>
+            <name>Label_21</name>
+            <scale_options>
+              <width_scalable>true</width_scalable>
+              <height_scalable>true</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <transparent>true</transparent>
+            <show_scrollbar>false</show_scrollbar>
+            <background_color>
+              <color red="255" green="255" blue="255" />
+            </background_color>
+            <foreground_color>
+              <color red="0" green="0" blue="0" />
+            </foreground_color>
+            <widget_type>Label</widget_type>
+            <enabled>true</enabled>
+            <text>CS-1 # bit 0</text>
+            <font>
+              <fontdata fontName="Lucida Grande" height="8" style="0" />
+            </font>
+            <width>101</width>
+            <border_style>0</border_style>
+            <rules />
+            <border_width>1</border_width>
+            <border_color>
+              <color red="0" green="128" blue="255" />
+            </border_color>
+            <horizontal_alignment>0</horizontal_alignment>
+            <actions hook="false" hook_all="false" />
+            <y>110</y>
+            <wrap_words>true</wrap_words>
+            <tooltip></tooltip>
+            <x>0</x>
+          </widget>
+          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+            <visible>true</visible>
+            <vertical_alignment>1</vertical_alignment>
+            <wuid>-191b87bc:13cc9bd1570:eba</wuid>
+            <auto_size>false</auto_size>
+            <scripts />
+            <height>10</height>
+            <name>Label_22</name>
+            <scale_options>
+              <width_scalable>true</width_scalable>
+              <height_scalable>true</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <transparent>true</transparent>
+            <show_scrollbar>false</show_scrollbar>
+            <background_color>
+              <color red="255" green="255" blue="255" />
+            </background_color>
+            <foreground_color>
+              <color red="0" green="0" blue="0" />
+            </foreground_color>
+            <widget_type>Label</widget_type>
+            <enabled>true</enabled>
+            <text>CS-1 # bit 1</text>
+            <font>
+              <fontdata fontName="Lucida Grande" height="8" style="0" />
+            </font>
+            <width>101</width>
+            <border_style>0</border_style>
+            <rules />
+            <border_width>1</border_width>
+            <border_color>
+              <color red="0" green="128" blue="255" />
+            </border_color>
+            <horizontal_alignment>0</horizontal_alignment>
+            <actions hook="false" hook_all="false" />
+            <y>100</y>
+            <wrap_words>true</wrap_words>
+            <tooltip></tooltip>
+            <x>0</x>
+          </widget>
+          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+            <visible>true</visible>
+            <vertical_alignment>1</vertical_alignment>
+            <wuid>-191b87bc:13cc9bd1570:ebb</wuid>
+            <auto_size>false</auto_size>
+            <scripts />
+            <height>10</height>
+            <name>Label_23</name>
+            <scale_options>
+              <width_scalable>true</width_scalable>
+              <height_scalable>true</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <transparent>true</transparent>
+            <show_scrollbar>false</show_scrollbar>
+            <background_color>
+              <color red="255" green="255" blue="255" />
+            </background_color>
+            <foreground_color>
+              <color red="0" green="0" blue="0" />
+            </foreground_color>
+            <widget_type>Label</widget_type>
+            <enabled>true</enabled>
+            <text>CS-1 # bit 2</text>
+            <font>
+              <fontdata fontName="Lucida Grande" height="8" style="0" />
+            </font>
+            <width>101</width>
+            <border_style>0</border_style>
+            <rules />
+            <border_width>1</border_width>
+            <border_color>
+              <color red="0" green="128" blue="255" />
+            </border_color>
+            <horizontal_alignment>0</horizontal_alignment>
+            <actions hook="false" hook_all="false" />
+            <y>90</y>
+            <wrap_words>true</wrap_words>
+            <tooltip></tooltip>
+            <x>0</x>
+          </widget>
+          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+            <visible>true</visible>
+            <vertical_alignment>1</vertical_alignment>
+            <wuid>-191b87bc:13cc9bd1570:ebc</wuid>
+            <auto_size>false</auto_size>
+            <scripts />
+            <height>10</height>
+            <name>Label_24</name>
+            <scale_options>
+              <width_scalable>true</width_scalable>
+              <height_scalable>true</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <transparent>true</transparent>
+            <show_scrollbar>false</show_scrollbar>
+            <background_color>
+              <color red="255" green="255" blue="255" />
+            </background_color>
+            <foreground_color>
+              <color red="0" green="0" blue="0" />
+            </foreground_color>
+            <widget_type>Label</widget_type>
+            <enabled>true</enabled>
+            <text>CS-1 # bit 3</text>
+            <font>
+              <fontdata fontName="Lucida Grande" height="8" style="0" />
+            </font>
+            <width>101</width>
+            <border_style>0</border_style>
+            <rules />
+            <border_width>1</border_width>
+            <border_color>
+              <color red="0" green="128" blue="255" />
+            </border_color>
+            <horizontal_alignment>0</horizontal_alignment>
+            <actions hook="false" hook_all="false" />
+            <y>80</y>
+            <wrap_words>true</wrap_words>
+            <tooltip></tooltip>
+            <x>0</x>
+          </widget>
+          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+            <visible>true</visible>
+            <vertical_alignment>1</vertical_alignment>
+            <wuid>-191b87bc:13cc9bd1570:ebd</wuid>
+            <auto_size>false</auto_size>
+            <scripts />
+            <height>10</height>
+            <name>Label_25</name>
+            <scale_options>
+              <width_scalable>true</width_scalable>
+              <height_scalable>true</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <transparent>true</transparent>
+            <show_scrollbar>false</show_scrollbar>
+            <background_color>
+              <color red="255" green="255" blue="255" />
+            </background_color>
+            <foreground_color>
+              <color red="0" green="0" blue="0" />
+            </foreground_color>
+            <widget_type>Label</widget_type>
+            <enabled>true</enabled>
+            <text>Rapid max velocity select</text>
+            <font>
+              <fontdata fontName="Lucida Grande" height="8" style="0" />
+            </font>
+            <width>101</width>
+            <border_style>0</border_style>
+            <rules />
+            <border_width>1</border_width>
+            <border_color>
+              <color red="0" green="128" blue="255" />
+            </border_color>
+            <horizontal_alignment>0</horizontal_alignment>
+            <actions hook="false" hook_all="false" />
+            <y>70</y>
+            <wrap_words>true</wrap_words>
+            <tooltip></tooltip>
+            <x>0</x>
+          </widget>
+          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+            <visible>true</visible>
+            <vertical_alignment>1</vertical_alignment>
+            <wuid>-191b87bc:13cc9bd1570:ebe</wuid>
+            <auto_size>false</auto_size>
+            <scripts />
+            <height>10</height>
+            <name>Label_26</name>
+            <scale_options>
+              <width_scalable>true</width_scalable>
+              <height_scalable>true</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <transparent>true</transparent>
+            <show_scrollbar>false</show_scrollbar>
+            <background_color>
+              <color red="255" green="255" blue="255" />
+            </background_color>
+            <foreground_color>
+              <color red="0" green="0" blue="0" />
+            </foreground_color>
+            <widget_type>Label</widget_type>
+            <enabled>true</enabled>
+            <text>Sign/magnitude servo enbl.</text>
+            <font>
+              <fontdata fontName="Lucida Grande" height="8" style="0" />
+            </font>
+            <width>101</width>
+            <border_style>0</border_style>
+            <rules />
+            <border_width>1</border_width>
+            <border_color>
+              <color red="0" green="128" blue="255" />
+            </border_color>
+            <horizontal_alignment>0</horizontal_alignment>
+            <actions hook="false" hook_all="false" />
+            <y>60</y>
+            <wrap_words>true</wrap_words>
+            <tooltip></tooltip>
+            <x>0</x>
+          </widget>
+          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+            <visible>true</visible>
+            <vertical_alignment>1</vertical_alignment>
+            <wuid>-191b87bc:13cc9bd1570:ebf</wuid>
+            <auto_size>false</auto_size>
+            <scripts />
+            <height>11</height>
+            <name>Label_27</name>
+            <scale_options>
+              <width_scalable>true</width_scalable>
+              <height_scalable>true</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <transparent>true</transparent>
+            <show_scrollbar>false</show_scrollbar>
+            <background_color>
+              <color red="255" green="255" blue="255" />
+            </background_color>
+            <foreground_color>
+              <color red="0" green="0" blue="0" />
+            </foreground_color>
+            <widget_type>Label</widget_type>
+            <enabled>true</enabled>
+            <text>Software capture enbl.</text>
+            <font>
+              <fontdata fontName="Lucida Grande" height="8" style="0" />
+            </font>
+            <width>101</width>
+            <border_style>0</border_style>
+            <rules />
+            <border_width>1</border_width>
+            <border_color>
+              <color red="0" green="128" blue="255" />
+            </border_color>
+            <horizontal_alignment>0</horizontal_alignment>
+            <actions hook="false" hook_all="false" />
+            <y>49</y>
+            <wrap_words>true</wrap_words>
+            <tooltip></tooltip>
+            <x>0</x>
+          </widget>
+          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+            <visible>true</visible>
+            <vertical_alignment>1</vertical_alignment>
+            <wuid>-191b87bc:13cc9bd1570:ec0</wuid>
+            <auto_size>false</auto_size>
+            <scripts />
+            <height>10</height>
+            <name>Label_28</name>
+            <scale_options>
+              <width_scalable>true</width_scalable>
+              <height_scalable>true</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <transparent>true</transparent>
+            <show_scrollbar>false</show_scrollbar>
+            <background_color>
+              <color red="255" green="255" blue="255" />
+            </background_color>
+            <foreground_color>
+              <color red="0" green="0" blue="0" />
+            </foreground_color>
+            <widget_type>Label</widget_type>
+            <enabled>true</enabled>
+            <text>Capture on error enbl.</text>
+            <font>
+              <fontdata fontName="Lucida Grande" height="8" style="0" />
+            </font>
+            <width>101</width>
+            <border_style>0</border_style>
+            <rules />
+            <border_width>1</border_width>
+            <border_color>
+              <color red="0" green="128" blue="255" />
+            </border_color>
+            <horizontal_alignment>0</horizontal_alignment>
+            <actions hook="false" hook_all="false" />
+            <y>40</y>
+            <wrap_words>true</wrap_words>
+            <tooltip></tooltip>
+            <x>0</x>
+          </widget>
+          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+            <visible>true</visible>
+            <vertical_alignment>1</vertical_alignment>
+            <wuid>-191b87bc:13cc9bd1570:ec1</wuid>
+            <auto_size>false</auto_size>
+            <scripts />
+            <height>10</height>
+            <name>Label_29</name>
+            <scale_options>
+              <width_scalable>true</width_scalable>
+              <height_scalable>true</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <transparent>true</transparent>
+            <show_scrollbar>false</show_scrollbar>
+            <background_color>
+              <color red="255" green="255" blue="255" />
+            </background_color>
+            <foreground_color>
+              <color red="0" green="0" blue="0" />
+            </foreground_color>
+            <widget_type>Label</widget_type>
+            <enabled>true</enabled>
+            <text>Posn follow enbl.</text>
+            <font>
+              <fontdata fontName="Lucida Grande" height="8" style="0" />
+            </font>
+            <width>101</width>
+            <border_style>0</border_style>
+            <rules />
+            <border_width>1</border_width>
+            <border_color>
+              <color red="0" green="128" blue="255" />
+            </border_color>
+            <horizontal_alignment>0</horizontal_alignment>
+            <actions hook="false" hook_all="false" />
+            <y>30</y>
+            <wrap_words>true</wrap_words>
+            <tooltip></tooltip>
+            <x>0</x>
+          </widget>
+          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+            <visible>true</visible>
+            <vertical_alignment>1</vertical_alignment>
+            <wuid>-191b87bc:13cc9bd1570:ec2</wuid>
+            <auto_size>false</auto_size>
+            <scripts />
+            <height>10</height>
+            <name>Label_30</name>
+            <scale_options>
+              <width_scalable>true</width_scalable>
+              <height_scalable>true</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <transparent>true</transparent>
+            <show_scrollbar>false</show_scrollbar>
+            <background_color>
+              <color red="255" green="255" blue="255" />
+            </background_color>
+            <foreground_color>
+              <color red="0" green="0" blue="0" />
+            </foreground_color>
+            <widget_type>Label</widget_type>
+            <enabled>true</enabled>
+            <text>Posn follow offset mode</text>
+            <font>
+              <fontdata fontName="Lucida Grande" height="8" style="0" />
+            </font>
+            <width>101</width>
+            <border_style>0</border_style>
+            <rules />
+            <border_width>1</border_width>
+            <border_color>
+              <color red="0" green="128" blue="255" />
+            </border_color>
+            <horizontal_alignment>0</horizontal_alignment>
+            <actions hook="false" hook_all="false" />
+            <y>20</y>
+            <wrap_words>true</wrap_words>
+            <tooltip></tooltip>
+            <x>0</x>
+          </widget>
+          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+            <visible>true</visible>
+            <vertical_alignment>1</vertical_alignment>
+            <wuid>-191b87bc:13cc9bd1570:ec3</wuid>
+            <auto_size>false</auto_size>
+            <scripts />
+            <height>10</height>
+            <name>Label_31</name>
+            <scale_options>
+              <width_scalable>true</width_scalable>
+              <height_scalable>true</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <transparent>true</transparent>
+            <show_scrollbar>false</show_scrollbar>
+            <background_color>
+              <color red="255" green="255" blue="255" />
+            </background_color>
+            <foreground_color>
+              <color red="0" green="0" blue="0" />
+            </foreground_color>
+            <widget_type>Label</widget_type>
+            <enabled>true</enabled>
+            <text>Commutation enable</text>
+            <font>
+              <fontdata fontName="Lucida Grande" height="8" style="0" />
+            </font>
+            <width>101</width>
+            <border_style>0</border_style>
+            <rules />
+            <border_width>1</border_width>
+            <border_color>
+              <color red="0" green="128" blue="255" />
+            </border_color>
+            <horizontal_alignment>0</horizontal_alignment>
+            <actions hook="false" hook_all="false" />
+            <y>10</y>
+            <wrap_words>true</wrap_words>
+            <tooltip></tooltip>
+            <x>0</x>
+          </widget>
+          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+            <visible>true</visible>
+            <vertical_alignment>1</vertical_alignment>
+            <wuid>-191b87bc:13cc9bd1570:ec4</wuid>
+            <auto_size>false</auto_size>
+            <scripts />
+            <height>10</height>
+            <name>Label_32</name>
+            <scale_options>
+              <width_scalable>true</width_scalable>
+              <height_scalable>true</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <transparent>true</transparent>
+            <show_scrollbar>false</show_scrollbar>
+            <background_color>
+              <color red="255" green="255" blue="255" />
+            </background_color>
+            <foreground_color>
+              <color red="0" green="0" blue="0" />
+            </foreground_color>
+            <widget_type>Label</widget_type>
+            <enabled>true</enabled>
+            <text>Y-addr commute enc.</text>
+            <font>
+              <fontdata fontName="Lucida Grande" height="8" style="0" />
+            </font>
+            <width>101</width>
+            <border_style>0</border_style>
+            <rules />
+            <border_width>1</border_width>
+            <border_color>
+              <color red="0" green="128" blue="255" />
+            </border_color>
+            <horizontal_alignment>0</horizontal_alignment>
+            <actions hook="false" hook_all="false" />
+            <y>0</y>
+            <wrap_words>true</wrap_words>
+            <tooltip></tooltip>
+            <x>0</x>
+          </widget>
+        </widget>
+      </widget>
+      <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0">
+        <macros>
+          <include_parent_macros>true</include_parent_macros>
+        </macros>
+        <visible>true</visible>
+        <wuid>-e503e06:13ccb3a4232:-7a70</wuid>
+        <scripts />
+        <height>170</height>
+        <name>Tab 0_2</name>
+        <scale_options>
+          <width_scalable>true</width_scalable>
+          <height_scalable>true</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <transparent>true</transparent>
+        <show_scrollbar>false</show_scrollbar>
+        <background_color>
+          <color red="240" green="240" blue="240" />
+        </background_color>
+        <foreground_color>
+          <color red="192" green="192" blue="192" />
+        </foreground_color>
+        <widget_type>Grouping Container</widget_type>
+        <enabled>true</enabled>
+        <font>
+          <opifont.name fontName="Lucida Grande" height="11" style="0">Default</opifont.name>
+        </font>
+        <width>121</width>
+        <border_style>0</border_style>
+        <rules />
+        <lock_children>true</lock_children>
+        <border_width>1</border_width>
+        <border_color>
+          <color red="0" green="128" blue="255" />
+        </border_color>
+        <actions hook="false" hook_all="false" />
+        <y>1</y>
+        <tooltip></tooltip>
+        <x>-1</x>
+        <widget typeId="org.csstudio.opibuilder.widgets.bytemonitor" version="1.0">
+          <border_alarm_sensitive>true</border_alarm_sensitive>
+          <visible>true</visible>
+          <wuid>-191b87bc:13cc9bd1570:14c0</wuid>
+          <bitReverse>true</bitReverse>
+          <scripts />
+          <square_led>true</square_led>
+          <startBit>0</startBit>
+          <on_color>
+            <color red="0" green="255" blue="0" />
+          </on_color>
+          <height>170</height>
+          <name>Byte Monitor_1</name>
+          <forecolor_alarm_sensitive>true</forecolor_alarm_sensitive>
+          <scale_options>
+            <width_scalable>true</width_scalable>
+            <height_scalable>true</height_scalable>
+            <keep_wh_ratio>false</keep_wh_ratio>
+          </scale_options>
+          <off_color>
+            <color red="0" green="100" blue="0" />
+          </off_color>
+          <pv_name>$(SYS){$(DEV)-Ax:$(AXIS)}Sts:1-Sts</pv_name>
+          <background_color>
+            <color red="240" green="240" blue="240" />
+          </background_color>
+          <foreground_color>
+            <color red="192" green="192" blue="192" />
+          </foreground_color>
+          <widget_type>Byte Monitor</widget_type>
+          <enabled>true</enabled>
+          <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+          <numBits>16</numBits>
+          <font>
+            <opifont.name fontName="Lucida Grande" height="11" style="0">Default</opifont.name>
+          </font>
+          <width>20</width>
+          <border_style>4</border_style>
+          <effect_3d>true</effect_3d>
+          <rules />
+          <pv_value />
+          <border_width>1</border_width>
+          <horizontal>false</horizontal>
+          <border_color>
+            <color red="0" green="128" blue="255" />
+          </border_color>
+          <actions hook="false" hook_all="false" />
+          <y>0</y>
+          <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+          <x>0</x>
+        </widget>
+        <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0">
+          <macros>
+            <include_parent_macros>true</include_parent_macros>
+          </macros>
+          <visible>true</visible>
+          <wuid>-e503e06:13ccb3a4232:-7a72</wuid>
+          <scripts />
+          <height>160</height>
+          <name>Tab 0_2</name>
+          <scale_options>
+            <width_scalable>true</width_scalable>
+            <height_scalable>true</height_scalable>
+            <keep_wh_ratio>false</keep_wh_ratio>
+          </scale_options>
+          <transparent>true</transparent>
+          <show_scrollbar>false</show_scrollbar>
+          <background_color>
+            <color red="240" green="240" blue="240" />
+          </background_color>
+          <foreground_color>
+            <color red="192" green="192" blue="192" />
+          </foreground_color>
+          <widget_type>Grouping Container</widget_type>
+          <enabled>true</enabled>
+          <font>
+            <opifont.name fontName="Lucida Grande" height="11" style="0">Default</opifont.name>
+          </font>
+          <width>101</width>
+          <border_style>0</border_style>
+          <rules />
+          <lock_children>true</lock_children>
+          <border_width>1</border_width>
+          <border_color>
+            <color red="0" green="128" blue="255" />
+          </border_color>
+          <actions hook="false" hook_all="false" />
+          <y>0</y>
+          <tooltip></tooltip>
+          <x>20</x>
+          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+            <visible>true</visible>
+            <vertical_alignment>1</vertical_alignment>
+            <wuid>-191b87bc:13cc9bd1570:14c1</wuid>
+            <auto_size>false</auto_size>
+            <scripts />
+            <height>10</height>
+            <name>Label_33</name>
+            <scale_options>
+              <width_scalable>true</width_scalable>
+              <height_scalable>true</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <transparent>true</transparent>
+            <show_scrollbar>false</show_scrollbar>
+            <background_color>
+              <color red="255" green="255" blue="255" />
+            </background_color>
+            <foreground_color>
+              <color red="0" green="0" blue="0" />
+            </foreground_color>
+            <widget_type>Label</widget_type>
+            <enabled>true</enabled>
+            <text>User servo enable</text>
+            <font>
+              <fontdata fontName="Lucida Grande" height="8" style="0" />
+            </font>
+            <width>101</width>
+            <border_style>0</border_style>
+            <rules />
+            <border_width>1</border_width>
+            <border_color>
+              <color red="0" green="128" blue="255" />
+            </border_color>
+            <horizontal_alignment>0</horizontal_alignment>
+            <actions hook="false" hook_all="false" />
+            <y>150</y>
+            <wrap_words>true</wrap_words>
+            <tooltip></tooltip>
+            <x>0</x>
+          </widget>
+          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+            <visible>true</visible>
+            <vertical_alignment>1</vertical_alignment>
+            <wuid>-191b87bc:13cc9bd1570:14c2</wuid>
+            <auto_size>false</auto_size>
+            <scripts />
+            <height>10</height>
+            <name>Label_34</name>
+            <scale_options>
+              <width_scalable>true</width_scalable>
+              <height_scalable>true</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <transparent>true</transparent>
+            <show_scrollbar>false</show_scrollbar>
+            <background_color>
+              <color red="255" green="255" blue="255" />
+            </background_color>
+            <foreground_color>
+              <color red="0" green="0" blue="0" />
+            </foreground_color>
+            <widget_type>Label</widget_type>
+            <enabled>true</enabled>
+            <text>User phase enable</text>
+            <font>
+              <fontdata fontName="Lucida Grande" height="8" style="0" />
+            </font>
+            <width>101</width>
+            <border_style>0</border_style>
+            <rules />
+            <border_width>1</border_width>
+            <border_color>
+              <color red="0" green="128" blue="255" />
+            </border_color>
+            <horizontal_alignment>0</horizontal_alignment>
+            <actions hook="false" hook_all="false" />
+            <y>140</y>
+            <wrap_words>true</wrap_words>
+            <tooltip></tooltip>
+            <x>0</x>
+          </widget>
+          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+            <visible>true</visible>
+            <vertical_alignment>1</vertical_alignment>
+            <wuid>-191b87bc:13cc9bd1570:14c3</wuid>
+            <auto_size>false</auto_size>
+            <scripts />
+            <height>10</height>
+            <name>Label_35</name>
+            <scale_options>
+              <width_scalable>true</width_scalable>
+              <height_scalable>true</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <transparent>true</transparent>
+            <show_scrollbar>false</show_scrollbar>
+            <background_color>
+              <color red="255" green="255" blue="255" />
+            </background_color>
+            <foreground_color>
+              <color red="0" green="0" blue="0" />
+            </foreground_color>
+            <widget_type>Label</widget_type>
+            <enabled>true</enabled>
+            <text>Home search in progress</text>
+            <font>
+              <fontdata fontName="Lucida Grande" height="8" style="0" />
+            </font>
+            <width>101</width>
+            <border_style>0</border_style>
+            <rules />
+            <border_width>1</border_width>
+            <border_color>
+              <color red="0" green="128" blue="255" />
+            </border_color>
+            <horizontal_alignment>0</horizontal_alignment>
+            <actions hook="false" hook_all="false" />
+            <y>130</y>
+            <wrap_words>true</wrap_words>
+            <tooltip></tooltip>
+            <x>0</x>
+          </widget>
+          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+            <visible>true</visible>
+            <vertical_alignment>1</vertical_alignment>
+            <wuid>-191b87bc:13cc9bd1570:14c4</wuid>
+            <auto_size>false</auto_size>
+            <scripts />
+            <height>10</height>
+            <name>Label_36</name>
+            <scale_options>
+              <width_scalable>true</width_scalable>
+              <height_scalable>true</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <transparent>true</transparent>
+            <show_scrollbar>false</show_scrollbar>
+            <background_color>
+              <color red="255" green="255" blue="255" />
+            </background_color>
+            <foreground_color>
+              <color red="0" green="0" blue="0" />
+            </foreground_color>
+            <widget_type>Label</widget_type>
+            <enabled>true</enabled>
+            <text>Block request</text>
+            <font>
+              <fontdata fontName="Lucida Grande" height="8" style="0" />
+            </font>
+            <width>101</width>
+            <border_style>0</border_style>
+            <rules />
+            <border_width>1</border_width>
+            <border_color>
+              <color red="0" green="128" blue="255" />
+            </border_color>
+            <horizontal_alignment>0</horizontal_alignment>
+            <actions hook="false" hook_all="false" />
+            <y>120</y>
+            <wrap_words>true</wrap_words>
+            <tooltip></tooltip>
+            <x>0</x>
+          </widget>
+          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+            <visible>true</visible>
+            <vertical_alignment>1</vertical_alignment>
+            <wuid>-191b87bc:13cc9bd1570:14c5</wuid>
+            <auto_size>false</auto_size>
+            <scripts />
+            <height>10</height>
+            <name>Label_37</name>
+            <scale_options>
+              <width_scalable>true</width_scalable>
+              <height_scalable>true</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <transparent>true</transparent>
+            <show_scrollbar>false</show_scrollbar>
+            <background_color>
+              <color red="255" green="255" blue="255" />
+            </background_color>
+            <foreground_color>
+              <color red="0" green="0" blue="0" />
+            </foreground_color>
+            <widget_type>Label</widget_type>
+            <enabled>true</enabled>
+            <text>Abort decel.  in progress</text>
+            <font>
+              <fontdata fontName="Lucida Grande" height="8" style="0" />
+            </font>
+            <width>101</width>
+            <border_style>0</border_style>
+            <rules />
+            <border_width>1</border_width>
+            <border_color>
+              <color red="0" green="128" blue="255" />
+            </border_color>
+            <horizontal_alignment>0</horizontal_alignment>
+            <actions hook="false" hook_all="false" />
+            <y>110</y>
+            <wrap_words>true</wrap_words>
+            <tooltip></tooltip>
+            <x>0</x>
+          </widget>
+          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+            <visible>true</visible>
+            <vertical_alignment>1</vertical_alignment>
+            <wuid>-191b87bc:13cc9bd1570:14c6</wuid>
+            <auto_size>false</auto_size>
+            <scripts />
+            <height>10</height>
+            <name>Label_38</name>
+            <scale_options>
+              <width_scalable>true</width_scalable>
+              <height_scalable>true</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <transparent>true</transparent>
+            <show_scrollbar>false</show_scrollbar>
+            <background_color>
+              <color red="255" green="255" blue="255" />
+            </background_color>
+            <foreground_color>
+              <color red="0" green="0" blue="0" />
+            </foreground_color>
+            <widget_type>Label</widget_type>
+            <enabled>true</enabled>
+            <text>Desired velocity zero</text>
+            <font>
+              <fontdata fontName="Lucida Grande" height="8" style="0" />
+            </font>
+            <width>101</width>
+            <border_style>0</border_style>
+            <rules />
+            <border_width>1</border_width>
+            <border_color>
+              <color red="0" green="128" blue="255" />
+            </border_color>
+            <horizontal_alignment>0</horizontal_alignment>
+            <actions hook="false" hook_all="false" />
+            <y>100</y>
+            <wrap_words>true</wrap_words>
+            <tooltip></tooltip>
+            <x>0</x>
+          </widget>
+          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+            <visible>true</visible>
+            <vertical_alignment>1</vertical_alignment>
+            <wuid>-191b87bc:13cc9bd1570:14c7</wuid>
+            <auto_size>false</auto_size>
+            <scripts />
+            <height>10</height>
+            <name>Label_39</name>
+            <scale_options>
+              <width_scalable>true</width_scalable>
+              <height_scalable>true</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <transparent>true</transparent>
+            <show_scrollbar>false</show_scrollbar>
+            <background_color>
+              <color red="255" green="255" blue="255" />
+            </background_color>
+            <foreground_color>
+              <color red="0" green="0" blue="0" />
+            </foreground_color>
+            <widget_type>Label</widget_type>
+            <enabled>true</enabled>
+            <text>Data block error</text>
+            <font>
+              <fontdata fontName="Lucida Grande" height="8" style="0" />
+            </font>
+            <width>101</width>
+            <border_style>0</border_style>
+            <rules />
+            <border_width>1</border_width>
+            <border_color>
+              <color red="0" green="128" blue="255" />
+            </border_color>
+            <horizontal_alignment>0</horizontal_alignment>
+            <actions hook="false" hook_all="false" />
+            <y>90</y>
+            <wrap_words>true</wrap_words>
+            <tooltip></tooltip>
+            <x>0</x>
+          </widget>
+          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+            <visible>true</visible>
+            <vertical_alignment>1</vertical_alignment>
+            <wuid>-191b87bc:13cc9bd1570:14c8</wuid>
+            <auto_size>false</auto_size>
+            <scripts />
+            <height>10</height>
+            <name>Label_40</name>
+            <scale_options>
+              <width_scalable>true</width_scalable>
+              <height_scalable>true</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <transparent>true</transparent>
+            <show_scrollbar>false</show_scrollbar>
+            <background_color>
+              <color red="255" green="255" blue="255" />
+            </background_color>
+            <foreground_color>
+              <color red="0" green="0" blue="0" />
+            </foreground_color>
+            <widget_type>Label</widget_type>
+            <enabled>true</enabled>
+            <text>Dwell in progress</text>
+            <font>
+              <fontdata fontName="Lucida Grande" height="8" style="0" />
+            </font>
+            <width>101</width>
+            <border_style>0</border_style>
+            <rules />
+            <border_width>1</border_width>
+            <border_color>
+              <color red="0" green="128" blue="255" />
+            </border_color>
+            <horizontal_alignment>0</horizontal_alignment>
+            <actions hook="false" hook_all="false" />
+            <y>80</y>
+            <wrap_words>true</wrap_words>
+            <tooltip></tooltip>
+            <x>0</x>
+          </widget>
+          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+            <visible>true</visible>
+            <vertical_alignment>1</vertical_alignment>
+            <wuid>-191b87bc:13cc9bd1570:14c9</wuid>
+            <auto_size>false</auto_size>
+            <scripts />
+            <height>10</height>
+            <name>Label_41</name>
+            <scale_options>
+              <width_scalable>true</width_scalable>
+              <height_scalable>true</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <transparent>true</transparent>
+            <show_scrollbar>false</show_scrollbar>
+            <background_color>
+              <color red="255" green="255" blue="255" />
+            </background_color>
+            <foreground_color>
+              <color red="0" green="0" blue="0" />
+            </foreground_color>
+            <widget_type>Label</widget_type>
+            <enabled>true</enabled>
+            <text>Integration mode</text>
+            <font>
+              <fontdata fontName="Lucida Grande" height="8" style="0" />
+            </font>
+            <width>101</width>
+            <border_style>0</border_style>
+            <rules />
+            <border_width>1</border_width>
+            <border_color>
+              <color red="0" green="128" blue="255" />
+            </border_color>
+            <horizontal_alignment>0</horizontal_alignment>
+            <actions hook="false" hook_all="false" />
+            <y>70</y>
+            <wrap_words>true</wrap_words>
+            <tooltip></tooltip>
+            <x>0</x>
+          </widget>
+          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+            <visible>true</visible>
+            <vertical_alignment>1</vertical_alignment>
+            <wuid>-191b87bc:13cc9bd1570:14ca</wuid>
+            <auto_size>false</auto_size>
+            <scripts />
+            <height>10</height>
+            <name>Label_42</name>
+            <scale_options>
+              <width_scalable>true</width_scalable>
+              <height_scalable>true</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <transparent>true</transparent>
+            <show_scrollbar>false</show_scrollbar>
+            <background_color>
+              <color red="255" green="255" blue="255" />
+            </background_color>
+            <foreground_color>
+              <color red="0" green="0" blue="0" />
+            </foreground_color>
+            <widget_type>Label</widget_type>
+            <enabled>true</enabled>
+            <text>Move timer active</text>
+            <font>
+              <fontdata fontName="Lucida Grande" height="8" style="0" />
+            </font>
+            <width>101</width>
+            <border_style>0</border_style>
+            <rules />
+            <border_width>1</border_width>
+            <border_color>
+              <color red="0" green="128" blue="255" />
+            </border_color>
+            <horizontal_alignment>0</horizontal_alignment>
+            <actions hook="false" hook_all="false" />
+            <y>60</y>
+            <wrap_words>true</wrap_words>
+            <tooltip></tooltip>
+            <x>0</x>
+          </widget>
+          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+            <visible>true</visible>
+            <vertical_alignment>1</vertical_alignment>
+            <wuid>-191b87bc:13cc9bd1570:14cb</wuid>
+            <auto_size>false</auto_size>
+            <scripts />
+            <height>11</height>
+            <name>Label_43</name>
+            <scale_options>
+              <width_scalable>true</width_scalable>
+              <height_scalable>true</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <transparent>true</transparent>
+            <show_scrollbar>false</show_scrollbar>
+            <background_color>
+              <color red="255" green="255" blue="255" />
+            </background_color>
+            <foreground_color>
+              <color red="0" green="0" blue="0" />
+            </foreground_color>
+            <widget_type>Label</widget_type>
+            <enabled>true</enabled>
+            <text>Open loop mode</text>
+            <font>
+              <fontdata fontName="Lucida Grande" height="8" style="0" />
+            </font>
+            <width>101</width>
+            <border_style>0</border_style>
+            <rules />
+            <border_width>1</border_width>
+            <border_color>
+              <color red="0" green="128" blue="255" />
+            </border_color>
+            <horizontal_alignment>0</horizontal_alignment>
+            <actions hook="false" hook_all="false" />
+            <y>49</y>
+            <wrap_words>true</wrap_words>
+            <tooltip></tooltip>
+            <x>0</x>
+          </widget>
+          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+            <visible>true</visible>
+            <vertical_alignment>1</vertical_alignment>
+            <wuid>-191b87bc:13cc9bd1570:14cc</wuid>
+            <auto_size>false</auto_size>
+            <scripts />
+            <height>10</height>
+            <name>Label_44</name>
+            <scale_options>
+              <width_scalable>true</width_scalable>
+              <height_scalable>true</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <transparent>true</transparent>
+            <show_scrollbar>false</show_scrollbar>
+            <background_color>
+              <color red="255" green="255" blue="255" />
+            </background_color>
+            <foreground_color>
+              <color red="0" green="0" blue="0" />
+            </foreground_color>
+            <widget_type>Label</widget_type>
+            <enabled>true</enabled>
+            <text>Amplifier enabled</text>
+            <font>
+              <fontdata fontName="Lucida Grande" height="8" style="0" />
+            </font>
+            <width>101</width>
+            <border_style>0</border_style>
+            <rules />
+            <border_width>1</border_width>
+            <border_color>
+              <color red="0" green="128" blue="255" />
+            </border_color>
+            <horizontal_alignment>0</horizontal_alignment>
+            <actions hook="false" hook_all="false" />
+            <y>40</y>
+            <wrap_words>true</wrap_words>
+            <tooltip></tooltip>
+            <x>0</x>
+          </widget>
+          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+            <visible>true</visible>
+            <vertical_alignment>1</vertical_alignment>
+            <wuid>-191b87bc:13cc9bd1570:14cd</wuid>
+            <auto_size>false</auto_size>
+            <scripts />
+            <height>10</height>
+            <name>Label_45</name>
+            <scale_options>
+              <width_scalable>true</width_scalable>
+              <height_scalable>true</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <transparent>true</transparent>
+            <show_scrollbar>false</show_scrollbar>
+            <background_color>
+              <color red="255" green="255" blue="255" />
+            </background_color>
+            <foreground_color>
+              <color red="0" green="0" blue="0" />
+            </foreground_color>
+            <widget_type>Label</widget_type>
+            <enabled>true</enabled>
+            <text>Ext. servo alg. enbl.</text>
+            <font>
+              <fontdata fontName="Lucida Grande" height="8" style="0" />
+            </font>
+            <width>101</width>
+            <border_style>0</border_style>
+            <rules />
+            <border_width>1</border_width>
+            <border_color>
+              <color red="0" green="128" blue="255" />
+            </border_color>
+            <horizontal_alignment>0</horizontal_alignment>
+            <actions hook="false" hook_all="false" />
+            <y>30</y>
+            <wrap_words>true</wrap_words>
+            <tooltip></tooltip>
+            <x>0</x>
+          </widget>
+          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+            <visible>true</visible>
+            <vertical_alignment>1</vertical_alignment>
+            <wuid>-191b87bc:13cc9bd1570:14ce</wuid>
+            <auto_size>false</auto_size>
+            <scripts />
+            <height>10</height>
+            <name>Label_46</name>
+            <scale_options>
+              <width_scalable>true</width_scalable>
+              <height_scalable>true</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <transparent>true</transparent>
+            <show_scrollbar>false</show_scrollbar>
+            <background_color>
+              <color red="255" green="255" blue="255" />
+            </background_color>
+            <foreground_color>
+              <color red="0" green="0" blue="0" />
+            </foreground_color>
+            <widget_type>Label</widget_type>
+            <enabled>true</enabled>
+            <text>Positive limit</text>
+            <font>
+              <fontdata fontName="Lucida Grande" height="8" style="0" />
+            </font>
+            <width>101</width>
+            <border_style>0</border_style>
+            <rules />
+            <border_width>1</border_width>
+            <border_color>
+              <color red="0" green="128" blue="255" />
+            </border_color>
+            <horizontal_alignment>0</horizontal_alignment>
+            <actions hook="false" hook_all="false" />
+            <y>20</y>
+            <wrap_words>true</wrap_words>
+            <tooltip></tooltip>
+            <x>0</x>
+          </widget>
+          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+            <visible>true</visible>
+            <vertical_alignment>1</vertical_alignment>
+            <wuid>-191b87bc:13cc9bd1570:14cf</wuid>
+            <auto_size>false</auto_size>
+            <scripts />
+            <height>10</height>
+            <name>Label_47</name>
+            <scale_options>
+              <width_scalable>true</width_scalable>
+              <height_scalable>true</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <transparent>true</transparent>
+            <show_scrollbar>false</show_scrollbar>
+            <background_color>
+              <color red="255" green="255" blue="255" />
+            </background_color>
+            <foreground_color>
+              <color red="0" green="0" blue="0" />
+            </foreground_color>
+            <widget_type>Label</widget_type>
+            <enabled>true</enabled>
+            <text>Negative limit</text>
+            <font>
+              <fontdata fontName="Lucida Grande" height="8" style="0" />
+            </font>
+            <width>101</width>
+            <border_style>0</border_style>
+            <rules />
+            <border_width>1</border_width>
+            <border_color>
+              <color red="0" green="128" blue="255" />
+            </border_color>
+            <horizontal_alignment>0</horizontal_alignment>
+            <actions hook="false" hook_all="false" />
+            <y>10</y>
+            <wrap_words>true</wrap_words>
+            <tooltip></tooltip>
+            <x>0</x>
+          </widget>
+          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+            <visible>true</visible>
+            <vertical_alignment>1</vertical_alignment>
+            <wuid>-191b87bc:13cc9bd1570:14d0</wuid>
+            <auto_size>false</auto_size>
+            <scripts />
+            <height>10</height>
+            <name>Label_48</name>
+            <scale_options>
+              <width_scalable>true</width_scalable>
+              <height_scalable>true</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <transparent>true</transparent>
+            <show_scrollbar>false</show_scrollbar>
+            <background_color>
+              <color red="255" green="255" blue="255" />
+            </background_color>
+            <foreground_color>
+              <color red="0" green="0" blue="0" />
+            </foreground_color>
+            <widget_type>Label</widget_type>
+            <enabled>true</enabled>
+            <text>Motor activated</text>
+            <font>
+              <fontdata fontName="Lucida Grande" height="8" style="0" />
+            </font>
+            <width>101</width>
+            <border_style>0</border_style>
+            <rules />
+            <border_width>1</border_width>
+            <border_color>
+              <color red="0" green="128" blue="255" />
+            </border_color>
+            <horizontal_alignment>0</horizontal_alignment>
+            <actions hook="false" hook_all="false" />
+            <y>0</y>
+            <wrap_words>true</wrap_words>
+            <tooltip></tooltip>
+            <x>0</x>
+          </widget>
+        </widget>
+      </widget>
+    </widget>
+  </widget>
+</display>
