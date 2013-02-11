@@ -19,7 +19,7 @@ ctlBgColor1 index 3
 ctlBgColor2 index 5
 topShadowColor index 1
 botShadowColor index 11
-title "PMAC Status - $(DEVICE)"
+title "PMAC Status - $(DEV)"
 showGrid
 snapToGrid
 gridSize 5
@@ -139,7 +139,7 @@ fontAlign "center"
 fgColor index 14
 bgColor index 48
 value {
-  "$(DEVICE) CPU Load/Status"
+  "$(DEV) CPU Load/Status"
 }
 endObjectProperties
 
@@ -341,8 +341,8 @@ bgColor index 3
 inconsistentColor index 0
 topShadowColor index 1
 botShadowColor index 11
-controlPv "$(SYS){$(DEVICE)}Sts:Read1-FOut_.SCAN"
-indicatorPv "$(SYS){$(DEVICE)}Sts:Read1-FOut_.SCAN"
+controlPv "$(SYS){$(DEV)}Sts:Read1-FOut_.SCAN"
+indicatorPv "$(SYS){$(DEV)}Sts:Read1-FOut_.SCAN"
 font "helvetica-bold-r-14.0"
 endObjectProperties
 
@@ -476,7 +476,7 @@ x 15
 y 520
 w 285
 h 20
-controlPv "$(SYS){$(DEVICE)}Val:Pgm-Sts"
+controlPv "$(SYS){$(DEV)}Val:Pgm-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -787,7 +787,7 @@ x 15
 y 155
 w 12
 h 192
-controlPv "$(SYS){$(DEVICE)}Sts:1-Sts"
+controlPv "$(SYS){$(DEV)}Sts:1-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -1157,7 +1157,7 @@ x 185
 y 155
 w 12
 h 192
-controlPv "$(SYS){$(DEVICE)}Sts:2-Sts"
+controlPv "$(SYS){$(DEV)}Sts:2-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -1527,7 +1527,7 @@ x 370
 y 155
 w 12
 h 192
-controlPv "$(SYS){$(DEVICE)}Sts:3-Sts"
+controlPv "$(SYS){$(DEV)}Sts:3-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -1575,7 +1575,7 @@ x 100
 y 55
 w 155
 h 30
-controlPv "$(SYS){$(DEVICE)}Type:PMAC-Sts"
+controlPv "$(SYS){$(DEV)}Type:PMAC-Sts"
 fgColor index 16
 fgAlarm
 bgColor index 10
@@ -1594,7 +1594,7 @@ x 100
 y 90
 w 155
 h 30
-controlPv "$(SYS){$(DEVICE)}Val:CPULoad-I"
+controlPv "$(SYS){$(DEV)}Val:CPULoad-I"
 fgColor index 16
 fgAlarm
 bgColor index 10
@@ -1613,7 +1613,7 @@ x 420
 y 90
 w 130
 h 30
-controlPv "$(SYS){$(DEVICE)}Cnt:MACRO_Err-I"
+controlPv "$(SYS){$(DEV)}Cnt:MACRO_Err-I"
 fgColor index 16
 fgAlarm
 bgColor index 10
@@ -1668,7 +1668,7 @@ x 15
 y 400
 w 285
 h 20
-controlPv "$(SYS){$(DEVICE)}Dsbl:PLC_W0-Sts"
+controlPv "$(SYS){$(DEV)}Dsbl:PLC_W0-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -1706,7 +1706,7 @@ x 15
 y 445
 w 285
 h 20
-controlPv "$(SYS){$(DEVICE)}Dsbl:PLC_W1-Sts"
+controlPv "$(SYS){$(DEV)}Dsbl:PLC_W1-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -1779,7 +1779,7 @@ x 185
 y 800
 w 120
 h 12
-controlPv "$(DEVICE):VME_ADDR_MODE"
+controlPv "$(DEV):VME_ADDR_MODE"
 font "helvetica-medium-r-10.0"
 fgColor index 16
 bgColor index 10
@@ -1841,7 +1841,7 @@ x 185
 y 815
 w 120
 h 12
-controlPv "$(DEVICE):VME_INTLVL"
+controlPv "$(DEV):VME_INTLVL"
 font "helvetica-medium-r-10.0"
 fgColor index 16
 bgColor index 10
@@ -1883,7 +1883,7 @@ x 185
 y 725
 w 120
 h 12
-controlPv "$(SYS){$(DEVICE)}Sts:PLC_Ctrl-Sts"
+controlPv "$(SYS){$(DEV)}Sts:PLC_Ctrl-Sts"
 font "helvetica-medium-r-10.0"
 fgColor index 16
 bgColor index 10
@@ -1906,7 +1906,7 @@ x 185
 y 755
 w 120
 h 12
-controlPv "$(SYS){$(DEVICE)}Mode:ErrRep-Sts"
+controlPv "$(SYS){$(DEV)}Mode:ErrRep-Sts"
 font "helvetica-medium-r-10.0"
 fgColor index 16
 bgColor index 10
@@ -1928,7 +1928,7 @@ x 185
 y 740
 w 120
 h 12
-controlPv "$(SYS){$(DEVICE)}Val:IO_HndShk-Sts"
+controlPv "$(SYS){$(DEV)}Val:IO_HndShk-Sts"
 font "helvetica-medium-r-10.0"
 fgColor index 16
 bgColor index 10
@@ -1990,7 +1990,7 @@ x 185
 y 770
 w 120
 h 12
-controlPv "$(DEVICE):DPRAM_COMMS_INT"
+controlPv "$(DEV):DPRAM_COMMS_INT"
 font "helvetica-medium-r-10.0"
 fgColor index 16
 bgColor index 10
@@ -2012,7 +2012,7 @@ x 185
 y 785
 w 120
 h 12
-controlPv "$(DEVICE):DPRAM_COMMS"
+controlPv "$(DEV):DPRAM_COMMS"
 font "helvetica-medium-r-10.0"
 fgColor index 16
 bgColor index 10
@@ -2129,16 +2129,16 @@ menuLabel {
   3 "Axis 4"
 }
 symbols {
-  0 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=1"
-  1 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=2"
-  2 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=3"
-  3 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=4"
+  0 "SYS=$(SYS),DEV=$(DEV)$(DEV),AXIS=1"
+  1 "SYS=$(SYS),DEV=$(DEV)$(DEV),AXIS=2"
+  2 "SYS=$(SYS),DEV=$(DEV)$(DEV),AXIS=3"
+  3 "SYS=$(SYS),DEV=$(DEV)$(DEV),AXIS=4"
 }
 endObjectProperties
 
 endGroup
 
-visPv "$(SYS){$(DEVICE)}Cnt:Axes-I"
+visPv "$(SYS){$(DEV)}Cnt:Axes-I"
 visInvert
 visMin "0"
 visMax "1"
@@ -2188,16 +2188,16 @@ menuLabel {
   3 "Axis 8"
 }
 symbols {
-  0 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=5"
-  1 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=6"
-  2 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=7"
-  3 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=8"
+  0 "SYS=$(SYS),DEV=$(DEV)$(DEV),AXIS=5"
+  1 "SYS=$(SYS),DEV=$(DEV)$(DEV),AXIS=6"
+  2 "SYS=$(SYS),DEV=$(DEV)$(DEV),AXIS=7"
+  3 "SYS=$(SYS),DEV=$(DEV)$(DEV),AXIS=8"
 }
 endObjectProperties
 
 endGroup
 
-visPv "$(SYS){$(DEVICE)}Cnt:Axes-I"
+visPv "$(SYS){$(DEV)}Cnt:Axes-I"
 visInvert
 visMin "0"
 visMax "5"
@@ -2247,16 +2247,16 @@ menuLabel {
   3 "Axis 12"
 }
 symbols {
-  0 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=Ax:09"
-  1 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=Ax:10"
-  2 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=Ax:11"
-  3 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=Ax:12"
+  0 "SYS=$(SYS),DEV=$(DEV)$(DEV),AXIS=Ax:09"
+  1 "SYS=$(SYS),DEV=$(DEV)$(DEV),AXIS=Ax:10"
+  2 "SYS=$(SYS),DEV=$(DEV)$(DEV),AXIS=Ax:11"
+  3 "SYS=$(SYS),DEV=$(DEV)$(DEV),AXIS=Ax:12"
 }
 endObjectProperties
 
 endGroup
 
-visPv "$(SYS){$(DEVICE)}Cnt:Axes-I"
+visPv "$(SYS){$(DEV)}Cnt:Axes-I"
 visInvert
 visMin "0"
 visMax "9"
@@ -2306,16 +2306,16 @@ menuLabel {
   3 "Axis 16"
 }
 symbols {
-  0 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=Ax:13"
-  1 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=Ax:14"
-  2 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=Ax:15"
-  3 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=Ax:16"
+  0 "SYS=$(SYS),DEV=$(DEV)$(DEV),AXIS=Ax:13"
+  1 "SYS=$(SYS),DEV=$(DEV)$(DEV),AXIS=Ax:14"
+  2 "SYS=$(SYS),DEV=$(DEV)$(DEV),AXIS=Ax:15"
+  3 "SYS=$(SYS),DEV=$(DEV)$(DEV),AXIS=Ax:16"
 }
 endObjectProperties
 
 endGroup
 
-visPv "$(SYS){$(DEVICE)}Cnt:Axes-I"
+visPv "$(SYS){$(DEV)}Cnt:Axes-I"
 visInvert
 visMin "0"
 visMax "13"
@@ -2365,16 +2365,16 @@ menuLabel {
   3 "Axis 20"
 }
 symbols {
-  0 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=Ax:17"
-  1 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=Ax:18"
-  2 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=Ax:19"
-  3 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=Ax:20"
+  0 "SYS=$(SYS),DEV=$(DEV)$(DEV),AXIS=Ax:17"
+  1 "SYS=$(SYS),DEV=$(DEV)$(DEV),AXIS=Ax:18"
+  2 "SYS=$(SYS),DEV=$(DEV)$(DEV),AXIS=Ax:19"
+  3 "SYS=$(SYS),DEV=$(DEV)$(DEV),AXIS=Ax:20"
 }
 endObjectProperties
 
 endGroup
 
-visPv "$(SYS){$(DEVICE)}Cnt:Axes-I"
+visPv "$(SYS){$(DEV)}Cnt:Axes-I"
 visInvert
 visMin "0"
 visMax "17"
@@ -2424,16 +2424,16 @@ menuLabel {
   3 "Axis 24"
 }
 symbols {
-  0 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=Ax:21"
-  1 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=Ax:22"
-  2 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=Ax:23"
-  3 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=Ax:24"
+  0 "SYS=$(SYS),DEV=$(DEV)$(DEV),AXIS=Ax:21"
+  1 "SYS=$(SYS),DEV=$(DEV)$(DEV),AXIS=Ax:22"
+  2 "SYS=$(SYS),DEV=$(DEV)$(DEV),AXIS=Ax:23"
+  3 "SYS=$(SYS),DEV=$(DEV)$(DEV),AXIS=Ax:24"
 }
 endObjectProperties
 
 endGroup
 
-visPv "$(SYS){$(DEVICE)}Cnt:Axes-I"
+visPv "$(SYS){$(DEV)}Cnt:Axes-I"
 visInvert
 visMin "0"
 visMax "21"
@@ -2483,16 +2483,16 @@ menuLabel {
   3 "Axis 28"
 }
 symbols {
-  0 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=Ax:25"
-  1 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=Ax:26"
-  2 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=Ax:27"
-  3 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=Ax:28"
+  0 "SYS=$(SYS),DEV=$(DEV)$(DEV),AXIS=Ax:25"
+  1 "SYS=$(SYS),DEV=$(DEV)$(DEV),AXIS=Ax:26"
+  2 "SYS=$(SYS),DEV=$(DEV)$(DEV),AXIS=Ax:27"
+  3 "SYS=$(SYS),DEV=$(DEV)$(DEV),AXIS=Ax:28"
 }
 endObjectProperties
 
 endGroup
 
-visPv "$(SYS){$(DEVICE)}Cnt:Axes-I"
+visPv "$(SYS){$(DEV)}Cnt:Axes-I"
 visInvert
 visMin "0"
 visMax "25"
@@ -2542,16 +2542,16 @@ menuLabel {
   3 "Axis 32"
 }
 symbols {
-  0 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=Ax:29"
-  1 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=Ax:30"
-  2 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=Ax:31"
-  3 "SYS=$(SYS),DEVICE=$(DEVICE)$(DEVICE),AXIS=Ax:32"
+  0 "SYS=$(SYS),DEV=$(DEV)$(DEV),AXIS=Ax:29"
+  1 "SYS=$(SYS),DEV=$(DEV)$(DEV),AXIS=Ax:30"
+  2 "SYS=$(SYS),DEV=$(DEV)$(DEV),AXIS=Ax:31"
+  3 "SYS=$(SYS),DEV=$(DEV)$(DEV),AXIS=Ax:32"
 }
 endObjectProperties
 
 endGroup
 
-visPv "$(SYS){$(DEVICE)}Cnt:Axes-I"
+visPv "$(SYS){$(DEV)}Cnt:Axes-I"
 visInvert
 visMin "0"
 visMax "29"
@@ -2567,7 +2567,7 @@ x 185
 y 830
 w 120
 h 12
-controlPv "$(DEVICE):VME_DPRAMBASE"
+controlPv "$(DEV):VME_DPRAMBASE"
 format "hex"
 font "helvetica-medium-r-10.0"
 fgColor index 16
@@ -2646,7 +2646,7 @@ x 15
 y 595
 w 285
 h 20
-controlPv "$(SYS){$(DEVICE)}In:GPIO-Sts"
+controlPv "$(SYS){$(DEV)}In:GPIO-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -2720,7 +2720,7 @@ x 15
 y 670
 w 285
 h 20
-controlPv "$(SYS){$(DEVICE)}Out:GPIO-Sel"
+controlPv "$(SYS){$(DEV)}Out:GPIO-Sel"
 lineColor index 14
 onColor index 15
 offColor index 19
