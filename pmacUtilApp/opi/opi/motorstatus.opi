@@ -8,7 +8,7 @@
   <boy_version>3.1.2.201212190928</boy_version>
   <scripts />
   <show_ruler>true</show_ruler>
-  <height>230</height>
+  <height>220</height>
   <name></name>
   <snap_to_geometry>true</snap_to_geometry>
   <show_grid>true</show_grid>
@@ -20,7 +20,7 @@
   </foreground_color>
   <widget_type>Display</widget_type>
   <show_close_button>true</show_close_button>
-  <width>400</width>
+  <width>320</width>
   <rules />
   <show_edit_range>true</show_edit_range>
   <grid_space>10</grid_space>
@@ -71,7 +71,7 @@
     <font>
       <opifont.name fontName="Lucida Grande" height="11" style="0">Default</opifont.name>
     </font>
-    <width>401</width>
+    <width>321</width>
     <line_style>0</line_style>
     <border_style>0</border_style>
     <rules />
@@ -116,7 +116,7 @@ $(pv_value)</tooltip>
     <font>
       <opifont.name fontName="Lucida Grande" height="18" style="1">Header 1</opifont.name>
     </font>
-    <width>401</width>
+    <width>321</width>
     <border_style>0</border_style>
     <rules />
     <border_width>1</border_width>
@@ -137,7 +137,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <wuid>-e503e06:13ccb3a4232:-7e02</wuid>
     <scripts />
-    <height>181</height>
+    <height>171</height>
     <name>Tab 0</name>
     <scale_options>
       <width_scalable>true</width_scalable>
@@ -157,7 +157,7 @@ $(pv_value)</tooltip>
     <font>
       <opifont.name fontName="Lucida Grande" height="11" style="0">Default</opifont.name>
     </font>
-    <width>381</width>
+    <width>301</width>
     <border_style>3</border_style>
     <rules />
     <lock_children>false</lock_children>
@@ -379,7 +379,7 @@ $(pv_value)</tooltip>
       </border_color>
       <horizontal_alignment>0</horizontal_alignment>
       <actions hook="false" hook_all="false" />
-      <y>70</y>
+      <y>71</y>
       <wrap_words>true</wrap_words>
       <tooltip></tooltip>
       <x>30</x>
@@ -625,7 +625,7 @@ $(pv_value)</tooltip>
       </border_color>
       <horizontal_alignment>0</horizontal_alignment>
       <actions hook="false" hook_all="false" />
-      <y>69</y>
+      <y>70</y>
       <wrap_words>true</wrap_words>
       <tooltip></tooltip>
       <x>185</x>
@@ -854,7 +854,7 @@ $(pv_value)</tooltip>
         <color red="0" green="128" blue="255" />
       </border_color>
       <actions hook="false" hook_all="false" />
-      <y>65</y>
+      <y>66</y>
       <tooltip>$(pv_name)
 $(pv_value)</tooltip>
       <x>11</x>
@@ -1172,7 +1172,7 @@ $(pv_value)</tooltip>
         <color red="0" green="128" blue="255" />
       </border_color>
       <actions hook="false" hook_all="false" />
-      <y>65</y>
+      <y>66</y>
       <tooltip>$(pv_name)
 $(pv_value)</tooltip>
       <x>166</x>
