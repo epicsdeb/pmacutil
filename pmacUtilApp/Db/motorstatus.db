@@ -4,10 +4,10 @@
 #! DBDEND
 
 ######## MACROS ###########
-# P:     PV base name
-# R:     PV postfix
-# PORT:  asyn port name to the PMAC (for instance PMAC_S0)
-# AXIS:  PMAC axis number to request the status word for
+# SYS:	PV system name
+# DEV:	PV device name
+# PORT: asyn port name to the PMAC (for instance PMAC_S0)
+# AXIS: PMAC axis number to request the status word for
 
 # Read the status ? from the pmac for axes no $(AXIS)
 record(asyn, "$(SYS)$(DEV)Sts-Asyn_") {
