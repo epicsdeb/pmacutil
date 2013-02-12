@@ -4,30 +4,31 @@
 #! DBDEND
 
 
-# % macro, PMAC,  Pmac/Geobrick name
+# % macro, SYS,  	System name
+# % macro, DEV,		Device and axis name
 # % macro, AXIS,    Axis number
 # % macro, PORT,    Asyn port
 
-record(ai, "$(SYS){$(PMAC)-Ax:$(AXIS)}Pos-I") {
+record(ai, "$(SYS){$(DEV}}Pos-I") {
   field(DTYP, "stream")
   field(INP, "@pmac.proto getVar(#$(AXIS)P) $(PORT)")
 }
 
-record(ai, "$(SYS){$(PMAC)-Ax:$(AXIS)}Val:FollErr-I") {
+record(ai, "$(SYS){$(DEV}}Val:FollErr-I") {
   field(DTYP, "stream")
   field(INP, "@pmac.proto getVar(#$(AXIS)F) $(PORT)")
 }
 
-record(ai, "$(SYS){$(PMAC)-Ax:$(AXIS)}Val:Vlcty-I") {
+record(ai, "$(SYS){$(DEV}}Val:Vlcty-I") {
   field(DTYP, "stream")
   field(INP, "@pmac.proto getVar(#$(AXIS)V) $(PORT)")
 }
 
-record(seq, "$(SYS){$(PMAC)-Ax:$(AXIS)}RB-Seq_") {
-  field(LNK1, "$(SYS){$(PMAC)-Ax:$(AXIS)}Pos-I.PROC PP")
-  field(LNK2, "$(SYS){$(PMAC)-Ax:$(AXIS)}Val:FollErr-I.PROC PP")
-  field(LNK3, "$(SYS){$(PMAC)-Ax:$(AXIS)}Val:Vlcty-I.PROC PP")
-  field(LNK4, "$(SYS){$(PMAC)-Ax:$(AXIS)}Sts:1-Sts.PROC PP")
+record(seq, "$(SYS){$(DEV}}RB-Seq_") {
+  field(LNK1, "$(SYS){$(DEV}}Pos-I.PROC PP")
+  field(LNK2, "$(SYS){$(DEV}}Val:FollErr-I.PROC PP")
+  field(LNK3, "$(SYS){$(DEV}}Val:Vlcty-I.PROC PP")
+  field(LNK4, "$(SYS){$(DEV}}Sts:1-Sts.PROC PP")
   field(DLY1, "0")
   field(DLY2, "0.5")
   field(DLY3, "0.5")
@@ -38,18 +39,15 @@ record(seq, "$(SYS){$(PMAC)-Ax:$(AXIS)}RB-Seq_") {
   field(DOL4, "1")
 }
 
-#% archiver 10 Monitor
-record(mbbiDirect, "$(SYS){$(PMAC)-Ax:$(AXIS)}Sts:1-Sts") {
+record(mbbiDirect, "$(SYS){$(DEV}}Sts:1-Sts") {
   field(DTYP, "stream")
-  field(INP, "@pmac.proto getStatus(#$(AXIS)?,$(SYS){$(PMAC)-Ax:$(AXIS)}) $(PORT)")
+  field(INP, "@pmac.proto getStatus(#$(AXIS)?,$(SYS){$(DEV}}) $(PORT)")
 }
 
-#% archiver 10 Monitor
-record(mbbiDirect, "$(SYS){$(PMAC)-Ax:$(AXIS)}Sts:2-Sts") {
+record(mbbiDirect, "$(SYS){$(DEV}}Sts:2-Sts") {
 }
 
-#% archiver 10 Monitor
-record(mbbiDirect, "$(SYS){$(PMAC)-Ax:$(AXIS)}Sts:3-Sts") {
+record(mbbiDirect, "$(SYS){$(DEV}}Sts:3-Sts") {
 }
 
 #! Further lines contain data used by VisualDCT
