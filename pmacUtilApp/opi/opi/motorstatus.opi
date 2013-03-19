@@ -69,7 +69,7 @@
     </fg_gradient_color>
     <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
     <font>
-      <opifont.name fontName="Lucida Grande" height="11" style="0">Default</opifont.name>
+      <opifont.name fontName="Lucida Grande" height="8" style="0">Default</opifont.name>
     </font>
     <width>321</width>
     <line_style>0</line_style>
@@ -114,7 +114,7 @@ $(pv_value)</tooltip>
     <enabled>true</enabled>
     <text>$(DEV) PMAC Axis Status</text>
     <font>
-      <opifont.name fontName="Lucida Grande" height="18" style="1">Header 1</opifont.name>
+      <opifont.name fontName="Lucida Grande" height="12" style="1">Header 1</opifont.name>
     </font>
     <width>321</width>
     <border_style>0</border_style>
@@ -155,7 +155,7 @@ $(pv_value)</tooltip>
     <widget_type>Grouping Container</widget_type>
     <enabled>true</enabled>
     <font>
-      <opifont.name fontName="Lucida Grande" height="11" style="0">Default</opifont.name>
+      <opifont.name fontName="Lucida Grande" height="8" style="0">Default</opifont.name>
     </font>
     <width>301</width>
     <border_style>3</border_style>
@@ -194,7 +194,7 @@ $(pv_value)</tooltip>
       <enabled>true</enabled>
       <text>Axis status</text>
       <font>
-        <opifont.name fontName="Lucida Grande" height="11" style="0">Default</opifont.name>
+        <opifont.name fontName="Lucida Grande" height="8" style="0">Default</opifont.name>
       </font>
       <width>61</width>
       <border_style>1</border_style>
@@ -235,7 +235,7 @@ $(pv_value)</tooltip>
       <enabled>true</enabled>
       <text>Axis number</text>
       <font>
-        <opifont.name fontName="Lucida Grande" height="11" style="0">Default</opifont.name>
+        <opifont.name fontName="Lucida Grande" height="8" style="0">Default</opifont.name>
       </font>
       <width>81</width>
       <border_style>0</border_style>
@@ -284,7 +284,7 @@ $(pv_value)</tooltip>
       <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
       <precision>0</precision>
       <font>
-        <opifont.name fontName="Lucida Grande" height="11" style="0">Default</opifont.name>
+        <opifont.name fontName="Lucida Grande" height="8" style="0">Default</opifont.name>
       </font>
       <width>111</width>
       <border_style>4</border_style>
@@ -327,7 +327,7 @@ $(pv_value)</tooltip>
       <enabled>true</enabled>
       <text>Motor activated</text>
       <font>
-        <fontdata fontName="Lucida Grande" height="10" style="0" />
+        <fontdata fontName="Lucida Grande" height="8" style="0" />
       </font>
       <width>101</width>
       <border_style>0</border_style>
@@ -368,7 +368,7 @@ $(pv_value)</tooltip>
       <enabled>true</enabled>
       <text>Negative limit</text>
       <font>
-        <fontdata fontName="Lucida Grande" height="10" style="0" />
+        <fontdata fontName="Lucida Grande" height="8" style="0" />
       </font>
       <width>101</width>
       <border_style>0</border_style>
@@ -409,7 +409,7 @@ $(pv_value)</tooltip>
       <enabled>true</enabled>
       <text>Positive limit</text>
       <font>
-        <fontdata fontName="Lucida Grande" height="10" style="0" />
+        <fontdata fontName="Lucida Grande" height="8" style="0" />
       </font>
       <width>101</width>
       <border_style>0</border_style>
@@ -450,7 +450,7 @@ $(pv_value)</tooltip>
       <enabled>true</enabled>
       <text>Amplifier enabled</text>
       <font>
-        <fontdata fontName="Lucida Grande" height="10" style="0" />
+        <fontdata fontName="Lucida Grande" height="8" style="0" />
       </font>
       <width>101</width>
       <border_style>0</border_style>
@@ -491,7 +491,7 @@ $(pv_value)</tooltip>
       <enabled>true</enabled>
       <text>Open loop mode</text>
       <font>
-        <fontdata fontName="Lucida Grande" height="10" style="0" />
+        <fontdata fontName="Lucida Grande" height="8" style="0" />
       </font>
       <width>101</width>
       <border_style>0</border_style>
@@ -532,7 +532,7 @@ $(pv_value)</tooltip>
       <enabled>true</enabled>
       <text>Home search in progress</text>
       <font>
-        <fontdata fontName="Lucida Grande" height="10" style="0" />
+        <fontdata fontName="Lucida Grande" height="8" style="0" />
       </font>
       <width>131</width>
       <border_style>0</border_style>
@@ -573,7 +573,7 @@ $(pv_value)</tooltip>
       <enabled>true</enabled>
       <text>Stopped on limit</text>
       <font>
-        <fontdata fontName="Lucida Grande" height="10" style="0" />
+        <fontdata fontName="Lucida Grande" height="8" style="0" />
       </font>
       <width>101</width>
       <border_style>0</border_style>
@@ -614,7 +614,7 @@ $(pv_value)</tooltip>
       <enabled>true</enabled>
       <text>Home complete</text>
       <font>
-        <fontdata fontName="Lucida Grande" height="10" style="0" />
+        <fontdata fontName="Lucida Grande" height="8" style="0" />
       </font>
       <width>101</width>
       <border_style>0</border_style>
@@ -655,7 +655,7 @@ $(pv_value)</tooltip>
       <enabled>true</enabled>
       <text>Fatal following error</text>
       <font>
-        <fontdata fontName="Lucida Grande" height="10" style="0" />
+        <fontdata fontName="Lucida Grande" height="8" style="0" />
       </font>
       <width>101</width>
       <border_style>0</border_style>
@@ -696,7 +696,7 @@ $(pv_value)</tooltip>
       <enabled>true</enabled>
       <text>Warning following error</text>
       <font>
-        <fontdata fontName="Lucida Grande" height="10" style="0" />
+        <fontdata fontName="Lucida Grande" height="8" style="0" />
       </font>
       <width>101</width>
       <border_style>0</border_style>
@@ -737,7 +737,7 @@ $(pv_value)</tooltip>
       <enabled>true</enabled>
       <text>In-position true</text>
       <font>
-        <fontdata fontName="Lucida Grande" height="10" style="0" />
+        <fontdata fontName="Lucida Grande" height="8" style="0" />
       </font>
       <width>101</width>
       <border_style>0</border_style>
@@ -787,7 +787,7 @@ $(pv_value)</tooltip>
       <enabled>true</enabled>
       <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
       <font>
-        <opifont.name fontName="Lucida Grande" height="11" style="0">Default</opifont.name>
+        <opifont.name fontName="Lucida Grande" height="8" style="0">Default</opifont.name>
       </font>
       <width>20</width>
       <border_style>0</border_style>
@@ -840,7 +840,7 @@ $(pv_value)</tooltip>
       <enabled>true</enabled>
       <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
       <font>
-        <opifont.name fontName="Lucida Grande" height="11" style="0">Default</opifont.name>
+        <opifont.name fontName="Lucida Grande" height="8" style="0">Default</opifont.name>
       </font>
       <width>20</width>
       <border_style>0</border_style>
@@ -893,7 +893,7 @@ $(pv_value)</tooltip>
       <enabled>true</enabled>
       <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
       <font>
-        <opifont.name fontName="Lucida Grande" height="11" style="0">Default</opifont.name>
+        <opifont.name fontName="Lucida Grande" height="8" style="0">Default</opifont.name>
       </font>
       <width>20</width>
       <border_style>0</border_style>
@@ -946,7 +946,7 @@ $(pv_value)</tooltip>
       <enabled>true</enabled>
       <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
       <font>
-        <opifont.name fontName="Lucida Grande" height="11" style="0">Default</opifont.name>
+        <opifont.name fontName="Lucida Grande" height="8" style="0">Default</opifont.name>
       </font>
       <width>20</width>
       <border_style>0</border_style>
@@ -999,7 +999,7 @@ $(pv_value)</tooltip>
       <enabled>true</enabled>
       <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
       <font>
-        <opifont.name fontName="Lucida Grande" height="11" style="0">Default</opifont.name>
+        <opifont.name fontName="Lucida Grande" height="8" style="0">Default</opifont.name>
       </font>
       <width>20</width>
       <border_style>0</border_style>
@@ -1052,7 +1052,7 @@ $(pv_value)</tooltip>
       <enabled>true</enabled>
       <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
       <font>
-        <opifont.name fontName="Lucida Grande" height="11" style="0">Default</opifont.name>
+        <opifont.name fontName="Lucida Grande" height="8" style="0">Default</opifont.name>
       </font>
       <width>20</width>
       <border_style>0</border_style>
@@ -1105,7 +1105,7 @@ $(pv_value)</tooltip>
       <enabled>true</enabled>
       <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
       <font>
-        <opifont.name fontName="Lucida Grande" height="11" style="0">Default</opifont.name>
+        <opifont.name fontName="Lucida Grande" height="8" style="0">Default</opifont.name>
       </font>
       <width>20</width>
       <border_style>0</border_style>
@@ -1158,7 +1158,7 @@ $(pv_value)</tooltip>
       <enabled>true</enabled>
       <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
       <font>
-        <opifont.name fontName="Lucida Grande" height="11" style="0">Default</opifont.name>
+        <opifont.name fontName="Lucida Grande" height="8" style="0">Default</opifont.name>
       </font>
       <width>20</width>
       <border_style>0</border_style>
@@ -1211,7 +1211,7 @@ $(pv_value)</tooltip>
       <enabled>true</enabled>
       <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
       <font>
-        <opifont.name fontName="Lucida Grande" height="11" style="0">Default</opifont.name>
+        <opifont.name fontName="Lucida Grande" height="8" style="0">Default</opifont.name>
       </font>
       <width>20</width>
       <border_style>0</border_style>
@@ -1264,7 +1264,7 @@ $(pv_value)</tooltip>
       <enabled>true</enabled>
       <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
       <font>
-        <opifont.name fontName="Lucida Grande" height="11" style="0">Default</opifont.name>
+        <opifont.name fontName="Lucida Grande" height="8" style="0">Default</opifont.name>
       </font>
       <width>20</width>
       <border_style>0</border_style>
@@ -1317,7 +1317,7 @@ $(pv_value)</tooltip>
       <enabled>true</enabled>
       <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
       <font>
-        <opifont.name fontName="Lucida Grande" height="11" style="0">Default</opifont.name>
+        <opifont.name fontName="Lucida Grande" height="8" style="0">Default</opifont.name>
       </font>
       <width>20</width>
       <border_style>0</border_style>
@@ -1362,7 +1362,7 @@ $(pv_value)</tooltip>
       <enabled>true</enabled>
       <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
       <font>
-        <opifont.name fontName="Lucida Grande" height="11" style="0">Default</opifont.name>
+        <opifont.name fontName="Lucida Grande" height="8" style="0">Default</opifont.name>
       </font>
       <width>100</width>
       <border_style>6</border_style>
@@ -1403,7 +1403,7 @@ $(pv_value)</tooltip>
       <text>Detail Status</text>
       <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
       <font>
-        <opifont.name fontName="Lucida Grande" height="11" style="0">Default</opifont.name>
+        <opifont.name fontName="Lucida Grande" height="8" style="0">Default</opifont.name>
       </font>
       <width>78</width>
       <border_style>0</border_style>
