@@ -41,7 +41,7 @@ record(ai, "$(SYS)$(DEV)Pos:Raw-I") {
 # at startup, tell autohome template about this motor
 record(stringout, "$(SYS)$(DEV)Cmd:SetHm-StringOut") {
   field(PINI, "YES")
-  field(VAL, "$(SYS)$(DEV)-Mtr")
+  field(VAL, "$(SYS)$(DEV)")
   field(OUT, "$(SYS)$(DEV)Addr:Homing-I PP")
 }
 
