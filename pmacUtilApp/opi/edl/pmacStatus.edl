@@ -3,10 +3,10 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 1000
-y 128
+x 876
+y 49
 w 560
-h 860
+h 720
 font "helvetica-medium-r-16.0"
 ctlFont "helvetica-bold-r-16.0"
 btnFont "helvetica-medium-r-16.0"
@@ -134,7 +134,7 @@ x 30
 y 3
 w 525
 h 25
-font "helvetica-bold-r-16.0"
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 48
@@ -279,7 +279,7 @@ minor 1
 release 0
 x 5
 y 40
-w 71
+w 77
 h 14
 font "helvetica-medium-r-12.0"
 fontAlign "center"
@@ -341,8 +341,8 @@ bgColor index 3
 inconsistentColor index 0
 topShadowColor index 1
 botShadowColor index 11
-controlPv "$(SYS){$(DEV)}Sts:Read1-FOut_.SCAN"
-indicatorPv "$(SYS){$(DEV)}Sts:Read1-FOut_.SCAN"
+controlPv "$(SYS)\{$(DEV)\}Sts:Read1-FOut_.SCAN"
+indicatorPv "$(SYS)\{$(DEV)\}Sts:Read1-FOut_.SCAN"
 font "helvetica-bold-r-14.0"
 endObjectProperties
 
@@ -354,7 +354,7 @@ minor 1
 release 0
 x 270
 y 40
-w 38
+w 43
 h 14
 font "helvetica-medium-r-12.0"
 fontAlign "center"
@@ -375,7 +375,7 @@ minor 1
 release 0
 x 5
 y 135
-w 87
+w 91
 h 14
 font "helvetica-medium-r-12.0"
 fontAlign "center"
@@ -453,7 +453,7 @@ minor 1
 release 0
 x 5
 y 485
-w 281
+w 288
 h 14
 font "helvetica-medium-r-12.0"
 fontAlign "center"
@@ -476,7 +476,7 @@ x 15
 y 520
 w 285
 h 20
-controlPv "$(SYS){$(DEV)}Val:Pgm-Sts"
+controlPv "$(SYS)\{$(DEV)\}Val:Pgm-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -505,7 +505,7 @@ minor 1
 release 0
 x 31
 y 335
-w 125
+w 118
 h 12
 font "helvetica-medium-r-10.0"
 fgColor index 14
@@ -525,7 +525,7 @@ minor 1
 release 0
 x 31
 y 323
-w 136
+w 128
 h 12
 font "helvetica-medium-r-10.0"
 fgColor index 14
@@ -545,7 +545,7 @@ minor 1
 release 0
 x 31
 y 311
-w 51
+w 50
 h 12
 font "helvetica-medium-r-10.0"
 fgColor index 14
@@ -585,7 +585,7 @@ minor 1
 release 0
 x 31
 y 287
-w 111
+w 108
 h 12
 font "helvetica-medium-r-10.0"
 fgColor index 14
@@ -605,7 +605,7 @@ minor 1
 release 0
 x 31
 y 275
-w 133
+w 130
 h 12
 font "helvetica-medium-r-10.0"
 fgColor index 14
@@ -625,7 +625,7 @@ minor 1
 release 0
 x 31
 y 263
-w 129
+w 131
 h 12
 font "helvetica-medium-r-10.0"
 fgColor index 14
@@ -645,7 +645,7 @@ minor 1
 release 0
 x 31
 y 251
-w 74
+w 73
 h 12
 font "helvetica-medium-r-10.0"
 fgColor index 14
@@ -665,7 +665,7 @@ minor 1
 release 0
 x 31
 y 239
-w 67
+w 68
 h 12
 font "helvetica-medium-r-10.0"
 fgColor index 14
@@ -685,7 +685,7 @@ minor 1
 release 0
 x 31
 y 227
-w 127
+w 129
 h 12
 font "helvetica-medium-r-10.0"
 fgColor index 14
@@ -705,7 +705,7 @@ minor 1
 release 0
 x 31
 y 215
-w 115
+w 116
 h 12
 font "helvetica-medium-r-10.0"
 fgColor index 14
@@ -725,7 +725,7 @@ minor 1
 release 0
 x 31
 y 203
-w 135
+w 131
 h 12
 font "helvetica-medium-r-10.0"
 fgColor index 14
@@ -745,7 +745,7 @@ minor 1
 release 0
 x 31
 y 191
-w 53
+w 56
 h 12
 font "helvetica-medium-r-10.0"
 fgColor index 14
@@ -765,7 +765,7 @@ minor 1
 release 0
 x 31
 y 179
-w 73
+w 72
 h 12
 font "helvetica-medium-r-10.0"
 fgColor index 14
@@ -787,7 +787,7 @@ x 15
 y 155
 w 12
 h 192
-controlPv "$(SYS){$(DEV)}Sts:1-Sts"
+controlPv "$(SYS)\{$(DEV)\}Sts:1-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -802,7 +802,7 @@ minor 1
 release 0
 x 31
 y 167
-w 127
+w 125
 h 12
 font "helvetica-medium-r-10.0"
 fgColor index 14
@@ -822,7 +822,7 @@ minor 1
 release 0
 x 31
 y 155
-w 115
+w 116
 h 12
 font "helvetica-medium-r-10.0"
 fgColor index 14
@@ -855,7 +855,7 @@ minor 1
 release 0
 x 201
 y 335
-w 67
+w 69
 h 12
 font "helvetica-medium-r-10.0"
 fgColor index 14
@@ -875,7 +875,7 @@ minor 1
 release 0
 x 201
 y 323
-w 76
+w 78
 h 12
 font "helvetica-medium-r-10.0"
 fgColor index 14
@@ -895,7 +895,7 @@ minor 1
 release 0
 x 201
 y 311
-w 113
+w 116
 h 12
 font "helvetica-medium-r-10.0"
 fgColor index 14
@@ -915,7 +915,7 @@ minor 1
 release 0
 x 201
 y 299
-w 87
+w 90
 h 12
 font "helvetica-medium-r-10.0"
 fgColor index 14
@@ -975,7 +975,7 @@ minor 1
 release 0
 x 201
 y 263
-w 54
+w 52
 h 12
 font "helvetica-medium-r-10.0"
 fgColor index 14
@@ -995,7 +995,7 @@ minor 1
 release 0
 x 201
 y 251
-w 69
+w 65
 h 12
 font "helvetica-medium-r-10.0"
 fgColor index 14
@@ -1015,7 +1015,7 @@ minor 1
 release 0
 x 201
 y 239
-w 92
+w 91
 h 12
 font "helvetica-medium-r-10.0"
 fgColor index 14
@@ -1035,7 +1035,7 @@ minor 1
 release 0
 x 201
 y 227
-w 90
+w 89
 h 12
 font "helvetica-medium-r-10.0"
 fgColor index 14
@@ -1055,7 +1055,7 @@ minor 1
 release 0
 x 201
 y 215
-w 115
+w 116
 h 12
 font "helvetica-medium-r-10.0"
 fgColor index 14
@@ -1075,7 +1075,7 @@ minor 1
 release 0
 x 201
 y 203
-w 93
+w 91
 h 12
 font "helvetica-medium-r-10.0"
 fgColor index 14
@@ -1115,7 +1115,7 @@ minor 1
 release 0
 x 201
 y 167
-w 119
+w 114
 h 12
 font "helvetica-medium-r-10.0"
 fgColor index 14
@@ -1135,7 +1135,7 @@ minor 1
 release 0
 x 201
 y 155
-w 89
+w 90
 h 12
 font "helvetica-medium-r-10.0"
 fgColor index 14
@@ -1157,7 +1157,7 @@ x 185
 y 155
 w 12
 h 192
-controlPv "$(SYS){$(DEV)}Sts:2-Sts"
+controlPv "$(SYS)\{$(DEV)\}Sts:2-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -1172,7 +1172,7 @@ minor 1
 release 0
 x 201
 y 179
-w 162
+w 158
 h 12
 font "helvetica-medium-r-10.0"
 fgColor index 14
@@ -1205,7 +1205,7 @@ minor 1
 release 0
 x 385
 y 336
-w 115
+w 116
 h 12
 font "helvetica-medium-r-10.0"
 fgColor index 14
@@ -1225,7 +1225,7 @@ minor 1
 release 0
 x 385
 y 323
-w 115
+w 116
 h 12
 font "helvetica-medium-r-10.0"
 fgColor index 14
@@ -1245,7 +1245,7 @@ minor 1
 release 0
 x 385
 y 311
-w 115
+w 116
 h 12
 font "helvetica-medium-r-10.0"
 fgColor index 14
@@ -1265,7 +1265,7 @@ minor 1
 release 0
 x 385
 y 299
-w 115
+w 116
 h 12
 font "helvetica-medium-r-10.0"
 fgColor index 14
@@ -1285,7 +1285,7 @@ minor 1
 release 0
 x 385
 y 287
-w 115
+w 116
 h 12
 font "helvetica-medium-r-10.0"
 fgColor index 14
@@ -1305,7 +1305,7 @@ minor 1
 release 0
 x 385
 y 275
-w 115
+w 116
 h 12
 font "helvetica-medium-r-10.0"
 fgColor index 14
@@ -1325,7 +1325,7 @@ minor 1
 release 0
 x 385
 y 263
-w 115
+w 116
 h 12
 font "helvetica-medium-r-10.0"
 fgColor index 14
@@ -1345,7 +1345,7 @@ minor 1
 release 0
 x 385
 y 251
-w 115
+w 116
 h 12
 font "helvetica-medium-r-10.0"
 fgColor index 14
@@ -1365,7 +1365,7 @@ minor 1
 release 0
 x 385
 y 239
-w 115
+w 116
 h 12
 font "helvetica-medium-r-10.0"
 fgColor index 14
@@ -1385,7 +1385,7 @@ minor 1
 release 0
 x 385
 y 227
-w 115
+w 116
 h 12
 font "helvetica-medium-r-10.0"
 fgColor index 14
@@ -1405,7 +1405,7 @@ minor 1
 release 0
 x 385
 y 215
-w 115
+w 116
 h 12
 font "helvetica-medium-r-10.0"
 fgColor index 14
@@ -1425,7 +1425,7 @@ minor 1
 release 0
 x 385
 y 203
-w 115
+w 116
 h 12
 font "helvetica-medium-r-10.0"
 fgColor index 14
@@ -1445,7 +1445,7 @@ minor 1
 release 0
 x 385
 y 191
-w 76
+w 72
 h 12
 font "helvetica-medium-r-10.0"
 fgColor index 14
@@ -1465,7 +1465,7 @@ minor 1
 release 0
 x 385
 y 179
-w 137
+w 139
 h 12
 font "helvetica-medium-r-10.0"
 fgColor index 14
@@ -1485,7 +1485,7 @@ minor 1
 release 0
 x 385
 y 167
-w 81
+w 79
 h 12
 font "helvetica-medium-r-10.0"
 fgColor index 14
@@ -1505,7 +1505,7 @@ minor 1
 release 0
 x 385
 y 155
-w 81
+w 79
 h 12
 font "helvetica-medium-r-10.0"
 fgColor index 14
@@ -1527,7 +1527,7 @@ x 370
 y 155
 w 12
 h 192
-controlPv "$(SYS){$(DEV)}Sts:3-Sts"
+controlPv "$(SYS)\{$(DEV)\}Sts:3-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -1565,7 +1565,7 @@ value {
 }
 endObjectProperties
 
-# (Textupdate)
+# (Text Update)
 object TextupdateClass
 beginObjectProperties
 major 10
@@ -1575,7 +1575,7 @@ x 100
 y 55
 w 155
 h 30
-controlPv "$(SYS){$(DEV)}Type:PMAC-Sts"
+controlPv "$(SYS)\{$(DEV)\}Type:PMAC-Sts"
 fgColor index 16
 fgAlarm
 bgColor index 10
@@ -1584,7 +1584,7 @@ font "helvetica-bold-r-14.0"
 fontAlign "center"
 endObjectProperties
 
-# (Textupdate)
+# (Text Update)
 object TextupdateClass
 beginObjectProperties
 major 10
@@ -1594,7 +1594,7 @@ x 100
 y 90
 w 155
 h 30
-controlPv "$(SYS){$(DEV)}Val:CPULoad-I"
+controlPv "$(SYS)\{$(DEV)\}Val:CPULoad-I"
 fgColor index 16
 fgAlarm
 bgColor index 10
@@ -1603,7 +1603,7 @@ font "helvetica-bold-r-14.0"
 fontAlign "center"
 endObjectProperties
 
-# (Textupdate)
+# (Text Update)
 object TextupdateClass
 beginObjectProperties
 major 10
@@ -1613,7 +1613,7 @@ x 420
 y 90
 w 130
 h 30
-controlPv "$(SYS){$(DEV)}Cnt:MACRO_Err-I"
+controlPv "$(SYS)\{$(DEV)\}Cnt:MACRO_Err-I"
 fgColor index 16
 fgAlarm
 bgColor index 10
@@ -1645,7 +1645,7 @@ minor 1
 release 0
 x 5
 y 365
-w 96
+w 97
 h 14
 font "helvetica-medium-r-12.0"
 fontAlign "center"
@@ -1668,7 +1668,7 @@ x 15
 y 400
 w 285
 h 20
-controlPv "$(SYS){$(DEV)}Dsbl:PLC_W0-Sts"
+controlPv "$(SYS)\{$(DEV)\}Dsbl:PLC_W0-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -1706,7 +1706,7 @@ x 15
 y 445
 w 285
 h 20
-controlPv "$(SYS){$(DEV)}Dsbl:PLC_W1-Sts"
+controlPv "$(SYS)\{$(DEV)\}Dsbl:PLC_W1-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -1773,7 +1773,7 @@ endObjectProperties
 object activeXTextDspClass:noedit
 beginObjectProperties
 major 4
-minor 4
+minor 5
 release 0
 x 185
 y 800
@@ -1799,7 +1799,7 @@ minor 1
 release 0
 x 10
 y 800
-w 126
+w 131
 h 12
 font "helvetica-medium-r-10.0"
 fgColor index 14
@@ -1819,7 +1819,7 @@ minor 1
 release 0
 x 10
 y 815
-w 117
+w 120
 h 12
 font "helvetica-medium-r-10.0"
 fgColor index 14
@@ -1835,7 +1835,7 @@ endObjectProperties
 object activeXTextDspClass:noedit
 beginObjectProperties
 major 4
-minor 4
+minor 5
 release 0
 x 185
 y 815
@@ -1861,7 +1861,7 @@ minor 1
 release 0
 x 10
 y 725
-w 118
+w 123
 h 12
 font "helvetica-medium-r-10.0"
 fgColor index 14
@@ -1877,13 +1877,13 @@ endObjectProperties
 object activeXTextDspClass:noedit
 beginObjectProperties
 major 4
-minor 4
+minor 5
 release 0
 x 185
 y 725
 w 120
 h 12
-controlPv "$(SYS){$(DEV)}Sts:PLC_Ctrl-Sts"
+controlPv "$(SYS)\{$(DEV)\}Sts:PLC_Ctrl-Sts"
 font "helvetica-medium-r-10.0"
 fgColor index 16
 bgColor index 10
@@ -1900,13 +1900,13 @@ endObjectProperties
 object activeXTextDspClass:noedit
 beginObjectProperties
 major 4
-minor 4
+minor 5
 release 0
 x 185
 y 755
 w 120
 h 12
-controlPv "$(SYS){$(DEV)}Mode:ErrRep-Sts"
+controlPv "$(SYS)\{$(DEV)\}Mode:ErrRep-Sts"
 font "helvetica-medium-r-10.0"
 fgColor index 16
 bgColor index 10
@@ -1922,13 +1922,13 @@ endObjectProperties
 object activeXTextDspClass:noedit
 beginObjectProperties
 major 4
-minor 4
+minor 5
 release 0
 x 185
 y 740
 w 120
 h 12
-controlPv "$(SYS){$(DEV)}Val:IO_HndShk-Sts"
+controlPv "$(SYS)\{$(DEV)\}Val:IO_HndShk-Sts"
 font "helvetica-medium-r-10.0"
 fgColor index 16
 bgColor index 10
@@ -1948,7 +1948,7 @@ minor 1
 release 0
 x 10
 y 740
-w 123
+w 127
 h 12
 font "helvetica-medium-r-10.0"
 fgColor index 14
@@ -1968,7 +1968,7 @@ minor 1
 release 0
 x 10
 y 755
-w 119
+w 123
 h 12
 font "helvetica-medium-r-10.0"
 fgColor index 14
@@ -1984,7 +1984,7 @@ endObjectProperties
 object activeXTextDspClass:noedit
 beginObjectProperties
 major 4
-minor 4
+minor 5
 release 0
 x 185
 y 770
@@ -2006,7 +2006,7 @@ endObjectProperties
 object activeXTextDspClass:noedit
 beginObjectProperties
 major 4
-minor 4
+minor 5
 release 0
 x 185
 y 785
@@ -2032,7 +2032,7 @@ minor 1
 release 0
 x 10
 y 785
-w 129
+w 133
 h 12
 font "helvetica-medium-r-10.0"
 fgColor index 14
@@ -2052,7 +2052,7 @@ minor 1
 release 0
 x 10
 y 770
-w 173
+w 177
 h 12
 font "helvetica-medium-r-10.0"
 fgColor index 14
@@ -2072,7 +2072,7 @@ minor 1
 release 0
 x 5
 y 710
-w 97
+w 101
 h 14
 font "helvetica-medium-r-12.0"
 fontAlign "center"
@@ -2102,7 +2102,7 @@ beginGroup
 object relatedDisplayClass
 beginObjectProperties
 major 4
-minor 2
+minor 3
 release 0
 x 320
 y 365
@@ -2138,7 +2138,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(SYS){$(DEV)}Cnt:Axes-I"
+visPv "$(SYS)\{$(DEV)\}Cnt:Axes-I"
 visInvert
 visMin "0"
 visMax "1"
@@ -2161,7 +2161,7 @@ beginGroup
 object relatedDisplayClass
 beginObjectProperties
 major 4
-minor 2
+minor 3
 release 0
 x 320
 y 400
@@ -2197,7 +2197,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(SYS){$(DEV)}Cnt:Axes-I"
+visPv "$(SYS)\{$(DEV)\}Cnt:Axes-I"
 visInvert
 visMin "0"
 visMax "5"
@@ -2220,7 +2220,7 @@ beginGroup
 object relatedDisplayClass
 beginObjectProperties
 major 4
-minor 2
+minor 3
 release 0
 x 320
 y 435
@@ -2256,7 +2256,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(SYS){$(DEV)}Cnt:Axes-I"
+visPv "$(SYS)\{$(DEV)\}Cnt:Axes-I"
 visInvert
 visMin "0"
 visMax "9"
@@ -2279,7 +2279,7 @@ beginGroup
 object relatedDisplayClass
 beginObjectProperties
 major 4
-minor 2
+minor 3
 release 0
 x 320
 y 470
@@ -2315,7 +2315,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(SYS){$(DEV)}Cnt:Axes-I"
+visPv "$(SYS)\{$(DEV)\}Cnt:Axes-I"
 visInvert
 visMin "0"
 visMax "13"
@@ -2338,7 +2338,7 @@ beginGroup
 object relatedDisplayClass
 beginObjectProperties
 major 4
-minor 2
+minor 3
 release 0
 x 320
 y 505
@@ -2374,7 +2374,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(SYS){$(DEV)}Cnt:Axes-I"
+visPv "$(SYS)\{$(DEV)\}Cnt:Axes-I"
 visInvert
 visMin "0"
 visMax "17"
@@ -2397,7 +2397,7 @@ beginGroup
 object relatedDisplayClass
 beginObjectProperties
 major 4
-minor 2
+minor 3
 release 0
 x 320
 y 540
@@ -2433,7 +2433,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(SYS){$(DEV)}Cnt:Axes-I"
+visPv "$(SYS)\{$(DEV)\}Cnt:Axes-I"
 visInvert
 visMin "0"
 visMax "21"
@@ -2456,7 +2456,7 @@ beginGroup
 object relatedDisplayClass
 beginObjectProperties
 major 4
-minor 2
+minor 3
 release 0
 x 320
 y 575
@@ -2492,7 +2492,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(SYS){$(DEV)}Cnt:Axes-I"
+visPv "$(SYS)\{$(DEV)\}Cnt:Axes-I"
 visInvert
 visMin "0"
 visMax "25"
@@ -2515,7 +2515,7 @@ beginGroup
 object relatedDisplayClass
 beginObjectProperties
 major 4
-minor 2
+minor 3
 release 0
 x 320
 y 610
@@ -2551,7 +2551,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(SYS){$(DEV)}Cnt:Axes-I"
+visPv "$(SYS)\{$(DEV)\}Cnt:Axes-I"
 visInvert
 visMin "0"
 visMax "29"
@@ -2561,7 +2561,7 @@ endObjectProperties
 object activeXTextDspClass:noedit
 beginObjectProperties
 major 4
-minor 4
+minor 5
 release 0
 x 185
 y 830
@@ -2588,7 +2588,7 @@ minor 1
 release 0
 x 10
 y 830
-w 153
+w 156
 h 12
 font "helvetica-medium-r-10.0"
 fgColor index 14
@@ -2623,7 +2623,7 @@ minor 1
 release 0
 x 5
 y 560
-w 144
+w 147
 h 14
 font "helvetica-medium-r-12.0"
 fontAlign "center"
@@ -2646,7 +2646,7 @@ x 15
 y 595
 w 285
 h 20
-controlPv "$(SYS){$(DEV)}In:GPIO-Sts"
+controlPv "$(SYS)\{$(DEV)\}In:GPIO-Sts"
 lineColor index 14
 onColor index 15
 offColor index 19
@@ -2697,7 +2697,7 @@ minor 1
 release 0
 x 5
 y 635
-w 154
+w 157
 h 14
 font "helvetica-medium-r-12.0"
 fontAlign "center"
@@ -2720,7 +2720,7 @@ x 15
 y 670
 w 285
 h 20
-controlPv "$(SYS){$(DEV)}Out:GPIO-Sel"
+controlPv "$(SYS)\{$(DEV)\}Out:GPIO-Sel"
 lineColor index 14
 onColor index 15
 offColor index 19
