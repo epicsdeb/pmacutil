@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 668
-y 129
+x 672
+y 153
 w 430
 h 515
 font "arial-medium-r-16.0"
@@ -291,7 +291,7 @@ bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
 label "EXIT"
-font "arial-medium-r-18.0"
+font "helvetica-medium-r-12.0"
 3d
 endObjectProperties
 
@@ -2334,5 +2334,44 @@ bgColor index 10
 fill
 font "helvetica-medium-r-12.0"
 fontAlign "center"
+endObjectProperties
+
+# (Menu Button)
+object activeMenuButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 70
+y 485
+w 90
+h 25
+fgColor index 14
+bgColor index 3
+inconsistentColor index 5
+topShadowColor index 1
+botShadowColor index 11
+controlPv "$(SYS)\{$(DEV)-Ax:$(AXIS)\}RB-Seq_.SCAN"
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 5
+y 490
+w 54
+h 14
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "Scan rate"
+}
+autoSize
 endObjectProperties
 
