@@ -9,26 +9,26 @@
 # % macro, AXIS,    Axis number
 # % macro, PORT,    Asyn port
 
-record(ai, "$(SYS){$(DEV)}Pos-I") {
+record(ai, "$(SYS)$(DEV)Pos-I") {
   field(DTYP, "stream")
   field(INP, "@pmac.proto getVar(#$(AXIS)P) $(PORT)")
 }
 
-record(ai, "$(SYS){$(DEV)}Val:FollErr-I") {
+record(ai, "$(SYS)$(DEV)Val:FollErr-I") {
   field(DTYP, "stream")
   field(INP, "@pmac.proto getVar(#$(AXIS)F) $(PORT)")
 }
 
-record(ai, "$(SYS){$(DEV)}Val:Vlcty-I") {
+record(ai, "$(SYS)$(DEV)Val:Vlcty-I") {
   field(DTYP, "stream")
   field(INP, "@pmac.proto getVar(#$(AXIS)V) $(PORT)")
 }
 
-record(seq, "$(SYS){$(DEV)}RB-Seq_") {
-  field(LNK1, "$(SYS){$(DEV)}Pos-I.PROC PP")
-  field(LNK2, "$(SYS){$(DEV)}Val:FollErr-I.PROC PP")
-  field(LNK3, "$(SYS){$(DEV)}Val:Vlcty-I.PROC PP")
-  field(LNK4, "$(SYS){$(DEV)}Sts:1-Sts.PROC PP")
+record(seq, "$(SYS)$(DEV)RB-Seq_") {
+  field(LNK1, "$(SYS)$(DEV)Pos-I.PROC PP")
+  field(LNK2, "$(SYS)$(DEV)Val:FollErr-I.PROC PP")
+  field(LNK3, "$(SYS)$(DEV)Val:Vlcty-I.PROC PP")
+  field(LNK4, "$(SYS)$(DEV)Sts:1-Sts.PROC PP")
   field(DLY1, "0")
   field(DLY2, "0.5")
   field(DLY3, "0.5")
@@ -39,14 +39,21 @@ record(seq, "$(SYS){$(DEV)}RB-Seq_") {
   field(DOL4, "1")
 }
 
-record(mbbiDirect, "$(SYS){$(DEV)}Sts:1-Sts") {
+record(mbbiDirect, "$(SYS)$(DEV)Sts:1-Sts") {
   field(DTYP, "stream")
-  field(INP, "@pmac.proto getStatus(#$(AXIS)?,$(SYS){$(DEV)}) $(PORT)")
+  field(INP, "@pmac.proto getAxisStatus1(#$(AXIS)?) $(PORT)")
+  field(FLNK, "$(SYS)$(DEV)Sts:2-Sts")
 }
 
-record(mbbiDirect, "$(SYS){$(DEV)}Sts:2-Sts") {
+record(mbbiDirect, "$(SYS)$(DEV)Sts:2-Sts") {
+  field(DTYP, "stream")
+  field(INP, "@pmac.proto getAxisStatus2(#$(AXIS)?) $(PORT)")
+  field(FLNK, "$(SYS)$(DEV)Sts:3-Sts")
+
 }
 
-record(mbbiDirect, "$(SYS){$(DEV)}Sts:3-Sts") {
+record(mbbiDirect, "$(SYS)$(DEV)Sts:3-Sts") {
+  field(DTYP, "stream")
+  field(INP, "@pmac.proto getAxisStatus3(#$(AXIS)?) $(PORT)")
 }
 
