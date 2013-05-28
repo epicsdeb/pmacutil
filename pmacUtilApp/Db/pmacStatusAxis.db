@@ -28,7 +28,7 @@ record(seq, "$(SYS)$(DEV)RB-Seq_") {
   field(LNK1, "$(SYS)$(DEV)Pos-I.PROC PP")
   field(LNK2, "$(SYS)$(DEV)Val:FollErr-I.PROC PP")
   field(LNK3, "$(SYS)$(DEV)Val:Vlcty-I.PROC PP")
-  field(LNK4, "$(SYS)$(DEV)Sts:1-Sts.PROC PP")
+  field(LNK4, "$(SYS)$(DEV)Sts:Word-Sts.PROC PP")
   field(DLY1, "0")
   field(DLY2, "0.5")
   field(DLY3, "0.5")
@@ -39,21 +39,41 @@ record(seq, "$(SYS)$(DEV)RB-Seq_") {
   field(DOL4, "1")
 }
 
-record(mbbiDirect, "$(SYS)$(DEV)Sts:1-Sts") {
+record(stringin, "$(SYS)$(DEV)Sts:Word-Sts") {
   field(DTYP, "stream")
-  field(INP, "@pmac.proto getAxisStatus1(#$(AXIS)?) $(PORT)")
-  field(FLNK, "$(SYS)$(DEV)Sts:2-Sts")
+  field(INP,  "@pmac.proto getAxisStatus(#$(AXIS)?) $(PORT)")
+}
+
+field(sCalcout, "$(SYS)$(DEV)Sts:1-SCalcout") {
+  field(INAA, "$(SYS)$(DEV)Sts:Word-Sts CPP")
+  field(CALC, "sscanf(A,'%4x%8*x'))
+  field(OUT,  "$(SYS)$(DEV)Sts:1-Sts PP")
+  field(OOPT, "On Change")
+  field(DOPT, "Use CALC")
+}
+
+record(mbbiDirect, "$(SYS)$(DEV)Sts:1-Sts") {
+}
+
+field(sCalcout, "$(SYS)$(DEV)Sts:2-SCalcout") {
+  field(INAA, "$(SYS)$(DEV)Sts:Word-Sts CPP")
+  field(CALC, "sscanf(A,'%*4x%4x%4*x'))
+  field(OUT,  "$(SYS)$(DEV)Sts:2-Sts PP")
+  field(OOPT, "On Change")
+  field(DOPT, "Use CALC")
 }
 
 record(mbbiDirect, "$(SYS)$(DEV)Sts:2-Sts") {
-  field(DTYP, "stream")
-  field(INP, "@pmac.proto getAxisStatus2(#$(AXIS)?) $(PORT)")
-  field(FLNK, "$(SYS)$(DEV)Sts:3-Sts")
+}
 
+field(sCalcout, "$(SYS)$(DEV)Sts:3-SCalcout") {
+  field(INAA, "$(SYS)$(DEV)Sts:Word-Sts CPP")
+  field(CALC, "sscanf(A,'%*8x%4x'))
+  field(OUT,  "$(SYS)$(DEV)Sts:3-Sts PP")
+  field(OOPT, "On Change")
+  field(DOPT, "Use CALC")
 }
 
 record(mbbiDirect, "$(SYS)$(DEV)Sts:3-Sts") {
-  field(DTYP, "stream")
-  field(INP, "@pmac.proto getAxisStatus3(#$(AXIS)?) $(PORT)")
 }
 
