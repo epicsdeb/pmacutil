@@ -341,8 +341,8 @@ bgColor index 3
 inconsistentColor index 0
 topShadowColor index 1
 botShadowColor index 11
-controlPv "$(SYS)\{$(DEV)\}Sts:Read1-FOut_.SCAN"
-indicatorPv "$(SYS)\{$(DEV)\}Sts:Read1-FOut_.SCAN"
+controlPv "$(SYS)\{$(DEV)\}Sts:Read1-FOut.SCAN"
+indicatorPv "$(SYS)\{$(DEV)\}Sts:Read1-FOut.SCAN"
 font "helvetica-bold-r-14.0"
 endObjectProperties
 
