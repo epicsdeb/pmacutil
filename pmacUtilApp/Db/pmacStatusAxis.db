@@ -44,34 +44,19 @@ record(stringin, "$(SYS)$(DEV)Sts:Word-Sts") {
   field(INP,  "@pmac.proto getAxisStatus(#$(AXIS)?) $(PORT)")
 }
 
-field(sCalcout, "$(SYS)$(DEV)Sts:1-SCalcout") {
+record(scalcout, "$(SYS)$(DEV)Sts:1-Sts") {
   field(INAA, "$(SYS)$(DEV)Sts:Word-Sts CPP")
-  field(CALC, "sscanf(A,'%4x%8*x'))
-  field(OUT,  "$(SYS)$(DEV)Sts:1-Sts PP")
-  field(OOPT, "On Change")
-  field(DOPT, "Use CALC")
+  field(CALC, "sscanf(AA,'%4x%8*x')")
 }
 
-record(mbbiDirect, "$(SYS)$(DEV)Sts:1-Sts") {
-}
-
-field(sCalcout, "$(SYS)$(DEV)Sts:2-SCalcout") {
+record(scalcout, "$(SYS)$(DEV)Sts:2-Sts") {
   field(INAA, "$(SYS)$(DEV)Sts:Word-Sts CPP")
-  field(CALC, "sscanf(A,'%*4x%4x%4*x'))
-  field(OUT,  "$(SYS)$(DEV)Sts:2-Sts PP")
-  field(OOPT, "On Change")
-  field(DOPT, "Use CALC")
+  field(CALC, "sscanf(AA,'%*4x%4x%4*x')")
 }
 
-record(mbbiDirect, "$(SYS)$(DEV)Sts:2-Sts") {
-}
-
-field(sCalcout, "$(SYS)$(DEV)Sts:3-SCalcout") {
+record(scalcout, "$(SYS)$(DEV)Sts:3-Sts") {
   field(INAA, "$(SYS)$(DEV)Sts:Word-Sts CPP")
-  field(CALC, "sscanf(A,'%*8x%4x'))
-  field(OUT,  "$(SYS)$(DEV)Sts:3-Sts PP")
-  field(OOPT, "On Change")
-  field(DOPT, "Use CALC")
+  field(CALC, "sscanf(AA,'%*8x%4x')")
 }
 
 record(mbbiDirect, "$(SYS)$(DEV)Sts:3-Sts") {
