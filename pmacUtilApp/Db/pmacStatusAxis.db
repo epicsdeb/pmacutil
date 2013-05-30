@@ -24,7 +24,7 @@ record(ai, "$(SYS)$(DEV)Val:Vlcty-I") {
   field(INP, "@pmac.proto getVar(#$(AXIS)V) $(PORT)")
 }
 
-record(seq, "$(SYS)$(DEV)RB-Seq_") {
+record(seq, "$(SYS)$(DEV)RB-Seq") {
   field(LNK1, "$(SYS)$(DEV)Pos-I.PROC PP")
   field(LNK2, "$(SYS)$(DEV)Val:FollErr-I.PROC PP")
   field(LNK3, "$(SYS)$(DEV)Val:Vlcty-I.PROC PP")
@@ -57,8 +57,5 @@ record(scalcout, "$(SYS)$(DEV)Sts:2-Sts") {
 record(scalcout, "$(SYS)$(DEV)Sts:3-Sts") {
   field(INAA, "$(SYS)$(DEV)Sts:Word-Sts CPP")
   field(CALC, "sscanf(AA,'%*8x%4x')")
-}
-
-record(mbbiDirect, "$(SYS)$(DEV)Sts:3-Sts") {
 }
 

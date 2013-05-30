@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 672
-y 153
+x 676
+y 177
 w 430
 h 515
 font "arial-medium-r-16.0"
@@ -2351,7 +2351,7 @@ bgColor index 3
 inconsistentColor index 5
 topShadowColor index 1
 botShadowColor index 11
-controlPv "$(SYS)\{$(DEV)-Ax:$(AXIS)\}RB-Seq_.SCAN"
+controlPv "$(SYS)\{$(DEV)-Ax:$(AXIS)\}RB-Seq.SCAN"
 font "helvetica-medium-r-12.0"
 endObjectProperties
 
