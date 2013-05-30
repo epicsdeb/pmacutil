@@ -27,11 +27,11 @@ record(ai, "$(SYS)$(DEV)Val:Vlcty-I") {
   field(INP, "@pmac.proto getVar(#$(AXIS)V) $(PORT)")
 }
 
-record(seq, "$(SYS)$(DEV)RB-Seq_") {
+record(seq, "$(SYS)$(DEV)RB-Seq") {
   field(LNK1, "$(SYS)$(DEV)Pos-I.PROC PP")
   field(LNK2, "$(SYS)$(DEV)Val:FollErr-I.PROC PP")
   field(LNK3, "$(SYS)$(DEV)Val:Vlcty-I.PROC PP")
-  field(LNK4, "$(SYS)$(DEV)Sts:1-Sts.PROC PP")
+  field(LNK4, "$(SYS)$(DEV)Sts:Word-Sts.PROC PP")
   field(DLY1, "0")
   field(DLY2, "0.5")
   field(DLY3, "0.5")
@@ -42,21 +42,23 @@ record(seq, "$(SYS)$(DEV)RB-Seq_") {
   field(DOL4, "1")
 }
 
-record(mbbiDirect, "$(SYS)$(DEV)Sts:1-Sts") {
+record(stringin, "$(SYS)$(DEV)Sts:Word-Sts") {
   field(DTYP, "stream")
-  field(INP, "@pmac.proto getAxisStatus1(#$(AXIS)?) $(PORT)")
-  field(FLNK, "$(SYS)$(DEV)Sts:2-Sts")
+  field(INP,  "@pmac.proto getAxisStatus(#$(AXIS)?) $(PORT)")
 }
 
-record(mbbiDirect, "$(SYS)$(DEV)Sts:2-Sts") {
-  field(DTYP, "stream")
-  field(INP, "@pmac.proto getAxisStatus2(#$(AXIS)?) $(PORT)")
-  field(FLNK, "$(SYS)$(DEV)Sts:3-Sts")
-
+record(scalcout, "$(SYS)$(DEV)Sts:1-Sts") {
+  field(INAA, "$(SYS)$(DEV)Sts:Word-Sts CPP")
+  field(CALC, "sscanf(AA,'%4x%8*x')")
 }
 
-record(mbbiDirect, "$(SYS)$(DEV)Sts:3-Sts") {
-  field(DTYP, "stream")
-  field(INP, "@pmac.proto getAxisStatus3(#$(AXIS)?) $(PORT)")
+record(scalcout, "$(SYS)$(DEV)Sts:2-Sts") {
+  field(INAA, "$(SYS)$(DEV)Sts:Word-Sts CPP")
+  field(CALC, "sscanf(AA,'%*4x%4x%4*x')")
+}
+
+record(scalcout, "$(SYS)$(DEV)Sts:3-Sts") {
+  field(INAA, "$(SYS)$(DEV)Sts:Word-Sts CPP")
+  field(CALC, "sscanf(AA,'%*8x%4x')")
 }
 

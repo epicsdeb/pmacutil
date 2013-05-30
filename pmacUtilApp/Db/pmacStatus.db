@@ -229,14 +229,14 @@ record(mbbi, "$(SYS){$(PMAC)}Mode:ErrRep-Sts") {
 }
 
 record(seq, "$(SYS){$(PMAC)-Ax:RB1}-Seq_") {
-  field(LNK1, "$(SYS){$(PMAC)-Ax:1}RB-Seq_.PROC PP")
-  field(LNK2, "$(SYS){$(PMAC)-Ax:2}RB-Seq_.PROC PP")
-  field(LNK3, "$(SYS){$(PMAC)-Ax:3}RB-Seq_.PROC PP")
-  field(LNK4, "$(SYS){$(PMAC)-Ax:4}RB-Seq_.PROC PP")
-  field(LNK5, "$(SYS){$(PMAC)-Ax:5}RB-Seq_.PROC PP")
-  field(LNK6, "$(SYS){$(PMAC)-Ax:6}RB-Seq_.PROC PP")
-  field(LNK7, "$(SYS){$(PMAC)-Ax:7}RB-Seq_.PROC PP")
-  field(LNK8, "$(SYS){$(PMAC)-Ax:8}RB-Seq_.PROC PP")
+  field(LNK1, "$(SYS){$(PMAC)-Ax:1}RB-Seq.PROC PP")
+  field(LNK2, "$(SYS){$(PMAC)-Ax:2}RB-Seq.PROC PP")
+  field(LNK3, "$(SYS){$(PMAC)-Ax:3}RB-Seq.PROC PP")
+  field(LNK4, "$(SYS){$(PMAC)-Ax:4}RB-Seq.PROC PP")
+  field(LNK5, "$(SYS){$(PMAC)-Ax:5}RB-Seq.PROC PP")
+  field(LNK6, "$(SYS){$(PMAC)-Ax:6}RB-Seq.PROC PP")
+  field(LNK7, "$(SYS){$(PMAC)-Ax:7}RB-Seq.PROC PP")
+  field(LNK8, "$(SYS){$(PMAC)-Ax:8}RB-Seq.PROC PP")
   field(DLY1, "0")
   field(DLY2, "0.5")
   field(DLY3, "0.5")

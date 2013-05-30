@@ -30,22 +30,10 @@ getStatus
   in "%4x%(\$2Sts:2-Sts.VAL)4x%(\$2Sts:3-Sts.VAL)4x";
 }
 
-getAxisStatus1
+getAxisStatus
 {
   out "\$1" CR;
-  in "%4x%*4x%*4x";
-}
-
-getAxisStatus2
-{
-  out "\$1" CR;
-  in "%*4x%4x%*4x";
-}
-
-getAxisStatus3
-{
-  out "\$1" CR;
-  in "%*4x%*4x%4x";
+  in "%12s";
 }
 
 getPlcsDisabled1
