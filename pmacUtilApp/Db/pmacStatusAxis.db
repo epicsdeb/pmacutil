@@ -3,11 +3,14 @@
 #! DBD("../../dbd/pmacUtil.dbd")
 #! DBDEND
 
+# This database provides detailed status for each axis in the PMAC, and is used
+# in conjunction with pmacStatusAxis.[edl|opi]
 
-# % macro, SYS,  	System name
-# % macro, DEV,		Device and axis name
+# % macro, SYS,  	System name - Secondary subsystem should be CT
+# % macro, DEV,		Device and axis number - Device should be MC:xxx
 # % macro, AXIS,    Axis number
 # % macro, PORT,    Asyn port
+
 
 record(ai, "$(SYS)$(DEV)Pos-I") {
   field(DTYP, "stream")

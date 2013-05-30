@@ -4,8 +4,8 @@
 #! DBDEND
 
 ######## MACROS ###########
-# SYS:	PV system name
-# DEV:	PV device name
+# SYS:	PV system name - same as for motor record
+# DEV:	PV device name - same as for motor record
 # PORT: asyn port name to the PMAC (for instance PMAC_S0)
 # AXIS: PMAC axis number to request the status word for
 
