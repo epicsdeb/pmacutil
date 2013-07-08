@@ -1,12 +1,11 @@
 syntax: glob 
 *.orig
 fls/*
-O.linux-x86/
+O.linux-x86*/
 dbd/
 db/
-lib/linux-x86/
+lib/linux-x86*/
 O.Common/
-O.linux-x86/
 *.swp
 qt/
 *.edl~

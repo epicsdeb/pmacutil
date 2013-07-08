@@ -36,6 +36,23 @@ CLEAR
     ; RTI task duty cycle
     P$(PLC)74=P$(PLC)71+P$(PLC)72+P$(PLC)73 ; Latest total foreground duty cycle
     P$(PLC)75=(P$(PLC)74+(P$(PLC)76-1)*P$(PLC)75)/P$(PLC)76 ; Averaged total foreground duty cycle
+
+    ; Also use this PLC to report all PLC status
+    P$(PLC)80 = 32768
+    P$(PLC)81 = 0
+    P$(PLC)82 = 0
+    P$(PLC)83 = 0
+
+    WHILE (P$(PLC)81 < 16)
+      P$(PLC)82=P$(PLC)80 * (-1 * M(5000+P$(PLC)81) + 1)
+      P$(PLC)83=P$(PLC)80 * (-1 * M(5016+P$(PLC)81) + 1)
+      P$(PLC)80 = P$(PLC)80 / 2
+      P$(PLC)81 = P$(PLC)81 + 1
+    ENDW
+
+    ; Take snapshot of PLC status for reporting to EPICS
+    P$(PLC)84 = P$(PLC)82 ; PLC 0-15
+    P$(PLC)85 = P$(PLC)83 ; PLC 16-31
     
 CLOSE
 

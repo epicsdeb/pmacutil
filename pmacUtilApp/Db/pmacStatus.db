@@ -20,7 +20,7 @@ record(fanout, "$(SYS){$(PMAC)}Sts:Read1-FOut") {
   field(FLNK, "$(SYS){$(PMAC)}Sts:Read2-FOut_")
   field(LNK1, "$(SYS){$(PMAC)}Sts:1-Sts")
   field(LNK2, "$(SYS){$(PMAC)}Val:CPULoad-I")
-  field(LNK3, "$(SYS){$(PMAC)}Sts:PLC-WF_")
+  field(LNK3, "$(SYS){$(PMAC)}Enbl:PLC_W0-Sts")
   field(LNK4, "$(SYS){$(PMAC)}Val:Pgm-WF_")
   field(LNK5, "$(SYS){$(PMAC)}Cnt:MACRO_Err-I")
   field(LNK6, "$(SYS){$(PMAC)-Ax:RB1}-Seq_")
@@ -73,34 +73,44 @@ record(mbbiDirect, "$(SYS){$(PMAC)}Sts:2-Sts") {
 record(mbbiDirect, "$(SYS){$(PMAC)}Sts:3-Sts") {
 }
 
-record(waveform, "$(SYS){$(PMAC)}Sts:PLC-WF_") {
+#record(waveform, "$(SYS){$(PMAC)}Sts:PLC-WF_") {
+  #field(DTYP, "stream")
+  #field(FLNK, "$(SYS){$(PMAC)}Sts:PLC-ACo_")
+  #field(INP, "@pmac.proto getPlcsDisabled$(VERSION) $(PORT)")
+  #field(NELM, "32")
+  #field(FTVL, "USHORT")
+  #field(DESC, "Query plcs cmd")
+#}
+
+#record(acalcout, "$(SYS){$(PMAC)}Sts:PLC-ACo_") {
+  #field(INAA, "$(SYS){$(PMAC)}Sts:PLC-WF_")
+  #field(FLNK, "$(SYS){$(PMAC)}Dsbl:PLC_W0-Sts")
+  #field(NELM, "64")
+#}
+
+#record(genSub, "$(SYS){$(PMAC)}Sts:PLC-GenSub_") {
+  #field(SNAM, "parsePlcBitString")
+  #field(INPA, "$(SYS){$(PMAC)}Sts:PLC-WF_.VAL")
+  #field(FTA, "USHORT")
+  #field(NOA, "32")
+  #field(FTVA, "ULONG")
+  #field(FTVB, "ULONG")
+  #field(FLNK, "$(SYS){$(PMAC)}Dsbl:PLC_W0-Sts")
+#}
+
+# % archiver 10 Monitor
+record(mbbiDirect, "$(SYS){$(PMAC)}Enbl:PLC_W0-Sts") {
   field(DTYP, "stream")
-  field(FLNK, "$(SYS){$(PMAC)}Sts:PLC-GenSub_")
-  field(INP, "@pmac.proto getPlcsDisabled$(VERSION) $(PORT)")
-  field(NELM, "32")
-  field(FTVL, "USHORT")
-  field(DESC, "Query plcs cmd")
-}
-
-record(genSub, "$(SYS){$(PMAC)}Sts:PLC-GenSub_") {
-  field(SNAM, "parsePlcBitString")
-  field(INPA, "$(SYS){$(PMAC)}Sts:PLC-WF_.VAL")
-  field(FTA, "USHORT")
-  field(NOA, "32")
-  field(FTVA, "ULONG")
-  field(FTVB, "ULONG")
-  field(FLNK, "$(SYS){$(PMAC)}Dsbl:PLC_W0-Sts")
+  field(FLNK, "$(SYS){$(PMAC)}Enbl:PLC_W1-Sts")
+  field(INP, "@pmac.proto getIntVar(P$(PLC)84) $(PORT)")
+  #field(INP, "$(SYS){$(PMAC)}Sts:PLC-GenSub_.VALA")
 }
 
 # % archiver 10 Monitor
-record(mbbiDirect, "$(SYS){$(PMAC)}Dsbl:PLC_W0-Sts") {
-  field(FLNK, "$(SYS){$(PMAC)}Dsbl:PLC_W1-Sts")
-  field(INP, "$(SYS){$(PMAC)}Sts:PLC-GenSub_.VALA")
-}
-
-# % archiver 10 Monitor
-record(mbbiDirect, "$(SYS){$(PMAC)}Dsbl:PLC_W1-Sts") {
-  field(INP, "$(SYS){$(PMAC)}Sts:PLC-GenSub_.VALB")
+record(mbbiDirect, "$(SYS){$(PMAC)}Enbl:PLC_W1-Sts") {
+  field(DTYP, "stream")
+  field(INP, "@pmac.proto getIntVar(P$(PLC)85) $(PORT)")
+  #field(INP, "$(SYS){$(PMAC)}Sts:PLC-GenSub_.VALB")
 }
 
 record(waveform, "$(SYS){$(PMAC)}In:GPIO-WF_") {
@@ -112,14 +122,14 @@ record(waveform, "$(SYS){$(PMAC)}In:GPIO-WF_") {
   field(DESC, "Query GPIO Inputs")
 }
 
-record(genSub, "$(SYS){$(PMAC)}In:GPIO-GenSub_") {
-  field(SNAM, "parseGPIOBitString")
-  field(INPA, "$(SYS){$(PMAC)}In:GPIO-WF_.VAL")
-  field(FTA, "USHORT")
-  field(NOA, "16")
-  field(FTVA, "ULONG")
-  field(FLNK, "$(SYS){$(PMAC)}In:GPIO-Sts")
-}
+#record(genSub, "$(SYS){$(PMAC)}In:GPIO-GenSub_") {
+  #field(SNAM, "parseGPIOBitString")
+  #field(INPA, "$(SYS){$(PMAC)}In:GPIO-WF_.VAL")
+  #field(FTA, "USHORT")
+  #field(NOA, "16")
+  #field(FTVA, "ULONG")
+  #field(FLNK, "$(SYS){$(PMAC)}In:GPIO-Sts")
+#}
 
 # % archiver 10 Monitor
 record(mbbiDirect, "$(SYS){$(PMAC)}In:GPIO-Sts") {
@@ -135,14 +145,14 @@ record(waveform, "$(SYS){$(PMAC)}Out:GPIO-WF_") {
   field(DESC, "Query GPIO Outputs")
 }
 
-record(genSub, "$(SYS){$(PMAC)}Out:GPIO-GenSub_") {
-  field(SNAM, "parseGPIOBitString")
-  field(INPA, "$(SYS){$(PMAC)}Out:GPIO-WF_.VAL")
-  field(FTA, "USHORT")
-  field(NOA, "16")
-  field(FTVA, "ULONG")
-  field(FLNK, "$(SYS){$(PMAC)}Out:GPIO-Sel")
-}
+#record(genSub, "$(SYS){$(PMAC)}Out:GPIO-GenSub_") {
+  #field(SNAM, "parseGPIOBitString")
+  #field(INPA, "$(SYS){$(PMAC)}Out:GPIO-WF_.VAL")
+  #field(FTA, "USHORT")
+  #field(NOA, "16")
+  #field(FTVA, "ULONG")
+  #field(FLNK, "$(SYS){$(PMAC)}Out:GPIO-Sel")
+#}
 
 # % archiver 10 Monitor
 record(mbbiDirect, "$(SYS){$(PMAC)}Out:GPIO-Sel") {
@@ -159,14 +169,14 @@ record(waveform, "$(SYS){$(PMAC)}Val:Pgm-WF_") {
   field(SIOL, "@")
 }
 
-record(genSub, "$(SYS){$(PMAC)}Val:Pgm-GenSub_") {
-  field(SNAM, "parseProgBitString")
-  field(INPA, "$(SYS){$(PMAC)}Val:Pgm-WF_")
-  field(FTA, "USHORT")
-  field(NOA, "16")
-  field(FTVA, "ULONG")
-  field(FLNK, "$(SYS){$(PMAC)}Val:Pgm-Sts")
-}
+#record(genSub, "$(SYS){$(PMAC)}Val:Pgm-GenSub_") {
+  #field(SNAM, "parseProgBitString")
+  #field(INPA, "$(SYS){$(PMAC)}Val:Pgm-WF_")
+  #field(FTA, "USHORT")
+  #field(NOA, "16")
+  #field(FTVA, "ULONG")
+  #field(FLNK, "$(SYS){$(PMAC)}Val:Pgm-Sts")
+#}
 
 # % archiver 10 Monitor
 record(mbbiDirect, "$(SYS){$(PMAC)}Val:Pgm-Sts") {
