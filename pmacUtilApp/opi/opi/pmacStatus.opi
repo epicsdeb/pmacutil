@@ -623,7 +623,7 @@ $(pv_value)</tooltip>
         <keep_wh_ratio>false</keep_wh_ratio>
       </scale_options>
       <transparent>false</transparent>
-      <pv_name>$(SYS){$(DEV)Sts:Read1-FOut.SCAN</pv_name>
+      <pv_name>$(SYS){$(DEV)}Sts:Read1-FOut.SCAN</pv_name>
       <background_color>
         <color name="MEDM_COLOR_6" red="158" green="158" blue="158" />
       </background_color>
@@ -2959,7 +2959,7 @@ $(pv_value)</tooltip>
       <off_color>
         <color red="0" green="100" blue="0" />
       </off_color>
-      <pv_name>$(SYS){$(DEV)}Dsbl:PLC_W0-Sts</pv_name>
+      <pv_name>$(SYS){$(DEV)}Enbl:PLC_W0-Sts</pv_name>
       <background_color>
         <color red="240" green="240" blue="240" />
       </background_color>
@@ -3667,7 +3667,7 @@ $(pv_value)</tooltip>
       <off_color>
         <color red="0" green="100" blue="0" />
       </off_color>
-      <pv_name>$(SYS){$(DEV)}Dsbl:PLC_W1-Sts</pv_name>
+      <pv_name>$(SYS){$(DEV)}Enbl:PLC_W1-Sts</pv_name>
       <background_color>
         <color red="240" green="240" blue="240" />
       </background_color>
