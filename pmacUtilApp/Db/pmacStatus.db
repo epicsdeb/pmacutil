@@ -21,15 +21,15 @@ record(fanout, "$(SYS){$(PMAC)}Sts:Read1-FOut") {
   field(LNK1, "$(SYS){$(PMAC)}Sts:1-Sts")
   field(LNK2, "$(SYS){$(PMAC)}Val:CPULoad-I")
   field(LNK3, "$(SYS){$(PMAC)}Enbl:PLC_W0-Sts")
-  field(LNK4, "$(SYS){$(PMAC)}Val:Pgm-WF_")
+  field(LNK4, "$(SYS){$(PMAC)}Val:Pgm-Sts")
   field(LNK5, "$(SYS){$(PMAC)}Cnt:MACRO_Err-I")
   field(LNK6, "$(SYS){$(PMAC)-Ax:RB1}-Seq_")
 }
 
 record(fanout, "$(SYS){$(PMAC)}Sts:Read2-FOut_") {
   field(SCAN, "1 second")
-  field(LNK1, "$(SYS){$(PMAC)}In:GPIO-WF_")
-  field(LNK2, "$(SYS){$(PMAC)}Out:GPIO-WF_")
+  field(LNK1, "$(SYS){$(PMAC)}In:GPIO-Sts")
+  field(LNK2, "$(SYS){$(PMAC)}Out:GPIO-Sel")
 }
 
 # pmac type record
@@ -102,25 +102,25 @@ record(mbbiDirect, "$(SYS){$(PMAC)}Sts:3-Sts") {
 record(mbbiDirect, "$(SYS){$(PMAC)}Enbl:PLC_W0-Sts") {
   field(DTYP, "stream")
   field(FLNK, "$(SYS){$(PMAC)}Enbl:PLC_W1-Sts")
-  field(INP, "@pmac.proto getIntVar(P$(PLC)84) $(PORT)")
+  field(INP, "@pmac.proto getIntVar(P$(PLC)92) $(PORT)")
   #field(INP, "$(SYS){$(PMAC)}Sts:PLC-GenSub_.VALA")
 }
 
 # % archiver 10 Monitor
 record(mbbiDirect, "$(SYS){$(PMAC)}Enbl:PLC_W1-Sts") {
   field(DTYP, "stream")
-  field(INP, "@pmac.proto getIntVar(P$(PLC)85) $(PORT)")
+  field(INP, "@pmac.proto getIntVar(P$(PLC)93) $(PORT)")
   #field(INP, "$(SYS){$(PMAC)}Sts:PLC-GenSub_.VALB")
 }
 
-record(waveform, "$(SYS){$(PMAC)}In:GPIO-WF_") {
-  field(DTYP, "stream")
-  field(FLNK, "$(SYS){$(PMAC)}In:GPIO-GenSub_")
-  field(INP, "@pmac.proto getGPIOInputs$(VERSION) $(PORT)")
-  field(NELM, "16")
-  field(FTVL, "USHORT")
-  field(DESC, "Query GPIO Inputs")
-}
+#record(waveform, "$(SYS){$(PMAC)}In:GPIO-WF_") {
+  #field(DTYP, "stream")
+  #field(FLNK, "$(SYS){$(PMAC)}In:GPIO-GenSub_")
+  #field(INP, "@pmac.proto getGPIOInputs$(VERSION) $(PORT)")
+  #field(NELM, "16")
+  #field(FTVL, "USHORT")
+  #field(DESC, "Query GPIO Inputs")
+#}
 
 #record(genSub, "$(SYS){$(PMAC)}In:GPIO-GenSub_") {
   #field(SNAM, "parseGPIOBitString")
@@ -133,17 +133,19 @@ record(waveform, "$(SYS){$(PMAC)}In:GPIO-WF_") {
 
 # % archiver 10 Monitor
 record(mbbiDirect, "$(SYS){$(PMAC)}In:GPIO-Sts") {
-  field(INP, "$(SYS){$(PMAC)}In:GPIO-GenSub_.VALA")
+  field(DTYP, "stream")
+  field(INP, "@pmac.proto getIntVar(P$(PLC)94) $(PORT)")
+  #field(INP, "$(SYS){$(PMAC)}In:GPIO-GenSub_.VALA")
 }
 
-record(waveform, "$(SYS){$(PMAC)}Out:GPIO-WF_") {
-  field(DTYP, "stream")
-  field(FLNK, "$(SYS){$(PMAC)}Out:GPIO-GenSub_")
-  field(INP, "@pmac.proto getGPIOOutputs$(VERSION) $(PORT)")
-  field(NELM, "16")
-  field(FTVL, "USHORT")
-  field(DESC, "Query GPIO Outputs")
-}
+#record(waveform, "$(SYS){$(PMAC)}Out:GPIO-WF_") {
+  #field(DTYP, "stream")
+  #field(FLNK, "$(SYS){$(PMAC)}Out:GPIO-GenSub_")
+  #field(INP, "@pmac.proto getGPIOOutputs$(VERSION) $(PORT)")
+  #field(NELM, "16")
+  #field(FTVL, "USHORT")
+  #field(DESC, "Query GPIO Outputs")
+#}
 
 #record(genSub, "$(SYS){$(PMAC)}Out:GPIO-GenSub_") {
   #field(SNAM, "parseGPIOBitString")
@@ -156,18 +158,20 @@ record(waveform, "$(SYS){$(PMAC)}Out:GPIO-WF_") {
 
 # % archiver 10 Monitor
 record(mbbiDirect, "$(SYS){$(PMAC)}Out:GPIO-Sel") {
-  field(INP, "$(SYS){$(PMAC)}Out:GPIO-GenSub_.VALA")
+  field(DTYP, "stream")
+  field(INP, "@pmac.proto getIntVar(P$(PLC)95) $(PORT)")
+  #field(INP, "$(SYS){$(PMAC)}Out:GPIO-GenSub_.VALA")
 }
 
-record(waveform, "$(SYS){$(PMAC)}Val:Pgm-WF_") {
-  field(DESC, "Query motion progs")
-  field(DTYP, "stream")
-  field(FLNK, "$(SYS){$(PMAC)}Val:Pgm-GenSub_")
-  field(INP, "@pmac.proto getMotionProgramActive$(VERSION) $(PORT)")
-  field(NELM, "16")
-  field(FTVL, "USHORT")
-  field(SIOL, "@")
-}
+#record(waveform, "$(SYS){$(PMAC)}Val:Pgm-WF_") {
+  #field(DESC, "Query motion progs")
+  #field(DTYP, "stream")
+  #field(FLNK, "$(SYS){$(PMAC)}Val:Pgm-GenSub_")
+  #field(INP, "@pmac.proto getMotionProgramActive$(VERSION) $(PORT)")
+  #field(NELM, "16")
+  #field(FTVL, "USHORT")
+  #field(SIOL, "@")
+#}
 
 #record(genSub, "$(SYS){$(PMAC)}Val:Pgm-GenSub_") {
   #field(SNAM, "parseProgBitString")
@@ -180,7 +184,9 @@ record(waveform, "$(SYS){$(PMAC)}Val:Pgm-WF_") {
 
 # % archiver 10 Monitor
 record(mbbiDirect, "$(SYS){$(PMAC)}Val:Pgm-Sts") {
-  field(INP, "$(SYS){$(PMAC)}Val:Pgm-GenSub_.VALA")
+  field(DTYP, "stream")
+  field(INP, "@pmac.proto getIntVar(P$(PLC)95) $(PORT)")
+  #field(INP, "$(SYS){$(PMAC)}Val:Pgm-GenSub_.VALA")
 }
 
 record(ai, "$(SYS){$(PMAC)}Cnt:MACRO_Err-I") {
