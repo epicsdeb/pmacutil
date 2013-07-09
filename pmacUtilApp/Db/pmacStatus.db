@@ -185,7 +185,7 @@ record(mbbiDirect, "$(SYS){$(PMAC)}Out:GPIO-Sel") {
 # % archiver 10 Monitor
 record(mbbiDirect, "$(SYS){$(PMAC)}Val:Pgm-Sts") {
   field(DTYP, "stream")
-  field(INP, "@pmac.proto getIntVar(P$(PLC)95) $(PORT)")
+  field(INP, "@pmac.proto getIntVar(P$(PLC)96) $(PORT)")
   #field(INP, "$(SYS){$(PMAC)}Val:Pgm-GenSub_.VALA")
 }
 
