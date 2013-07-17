@@ -11,7 +11,7 @@
   <height>900</height>
   <name></name>
   <snap_to_geometry>true</snap_to_geometry>
-  <show_grid>false</show_grid>
+  <show_grid>true</show_grid>
   <background_color>
     <color name="default_bg" red="200" green="200" blue="200" />
   </background_color>
@@ -23,7 +23,7 @@
   <width>520</width>
   <rules />
   <show_edit_range>true</show_edit_range>
-  <grid_space>10</grid_space>
+  <grid_space>5</grid_space>
   <auto_scale_widgets>
     <auto_scale_widgets>false</auto_scale_widgets>
     <min_width>-1</min_width>
@@ -6984,6 +6984,203 @@ $(pv_value)</tooltip>
       <tooltip>$(pv_name)
 $(pv_value)</tooltip>
       <x>146</x>
+    </widget>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0">
+    <macros>
+      <include_parent_macros>true</include_parent_macros>
+    </macros>
+    <visible>true</visible>
+    <wuid>-4986b92b:13fede86ac9:-79e7</wuid>
+    <scripts />
+    <height>59</height>
+    <name>Grouping Container</name>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <transparent>true</transparent>
+    <show_scrollbar>true</show_scrollbar>
+    <background_color>
+      <color red="240" green="240" blue="240" />
+    </background_color>
+    <foreground_color>
+      <color red="192" green="192" blue="192" />
+    </foreground_color>
+    <widget_type>Grouping Container</widget_type>
+    <enabled>true</enabled>
+    <font>
+      <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+    </font>
+    <width>181</width>
+    <border_style>3</border_style>
+    <rules />
+    <lock_children>false</lock_children>
+    <border_width>1</border_width>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <actions hook="false" hook_all="false" />
+    <y>302</y>
+    <tooltip></tooltip>
+    <x>280</x>
+    <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+      <visible>true</visible>
+      <vertical_alignment>1</vertical_alignment>
+      <wuid>-4986b92b:13fede86ac9:-79db</wuid>
+      <auto_size>true</auto_size>
+      <scripts />
+      <height>17</height>
+      <name>Label</name>
+      <scale_options>
+        <width_scalable>true</width_scalable>
+        <height_scalable>true</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <transparent>false</transparent>
+      <show_scrollbar>false</show_scrollbar>
+      <background_color>
+        <color name="MEDM_COLOR_5" red="174" green="174" blue="174" />
+      </background_color>
+      <foreground_color>
+        <color red="0" green="0" blue="0" />
+      </foreground_color>
+      <widget_type>Label</widget_type>
+      <enabled>true</enabled>
+      <text>Axis status</text>
+      <font>
+        <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+      </font>
+      <width>74</width>
+      <border_style>1</border_style>
+      <rules />
+      <border_width>1</border_width>
+      <border_color>
+        <color name="default_fg" red="0" green="0" blue="0" />
+      </border_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <actions hook="false" hook_all="false" />
+      <y>0</y>
+      <wrap_words>true</wrap_words>
+      <tooltip></tooltip>
+      <x>0</x>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.MenuButton" version="1.0">
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <visible>true</visible>
+      <actions_from_pv>false</actions_from_pv>
+      <wuid>-4986b92b:13fede86ac9:-7a32</wuid>
+      <scripts />
+      <height>21</height>
+      <name>Menu Button</name>
+      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+      <scale_options>
+        <width_scalable>true</width_scalable>
+        <height_scalable>true</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <transparent>false</transparent>
+      <pv_name></pv_name>
+      <background_color>
+        <color name="MEDM_COLOR_6" red="158" green="158" blue="158" />
+      </background_color>
+      <foreground_color>
+        <color red="0" green="0" blue="0" />
+      </foreground_color>
+      <widget_type>Menu Button</widget_type>
+      <enabled>true</enabled>
+      <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+      <font>
+        <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+      </font>
+      <width>161</width>
+      <border_style>6</border_style>
+      <label>Axis 1-8</label>
+      <rules />
+      <pv_value />
+      <border_width>1</border_width>
+      <border_color>
+        <color red="0" green="128" blue="255" />
+      </border_color>
+      <y>25</y>
+      <actions hook="false" hook_all="false">
+        <action type="OPEN_DISPLAY">
+          <path>pmacStatusAxis.opi</path>
+          <macros>
+            <include_parent_macros>true</include_parent_macros>
+            <AXIS>1</AXIS>
+          </macros>
+          <replace>0</replace>
+          <description>Axis 1</description>
+        </action>
+        <action type="OPEN_DISPLAY">
+          <path>pmacStatusAxis.opi</path>
+          <macros>
+            <include_parent_macros>true</include_parent_macros>
+            <AXIS>2</AXIS>
+          </macros>
+          <replace>0</replace>
+          <description>Axis 2</description>
+        </action>
+        <action type="OPEN_DISPLAY">
+          <path>pmacStatusAxis.opi</path>
+          <macros>
+            <include_parent_macros>true</include_parent_macros>
+            <AXIS>3</AXIS>
+          </macros>
+          <replace>0</replace>
+          <description>Axis 3</description>
+        </action>
+        <action type="OPEN_DISPLAY">
+          <path>pmacStatusAxis.opi</path>
+          <macros>
+            <include_parent_macros>true</include_parent_macros>
+            <AXIS>4</AXIS>
+          </macros>
+          <replace>0</replace>
+          <description>Axis 4</description>
+        </action>
+        <action type="OPEN_DISPLAY">
+          <path>pmacStatusAxis.opi</path>
+          <macros>
+            <include_parent_macros>true</include_parent_macros>
+            <AXIS>5</AXIS>
+          </macros>
+          <replace>0</replace>
+          <description>Axis 5</description>
+        </action>
+        <action type="OPEN_DISPLAY">
+          <path>pmacStatusAxis.opi</path>
+          <macros>
+            <include_parent_macros>true</include_parent_macros>
+            <AXIS>6</AXIS>
+          </macros>
+          <replace>0</replace>
+          <description>Axis 6</description>
+        </action>
+        <action type="OPEN_DISPLAY">
+          <path>pmacStatusAxis.opi</path>
+          <macros>
+            <include_parent_macros>true</include_parent_macros>
+            <AXIS>7</AXIS>
+          </macros>
+          <replace>0</replace>
+          <description>Axis 7</description>
+        </action>
+        <action type="OPEN_DISPLAY">
+          <path>pmacStatusAxis.opi</path>
+          <macros>
+            <include_parent_macros>true</include_parent_macros>
+            <AXIS>8</AXIS>
+          </macros>
+          <replace>0</replace>
+          <description>Axis 8</description>
+        </action>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+      <x>10</x>
     </widget>
   </widget>
 </display>
