@@ -11,6 +11,14 @@ OutTerminator = "";
 InTerminator = ACK;
 Separator = CR;
 
+#out"M276" to read motor 2 current
+getCurrent_RDB{ out"\$1" CR; in "%d";
+}
+
+#out"M239" to read motor 2 amplifier status
+getAmplifierStat{ out"\$1" CR; in "%d";
+}
+
 getVar
 {
   out "\$1" CR;
