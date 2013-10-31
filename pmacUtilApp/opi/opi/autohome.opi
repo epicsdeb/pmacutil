@@ -112,7 +112,7 @@ $(pv_value)</tooltip>
     </foreground_color>
     <widget_type>Label</widget_type>
     <enabled>true</enabled>
-    <text>$SYS{$(DEV)} Homing Status</text>
+    <text>$(SYS)$(DEV) Homing Status</text>
     <font>
       <opifont.name fontName="Lucida Grande" height="11" style="1">Default Bold</opifont.name>
     </font>
@@ -600,14 +600,20 @@ $(pv_value)</tooltip>
       <image></image>
       <rules />
       <pv_value />
-      <toggle_button>true</toggle_button>
+      <toggle_button>false</toggle_button>
       <border_width>1</border_width>
-      <release_action_index>0</release_action_index>
       <border_color>
         <color red="0" green="128" blue="255" />
       </border_color>
       <y>20</y>
-      <actions hook="false" hook_all="false" />
+      <actions hook="false" hook_all="false">
+        <action type="WRITE_PV">
+          <pv_name>$(SYS)$(DEV)Start:Home-Cmd.PROC</pv_name>
+          <value>1</value>
+          <timeout>10</timeout>
+          <description></description>
+        </action>
+      </actions>
       <tooltip>$(pv_name)
 $(pv_value)</tooltip>
       <x>10</x>
@@ -645,14 +651,20 @@ $(pv_value)</tooltip>
       <image></image>
       <rules />
       <pv_value />
-      <toggle_button>true</toggle_button>
+      <toggle_button>false</toggle_button>
       <border_width>1</border_width>
-      <release_action_index>0</release_action_index>
       <border_color>
         <color red="0" green="128" blue="255" />
       </border_color>
       <y>50</y>
-      <actions hook="false" hook_all="false" />
+      <actions hook="false" hook_all="false">
+        <action type="WRITE_PV">
+          <pv_name>$(SYS)$(DEV)Abort:Home-Cmd.PROC</pv_name>
+          <value>1</value>
+          <timeout>10</timeout>
+          <description></description>
+        </action>
+      </actions>
       <tooltip>$(pv_name)
 $(pv_value)</tooltip>
       <x>10</x>
