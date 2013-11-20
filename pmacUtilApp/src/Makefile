@@ -23,7 +23,7 @@ pmacUtil_DBD += motorSupport.dbd
 pmacUtil_DBD += busySupport.dbd
 
 # The following are compiled and added to the support library
-pmacUtil_SRCS += gather.st
+#pmacUtil_SRCS += gather.st
 #pmacUtil_SRCS += compensationtable.c
 #pmacUtil_SRCS += pmacStatusOutParse.c
 
