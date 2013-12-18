@@ -48,17 +48,17 @@ CLEAR
 
     WHILE (P$(PLC)81 < 16)
       ; PLCS 0-15
-      P$(PLC)82=P$(PLC)80 * (-1 * M(5000+P$(PLC)81) + 1)
+      P$(PLC)82=P$(PLC)82 + P$(PLC)80 * (-1 * M(5000+P$(PLC)81) + 1)
       ; PLCS 16-31
-      P$(PLC)83=P$(PLC)80 * (-1 * M(5016+P$(PLC)81) + 1)
+      P$(PLC)83=P$(PLC)83 + P$(PLC)80 * (-1 * M(5016+P$(PLC)81) + 1)
       ; GPIO inputs
-      P$(PLC)84=P$(PLC)80 * M(0+P$(PLC)81)
+      P$(PLC)84=P$(PLC)84 + P$(PLC)80 * M(0+P$(PLC)81)
       ; GPIO outputs
       IF (P$(PLC)81 < 8)
-        P$(PLC)85 = P$(PLC)80 * M(32+P$(PLC)81)
+        P$(PLC)85 = P$(PLC)85 + P$(PLC)80 * M(32+P$(PLC)81)
       ENDIF
       ; Motion programs
-      P$(PLC)86 = P$(PLC)80 * M(5180+100*P$(PLC)81)
+      P$(PLC)86 = P$(PLC)86 + P$(PLC)80 * M(5180+100*P$(PLC)81)
 
       ; Update counters
       P$(PLC)80 = P$(PLC)80 / 2
