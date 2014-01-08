@@ -1,0 +1,191 @@
+; Homing PLC for Axis $(AXIS) (PLC $(PLC))
+; 
+; This program will home an axis to either the positive or negative limit. The
+; homing program performs the following steps:
+; 1. Move to the limit switch being used as a reference.
+; 2. Perform a homing move away from the limit switch until it deactivates.
+; 3. Return to the starting position. 
+; 
+; Note that the direction set by the home velocity (Ixx23) is opposite to the
+; limit switch actually used for homing. This is because the homing movement
+; (Step 2 above) is away from the limit, with the controller looking for the
+; switch to deactivate to indicate the home position. This is summarised below:
+; Home at negative limit -> Positive home velocity
+; Home at positive limit -> Negative home velocity
+
+; Initial configuration of state variables.
+; Homing State P Variable
+P$(PLC)00 = 0
+
+; Homing Status P Variable
+P$(PLC)01 = 0
+
+; Homing Group P Variable
+;P$(PLC)02 = 0
+
+; Homing Group Backup P Variable
+;P$(PLC)03 = 0
+
+DEL GAT
+OPEN PLC$(PLC) CLEAR
+P$(PLC)01 = 1
+
+;---- Configuring State ----
+P$(PLC)00=1
+;Save the Homing group to Pxx03
+;P$(PLC)03=P$(PLC)02
+;Save high soft limits to P variables Pxx04..x19
+P$(PLC)04=I$(AXIS)13
+;Save the low soft limits to P variables Pxx20..x35
+P$(PLC)20=I$(AXIS)14
+;Save the home capture flags to P variables Pxx36..x51
+P$(PLC)36=I$(SERVO)2
+;Store 'not flag' to use in moving off a flag in P variables Pxx52..x67
+P$(PLC)52=P$(PLC)36^$C
+;Save the limit flags to P variables Pxx68..x83
+P$(PLC)68=I$(AXIS)24
+;Save the current position to P variables Pxx84..x99
+P$(PLC)84=M$(AXIS)62
+;Clear the soft limits
+I$(AXIS)13=0
+I$(AXIS)14=0
+
+;if (P$(PLC)03=1 and P$(PLC)01=1)
+;or (P$(PLC)03=2 and P$(PLC)01=1)
+	;P$(PLC)02=2
+  
+if (P$(PLC)01=1)
+
+	;---- FastSearch State ----
+  ; Move to the limit switch
+	if (P$(PLC)01=1)
+		P$(PLC)00=8
+		; Execute the move commands
+		M$(AXIS)72=100000000*(-I$(AXIS)23/ABS(I$(AXIS)23))
+		cmd "#$(AXIS)J^*"
+		; Wait for the move to complete
+		I$(TIMER) = 20 * 8388608/I10 ; Small delay to start moving
+		while (I$(TIMER) > 0)
+		endw
+		I$(TIMER) = 600000 * 8388608/I10 ; Now start checking the conditions
+		while (M$(AXIS)40=0) ; At least one motor should not be In Position
+		and (M$(AXIS)42=0) ; No following errors should be set for any motor
+		and (I$(TIMER) > 0) ; Check for timeout
+		and (P$(PLC)01 = 1) ; Check that we didn't abort
+		endw
+
+		; Check why we left the while loop
+		if (M$(AXIS)42=1) ; If a motor hit a following error
+			P$(PLC)01 = 4
+		endif
+		if (I$(TIMER)<0 or I$(TIMER)=0) ; If we timed out
+			P$(PLC)01 = 3
+		endif
+	endif
+
+	;---- Store the difference between current pos and start pos ----
+	if (P$(PLC)01=1)
+		P$(PLC)86=(P$(PLC)86-M$(AXIS)62)/(I$(AXIS)08*32)-(I$(AXIS)26/16)
+	endif
+
+	;---- Homing State ----
+	if (P$(PLC)01=1)
+		P$(PLC)00=4
+    ; Set the capture flag correctly            
+    ; If homing direction is negative, we are homing using the positive
+    ; limit switch and vice versa.              
+    if (I$(AXIS)23<0)
+      I$(SERVO)3=1
+    else
+      I$(SERVO)3=2
+    endif             
+		; Execute the move commands
+		I$(SERVO)2=P$(PLC)52
+		cmd "#$(AXIS)hm"
+		; Wait for the move to complete
+		I$(TIMER) = 20 * 8388608/I10 ; Small delay to start moving
+		while (I$(TIMER) > 0)
+		endw
+		I$(TIMER) = 600000 * 8388608/I10 ; Now start checking the conditions
+		while (M$(AXIS)40=0) ; At least one motor should not be In Position
+		and (M$(AXIS)42=0) ; No following errors should be set for any motor
+		and (M$(AXIS)30=0) ; Should not stop on position limit for selected motors
+		and (I$(TIMER) > 0) ; Check for timeout
+		and (P$(PLC)01 = 1) ; Check that we didn't abort
+		endw
+		; Check why we left the while loop
+		if (M$(AXIS)42=1) ; If a motor hit a following error
+			P$(PLC)01 = 4
+		endif
+		if (M$(AXIS)30=1) ; If a motor hit a limit
+			P$(PLC)01 = 5
+		endif
+		if (I$(TIMER)<0 or I$(TIMER)=0) ; If we timed out
+			P$(PLC)01 = 3
+		endif
+	endif
+
+	;---- Check if all motors have homed ----
+	if (P$(PLC)01=1)
+	and (M$(AXIS)45=0)
+		P$(PLC)01=6
+	endif
+
+	;---- PostHomeMove State ----
+	if (P$(PLC)01=1)
+		P$(PLC)00=5
+		; Execute the move commands
+		M$(AXIS)72=P$(PLC)84/(I$(AXIS)08*32)
+		cmd "#$(AXIS)J=*"
+		; Wait for the move to complete
+		I$(TIMER) = 20 * 8388608/I10 ; Small delay to start moving
+		while (I$(TIMER) > 0)
+		endw
+		I$(TIMER) = 600000 * 8388608/I10 ; Now start checking the conditions
+		while (M$(AXIS)40=0) ; At least one motor should not be In Position
+		and (M$(AXIS)42=0) ; No following errors should be set for any motor
+		and (M$(AXIS)30=0) ; Should not stop on position limit for selected motors
+		and (I$(TIMER) > 0) ; Check for timeout
+		and (P$(PLC)01 = 1) ; Check that we didn't abort
+		endw
+		; Check why we left the while loop
+		if (M$(AXIS)42=1) ; If a motor hit a following error
+			P$(PLC)01 = 4
+		endif
+		if (M$(AXIS)30=1) ; If a motor hit a limit
+			P$(PLC)01 = 5
+		endif
+		if (I$(TIMER)<0 or I$(TIMER)=0) ; If we timed out
+			P$(PLC)01 = 3
+		endif
+	endif
+
+endif
+
+;---- Done ----
+if (P$(PLC)01 = 1)
+	;If we've got this far without failing, set status and state done
+	P$(PLC)01=0
+	P$(PLC)00=7
+	;Restore the homing group from px03
+	;P$(PLC)02=P$(PLC)03
+endif
+
+;---- Tidy Up ----
+;Stop all motors if they don't have a following error
+if (M$(AXIS)42=0)
+	cmd "#$(AXIS)J/"
+endif
+;Restore the high soft limits from P variables Pxx04..x19
+I$(AXIS)13=P$(PLC)04
+;Restore the low soft limits from P variables Pxx20..x35
+I$(AXIS)14=P$(PLC)20
+;Restore the home capture flags from P variables Pxx36..x51
+I$(SERVO)2=P$(PLC)36
+;Restore the limit flags to P variables Pxx68..x83
+I$(AXIS)24=P$(PLC)68
+
+DISABLE PLC$(PLC)
+CLOSE
+
+

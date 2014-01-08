@@ -1,0 +1,52 @@
+; Homing PLC for Axis $(AXIS) (PLC $(PLC))
+; 
+; This program will home an axis to the current position. It issues a HMZ
+; command.
+
+; Initial configuration of state variables.
+; Homing State P Variable
+P$(PLC)00 = 0
+
+; Homing Status P Variable
+P$(PLC)01 = 0
+
+DEL GAT
+OPEN PLC$(PLC) CLEAR
+P$(PLC)01 = 1
+
+;---- Configuring State ----
+P$(PLC)00=1
+  
+if (P$(PLC)01=1)
+
+	;---- Homing State ----
+	if (P$(PLC)01=1)
+		P$(PLC)00=4
+		; Execute the move commands
+		cmd "#$(AXIS)hmz"
+	endif
+
+	;---- Check if all motors have homed ----
+	if (P$(PLC)01=1)
+	and (M$(AXIS)45=0)
+		P$(PLC)01=6
+	endif
+endif
+
+;---- Done ----
+if (P$(PLC)01 = 1)
+	;If we've got this far without failing, set status and state done
+	P$(PLC)01=0
+	P$(PLC)00=7
+endif
+
+;---- Tidy Up ----
+;Stop all motors if they don't have a following error
+if (M$(AXIS)42=0)
+	cmd "#$(AXIS)J/"
+endif
+
+DISABLE PLC$(PLC)
+CLOSE
+
+
