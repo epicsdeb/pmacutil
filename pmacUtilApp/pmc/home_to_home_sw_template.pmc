@@ -1,5 +1,17 @@
 ; Homing PLC for Axis $(AXIS) (PLC $(PLC))
 
+; This homing routine will move to a limit, and then search for the home switch.
+; The axis home velocity sign sets the direction for the final "home to
+; home switch" move. The initial move to the limit will be in the opposite direction.
+; 
+; Wayne Lewis 20140108
+; 
+; Macros:
+; - PLC: PLC number
+; - AXIS: motion axis
+; - TIMER: PMAC timer to use
+; - SERVO: first three digits of axis gate array (I7mn)
+
 ; Homing State P Variable
 P$(PLC)00 = 0
 

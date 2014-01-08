@@ -12,6 +12,14 @@
 ; switch to deactivate to indicate the home position. This is summarised below:
 ; Home at negative limit -> Positive home velocity
 ; Home at positive limit -> Negative home velocity
+; 
+; Wayne Lewis 20140108
+; 
+; Macros:
+; - PLC: PLC number
+; - AXIS: motion axis
+; - TIMER: PMAC timer to use
+; - SERVO: first three digits of axis gate array (I7mn)
 
 ; Initial configuration of state variables.
 ; Homing State P Variable

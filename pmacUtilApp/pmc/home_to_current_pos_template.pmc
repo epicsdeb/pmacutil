@@ -2,6 +2,12 @@
 ; 
 ; This program will home an axis to the current position. It issues a HMZ
 ; command.
+; 
+; Wayne Lewis 20140108
+; 
+; Macros:
+; - PLC: PLC number
+; - AXIS: motion axis
 
 ; Initial configuration of state variables.
 ; Homing State P Variable
