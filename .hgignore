@@ -10,3 +10,8 @@ O.Common/
 qt/
 *.edl~
 .project
+*.56K
+*.TAB
+*.PMA
+*.MAP
+*.LOG
