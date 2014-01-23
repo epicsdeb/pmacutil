@@ -1,5 +1,5 @@
 epics-pmacutil-dev (1.0-1) unstable; urgency=low
 
-  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+  * Initial release 
 
- -- djc <djc@TooLBox.local>  Wed, 22 Jan 2014 18:42:00 -0500
+ -- Daron Chabot <dchabot@bnl.gov>  Wed, 22 Jan 2014 18:42:00 -0500
