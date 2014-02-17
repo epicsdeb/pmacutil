@@ -10,9 +10,6 @@
 export DH_VERBOSE=1
 
 %:
-	dh $@ --with epics -Sepicsmake
+	dh $@ 
 
-override_dh_install:
-	rm -rf debian/tmp/usr/lib/epics/configure
-	dh_install --fail-missing
-
+override_dh_auto_configure:

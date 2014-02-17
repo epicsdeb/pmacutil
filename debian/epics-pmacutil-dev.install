@@ -1,0 +1,2 @@
+pmacUtilApp/pmc/*.pmc usr/share/epics-pmacutil-dev/pmc
+pmacUtilApp/protocol/*.proto usr/share/epics-pmacutil-dev/protocol 

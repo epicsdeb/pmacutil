@@ -2,7 +2,8 @@ Source: epics-pmacutil-dev
 Section: devel
 Priority: optional
 Maintainer: Daron Chabot <dchabot@bnl.gov>
-Build-Depends: debhelper (>= 8.0.0), epics-debhelper (>= 6~)
+Build-Depends: debhelper (>= 8.0.0), epics-debhelper (>= 6~),
+                epics-synapps-dev (>= 20130320)
 Standards-Version: 3.9.4
 Homepage: http://controls.diamond.ac.uk/downloads/support/pmacUtil/
 #Vcs-Git: git://git.debian.org/collab-maint/epics-pmacutil-dev.git
