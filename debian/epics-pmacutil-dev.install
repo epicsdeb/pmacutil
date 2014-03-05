@@ -1,2 +1,3 @@
-pmacUtilApp/pmc/*.pmc usr/share/epics-pmacutil-dev/pmc
-pmacUtilApp/protocol/*.proto usr/share/epics-pmacutil-dev/protocol 
+pmacUtilApp/protocol/*.proto    usr/share/epics-pmacutil-dev/protocol
+pmacUtilApp/pmc/*.pmc   usr/share/epics-pmacutil-dev/pmc
+pmacUtilApp/Db/*.{db,substitutions,template}    usr/lib/epics/db
