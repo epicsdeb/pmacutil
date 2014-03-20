@@ -48,8 +48,8 @@ P$(PLC)04=I$(AXIS)13
 P$(PLC)20=I$(AXIS)14
 ;Save the home capture flags to P variables Pxx36..x51
 P$(PLC)36=I$(SERVO)2
-;Store 'not flag' to use in moving off a flag in P variables Pxx52..x67
-P$(PLC)52=P$(PLC)36^$C
+;Store value to use in moving off a flag in P variables Pxx52..x67
+P$(PLC)52=10
 ;Save the limit flags to P variables Pxx68..x83
 P$(PLC)68=I$(AXIS)24
 ;Save the current position to P variables Pxx84..x99
@@ -58,10 +58,6 @@ P$(PLC)84=M$(AXIS)62
 I$(AXIS)13=0
 I$(AXIS)14=0
 
-;if (P$(PLC)03=1 and P$(PLC)01=1)
-;or (P$(PLC)03=2 and P$(PLC)01=1)
-	;P$(PLC)02=2
-  
 if (P$(PLC)01=1)
 
 	;---- FastSearch State ----
@@ -70,7 +66,7 @@ if (P$(PLC)01=1)
 		P$(PLC)00=8
 		; Execute the move commands
 		M$(AXIS)72=100000000*(-I$(AXIS)23/ABS(I$(AXIS)23))
-		cmd "#$(AXIS)J^*"
+		cmd "#$(AXIS)J:*"
 		; Wait for the move to complete
 		I$(TIMER) = 20 * 8388608/I10 ; Small delay to start moving
 		while (I$(TIMER) > 0)
@@ -115,11 +111,18 @@ if (P$(PLC)01=1)
 		while (I$(TIMER) > 0)
 		endw
 		I$(TIMER) = 600000 * 8388608/I10 ; Now start checking the conditions
+    P$(PLC)05 = 0
 		while (M$(AXIS)40=0) ; At least one motor should not be In Position
 		and (M$(AXIS)42=0) ; No following errors should be set for any motor
-		and (M$(AXIS)30=0) ; Should not stop on position limit for selected motors
+		and (P$(PLC)05=0) ; Should not stop on position limit for selected motors
 		and (I$(TIMER) > 0) ; Check for timeout
 		and (P$(PLC)01 = 1) ; Check that we didn't abort
+    if (I$(AXIS)23 < 0 and M$(AXIS)32 = 1)
+      P$(PLC)05 = 1
+    endif
+    if (I$(AXIS)23 > 0 and M$(AXIS)31 = 1)
+      P$(PLC)05 = 1
+    endif
 		endw
 		; Check why we left the while loop
 		if (M$(AXIS)42=1) ; If a motor hit a following error
