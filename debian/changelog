@@ -1,3 +1,9 @@
+epics-pmacutil-dev (1.1-1) unstable; urgency=low
+
+  * Upstream bugfix to home-to-limit plc.
+
+ -- Daron Chabot <dchabot@bnl.gov>  Tue, 08 Apr 2014 10:01:48 -0400
+
 epics-pmacutil-dev (1.0-2) unstable; urgency=low
 
   * Install *.pmc, *.proto to /usr/share/<pkg-name>.
