@@ -102,6 +102,7 @@ record(mbbi, "$(SYS)$(DEV)Pgm:Home-Sts") {
   field(FVVL, "5")
   field(SXVL, "6")
   field(SVVL, "7")
+  field(EIVL, "8")
   field(ZRSV, "NO_ALARM")
   field(ONSV, "NO_ALARM")
   field(TWSV, "MINOR")
@@ -114,6 +115,7 @@ record(mbbi, "$(SYS)$(DEV)Pgm:Home-Sts") {
   field(FVST, "Stopped on lim")
   field(SXST, "Incomplete Home")
   field(SVST, "Invalid Setting")
+  field(EIST, "Phasing Error")
 }
 
 record(mbbi, "$(SYS)$(DEV)Sts:Home-Sts") {
@@ -124,10 +126,9 @@ record(mbbi, "$(SYS)$(DEV)Sts:Home-Sts") {
   field(ZRVL, "0")
   field(ONVL, "1")
   field(TWVL, "2")
+  field(TWST, "Phasing")
   field(THVL, "3")
   field(ZRST, "Idle")
-  field(ONST, "Configuring")
-  field(TWST, "Move to neg lim")
   field(THST, "Move to pos lim")
   field(FRVL, "4")
   field(FRST, "Homing")
