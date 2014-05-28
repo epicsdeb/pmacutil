@@ -3,7 +3,7 @@ epics-pmacutil-dev (1.2-1) unstable; urgency=low
   * Upstream bugfix.
   * Template file suffix change.
 
- -- Daron Chabot <dchabot@box32.cs.nsls2.local>  Wed, 16 Apr 2014 15:14:23 -0400
+ -- Daron Chabot <dchabot@bnl.gov>  Wed, 16 Apr 2014 15:14:23 -0400
 
 epics-pmacutil-dev (1.1-1) unstable; urgency=low
 
