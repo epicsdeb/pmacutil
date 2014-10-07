@@ -30,6 +30,8 @@ CLEAR
 
 ; Is the motor amplifier enabled?
 IF(M$(MOTOR)39 = 1)
+  ; Check limit switches
+  AND (M$(MOTOR)31 = 0 OR M$(MOTOR)32 = 0)
     ; Release the brake
     $(BRAKE) = $(RELEASE)
     P$(PLC)01 = 0
