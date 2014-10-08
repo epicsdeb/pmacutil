@@ -33,11 +33,11 @@ IF(M$(MOTOR)39 = 1)
   ; Check limit switches
   AND (M$(MOTOR)31 = 0 OR M$(MOTOR)32 = 0)
     ; Release the brake
-    $(BRAKE) = $(RELEASE)
+    M$(BRAKE) = $(RELEASE)
     P$(PLC)01 = 0
 ELSE
     ; Engage the brake
-    $(BRAKE) = $(APPLY)
+    M$(BRAKE) = $(APPLY)
     P$(PLC)01 = 1
 ENDIF
 
