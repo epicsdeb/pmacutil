@@ -14,12 +14,12 @@ CLOSE
 ;   MOTOR = $(MOTOR)          ; The motor that the brake operates on
 ;   APPLY = $(APPLY)          ; The value to write to apply the brake
 ;   RELEASE = $(RELEASE)      ; The value to write to release the brake
-;
+; 
 ; The PLC performs following tasks:
 ;     If the motor is killed, the brake is applied
 ;     If both limits are active, the brake is applied
 ;     If the amplifier is enabled,  the brake is deactivate
-;
+; 
 ; P variable use:
 ;    P$(PLC)01    ; The current brake state
 ;     
@@ -32,12 +32,12 @@ CLEAR
 IF(M$(MOTOR)39 = 1)
   ; Check limit switches
   AND (M$(MOTOR)31 = 0 OR M$(MOTOR)32 = 0)
-        ; Release the brake
-        $(BRAKE) = $(RELEASE)
-        P$(PLC)01 = 0
+    ; Release the brake
+    M$(BRAKE) = $(RELEASE)
+    P$(PLC)01 = 0
 ELSE
     ; Engage the brake
-    $(BRAKE) = $(APPLY)
+    M$(BRAKE) = $(APPLY)
     P$(PLC)01 = 1
 ENDIF
 
