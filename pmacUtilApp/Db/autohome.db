@@ -166,6 +166,16 @@ record(bo, "$(SYS)$(DEV)Start:Home-Cmd") {
   field(FLNK, "$(SYS)$(DEV)Start:Home-CalcOut_")
 }
 
+record(bo, "$(SYS)$(DEV)Mode:PostHome-Sel") {
+  field(DESC, "Set post-home move mode")
+  field(SCAN, "Passive")
+  field(DTYP, "Soft Channel")
+  field(OUT,  "$(SYS)$(DEV)Cmd:Home-Asyn_.AOUT PP")
+  field(ZNAM, "Return to start pos")
+  field(ONAM, "Stay at zero")
+}
+
+
 
 record(calcout, "$(SYS)$(DEV)Check:Home-Sts") {
   field(CALC, "A==1")
