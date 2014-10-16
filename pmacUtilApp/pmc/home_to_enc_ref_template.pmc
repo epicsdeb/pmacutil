@@ -16,9 +16,7 @@
 ; P variables
 ; P$(PLC)00 - homing state (homing, not homing)
 ; P$(PLC)01 - homing status (limit search, home search, post-home move)
-; P$(PLC)02 - homing group (not used)
-; P$(PLC)03 - homing group backup (not used)
-; P$(PLC)04 - post-home move (0 = return to previous, 1 = stay at zero)
+; P$(PLC)02 - post-home move (0 = return to previous, 1 = stay at zero)
 
 ; Homing State P Variable
 P$(PLC)00 = 0
@@ -32,15 +30,15 @@ P$(PLC)01 = 1
 
 ;---- Configuring State ----
 P$(PLC)00=1
-;Save high soft limits to P variables Pxx04..x19
+;Save high soft limits to P variable Pxx04
 P$(PLC)04=I$(AXIS)13
-;Save the low soft limits to P variables Pxx20..x35
+;Save the low soft limits to P variable Pxx20
 P$(PLC)20=I$(AXIS)14
-;Save the home capture 2lags to P variables Pxx36..x51
+;Save the home capture 2lags to P variable Pxx36
 P$(PLC)36=I$(SERVO)2
-;Save the limit flags to P variables Pxx68..x83
+;Save the limit flags to P variable Pxx68
 P$(PLC)68=I$(AXIS)24
-;Save the current position to P variables Pxx84..x99
+;Save the current position to P variable Pxx84
 P$(PLC)84=M$(AXIS)62
 ;Clear the soft limits
 I$(AXIS)13=0
@@ -118,7 +116,8 @@ if (P$(PLC)01 = 1)
 
 	;---- PostHomeMove State ----
 	if (P$(PLC)01=1)
-    if (P$(PLC)04 = 0)
+    ; Check the type of post-home move
+    if (P$(PLC)02 = 0)
       P$(PLC)00=5
       ; Execute the move commands
       M$(AXIS)72=P$(PLC)84/(I$(AXIS)08*32)
