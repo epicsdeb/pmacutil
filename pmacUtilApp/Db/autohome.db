@@ -172,7 +172,10 @@ record(bo, "$(SYS)$(DEV)Mode:PostHome-Sel") {
   field(DTYP, "Soft Channel")
   field(ZNAM, "Return to start pos")
   field(ONAM, "Stay at zero")
-  field(FLNK, "$(SYS)$(DEV)Mode:PostHome-StringOut_")
+  field(OUT,  "$(SYS)$(DEV)Mode:PostHome-SCalcOut_.A PP")
+  field(PINI, "YES")
+
+  info(autosaveFields, "VAL")
 }
 
 record(scalcout, "$(SYS)$(DEV)Mode:PostHome-SCalcOut_") {
@@ -180,7 +183,6 @@ record(scalcout, "$(SYS)$(DEV)Mode:PostHome-SCalcOut_") {
   field(SCAN, "Passive")
   field(DTYP, "Soft Channel")
   field(CALC, "PRINTF('P$(PLC)02=%i',A)")
-  field(INPA, "$(SYS)$(DEV)Mode:PostHome-Sel NPP")
   field(OUT,  "$(SYS)$(DEV)Cmd:Home-Asyn_.AOUT PP")
   field(OOPT, "Every Time")
   field(DOPT, "Use CALC")
