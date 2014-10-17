@@ -170,8 +170,8 @@ record(bo, "$(SYS)$(DEV)Mode:PostHome-Sel") {
   field(DESC, "Set post-home move mode")
   field(SCAN, "Passive")
   field(DTYP, "Soft Channel")
-  field(ZNAM, "Return to start pos")
-  field(ONAM, "Stay at zero")
+  field(ZNAM, "Previous")
+  field(ONAM, "Zero")
   field(OUT,  "$(SYS)$(DEV)Mode:PostHome-SCalcOut_.A PP")
   field(PINI, "YES")
 
