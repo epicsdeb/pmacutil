@@ -166,6 +166,27 @@ record(bo, "$(SYS)$(DEV)Start:Home-Cmd") {
   field(FLNK, "$(SYS)$(DEV)Start:Home-CalcOut_")
 }
 
+record(bo, "$(SYS)$(DEV)Mode:PostHome-Sel") {
+  field(DESC, "Set post-home move mode")
+  field(SCAN, "Passive")
+  field(DTYP, "Soft Channel")
+  field(ZNAM, "Previous")
+  field(ONAM, "Zero")
+  field(OUT,  "$(SYS)$(DEV)Mode:PostHome-SCalcOut_.A PP")
+  field(PINI, "YES")
+
+  info(autosaveFields, "VAL")
+}
+
+record(scalcout, "$(SYS)$(DEV)Mode:PostHome-SCalcOut_") {
+  field(DESC, "Set post-home move mode")
+  field(SCAN, "Passive")
+  field(DTYP, "Soft Channel")
+  field(CALC, "PRINTF('P$(PLC)02=%i',A)")
+  field(OUT,  "$(SYS)$(DEV)Cmd:Home-Asyn_.AOUT PP")
+  field(OOPT, "Every Time")
+  field(DOPT, "Use CALC")
+}
 
 record(calcout, "$(SYS)$(DEV)Check:Home-Sts") {
   field(CALC, "A==1")
@@ -178,7 +199,6 @@ record(calcout, "$(SYS)$(DEV)Check:Home-Sts") {
 record(fanout, "$(SYS)$(DEV)Sts:Home-FOut_") {
   field(FLNK, "$(SYS)$(DEV)Pgm:Home-SCalcOut_")
   field(LNK1, "$(SYS)$(DEV)Sts:Home-SCalcOut_")
-  field(LNK2, "$(SYS)$(DEV)Group:Home-SCalcOut_")
 }
 
 record(bo, "$(SYS)$(DEV)Sts:Homed-Sts") {
@@ -217,57 +237,6 @@ record(stringout, "$(SYS)$(DEV)Start:Home-StringOut") {
   field(DTYP, "Soft Channel")
   field(VAL, "ENABLE PLC$(PLC)")
   field(OUT, "$(SYS)$(DEV)Cmd:Home-Asyn_.AOUT PP")
-}
-
-record(mbbo, "$(SYS)$(DEV)Group:Home-Sel") {
-  field(DESC, "Homing group")
-  field(SCAN, "Passive")
-  field(PINI, "YES")
-  field(DTYP, "Soft Channel")
-  field(FLNK, "$(SYS)$(DEV)Group:Send-SCalcOut")
-  field(ZRVL, "0")
-  field(ONVL, "1")
-  field(TWVL, "2")
-  field(THVL, "3")
-  field(FRVL, "4")
-  field(FVVL, "5")
-  field(SXVL, "6")
-  field(SVVL, "7")
-  field(ZRST, "none")
-  field(ONST, "$(GRP1=All)")
-  field(TWST, "$(GRP2=)")
-  field(THST, "$(GRP3=)")
-  field(FRST, "$(GRP4=)")
-  field(FVST, "$(GRP5=)")
-  field(SXST, "$(GRP6=)")
-  field(SVST, "$(GRP7=)")
-  field(UNSV, "INVALID")
-  field(IVOA, "Set output to IVOV")
-  field(IVOV, "0")
-}
-
-record(scalcout, "$(SYS)$(DEV)Group:Send-SCalcOut") {
-  field(DESC, "Select group on pmac")
-  field(SCAN, "Passive")
-  field(DTYP, "Soft Channel")
-  field(CALC, "PRINTF('P$(PLC)02=%i',A)")
-  field(INPA, "$(SYS)$(DEV)Group:Home-Sel PP")
-  field(OUT, "$(SYS)$(DEV)Cmd:Home-Asyn_.AOUT PP")
-  field(OOPT, "Every Time")
-  field(DOPT, "Use CALC")
-}
-
-record(scalcout, "$(SYS)$(DEV)Group:Home-SCalcOut_") {
-  field(DESC, "Parse pmac P$(PLC)02")
-  field(SCAN, "Passive")
-  field(PINI, "NO")
-  field(DTYP, "Soft Channel")
-  field(CALC, "SSCANF(AA,'%*d %*d %d')")
-  field(INAA, "$(SYS)$(DEV)Sts:Home-Asyn_.AINP")
-  field(OOPT, "On Change")
-  field(DOPT, "Use CALC")
-  field(PREC, "0")
-  field(OUT, "$(SYS)$(DEV)Group:Home-LongOut_ PP")
 }
 
 record(ao, "$(SYS)$(DEV)Num:HomePLC-I") {
@@ -436,11 +405,6 @@ record(stringout, "$(SYS)$(DEV)Sts:HomeMtr31-StringOut_") {
 }
 
 record(stringout, "$(SYS)$(DEV)Sts:HomeMtr32-StringOut_") {
-}
-
-record(longout, "$(SYS)$(DEV)Group:Home-LongOut_") {
-  field(DTYP, "Soft Channel")
-  field(OUT, "$(SYS)$(DEV)Group:Home-Sel PP")
 }
 
 #! Further lines contain data used by VisualDCT
