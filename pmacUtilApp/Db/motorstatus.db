@@ -134,6 +134,29 @@ record(ao, "$(SYS)$(DEV)Cnt:Ax-SP") {
   field(LOPR, "1")
 }
 
+record(mbbi, "$(SYS)$(DEV)Sts:HomeCmplt-Sts_") {
+  field(DESC, "Home complete bit extraction")
+  field(PINI, "YES")
+  field(SCAN, "Passive")
+  field(DTYP, "Raw Soft Channel")
+  field(INP,  "$(SYS)$(DEV)Sts:1-Sts CPP")
+  field(NOBT, "1")
+  field(SHFT, "10")
+  field(FLNK, "$(SYS)$(DEV)Sts:HomeCmplt-Sts")
+}
+
+record(bi, "$(SYS)$(DEV)Sts:HomeCmplt-Sts") {
+  field(DESC, "Home complete status")
+  field(PINI, "NO")
+  field(SCAN, "Passive")
+  field(DTYP, "Soft Channel")
+  field(INP,  "$(SYS)$(DEV)Sts:HomeCmplt-Sts_")
+  field(ZNAM, "Not homed")
+  field(ONAM, "Homed")
+  field(ZSV,  "MINOR")
+  field(OSV,  "NO_ALARM")
+}
+
 #! Further lines contain data used by VisualDCT
 #! View(42,1308,1.2)
 #! Record("$(SYS)$(DEV)Sts-Asyn_",480,1543,0,0,"$(SYS)$(DEV)Sts-Asyn_")
