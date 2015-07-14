@@ -51,7 +51,7 @@ record(scalcout, "$(SYS)$(DEV)Sts:1-SCalcout_") {
   field(SCAN, "Passive")
   field(DTYP, "Soft Channel")
   field(INAA, "$(SYS)$(DEV)Sts-Asyn_.TINP PP MS")
-  field(OUT, "$(SYS)$(DEV)Sts:2-FOut_.VAL PP")
+  field(OUT, "$(SYS)$(DEV)Sts:1_2-FOut_.VAL PP")
   field(OOPT, "On Change")
   field(DOPT, "Use CALC")
   field(CALC, "SSCANF(AA, '%*6X%6X')")
@@ -62,18 +62,18 @@ record(scalcout, "$(SYS)$(DEV)Sts:2-SCalcout_") {
   field(SCAN, "Passive")
   field(DTYP, "Soft Channel")
   field(INAA, "$(SYS)$(DEV)Sts-Asyn_.TINP PP MS")
-  field(OUT, "$(SYS)$(DEV)Sts:3-FOut_.VAL PP")
+  field(OUT, "$(SYS)$(DEV)Sts:3_4-FOut_.VAL PP")
   field(OOPT, "On Change")
   field(DOPT, "Use CALC")
   field(CALC, "SSCANF(AA, '%6X%*6X')")
 }
 
-record(dfanout, "$(SYS)$(DEV)Sts:3-FOut_") {
+record(dfanout, "$(SYS)$(DEV)Sts:3_4-FOut_") {
   field(OUTA, "$(SYS)$(DEV)Sts:3-Sts.RVAL PP")
   field(OUTB, "$(SYS)$(DEV)Sts:4-Sts.RVAL PP")
 }
 
-record(dfanout, "$(SYS)$(DEV)Sts:2-FOut_") {
+record(dfanout, "$(SYS)$(DEV)Sts:1_2-FOut_") {
   field(OUTA, "$(SYS)$(DEV)Sts:1-Sts.RVAL PP")
   field(OUTB, "$(SYS)$(DEV)Sts:2-Sts.RVAL PP")
 }
@@ -111,7 +111,7 @@ record(mbbiDirect, "$(SYS)$(DEV)Sts:4-Sts") {
 }
 
 # Put together the axis number to form the #xx? command
-record(scalcout, "$(SYS)$(DEV)Cmd-SCalcout_") {
+record(scalcout, "$(SYS)$(DEV)Sts-SCalcout_") {
   field(DESC, "create the pmac cmd")
   field(FLNK, "$(SYS)$(DEV)Sts-Asyn_")
   field(CALC, "PRINTF('#%d?',A)")
@@ -119,8 +119,8 @@ record(scalcout, "$(SYS)$(DEV)Cmd-SCalcout_") {
   field(OUT, "$(SYS)$(DEV)Sts-Asyn_.AOUT PP")
   field(OOPT, "Every Time")
   field(DOPT, "Use CALC")
+  field(SCAN, "1 second")
 }
-
 
 record(ao, "$(SYS)$(DEV)Cnt:Ax-SP") {
   field(DESC, "PMAC Axis number")
@@ -132,6 +132,29 @@ record(ao, "$(SYS)$(DEV)Cnt:Ax-SP") {
   field(LINR, "NO CONVERSION")
   field(HOPR, "32")
   field(LOPR, "1")
+}
+
+record(mbbi, "$(SYS)$(DEV)Sts:HomeCmplt-Sts_") {
+  field(DESC, "Home complete bit extraction")
+  field(PINI, "YES")
+  field(SCAN, "Passive")
+  field(DTYP, "Raw Soft Channel")
+  field(INP,  "$(SYS)$(DEV)Sts:1-Sts CPP")
+  field(NOBT, "1")
+  field(SHFT, "10")
+  field(FLNK, "$(SYS)$(DEV)Sts:HomeCmplt-Sts")
+}
+
+record(bi, "$(SYS)$(DEV)Sts:HomeCmplt-Sts") {
+  field(DESC, "Home complete status")
+  field(PINI, "NO")
+  field(SCAN, "Passive")
+  field(DTYP, "Soft Channel")
+  field(INP,  "$(SYS)$(DEV)Sts:HomeCmplt-Sts_")
+  field(ZNAM, "Not homed")
+  field(ONAM, "Homed")
+  field(ZSV,  "MINOR")
+  field(OSV,  "NO_ALARM")
 }
 
 #! Further lines contain data used by VisualDCT
