@@ -1,3 +1,9 @@
+epics-pmacutil-dev (1.5-1) unstable; urgency=low
+
+  * Add Home status records from upstream (Wayne Lewis).
+
+ -- Daron Chabot <dchabot@bnl.gov>  Tue, 14 Jul 2015 10:05:01 -0400
+
 epics-pmacutil-dev (1.4-2) unstable; urgency=low
 
   * No changes - rebuildd attempt 2.
