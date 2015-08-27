@@ -11,6 +11,7 @@
 ; - AXIS: motion axis
 ; - TIMER: PMAC timer to use
 ; - SERVO: first three digits of axis gate array (I7mn)
+; - HOME_POL: polarity of home switch signal
 
 ; P variables
 ; P$(PLC)00 - homing state (homing, not homing)
