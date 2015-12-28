@@ -1,3 +1,9 @@
+epics-pmacutil-dev (1.6-1~2013B+1) wheezy-2013B; urgency=low
+
+  * Make available for Wheezy 2013B distributions.
+
+ -- Daron Chabot <dchabot@bnl.gov>  Mon, 28 Dec 2015 15:55:31 -0500
+
 epics-pmacutil-dev (1.6-1) unstable; urgency=low
 
   * Merge with upstream.
