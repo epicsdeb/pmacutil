@@ -1,10 +1,11 @@
 ; Homing PLC for Axis $(AXIS) (PLC $(PLC))
 
-; This homing routine will move to a limit, and then search for the home switch.
+; This homing routine will search for the home switch immediately, without first
+; doing a search for a limit switch.
 ; The axis home velocity sign sets the direction for the final "home to
 ; home switch" move. The initial move to the limit will be in the opposite direction.
 ; 
-; Wayne Lewis 20140108
+; Wayne Lewis 2015-08-27
 ; 
 ; Macros:
 ; - PLC: PLC number
@@ -43,39 +44,6 @@ P$(PLC)84=M$(AXIS)62
 ;Clear the soft limits
 I$(AXIS)13=0
 I$(AXIS)14=0
-
-if (P$(PLC)01=1)
-	;---- FastSearch State ----
-  ; Move to the limit switch
-	if (P$(PLC)01=1)
-		P$(PLC)00=8
-		; Execute the move commands
-		M$(AXIS)72=100000000*(-I$(AXIS)23/ABS(I$(AXIS)23))
-		cmd "#$(AXIS)J^*"
-		; Wait for the move to complete
-		I$(TIMER) = 20 * 8388608/I10 ; Small delay to start moving
-		while (I$(TIMER) > 0)
-		endw
-		I$(TIMER) = 600000 * 8388608/I10 ; Now start checking the conditions
-		while (M$(AXIS)40=0) ; At least one motor should not be In Position
-		and (M$(AXIS)42=0) ; No following errors should be set for any motor
-		and (I$(TIMER) > 0) ; Check for timeout
-		and (P$(PLC)01 = 1) ; Check that we didn't abort
-		endw
-
-		; Check why we left the while loop
-		if (M$(AXIS)42=1) ; If a motor hit a following error
-			P$(PLC)01 = 4
-		endif
-		if (I$(TIMER)<0 or I$(TIMER)=0) ; If we timed out
-			P$(PLC)01 = 3
-		endif
-	endif
-
-	;---- Store the difference between current pos and start pos ----
-	if (P$(PLC)01=1)
-		P$(PLC)86=(P$(PLC)86-M$(AXIS)62)/(I$(AXIS)08*32)-(I$(AXIS)26/16)
-	endif
 
 	;---- Homing State ----
 	if (P$(PLC)01=1)

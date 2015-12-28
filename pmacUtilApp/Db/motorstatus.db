@@ -126,7 +126,7 @@ record(ao, "$(SYS)$(DEV)Cnt:Ax-SP") {
   field(DESC, "PMAC Axis number")
   field(PINI, "YES")
   field(DTYP, "Soft Channel")
-  field(FLNK, "$(SYS)$(DEV)Cmd-SCalcout_")
+  field(FLNK, "$(SYS)$(DEV)Sts-SCalcout_")
   field(VAL, "$(AXIS)")
   field(PREC, "0")
   field(LINR, "NO CONVERSION")
