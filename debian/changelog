@@ -1,3 +1,22 @@
+epics-pmacutil-dev (1.7) unstable; urgency=low
+
+  * BLD: pkg dependencies
+  * FMT: whitespace
+  * GIT: ignore file
+  * BLD: build as a native pkg
+  * BLD: bump version to reflect native pkging
+
+ -- Daron Chabot <chabot@frib.msu.edu>  Wed, 25 Jan 2017 16:42:35 -0500
+
+epics-pmacutil-dev (1.6-1+wheezy2) wheezy; urgency=low
+
+  * FMT: whitespace
+  * GIT: ignore file
+  * BLD: build as a native pkg
+  * BLD: bump version to reflect native pkging
+
+ -- Daron Chabot <chabot@frib.msu.edu>  Wed, 25 Jan 2017 16:42:15 -0500
+
 epics-pmacutil-dev (1.6-1+wheezy1) wheezy; urgency=low
 
   * Wheezy build.
