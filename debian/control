@@ -2,16 +2,20 @@ Source: epics-pmacutil-dev
 Section: devel
 Priority: optional
 Maintainer: Daron Chabot <dchabot@bnl.gov>
-Build-Depends: debhelper (>= 8.0.0), epics-debhelper (>= 6~),
-                epics-synapps-dev (>= 20130320)
-Standards-Version: 3.9.4
+Build-Depends: debhelper (>= 9),
+               epics-dev,
+               epics-asyn-dev,
+               epics-calc-dev,
+               epics-stream-dev,
+               epics-motor-dev,
+               epics-busy-dev,
+Standards-Version: 3.9.6
 Homepage: http://controls.diamond.ac.uk/downloads/support/pmacUtil/
-#Vcs-Git: git://git.debian.org/collab-maint/epics-pmacutil-dev.git
-#Vcs-Browser: http://git.debian.org/?p=collab-maint/epics-pmacutil-dev.git;a=summary
 
 Package: epics-pmacutil-dev
 Architecture: all
-Depends: epics-pmacasyn-dev, ${misc:Depends}
+Depends: ${misc:Depends}
+Recommends: epics-pmacasyn-dev, epics-stream-dev
 Description: Utilities supporting PMAC operation within EPICS.
  This package contains PLC and EPICS database templates supporting
  motion control applications using Delta Tau Turbo PMAC hardware.
