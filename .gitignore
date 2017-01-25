@@ -1,0 +1,6 @@
+*.swp
+db/*
+dbd/*
+bin/*
+lib/*
+O.*
