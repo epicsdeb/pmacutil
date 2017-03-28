@@ -1,3 +1,9 @@
+epics-pmacutil-dev (1.8) unstable; urgency=low
+
+  * API: relocate protocol files to EPICS_BASE
+
+ -- Daron Chabot <chabot@frib.msu.edu>  Tue, 28 Mar 2017 17:32:22 -0400
+
 epics-pmacutil-dev (1.7) unstable; urgency=low
 
   * BLD: pkg dependencies
